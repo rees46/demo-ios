@@ -2,7 +2,7 @@
 import XCTest
 @testable import demo_store_ios
 
-final class demo_store_iosTests: XCTestCase {
+final class DemoStoreTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
