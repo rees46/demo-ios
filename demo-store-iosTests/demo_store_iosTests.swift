@@ -1,9 +1,3 @@
-//
-//  demo_store_iosTests.swift
-//  demo-store-iosTests
-//
-//  Created by Daniel Green on 2024-07-03.
-//
 
 import XCTest
 @testable import demo_store_ios
