@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7559449F2C357E5C00C274C9 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7559449E2C357E5C00C274C9 /* SplashScreenView.swift */; };
+		755944A12C35822700C274C9 /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755944A02C35822700C274C9 /* LaunchScreen.swift */; };
 		75B935572C3564360063E814 /* DemoStoreApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B935562C3564360063E814 /* DemoStoreApp.swift */; };
 		75B935592C3564360063E814 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B935582C3564360063E814 /* ContentView.swift */; };
 		75B9355B2C3564370063E814 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75B9355A2C3564370063E814 /* Assets.xcassets */; };
@@ -41,6 +43,8 @@
 		18B7CB949CB70787994FC425 /* Pods-demo-store-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demo-store-ios.debug.xcconfig"; path = "Target Support Files/Pods-demo-store-ios/Pods-demo-store-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		3DAD44E6C74C30A194159846 /* Pods_demo_store_ios_demo_store_iosUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_demo_store_ios_demo_store_iosUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7441D18EA106D3DD3F55F71E /* Pods-demo-store-ios-demo-store-iosUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demo-store-ios-demo-store-iosUITests.debug.xcconfig"; path = "Target Support Files/Pods-demo-store-ios-demo-store-iosUITests/Pods-demo-store-ios-demo-store-iosUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		7559449E2C357E5C00C274C9 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
+		755944A02C35822700C274C9 /* LaunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreen.swift; sourceTree = "<group>"; };
 		75B935532C3564360063E814 /* demo-store-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "demo-store-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		75B935562C3564360063E814 /* DemoStoreApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoStoreApp.swift; sourceTree = "<group>"; };
 		75B935582C3564360063E814 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -96,6 +100,38 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7559449C2C357E1800C274C9 /* features */ = {
+			isa = PBXGroup;
+			children = (
+				755944A22C35858C00C274C9 /* main */,
+				7559449D2C357E4300C274C9 /* splash */,
+			);
+			path = features;
+			sourceTree = "<group>";
+		};
+		7559449D2C357E4300C274C9 /* splash */ = {
+			isa = PBXGroup;
+			children = (
+				7559449E2C357E5C00C274C9 /* SplashScreenView.swift */,
+				755944A02C35822700C274C9 /* LaunchScreen.swift */,
+			);
+			path = splash;
+			sourceTree = "<group>";
+		};
+		755944A22C35858C00C274C9 /* main */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = main;
+			sourceTree = "<group>";
+		};
+		755944A32C35883F00C274C9 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
 		75B9354A2C3564360063E814 = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +157,8 @@
 		75B935552C3564360063E814 /* demo-store-ios */ = {
 			isa = PBXGroup;
 			children = (
+				755944A32C35883F00C274C9 /* utils */,
+				7559449C2C357E1800C274C9 /* features */,
 				75B935562C3564360063E814 /* DemoStoreApp.swift */,
 				75B935582C3564360063E814 /* ContentView.swift */,
 				75B9355A2C3564370063E814 /* Assets.xcassets */,
@@ -369,8 +407,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				755944A12C35822700C274C9 /* LaunchScreen.swift in Sources */,
 				75B935592C3564360063E814 /* ContentView.swift in Sources */,
 				75B935572C3564360063E814 /* DemoStoreApp.swift in Sources */,
+				7559449F2C357E5C00C274C9 /* SplashScreenView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

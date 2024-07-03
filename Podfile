@@ -1,10 +1,10 @@
- platform :ios, '12.0'
+platform :ios, '12.0'
 
 target 'demo-store-ios' do
-  # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-  # Pods for demo-store-ios
+  # Добавьте ваш SDK
+  pod 'REES46', :git => 'https://github.com/rees46/ios-sdk.git', :branch => 'master', :tag => '3.6.19'
 
   target 'demo-store-iosTests' do
     inherit! :search_paths
