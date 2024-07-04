@@ -5,10 +5,10 @@ struct MainScreenView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Text("Favourites Screen")
+                Text("main_tab_title")
                     .foregroundColor(.white)
             }
-            .navigationTitle("Favourites")
+            .navigationTitle("main_tab_title")
             .background(Color.black.edgesIgnoringSafeArea(.all)) 
         }
     }

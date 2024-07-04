@@ -5,10 +5,10 @@ struct SettingsScreenView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Text("Set Screen")
+                Text("settings_tab_title")
                     .foregroundColor(.white)
             }
-            .navigationTitle("Favourites")
+            .navigationTitle("settings_tab_title")
             .background(Color.black.edgesIgnoringSafeArea(.all))
         }
     }

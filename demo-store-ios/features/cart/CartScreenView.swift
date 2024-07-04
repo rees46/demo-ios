@@ -5,10 +5,10 @@ struct CartScreenView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Text("Cart Screen")
+                Text("cart_tab_title")
                     .foregroundColor(.white)
             }
-            .navigationTitle("Favourites")
+            .navigationTitle("cart_tab_title")
             .background(Color.black.edgesIgnoringSafeArea(.all))
         }
     }
