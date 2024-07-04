@@ -3,8 +3,7 @@ import SwiftUI
 struct SplashScreenView: View {
     var body: some View {
         ZStack{
-            Color.black
-                .edgesIgnoringSafeArea(.all)
+            Color.black.edgesIgnoringSafeArea(.all)
             
             Image("SplashLogo")
                 .resizable()

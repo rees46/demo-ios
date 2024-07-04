@@ -8,6 +8,7 @@ struct DemoStoreApp: App {
         WindowGroup {
             if showSplash {
                 LaunchScreen()
+                    .edgesIgnoringSafeArea(.all)
                     .onAppear {
                         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                             withAnimation {

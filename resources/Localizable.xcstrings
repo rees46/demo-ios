@@ -12,6 +12,9 @@
         }
       }
     },
+    "Favourites" : {
+
+    },
     "main_tab_title" : {
       "extractionState" : "manual",
       "localizations" : {
