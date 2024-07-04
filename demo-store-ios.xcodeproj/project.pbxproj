@@ -16,6 +16,10 @@
 		75B935682C3564370063E814 /* DemoStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B935672C3564370063E814 /* DemoStoreTests.swift */; };
 		75B935722C3564370063E814 /* DemoStoreUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B935712C3564370063E814 /* DemoStoreUITests.swift */; };
 		75B935742C3564370063E814 /* DemoStoreUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B935732C3564370063E814 /* DemoStoreUITestsLaunchTests.swift */; };
+		75ECCD0B2C36BDF500D6D346 /* MainScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75ECCD0A2C36BDF500D6D346 /* MainScreenView.swift */; };
+		75ECCD102C36BE2000D6D346 /* CatalogScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75ECCD0F2C36BE2000D6D346 /* CatalogScreenView.swift */; };
+		75ECCD122C36BE2D00D6D346 /* CartScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75ECCD112C36BE2D00D6D346 /* CartScreenView.swift */; };
+		75ECCD142C36BE4300D6D346 /* SettingsScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75ECCD132C36BE4300D6D346 /* SettingsScreenView.swift */; };
 		D78A79C526F8BC172C2E09DA /* Pods_demo_store_ios_demo_store_iosUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD44E6C74C30A194159846 /* Pods_demo_store_ios_demo_store_iosUITests.framework */; };
 		E595009B8CDAA1ED437EACF0 /* Pods_demo_store_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C600BF4BA27B7E78C2412ED /* Pods_demo_store_ios.framework */; };
 		FF4CD03BDB28EF3ACB920BA6 /* Pods_demo_store_iosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15B91E8E795D4DD2A7328979 /* Pods_demo_store_iosTests.framework */; };
@@ -55,6 +59,10 @@
 		75B9356D2C3564370063E814 /* demo-store-iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "demo-store-iosUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		75B935712C3564370063E814 /* DemoStoreUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoStoreUITests.swift; sourceTree = "<group>"; };
 		75B935732C3564370063E814 /* DemoStoreUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoStoreUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		75ECCD0A2C36BDF500D6D346 /* MainScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenView.swift; sourceTree = "<group>"; };
+		75ECCD0F2C36BE2000D6D346 /* CatalogScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogScreenView.swift; sourceTree = "<group>"; };
+		75ECCD112C36BE2D00D6D346 /* CartScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartScreenView.swift; sourceTree = "<group>"; };
+		75ECCD132C36BE4300D6D346 /* SettingsScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreenView.swift; sourceTree = "<group>"; };
 		8C600BF4BA27B7E78C2412ED /* Pods_demo_store_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_demo_store_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		97099283EE540065ADEA8106 /* Pods-demo-store-iosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demo-store-iosTests.release.xcconfig"; path = "Target Support Files/Pods-demo-store-iosTests/Pods-demo-store-iosTests.release.xcconfig"; sourceTree = "<group>"; };
 		CD9E73BFACD7F4C2DCD8D43C /* Pods-demo-store-ios-demo-store-iosUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demo-store-ios-demo-store-iosUITests.release.xcconfig"; path = "Target Support Files/Pods-demo-store-ios-demo-store-iosUITests/Pods-demo-store-ios-demo-store-iosUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -103,6 +111,9 @@
 		7559449C2C357E1800C274C9 /* features */ = {
 			isa = PBXGroup;
 			children = (
+				75ECCD0E2C36BE1000D6D346 /* settings */,
+				75ECCD0D2C36BE0600D6D346 /* cart */,
+				75ECCD0C2C36BDFF00D6D346 /* catalog */,
 				755944A22C35858C00C274C9 /* main */,
 				7559449D2C357E4300C274C9 /* splash */,
 			);
@@ -112,6 +123,7 @@
 		7559449D2C357E4300C274C9 /* splash */ = {
 			isa = PBXGroup;
 			children = (
+				75B935582C3564360063E814 /* ContentView.swift */,
 				7559449E2C357E5C00C274C9 /* SplashScreenView.swift */,
 				755944A02C35822700C274C9 /* LaunchScreen.swift */,
 			);
@@ -121,6 +133,7 @@
 		755944A22C35858C00C274C9 /* main */ = {
 			isa = PBXGroup;
 			children = (
+				75ECCD0A2C36BDF500D6D346 /* MainScreenView.swift */,
 			);
 			path = main;
 			sourceTree = "<group>";
@@ -160,7 +173,6 @@
 				755944A32C35883F00C274C9 /* utils */,
 				7559449C2C357E1800C274C9 /* features */,
 				75B935562C3564360063E814 /* DemoStoreApp.swift */,
-				75B935582C3564360063E814 /* ContentView.swift */,
 				75B9355A2C3564370063E814 /* Assets.xcassets */,
 				75B9355C2C3564370063E814 /* Preview Content */,
 			);
@@ -190,6 +202,30 @@
 				75B935732C3564370063E814 /* DemoStoreUITestsLaunchTests.swift */,
 			);
 			path = "demo-store-iosUITests";
+			sourceTree = "<group>";
+		};
+		75ECCD0C2C36BDFF00D6D346 /* catalog */ = {
+			isa = PBXGroup;
+			children = (
+				75ECCD0F2C36BE2000D6D346 /* CatalogScreenView.swift */,
+			);
+			path = catalog;
+			sourceTree = "<group>";
+		};
+		75ECCD0D2C36BE0600D6D346 /* cart */ = {
+			isa = PBXGroup;
+			children = (
+				75ECCD112C36BE2D00D6D346 /* CartScreenView.swift */,
+			);
+			path = cart;
+			sourceTree = "<group>";
+		};
+		75ECCD0E2C36BE1000D6D346 /* settings */ = {
+			isa = PBXGroup;
+			children = (
+				75ECCD132C36BE4300D6D346 /* SettingsScreenView.swift */,
+			);
+			path = settings;
 			sourceTree = "<group>";
 		};
 		8FED5CC7CDC6607CEFB8FDC9 /* Pods */ = {
@@ -407,10 +443,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75ECCD102C36BE2000D6D346 /* CatalogScreenView.swift in Sources */,
 				755944A12C35822700C274C9 /* LaunchScreen.swift in Sources */,
+				75ECCD0B2C36BDF500D6D346 /* MainScreenView.swift in Sources */,
+				75ECCD122C36BE2D00D6D346 /* CartScreenView.swift in Sources */,
 				75B935592C3564360063E814 /* ContentView.swift in Sources */,
 				75B935572C3564360063E814 /* DemoStoreApp.swift in Sources */,
 				7559449F2C357E5C00C274C9 /* SplashScreenView.swift in Sources */,
+				75ECCD142C36BE4300D6D346 /* SettingsScreenView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
