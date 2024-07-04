@@ -1,6 +1,39 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "also_bought_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Also bought"
+          }
+        }
+      }
+    },
+    "arrivals_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "New arrivals"
+          }
+        }
+      }
+    },
+    "back_button" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Back"
+          }
+        }
+      }
+    },
     "cart_tab_title" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -12,8 +45,85 @@
         }
       }
     },
+    "checkout_button" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Checkout"
+          }
+        }
+      }
+    },
+    "continue_button" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Continue shopping"
+          }
+        }
+      }
+    },
+    "default_error_sub_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Page not found."
+          }
+        }
+      }
+    },
+    "default_error_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Something went wrong."
+          }
+        }
+      }
+    },
+    "empty_cart_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your shopping cart is empty"
+          }
+        }
+      }
+    },
     "Favourites" : {
 
+    },
+    "go_home_button" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Go to home"
+          }
+        }
+      }
+    },
+    "login_button" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Login"
+          }
+        }
+      }
     },
     "main_tab_title" : {
       "extractionState" : "manual",
@@ -26,6 +136,50 @@
         }
       }
     },
+    "more_button" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Show more"
+          }
+        }
+      }
+    },
+    "processing_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Page not found."
+          }
+        }
+      }
+    },
+    "reccomender_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recommender title"
+          }
+        }
+      }
+    },
+    "settings_sub_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you want to try a demo store with your products, you can put here your store key. To get the key, sign up on rees46.ru."
+          }
+        }
+      }
+    },
     "settings_tab_title" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -33,6 +187,97 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Store settings"
+          }
+        }
+      }
+    },
+    "settings_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Try your own products"
+          }
+        }
+      }
+    },
+    "shipping_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Shipping:"
+          }
+        }
+      }
+    },
+    "show_all_button" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Show all"
+          }
+        }
+      }
+    },
+    "sign_up_button" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sign Up"
+          }
+        }
+      }
+    },
+    "store_key_hint" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your store key"
+          }
+        }
+      }
+    },
+    "stories_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stories"
+          }
+        }
+      }
+    },
+    "top_trend_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Top trends"
+          }
+        }
+      }
+    },
+    "total_title" : {
+      "extractionState" : "manual"
+    },
+    "upload_button_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Upload"
           }
         }
       }
