@@ -147,6 +147,17 @@
         }
       }
     },
+    "process_timeout_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This process may take some time."
+          }
+        }
+      }
+    },
     "processing_title" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -269,7 +280,15 @@
       }
     },
     "total_title" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Total"
+          }
+        }
+      }
     },
     "upload_button_title" : {
       "extractionState" : "manual",
