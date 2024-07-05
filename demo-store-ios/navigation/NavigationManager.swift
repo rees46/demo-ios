@@ -16,6 +16,10 @@ class NavigationManager: ObservableObject {
         self.currentScreenType = type(of: screen)
     }
     
+    func setToolbarHidden(hidden: Bool) {
+           self.isToolbarHidden = hidden
+       }
+    
     func navigateBack() {
         // Implement navigation back logic if needed
     }

@@ -19,35 +19,37 @@ struct ToolbarView: View {
                     .foregroundColor(.white)
             }
             .frame(height: 50)
-            
-            HStack(spacing: 20) {
-                
-                Image("MenuIcon")
-                    .resizable()
-                    .renderingMode(.template)
-                    .frame(width: 24, height: 24)
-                    .foregroundColor(.black)
-                    .padding(.leading, 12)
-                
-                Spacer()
-                
-                Image("SearchIcon")
-                    .resizable()
-                    .renderingMode(.template)
-                    .frame(width: 30, height: 30)
-                    .foregroundColor(.black)
-                
-                Image("CartIcon")
-                    .resizable()
-                    .renderingMode(.template)
-                    .frame(width: 30, height: 30)
-                    .foregroundColor(.black)
-                    .padding(.trailing, 12)
-                    .onTapGesture {
-                        navigationManager.navigateTo(screen: AnyView(CartScreenView()))
-                    }
+            if !navigationManager.isToolbarHidden {
+                HStack(spacing: 20) {
+                    
+                    Image("MenuIcon")
+                        .resizable()
+                        .renderingMode(.template)
+                        .frame(width: 24, height: 24)
+                        .foregroundColor(.black)
+                        .padding(.leading, 12)
+                    
+                    Spacer()
+                    
+                    Image("SearchIcon")
+                        .resizable()
+                        .renderingMode(.template)
+                        .frame(width: 30, height: 30)
+                        .foregroundColor(.black)
+                    
+                    Image("CartIcon")
+                        .resizable()
+                        .renderingMode(.template)
+                        .frame(width: 30, height: 30)
+                        .foregroundColor(.black)
+                        .padding(.trailing, 12)
+                        .onTapGesture {
+                            navigationManager.navigateTo(screen: AnyView(CartScreenView()))
+                        }
+                }
+                .frame(height: 50)
             }
-            .frame(height: 50)
+            
         }
         .background(Color.white)
     }

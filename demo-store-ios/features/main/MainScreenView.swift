@@ -1,7 +1,8 @@
-
 import SwiftUI
 
 struct MainScreenView: View {
+    @EnvironmentObject var navigationManager: NavigationManager
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -9,7 +10,10 @@ struct MainScreenView: View {
                     .foregroundColor(.white)
             }
             .navigationTitle("main_tab_title")
-            .background(Color.black.edgesIgnoringSafeArea(.all)) 
+            .background(Color.black.edgesIgnoringSafeArea(.all))
+            .onAppear {
+                navigationManager.setToolbarHidden(hidden: false)
+            }
         }
     }
 }
