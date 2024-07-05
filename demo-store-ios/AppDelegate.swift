@@ -34,6 +34,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("SDK Initialization succeeded")
             }
         }
+#if DEBUG
+        print("SDK Session Initialization result: \(sdk?.getSession() ?? "No session")")
+#endif
+        
     }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {

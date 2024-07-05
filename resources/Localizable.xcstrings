@@ -84,7 +84,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Something went wrong."
+            "value" : "Something\\nwent wrong."
           }
         }
       }
@@ -154,17 +154,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "This process may take some time."
-          }
-        }
-      }
-    },
-    "processing_title" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Page not found."
           }
         }
       }

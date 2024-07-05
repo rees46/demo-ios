@@ -1,48 +1,42 @@
 import SwiftUI
 import Combine
 
-class TabSelection: ObservableObject {
-    @Published var selectedTabIndex = 0
-}
-
 struct BottomBarView: View {
-    @ObservedObject var tabSelection: TabSelection
+    @EnvironmentObject var navigationManager: NavigationManager
     
     var body: some View {
         VStack {
-            switch tabSelection.selectedTabIndex {
-            case 0: MainScreenView()
-            case 1: CatalogScreenView()
-            case 2: CartScreenView()
-            case 3: SettingsScreenView()
-            default: MainScreenView()
-            }
-            
             Spacer()
             
             HStack {
-                TabBarButton(image: "MainTab", isSelected: tabSelection.selectedTabIndex == 0)
-                    .onTapGesture { tabSelection.selectedTabIndex = 0 }
+                TabBarButton(image: "MainTab", isSelected: navigationManager.currentScreenType == MainScreenView.self)
+                    .onTapGesture {
+                        navigationManager.navigateTo(screen: AnyView(MainScreenView()))
+                    }
                     .padding(.leading, 20)
                 
                 Spacer()
                 
-                TabBarButton(image: "CatalogTab", isSelected: tabSelection.selectedTabIndex == 1)
-                    .onTapGesture { tabSelection.selectedTabIndex = 1 }
+                TabBarButton(image: "CatalogTab", isSelected: navigationManager.currentScreenType == CatalogScreenView.self)
+                    .onTapGesture {
+                        navigationManager.navigateTo(screen: AnyView(CatalogScreenView()))
+                    }
                 
                 Spacer()
                 
-                TabBarButton(image: "CartTab", isSelected: tabSelection.selectedTabIndex == 2)
-                    .onTapGesture { tabSelection.selectedTabIndex = 2 }
+                TabBarButton(image: "CartTab", isSelected: navigationManager.currentScreenType == CartScreenView.self)
+                    .onTapGesture {
+                        navigationManager.navigateTo(screen: AnyView(CartScreenView()))
+                    }
                 
                 Spacer()
                 
-                TabBarButton(image: "SettingsTab", isSelected: tabSelection.selectedTabIndex == 3)
-                    .onTapGesture { tabSelection.selectedTabIndex = 3 }
+                TabBarButton(image: "SettingsTab", isSelected: navigationManager.currentScreenType == SettingsScreenView.self)
+                    .onTapGesture {
+                        navigationManager.navigateTo(screen: AnyView(SettingsScreenView()))
+                    }
                     .padding(.trailing, 20)
             }
-            .frame(height: 70)
-            .background(Color.black)
         }
     }
 }

@@ -1,51 +1,56 @@
 import SwiftUI
 
+enum ViewState {
+    case loading
+    case error(String)
+    case data
+}
+
 struct SettingsScreenView: View {
-    @State private var username: String = ""
+    
+    @EnvironmentObject var navigationManager: NavigationManager
+    
+    @State private var storeKey: String = ""
+    @State private var viewState: ViewState = .loading
     
     var body: some View {
         NavigationView {
-            VStack(spacing: 20) {
-                Text("settings_title")
-                    .font(.title)
-                    .font(.system(size: 24))
-                    .foregroundColor(.black)
-                
-                Text("settings_sub_title")
-                    .font(.system(size: 18))
-                    .multilineTextAlignment(.center)
-                    .foregroundColor(.black)
-                
-                VStack {
-                    TextField("store_key_hint", text: $username)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .font(.system(size: 16))
-                        .frame(height: 55)
-//                        .padding(.horizontal)
+            VStack {
+                switch viewState {
+                case .loading:
+                    ProgressView()
+                        .progressViewStyle(CircularProgressViewStyle())
+                        .onAppear {
+                            // Start a timer to simulate loading
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                                loadData()
+                            }
+                        }
                     
-                    Button(action: {
-                        // Action to perform when the button is tapped
-                        print("Button tapped")
-                    }) {
-                        Text("upload_button_title")
-                            .foregroundColor(.white)
-                            .padding()
-                            .frame(height: 44)
-                            .font(.system(size: 16))
-                            .frame(maxWidth: .infinity)
-                            .background(Color.black)
-                            .cornerRadius(10)
+                case .error:
+                    SettingsErrroScreenView() {
+                        navigationManager.navigateTo(screen: AnyView(MainScreenView()))
                     }
-                    .buttonStyle(PlainButtonStyle())
+                    
+                case .data:
+                    SettingsInputCodeView(storeKey: $storeKey)
                 }
-                
-                Text("process_timeout_title")
-                    .font(.system(size: 13))
-                    .foregroundColor(.gray)
             }
             .padding()
             .navigationTitle("settings_tab_title")
             .background(Color.white.edgesIgnoringSafeArea(.all))
+        }
+    }
+    
+    private func loadData() {
+        // Simulate data loading
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            let success = Bool.random()
+            if success {
+                viewState = .data
+            } else {
+                viewState = .error("Failed to load data")
+            }
         }
     }
 }
