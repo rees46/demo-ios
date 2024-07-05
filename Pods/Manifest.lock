@@ -1,3 +1,24 @@
-PODFILE CHECKSUM: 149d4084f0a926e30c6011e52f5111014f15474e
+PODS:
+  - REES46 (3.6.19)
+
+DEPENDENCIES:
+  - REES46 (from `https://github.com/rees46/ios-sdk.git`, branch `master`, tag `3.6.19`)
+
+EXTERNAL SOURCES:
+  REES46:
+    :branch: master
+    :git: https://github.com/rees46/ios-sdk.git
+    :tag: 3.6.19
+
+CHECKOUT OPTIONS:
+  REES46:
+    :commit: a7dc0ba52750cc671ff34e5cbf52b98b0aae61d9
+    :git: https://github.com/rees46/ios-sdk.git
+    :tag: 3.6.19
+
+SPEC CHECKSUMS:
+  REES46: 687320dccba92b13654a5ea57c355bd1f0aed8eb
+
+PODFILE CHECKSUM: 4ac57bdcddb3e4b10f017054225582e9a1d32920
 
 COCOAPODS: 1.15.2

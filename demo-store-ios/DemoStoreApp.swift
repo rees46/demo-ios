@@ -2,6 +2,9 @@ import SwiftUI
 
 @main
 struct DemoStoreApp: App {
+    
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
     @State private var showSplash = true
     
     var body: some Scene {
