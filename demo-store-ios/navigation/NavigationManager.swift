@@ -1,26 +1,50 @@
 import SwiftUI
-import Combine
 
 class NavigationManager: ObservableObject {
     @Published var currentScreen: AnyView
     @Published var isToolbarHidden: Bool = false
-    @Published var currentScreenType: Any.Type
+    @Published var currentScreenType: ScreenType = .none
+    @Published var selectedTab: ScreenType? = .main
     
     init() {
         self.currentScreen = AnyView(MainScreenView())
-        self.currentScreenType = MainScreenView.self
+        self.currentScreenType = .main
     }
     
-    func navigateTo<Content: View>(screen: Content) {
+    func navigateTo<Content: View>(screen: Content, selectedTab: ScreenType) {
         self.currentScreen = AnyView(screen)
-        self.currentScreenType = type(of: screen)
+        self.selectedTab = selectedTab
+        switch screen {
+        case is MainScreenView:
+            self.currentScreenType = .main
+        case is CatalogScreenView:
+            self.currentScreenType = .catalog
+        case is CartScreenView:
+            self.currentScreenType = .cart
+        case is SettingsScreenView:
+            self.currentScreenType = .settings
+        default:
+            self.currentScreenType = .none
+        }
     }
     
     func setToolbarHidden(hidden: Bool) {
-           self.isToolbarHidden = hidden
-       }
+        self.isToolbarHidden = hidden
+    }
+    
+    func resetSelection() {
+        self.selectedTab = nil
+    }
     
     func navigateBack() {
         // Implement navigation back logic if needed
     }
+}
+
+enum ScreenType {
+    case main
+    case catalog
+    case cart
+    case settings
+    case none
 }

@@ -44,7 +44,10 @@ struct ToolbarView: View {
                         .foregroundColor(.black)
                         .padding(.trailing, 12)
                         .onTapGesture {
-                            navigationManager.navigateTo(screen: AnyView(CartScreenView()))
+                            navigationManager.navigateTo(
+                                screen: AnyView(CartScreenView()),
+                                selectedTab: .cart
+                            )
                         }
                 }
             }

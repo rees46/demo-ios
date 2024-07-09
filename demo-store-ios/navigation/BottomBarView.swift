@@ -1,42 +1,49 @@
 import SwiftUI
-import Combine
 
 struct BottomBarView: View {
     @EnvironmentObject var navigationManager: NavigationManager
+    @State private var selectedTab: ScreenType? = .main
     
     var body: some View {
         VStack {
             Spacer()
             
             HStack {
-                TabBarButton(image: "MainTab", isSelected: navigationManager.currentScreenType == MainScreenView.self)
+                TabBarButton(image: "MainTab", isSelected: selectedTab == .main)
                     .onTapGesture {
-                        navigationManager.navigateTo(screen: AnyView(MainScreenView()))
+                        selectedTab = .main
+                        navigationManager.navigateTo(screen: AnyView(MainScreenView()), selectedTab: .main)
                     }
                     .padding(.leading, 20)
                 
                 Spacer()
                 
-                TabBarButton(image: "CatalogTab", isSelected: navigationManager.currentScreenType == CatalogScreenView.self)
+                TabBarButton(image: "CatalogTab", isSelected: selectedTab == .catalog)
                     .onTapGesture {
-                        navigationManager.navigateTo(screen: AnyView(CatalogScreenView()))
+                        selectedTab = .catalog
+                        navigationManager.navigateTo(screen: AnyView(CatalogScreenView()), selectedTab: .catalog)
                     }
                 
                 Spacer()
                 
-                TabBarButton(image: "CartTab", isSelected: navigationManager.currentScreenType == CartScreenView.self)
+                TabBarButton(image: "CartTab", isSelected: selectedTab == .cart)
                     .onTapGesture {
-                        navigationManager.navigateTo(screen: AnyView(CartScreenView()))
+                        selectedTab = .cart
+                        navigationManager.navigateTo(screen: AnyView(CartScreenView()), selectedTab: .cart)
                     }
                 
                 Spacer()
                 
-                TabBarButton(image: "SettingsTab", isSelected: navigationManager.currentScreenType == SettingsScreenView.self)
+                TabBarButton(image: "SettingsTab", isSelected: selectedTab == .settings)
                     .onTapGesture {
-                        navigationManager.navigateTo(screen: AnyView(SettingsScreenView()))
+                        selectedTab = .settings
+                        navigationManager.navigateTo(screen: AnyView(SettingsScreenView()), selectedTab: .settings)
                     }
                     .padding(.trailing, 20)
             }
+        }
+        .onChange(of: navigationManager.selectedTab) { newTab in
+            selectedTab = newTab
         }
     }
 }
