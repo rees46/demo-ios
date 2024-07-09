@@ -246,6 +246,9 @@
         }
       }
     },
+    "Stories" : {
+
+    },
     "stories_title" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -256,6 +259,15 @@
           }
         }
       }
+    },
+    "Subtitle 1" : {
+
+    },
+    "Subtitle 2" : {
+
+    },
+    "Title" : {
+
     },
     "top_trend_title" : {
       "extractionState" : "manual",

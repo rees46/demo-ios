@@ -1,8 +1,9 @@
 import SwiftUI
+import REES46
 
 struct ContentView: View {
     @StateObject var navigationManager = NavigationManager()
-    
+ 
     var body: some View {
         ZStack {
             Color.black.edgesIgnoringSafeArea(.all)
@@ -11,6 +12,7 @@ struct ContentView: View {
                 ToolbarView()
                 
                 navigationManager.currentScreen
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
                     .edgesIgnoringSafeArea(.bottom)
                 
                 BottomBarView()

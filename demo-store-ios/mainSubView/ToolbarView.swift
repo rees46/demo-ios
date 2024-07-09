@@ -47,7 +47,6 @@ struct ToolbarView: View {
                             navigationManager.navigateTo(screen: AnyView(CartScreenView()))
                         }
                 }
-                .frame(height: 50)
             }
             
         }

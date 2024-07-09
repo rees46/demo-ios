@@ -1,17 +1,18 @@
 import SwiftUI
+import REES46
 
 struct MainScreenView: View {
     @EnvironmentObject var navigationManager: NavigationManager
-
+    
     var body: some View {
         NavigationView {
             ScrollView {
                 VStack(spacing: 16) {
-                    ForEach(0..<1) { _ in
-                        MainDiscoverView()
-                    }
+                    MainDiscoverView()
+                    MainStoriesContainerView()
                 }
                 .padding(.vertical, 16)
+                .frame(maxWidth: .infinity, alignment: .top)
             }
             .navigationTitle("main_tab_title")
             .onAppear {

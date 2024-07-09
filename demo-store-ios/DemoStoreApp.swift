@@ -2,8 +2,7 @@ import SwiftUI
 
 @main
 struct DemoStoreApp: App {
-    
-    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    @StateObject private var diContainer = DIContainer()
     
     @State private var showSplash = true
     
@@ -21,6 +20,7 @@ struct DemoStoreApp: App {
                     }
             } else {
                 ContentView()
+                    .environmentObject(diContainer)
             }
         }
     }

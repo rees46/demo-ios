@@ -12,7 +12,7 @@ struct MainDiscoverView: View {
                         VStack {
                             Image(systemName: "photo")
                                 .resizable()
-                                .frame(width: 140, height: 180)
+                                .frame(width: 140, height: 160)
                                 .cornerRadius(8)
                                 .overlay(
                                     VStack(alignment: .leading, spacing: 4) {
@@ -37,7 +37,6 @@ struct MainDiscoverView: View {
                 }
                 .padding(.horizontal, 8)
             }
-            .frame(height: 180)
         }
     }
 }
