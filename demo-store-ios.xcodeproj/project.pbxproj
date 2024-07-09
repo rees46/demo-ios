@@ -17,6 +17,8 @@
 		75674CE82C3D299A007FAB88 /* SdkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75674CE72C3D299A007FAB88 /* SdkViewModel.swift */; };
 		75674CEF2C3D39F9007FAB88 /* StoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75674CEE2C3D39F9007FAB88 /* StoriesViewController.swift */; };
 		75674CF22C3D7A5D007FAB88 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75674CF12C3D7A5D007FAB88 /* SectionHeaderView.swift */; };
+		75674CF52C3D92CC007FAB88 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75674CF42C3D92CC007FAB88 /* Category.swift */; };
+		75674CF72C3D92E0007FAB88 /* RecommendedProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75674CF62C3D92E0007FAB88 /* RecommendedProduct.swift */; };
 		75A3F41E2C38065000AAC175 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A3F41D2C38065000AAC175 /* AppDelegate.swift */; };
 		75A3F4232C383CEF00AAC175 /* SettingsInputCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A3F4222C383CEF00AAC175 /* SettingsInputCodeView.swift */; };
 		75A3F4252C383E8100AAC175 /* SettingsErrroScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A3F4242C383E8100AAC175 /* SettingsErrroScreenView.swift */; };
@@ -67,6 +69,8 @@
 		75674CE72C3D299A007FAB88 /* SdkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SdkViewModel.swift; sourceTree = "<group>"; };
 		75674CEE2C3D39F9007FAB88 /* StoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesViewController.swift; sourceTree = "<group>"; };
 		75674CF12C3D7A5D007FAB88 /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
+		75674CF42C3D92CC007FAB88 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		75674CF62C3D92E0007FAB88 /* RecommendedProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedProduct.swift; sourceTree = "<group>"; };
 		75A3F41D2C38065000AAC175 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75A3F4212C3828A400AAC175 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		75A3F4222C383CEF00AAC175 /* SettingsInputCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInputCodeView.swift; sourceTree = "<group>"; };
@@ -206,6 +210,15 @@
 			path = newArriwals;
 			sourceTree = "<group>";
 		};
+		75674CF32C3D92B0007FAB88 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				75674CF42C3D92CC007FAB88 /* Category.swift */,
+				75674CF62C3D92E0007FAB88 /* RecommendedProduct.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
 		75B9354A2C3564360063E814 = {
 			isa = PBXGroup;
 			children = (
@@ -232,6 +245,7 @@
 		75B935552C3564360063E814 /* demo-store-ios */ = {
 			isa = PBXGroup;
 			children = (
+				75674CF32C3D92B0007FAB88 /* models */,
 				75A3F4212C3828A400AAC175 /* Info.plist */,
 				75674CE92C3D29BF007FAB88 /* viewModel */,
 				75ECCD1B2C37F09100D6D346 /* di */,
@@ -590,6 +604,7 @@
 				75674CDC2C3C1A67007FAB88 /* MainDiscoverView.swift in Sources */,
 				75ECCD1A2C36F94800D6D346 /* BottomBarView.swift in Sources */,
 				75ECCD102C36BE2000D6D346 /* CatalogScreenView.swift in Sources */,
+				75674CF72C3D92E0007FAB88 /* RecommendedProduct.swift in Sources */,
 				75674CEF2C3D39F9007FAB88 /* StoriesViewController.swift in Sources */,
 				755944A12C35822700C274C9 /* LaunchScreen.swift in Sources */,
 				75674CF22C3D7A5D007FAB88 /* SectionHeaderView.swift in Sources */,
@@ -605,6 +620,7 @@
 				75A3F4252C383E8100AAC175 /* SettingsErrroScreenView.swift in Sources */,
 				75A3F4272C3858DE00AAC175 /* NavigationManager.swift in Sources */,
 				75ECCD142C36BE4300D6D346 /* SettingsScreenView.swift in Sources */,
+				75674CF52C3D92CC007FAB88 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
