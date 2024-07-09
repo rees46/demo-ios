@@ -2,7 +2,7 @@ import SwiftUI
 
 @main
 struct DemoStoreApp: App {
-    @StateObject private var diContainer = DIContainer()
+    @StateObject private var sdkViewModel = SDKViewModel()
     
     @State private var showSplash = true
     
@@ -20,7 +20,7 @@ struct DemoStoreApp: App {
                     }
             } else {
                 ContentView()
-                    .environmentObject(diContainer)
+                    .environmentObject(sdkViewModel)
             }
         }
     }

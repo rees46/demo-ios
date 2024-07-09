@@ -1,19 +1,19 @@
 import SwiftUI
 import UIKit
-import REES46
 
 struct MainStoriesContainerView: View {
-    
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
             Text("Stories")
-                .font(.title)
+                .font(.system(size: 24))
                 .foregroundColor(.black)
                 .padding(.horizontal)
+                .padding(.top, 32)
             
-                .padding(.horizontal)
-                .padding(.bottom, 16)
+            StoriesViewControllerRepresentable()
+                .frame(height: 200)
         }
+        .environmentObject(SDKViewModel())
     }
 }
 
