@@ -9,7 +9,21 @@ struct MainScreenView: View {
             ScrollView {
                 VStack(spacing: 16) {
                     MainDiscoverView()
+                    
                     MainStoriesContainerView()
+                    
+                    
+                    SectionHeaderView(title: NSLocalizedString("arrivals_title", comment: "")) {
+                        // Button action here
+                    }
+                    
+                    SectionHeaderView(title: NSLocalizedString("top_trend_title", comment: "")) {
+                        // Button action here
+                    }
+                    
+                    SectionHeaderView(title: NSLocalizedString("reccomender_title", comment: "")) {
+                        // Button action here
+                    }
                 }
                 .padding(.vertical, 16)
                 .frame(maxWidth: .infinity, alignment: .top)

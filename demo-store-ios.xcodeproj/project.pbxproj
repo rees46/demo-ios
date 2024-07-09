@@ -16,6 +16,7 @@
 		75674CE62C3D295F007FAB88 /* SdkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75674CE52C3D295F007FAB88 /* SdkManager.swift */; };
 		75674CE82C3D299A007FAB88 /* SdkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75674CE72C3D299A007FAB88 /* SdkViewModel.swift */; };
 		75674CEF2C3D39F9007FAB88 /* StoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75674CEE2C3D39F9007FAB88 /* StoriesViewController.swift */; };
+		75674CF22C3D7A5D007FAB88 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75674CF12C3D7A5D007FAB88 /* SectionHeaderView.swift */; };
 		75A3F41E2C38065000AAC175 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A3F41D2C38065000AAC175 /* AppDelegate.swift */; };
 		75A3F4232C383CEF00AAC175 /* SettingsInputCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A3F4222C383CEF00AAC175 /* SettingsInputCodeView.swift */; };
 		75A3F4252C383E8100AAC175 /* SettingsErrroScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A3F4242C383E8100AAC175 /* SettingsErrroScreenView.swift */; };
@@ -65,6 +66,7 @@
 		75674CE52C3D295F007FAB88 /* SdkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SdkManager.swift; sourceTree = "<group>"; };
 		75674CE72C3D299A007FAB88 /* SdkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SdkViewModel.swift; sourceTree = "<group>"; };
 		75674CEE2C3D39F9007FAB88 /* StoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesViewController.swift; sourceTree = "<group>"; };
+		75674CF12C3D7A5D007FAB88 /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
 		75A3F41D2C38065000AAC175 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75A3F4212C3828A400AAC175 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		75A3F4222C383CEF00AAC175 /* SettingsInputCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInputCodeView.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 		755944A22C35858C00C274C9 /* main */ = {
 			isa = PBXGroup;
 			children = (
+				75674CF02C3D787A007FAB88 /* newArriwals */,
 				75674CEC2C3D2E45007FAB88 /* discover */,
 				75674CEA2C3D2E32007FAB88 /* stories */,
 				75ECCD0A2C36BDF500D6D346 /* MainScreenView.swift */,
@@ -158,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				75A3F4282C38593800AAC175 /* ToolbarView.swift */,
+				75674CF12C3D7A5D007FAB88 /* SectionHeaderView.swift */,
 			);
 			path = mainSubView;
 			sourceTree = "<group>";
@@ -193,6 +197,13 @@
 				75674CEE2C3D39F9007FAB88 /* StoriesViewController.swift */,
 			);
 			path = controller;
+			sourceTree = "<group>";
+		};
+		75674CF02C3D787A007FAB88 /* newArriwals */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = newArriwals;
 			sourceTree = "<group>";
 		};
 		75B9354A2C3564360063E814 = {
@@ -581,6 +592,7 @@
 				75ECCD102C36BE2000D6D346 /* CatalogScreenView.swift in Sources */,
 				75674CEF2C3D39F9007FAB88 /* StoriesViewController.swift in Sources */,
 				755944A12C35822700C274C9 /* LaunchScreen.swift in Sources */,
+				75674CF22C3D7A5D007FAB88 /* SectionHeaderView.swift in Sources */,
 				75674CDE2C3C4292007FAB88 /* MainStoriesContainerView.swift in Sources */,
 				75ECCD0B2C36BDF500D6D346 /* MainScreenView.swift in Sources */,
 				75ECCD122C36BE2D00D6D346 /* CartScreenView.swift in Sources */,

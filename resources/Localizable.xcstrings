@@ -84,7 +84,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Something\\nwent wrong."
+            "value" : "Something went wrong."
           }
         }
       }

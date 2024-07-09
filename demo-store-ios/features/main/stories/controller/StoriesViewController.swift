@@ -20,12 +20,14 @@ class StoriesViewController: UIViewController {
         storiesView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(storiesView)
         
-        NSLayoutConstraint.activate([
+        NSLayoutConstraint.activate(
+            [
             storiesView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             storiesView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             storiesView.topAnchor.constraint(equalTo: view.topAnchor),
             storiesView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        ])
+        ]
+        )
         
         storiesView.configure(sdk: sdk, mainVC: self, code: storiesCode)
     }

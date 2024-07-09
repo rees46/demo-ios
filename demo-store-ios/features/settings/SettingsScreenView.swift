@@ -16,25 +16,26 @@ struct SettingsScreenView: View {
     var body: some View {
         NavigationView {
             VStack {
-                switch viewState {
-                case .loading:
-                    ProgressView()
-                        .progressViewStyle(CircularProgressViewStyle())
-                        .onAppear {
-                            // Start a timer to simulate loading
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                                loadData()
-                            }
-                        }
-                    
-                case .error:
-                    SettingsErrroScreenView() {
-                        navigationManager.navigateTo(screen: AnyView(MainScreenView()))
-                    }
-                    
-                case .data:
-                    SettingsInputCodeView(storeKey: $storeKey)
-                }
+                SettingsInputCodeView(storeKey: $storeKey)
+//                switch viewState {
+//                case .loading:
+//                    ProgressView()
+//                        .progressViewStyle(CircularProgressViewStyle())
+//                        .onAppear {
+//                            // Start a timer to simulate loading
+//                            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+//                                loadData()
+//                            }
+//                        }
+//                    
+//                case .error:
+//                    SettingsErrroScreenView() {
+//                        navigationManager.navigateTo(screen: AnyView(MainScreenView()))
+//                    }
+//                    
+//                case .data:
+//                    SettingsInputCodeView(storeKey: $storeKey)
+//                }
             }
             .padding()
             .navigationTitle("settings_tab_title")
