@@ -27,7 +27,7 @@ struct MainDiscoverView: View {
                                 urlString: item.urlString,
                                 width: 140,
                                 height: 180,
-                                contentMode: .fill 
+                                contentMode: .fill
                             )
                             .aspectRatio(contentMode: .fill)
                             .overlay(
