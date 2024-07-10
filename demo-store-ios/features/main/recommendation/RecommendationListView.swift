@@ -1,11 +1,13 @@
 import SwiftUI
 
-struct NewArrivalsView: View {
+struct RecommendationListView: View {
+    
     var recommendedProducts: [RecommendedProduct]
+    var title: String
     
     var body: some View {
         VStack(alignment: .leading) {
-            SectionHeaderView(title: "New Arrivals") {
+            SectionHeaderView(title: title) {
                 // Button action here if needed
             }
             ScrollView(.horizontal, showsIndicators: false) {
@@ -27,7 +29,7 @@ struct ProductItemView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 5) {
             RemoteImageView(urlString: product.resizedImageUrl)
-
+            
             
             Text(product.brand)
                 .font(.subheadline)
@@ -129,6 +131,9 @@ struct NewArrivalsView_Previews: PreviewProvider {
             )
         ]
         
-        return NewArrivalsView(recommendedProducts: products)
+        return RecommendationListView(
+            recommendedProducts: products,
+            title:"Top products"
+        )
     }
 }

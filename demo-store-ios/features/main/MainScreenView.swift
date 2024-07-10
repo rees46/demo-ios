@@ -15,20 +15,27 @@ struct MainScreenView: View {
                     
                     MainStoriesContainerView()
                     
-                    
-                    NewArrivalsView(recommendedProducts: viewModel.recommendedProducts)
-                        .onAppear{
-                            viewModel.getRecommendations(blockId: blockId, currentProductId: "646")
-                        }
-                    
-                    
-                    SectionHeaderView(title: NSLocalizedString("top_trend_title", comment: "")) {
-                        // Button action here
+                    RecommendationListView(
+                        recommendedProducts: viewModel.arrivalsProducts,
+                        title: NSLocalizedString("arrivals_title", comment: "")
+                    ).onAppear {
+                        viewModel.loadArrivalsRecommendations(blockId: blockId, currentProductId: "646")
                     }
                     
-                    SectionHeaderView(title: NSLocalizedString("reccomender_title", comment: "")) {
-                        // Button action here
+                    RecommendationListView(
+                        recommendedProducts: viewModel.topTrendProducts,
+                        title: NSLocalizedString("top_trend_title", comment: "")
+                    ).onAppear {
+                        viewModel.loadTopTrendRecommendations(blockId: blockId, currentProductId: "649")
                     }
+                    
+                    RecommendationListView(
+                        recommendedProducts: viewModel.recommenderProducts,
+                        title: NSLocalizedString("reccomender_title", comment: "")
+                    ).onAppear {
+                        viewModel.loadRecommenderRecommendations(blockId: blockId, currentProductId: "641")
+                    }
+                    
                 }
                 .padding(.vertical, 16)
                 .frame(maxWidth: .infinity, alignment: .top)
