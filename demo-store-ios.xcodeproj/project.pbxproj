@@ -146,10 +146,10 @@
 		7559449C2C357E1800C274C9 /* features */ = {
 			isa = PBXGroup;
 			children = (
-				75ECCD0E2C36BE1000D6D346 /* settings */,
-				75ECCD0D2C36BE0600D6D346 /* cart */,
-				75ECCD0C2C36BDFF00D6D346 /* catalog */,
-				755944A22C35858C00C274C9 /* main */,
+				75ECCD0E2C36BE1000D6D346 /* settingsTab */,
+				75ECCD0D2C36BE0600D6D346 /* cartTab */,
+				75ECCD0C2C36BDFF00D6D346 /* catalogTab */,
+				755944A22C35858C00C274C9 /* mainTab */,
 				7559449D2C357E4300C274C9 /* splash */,
 			);
 			path = features;
@@ -164,7 +164,7 @@
 			path = splash;
 			sourceTree = "<group>";
 		};
-		755944A22C35858C00C274C9 /* main */ = {
+		755944A22C35858C00C274C9 /* mainTab */ = {
 			isa = PBXGroup;
 			children = (
 				75674CF02C3D787A007FAB88 /* recommendation */,
@@ -172,7 +172,7 @@
 				75674CEA2C3D2E32007FAB88 /* stories */,
 				75ECCD0A2C36BDF500D6D346 /* MainScreenView.swift */,
 			);
-			path = main;
+			path = mainTab;
 			sourceTree = "<group>";
 		};
 		755944A32C35883F00C274C9 /* mainSubView */ = {
@@ -323,30 +323,30 @@
 			path = "demo-store-iosUITests";
 			sourceTree = "<group>";
 		};
-		75ECCD0C2C36BDFF00D6D346 /* catalog */ = {
+		75ECCD0C2C36BDFF00D6D346 /* catalogTab */ = {
 			isa = PBXGroup;
 			children = (
 				75ECCD0F2C36BE2000D6D346 /* CatalogScreenView.swift */,
 			);
-			path = catalog;
+			path = catalogTab;
 			sourceTree = "<group>";
 		};
-		75ECCD0D2C36BE0600D6D346 /* cart */ = {
+		75ECCD0D2C36BE0600D6D346 /* cartTab */ = {
 			isa = PBXGroup;
 			children = (
 				75ECCD112C36BE2D00D6D346 /* CartScreenView.swift */,
 			);
-			path = cart;
+			path = cartTab;
 			sourceTree = "<group>";
 		};
-		75ECCD0E2C36BE1000D6D346 /* settings */ = {
+		75ECCD0E2C36BE1000D6D346 /* settingsTab */ = {
 			isa = PBXGroup;
 			children = (
 				75ECCD132C36BE4300D6D346 /* SettingsScreenView.swift */,
 				75A3F4222C383CEF00AAC175 /* SettingsInputCodeView.swift */,
 				75A3F4242C383E8100AAC175 /* SettingsErrroScreenView.swift */,
 			);
-			path = settings;
+			path = settingsTab;
 			sourceTree = "<group>";
 		};
 		75ECCD152C36D6B400D6D346 /* resources */ = {
