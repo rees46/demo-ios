@@ -11,9 +11,11 @@ class NavigationManager: ObservableObject {
         self.currentScreenType = .main
     }
     
-    func navigateTo<Content: View>(screen: Content, selectedTab: ScreenType) {
+    func navigateTo<Content: View>(screen: Content, selectedTab: ScreenType? = .main) {
+        
         self.currentScreen = AnyView(screen)
         self.selectedTab = selectedTab
+        
         switch screen {
         case is MainScreenView:
             self.currentScreenType = .main

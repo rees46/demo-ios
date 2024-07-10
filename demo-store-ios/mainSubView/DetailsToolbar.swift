@@ -1,18 +1,16 @@
 import SwiftUI
-import Combine
 
-protocol ToolbarConfigurable {
-    var isToolbarHidden: Bool { get }
-}
-
-struct ToolbarView: View {
+struct DetailsToolbarView: View {
     @EnvironmentObject var navigationManager: NavigationManager
     
     var body: some View {
-        if !navigationManager.isToolbarHidden {
+        ZStack {
+            RemoteImageView(
+                urlString: "https://png.pngtree.com/thumb_back/fw800/background/20240121/pngtree-set-of-various-kinds-girls-dress-in-same-color-image_15613096.jpg"
+            )
+            
             VStack {
                 ZStack {
-                    Color.black
                     Image("ToolbarLogo")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
@@ -22,12 +20,11 @@ struct ToolbarView: View {
                 .frame(height: 50)
                 
                 HStack(spacing: 20) {
-                    
                     Image("MenuIcon")
                         .resizable()
                         .renderingMode(.template)
                         .frame(width: 24, height: 24)
-                        .foregroundColor(.black)
+                        .foregroundColor(.white)
                         .padding(.leading, 12)
                     
                     Spacer()
@@ -36,13 +33,13 @@ struct ToolbarView: View {
                         .resizable()
                         .renderingMode(.template)
                         .frame(width: 30, height: 30)
-                        .foregroundColor(.black)
+                        .foregroundColor(.white)
                     
                     Image("CartIcon")
                         .resizable()
                         .renderingMode(.template)
                         .frame(width: 30, height: 30)
-                        .foregroundColor(.black)
+                        .foregroundColor(.white)
                         .padding(.trailing, 12)
                         .onTapGesture {
                             navigationManager.navigateTo(
@@ -52,7 +49,14 @@ struct ToolbarView: View {
                         }
                 }
             }
-            .background(Color.white)
+            .padding(.horizontal, 10)
+            .edgesIgnoringSafeArea(.all)
         }
+    }
+}
+
+struct DetailsToolbarView_Previews: PreviewProvider {
+    static var previews: some View {
+        DetailsToolbarView()
     }
 }

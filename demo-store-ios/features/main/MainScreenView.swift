@@ -15,21 +15,21 @@ struct MainScreenView: View {
                     
                     MainStoriesContainerView()
                     
-                    RecommendationListView(
+                    ShortRecommendationListView(
                         recommendedProducts: viewModel.arrivalsProducts,
                         title: NSLocalizedString("arrivals_title", comment: "")
                     ).onAppear {
                         viewModel.loadArrivalsRecommendations(blockId: blockId, currentProductId: "646")
                     }
                     
-                    RecommendationListView(
+                    ShortRecommendationListView(
                         recommendedProducts: viewModel.topTrendProducts,
                         title: NSLocalizedString("top_trend_title", comment: "")
                     ).onAppear {
                         viewModel.loadTopTrendRecommendations(blockId: blockId, currentProductId: "649")
                     }
                     
-                    RecommendationListView(
+                    ShortRecommendationListView(
                         recommendedProducts: viewModel.recommenderProducts,
                         title: NSLocalizedString("reccomender_title", comment: "")
                     ).onAppear {

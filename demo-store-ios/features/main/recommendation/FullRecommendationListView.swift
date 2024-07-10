@@ -1,68 +1,40 @@
 import SwiftUI
 
-struct RecommendationListView: View {
+struct FullRecommendationListView: View {
+    
+    @EnvironmentObject var navigationManager: NavigationManager
     
     var recommendedProducts: [RecommendedProduct]
     var title: String
-    
     var body: some View {
         VStack(alignment: .leading) {
-            SectionHeaderView(title: title) {
-                // Button action here if needed
-            }
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 16) {
+            DetailsToolbarView()
+            
+            
+            ScrollView {
+                Spacer().frame(height: 20)
+                LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 16) {
                     ForEach(recommendedProducts, id: \.id) { product in
-                        ProductItemView(product: product)
+                        ProductListItemView(
+                            product: product,
+                            containerWidth: 170,
+                            containerHeight: 280,
+                            imageWidth: 170,
+                            imageHeight: 170,
+                            showShopButton: true
+                        ).padding(.bottom,20)
                     }
                 }
-                .padding(.horizontal, 16)
             }
+        }
+        .background(Color.white)
+        .onAppear{
+            navigationManager.setToolbarHidden(hidden: true)
         }
     }
 }
 
-
-struct ProductItemView: View {
-    var product: RecommendedProduct
-    
-    var body: some View {
-        VStack(alignment: .leading, spacing: 5) {
-            RemoteImageView(urlString: product.resizedImageUrl)
-            
-            
-            Text(product.brand)
-                .font(.subheadline)
-                .foregroundColor(.secondary)
-                .lineLimit(1)
-            
-            Text(product.name)
-                .font(.headline)
-                .foregroundColor(.primary)
-                .lineLimit(1)
-            
-            RatingView(rating: Double(product.rating))
-            
-            if let oldPrice = product.oldPriceFormatted {
-                Text(oldPrice)
-                    .font(.subheadline)
-                    .foregroundColor(.secondary)
-                    .strikethrough()
-            }
-            
-            Text(product.priceFormatted ?? "")
-                .font(.body)
-                .foregroundColor(.primary)
-            
-            Spacer()
-        }
-        .cornerRadius(10)
-        .frame(width: 140, height: 260)
-        
-    }
-}
-
-struct NewArrivalsView_Previews: PreviewProvider {
+struct FullRecommendationListView_Previews: PreviewProvider {
     static var previews: some View {
         let products = [
             RecommendedProduct(
@@ -83,7 +55,7 @@ struct NewArrivalsView_Previews: PreviewProvider {
                 priceFull: 129.99,
                 priceFullFormatted: "$129.99",
                 oldPrice: 10.0,
-                oldPriceFormatted: nil,
+                oldPriceFormatted: "$129.99",
                 oldPriceFull: 0.0,
                 oldPriceFullFormatted: nil,
                 currency: "USD",
@@ -131,9 +103,9 @@ struct NewArrivalsView_Previews: PreviewProvider {
             )
         ]
         
-        return RecommendationListView(
+        return FullRecommendationListView(
             recommendedProducts: products,
-            title:"Top products"
+            title: "Top Products"
         )
     }
 }

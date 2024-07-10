@@ -17,19 +17,26 @@ class RemoteImageLoader: ObservableObject {
 }
 
 struct RemoteImageView: View {
-    @ObservedObject var imageLoader: RemoteImageLoader
-    let imageSize: CGFloat = 140
     
-    init(urlString: String) {
-        imageLoader = RemoteImageLoader(urlString: urlString)
+    @ObservedObject var imageLoader: RemoteImageLoader
+    let width: CGFloat?
+    let height: CGFloat?
+    let contentMode: ContentMode
+    
+    init(urlString: String, width: CGFloat? = nil, height: CGFloat? = nil, contentMode: ContentMode = .fit) {
+        self.imageLoader = RemoteImageLoader(urlString: urlString)
+        self.width = width
+        self.height = height
+        self.contentMode = contentMode
     }
+    
     
     var body: some View {
         if let uiImage = UIImage(data: imageLoader.imageData) {
             Image(uiImage: uiImage)
                 .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: imageSize, height: imageSize)
+                .aspectRatio(contentMode: contentMode)
+                .frame(width: width, height: height)
                 .cornerRadius(5)
                 .overlay(
                     RoundedRectangle(cornerRadius: 10)
@@ -40,7 +47,7 @@ struct RemoteImageView: View {
             Image(systemName: "photo")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: imageSize, height: imageSize)
+                .frame(width: width, height: height)
                 .cornerRadius(5)
                 .overlay(
                     RoundedRectangle(cornerRadius: 10)

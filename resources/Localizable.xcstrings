@@ -1,6 +1,12 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "%@" : {
+
+    },
+    "%lld" : {
+
+    },
     "also_bought_title" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -158,6 +164,9 @@
         }
       }
     },
+    "Products" : {
+
+    },
     "reccomender_title" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -213,6 +222,9 @@
         }
       }
     },
+    "Shop" : {
+
+    },
     "show_all_button" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -259,15 +271,6 @@
           }
         }
       }
-    },
-    "Subtitle 1" : {
-
-    },
-    "Subtitle 2" : {
-
-    },
-    "Title" : {
-
     },
     "top_trend_title" : {
       "extractionState" : "manual",
