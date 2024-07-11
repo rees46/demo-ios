@@ -10,7 +10,10 @@ class SDKViewModel: ObservableObject {
     let sdkManager = SDKManager.shared
     
     func getRecommendations(blockId: String, currentProductId: String, completion: @escaping ([RecommendedProduct]) -> Void) {
-        sdkManager.sdk?.recommend(blockId: blockId, currentProductId: currentProductId) { response in
+        sdkManager.sdk?.recommend(
+            blockId: blockId,
+            currentProductId: currentProductId
+        ) { response in
             switch response {
             case .success(let recommendResponse):
                 let products = RecommendedProductMapper.mapResponseToProducts(response: recommendResponse)

@@ -1,8 +1,19 @@
 PODS:
   - REES46 (3.6.19)
+  - SDWebImage (5.19.4):
+    - SDWebImage/Core (= 5.19.4)
+  - SDWebImage/Core (5.19.4)
+  - SDWebImageSwiftUI (2.2.7):
+    - SDWebImage (~> 5.10)
 
 DEPENDENCIES:
   - REES46 (from `https://github.com/rees46/ios-sdk.git`, branch `master`, tag `3.6.19`)
+  - SDWebImageSwiftUI
+
+SPEC REPOS:
+  trunk:
+    - SDWebImage
+    - SDWebImageSwiftUI
 
 EXTERNAL SOURCES:
   REES46:
@@ -18,7 +29,9 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   REES46: 687320dccba92b13654a5ea57c355bd1f0aed8eb
+  SDWebImage: 066c47b573f408f18caa467d71deace7c0f8280d
+  SDWebImageSwiftUI: 65a2c8b4b0d9577f2e11556cb163cc4613b9ee54
 
-PODFILE CHECKSUM: 904ef94ca4cc9c5fb28bf31df73479a3e0a72263
+PODFILE CHECKSUM: 4d55473ee53d2bc58b313538de6caff4ba97b096
 
 COCOAPODS: 1.15.2

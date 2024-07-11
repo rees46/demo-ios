@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		37CF7497084E2A6C5AB03AAF /* Pods_demo_store_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D65FBB29DC18ECADC9C8C94 /* Pods_demo_store_ios.framework */; };
 		452CB1BD95293EB9465F6C4C /* Pods_demo_store_ios_demo_store_iosUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF343FE4C1EB44258E4142CD /* Pods_demo_store_ios_demo_store_iosUITests.framework */; };
 		748A7C58839E67C62D21DB52 /* Pods_demo_store_iosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09908BAF81F91172D8D6062C /* Pods_demo_store_iosTests.framework */; };
 		7559449F2C357E5C00C274C9 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7559449E2C357E5C00C274C9 /* SplashScreenView.swift */; };
@@ -44,7 +45,6 @@
 		75ECCD142C36BE4300D6D346 /* SettingsScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75ECCD132C36BE4300D6D346 /* SettingsScreenView.swift */; };
 		75ECCD172C36D6D000D6D346 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 75ECCD162C36D6D000D6D346 /* Localizable.xcstrings */; };
 		75ECCD1A2C36F94800D6D346 /* BottomBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75ECCD192C36F94800D6D346 /* BottomBarView.swift */; };
-		79D46076E61CE01A7716D506 /* Pods_demo_store_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D65FBB29DC18ECADC9C8C94 /* Pods_demo_store_ios.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,7 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79D46076E61CE01A7716D506 /* Pods_demo_store_ios.framework in Frameworks */,
+				37CF7497084E2A6C5AB03AAF /* Pods_demo_store_ios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -757,7 +757,7 @@
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";

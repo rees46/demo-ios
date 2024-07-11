@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct ProductListItemView: View {
+    
+    @EnvironmentObject var navigationManager: NavigationManager
     var product: RecommendedProduct
     var containerWidth: CGFloat
     var containerHeight: CGFloat
@@ -63,5 +65,15 @@ struct ProductListItemView: View {
         }
         .cornerRadius(10)
         .frame(width: containerWidth, height: containerHeight)
+        .onTapGesture {
+          navigationManager.navigateTo(
+              screen: AnyView(
+                CatalogScreenView(
+                    product: product
+                )
+              ),
+              selectedTab: .catalog
+          )
+      }
     }
 }

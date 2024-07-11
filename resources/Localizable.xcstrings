@@ -106,9 +106,6 @@
         }
       }
     },
-    "Favourites" : {
-
-    },
     "go_home_button" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -116,6 +113,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Go to home"
+          }
+        }
+      }
+    },
+    "Home / %@ / %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Home / %1$@ / %2$@"
           }
         }
       }
@@ -153,6 +160,9 @@
         }
       }
     },
+    "No product data available" : {
+
+    },
     "process_timeout_title" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -164,8 +174,16 @@
         }
       }
     },
-    "Products" : {
-
+    "products_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Products"
+          }
+        }
+      }
     },
     "reccomender_title" : {
       "extractionState" : "manual",

@@ -11,7 +11,7 @@ struct MainDiscoverView: View {
         ImageItem(urlString: "https://m.media-amazon.com/images/I/71qqPTyiatS._AC_UY580_.jpg", type: "Summer style", count: 10),
         ImageItem(urlString: "https://ankerliebe.com/wp-content/uploads/2022/10/6f147a6d-b07c-43b9-9185-74516049e68a.jpg", type: "Evening style", count: 5),
         ImageItem(urlString: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSr5xYylSSx5eBFzxggQRXoH-E2AAU05jcSckFoUGphRwWdBE1W9OSQbOiVP67RDq_kdX0&usqp=CAU", type: "Formal style", count: 7),
-        ImageItem(urlString: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzWEQ1KTnzIU2I-xehvxIRR2hwg-SPwR--SOnmhUcuu3DgqshTkUVFfBrnVUKqSEXuDCg&usqp=CAU", type: "Ceremonial style", count: 3)
+        ImageItem(urlString: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzWEQ1KTnzIU2I-xehvxIRR2hwg-SPwR--SOnmhUcuu3DgqshTkUVFfBrnVUKqSEXuDCg&usqp=CAU", type: "Official style", count: 3)
     ]
     
     var body: some View {
@@ -40,7 +40,7 @@ struct MainDiscoverView: View {
                                         Text("\(item.count)")
                                             .font(.system(size: 12))
                                             .foregroundColor(.white)
-                                        Text("Products")
+                                        Text("products_title")
                                             .font(.system(size: 12))
                                             .foregroundColor(.white)
                                         
