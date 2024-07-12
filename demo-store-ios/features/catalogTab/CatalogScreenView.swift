@@ -10,26 +10,15 @@ struct CatalogScreenView: View {
         NavigationView {
             ScrollView {
                 VStack(alignment: .leading) {
+                    
                     topSection
+                    
                     productImagesSection
+                    
                     productDetailsSection
-                    Spacer().frame(height: 20)
-                    VStack {
-                        if let oldPrice = product?.oldPriceFormatted {
-                            Text(oldPrice)
-                                .font(.subheadline)
-                                .foregroundColor(.secondary)
-                                .strikethrough()
-                        }
-                        
-                        Spacer().frame(height: 4)
-                        
-                        HStack {
-                            Text(product?.priceFormatted ?? "")
-                                .font(.system(size: 17, weight: .bold))
-                                .foregroundColor(.primary)
-                        }
-                    }
+                    
+                    priceSection
+                    
                 }
                 .padding(.horizontal)
                 .background(Color.white)
@@ -42,6 +31,7 @@ struct CatalogScreenView: View {
                 }
             }
         }
+        
     }
     
     private var topSection: some View {
@@ -122,6 +112,36 @@ struct CatalogScreenView: View {
                 .lineSpacing(8)
         }
     }
+    
+    private var priceSection: some View {
+        VStack(alignment: .leading, spacing: 4) {
+            Spacer().frame(height: 20)
+            
+            Text(product?.oldPriceFormatted ?? "₽ 42")
+                .font(.system(size: 18))
+                .foregroundColor(.secondary)
+                .strikethrough()
+            
+            HStack {
+                Text(product?.priceFormatted ?? "")
+                    .font(.system(size: 17, weight: .bold))
+                    .foregroundColor(.primary)
+                
+                Spacer().frame(width: 12)
+                
+                Text("\(Int.random(in: 1...50))%")
+                    .font(.system(size: 16))
+                    .frame(width: 46, height: 18)
+                    .foregroundColor(.white)
+                    .padding(8)
+                    .background(Color.red)
+                    .cornerRadius(8)
+            }
+            Spacer().frame(height: 20)
+        }
+        .frame(maxWidth: .infinity, alignment: .topLeading)
+    }
+    
 }
 
 struct CatalogScreenView_Previews: PreviewProvider {

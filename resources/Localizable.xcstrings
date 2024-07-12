@@ -7,6 +7,9 @@
     "%lld" : {
 
     },
+    "%lld%%" : {
+
+    },
     "also_bought_title" : {
       "extractionState" : "manual",
       "localizations" : {

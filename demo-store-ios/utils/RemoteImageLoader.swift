@@ -29,7 +29,12 @@ struct RemoteImageView: View {
     let height: CGFloat?
     let contentMode: ContentMode
     
-    init(urlString: String, width: CGFloat? = nil, height: CGFloat? = nil, contentMode: ContentMode = .fit) {
+    init(
+        urlString: String,
+        width: CGFloat? = nil,
+        height: CGFloat? = nil,
+        contentMode: ContentMode = .fit
+    ) {
         self.urlString = urlString
         self.width = width
         self.height = height
