@@ -18,22 +18,23 @@ struct MainScreenView: View {
                     ShortRecommendationListView(
                         recommendedProducts: viewModel.arrivalsProducts,
                         title: NSLocalizedString("arrivals_title", comment: "")
-                    ).onAppear {
-                        viewModel.loadArrivalsRecommendations(blockId: blockId, currentProductId: "670")
+                    )
+                    .onAppear {
+                        viewModel.loadArrivalsRecommendations( currentProductId: "670")
                     }
                     
                     ShortRecommendationListView(
                         recommendedProducts: viewModel.topTrendProducts,
                         title: NSLocalizedString("top_trend_title", comment: "")
                     ).onAppear {
-                        viewModel.loadTopTrendRecommendations(blockId: blockId, currentProductId: "656")
+                        viewModel.loadTopTrendRecommendations(currentProductId: "656")
                     }
                     
                     ShortRecommendationListView(
                         recommendedProducts: viewModel.recommenderProducts,
                         title: NSLocalizedString("reccomender_title", comment: "")
                     ).onAppear {
-                        viewModel.loadRecommenderRecommendations(blockId: blockId, currentProductId: "651")
+                        viewModel.loadRecommenderRecommendations(currentProductId: "651")
                     }
                     
                 }

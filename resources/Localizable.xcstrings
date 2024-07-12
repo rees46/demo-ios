@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "-" : {
+
+    },
     "%@" : {
 
     },
@@ -8,6 +11,12 @@
 
     },
     "%lld%%" : {
+
+    },
+    "+" : {
+
+    },
+    "Add to Cart" : {
 
     },
     "also_bought_title" : {
@@ -206,6 +215,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Recommender title"
+          }
+        }
+      }
+    },
+    "recommend_like_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You also may like"
           }
         }
       }

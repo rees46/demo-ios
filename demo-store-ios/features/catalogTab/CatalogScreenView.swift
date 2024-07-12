@@ -3,6 +3,7 @@ import SwiftUI
 struct CatalogScreenView: View {
     
     var product: RecommendedProduct?
+    @ObservedObject var viewModel = SDKViewModel()
     
     @State private var selectedImageIndex = 0
     
@@ -19,9 +20,11 @@ struct CatalogScreenView: View {
                     
                     priceSection
                     
-                }
-                .padding(.horizontal)
-                .background(Color.white)
+                    actionSection
+                    
+                    recomendSection
+                    
+                }                .background(Color.white)
             }
             .onAppear {
                 if let product = product {
@@ -31,7 +34,6 @@ struct CatalogScreenView: View {
                 }
             }
         }
-        
     }
     
     private var topSection: some View {
@@ -41,7 +43,7 @@ struct CatalogScreenView: View {
                 .font(.system(size: 14))
                 .foregroundColor(.gray)
             Spacer().frame(height: 20)
-        }
+        }.padding(.horizontal)
     }
     
     private var productImagesSection: some View {
@@ -77,7 +79,7 @@ struct CatalogScreenView: View {
                     .foregroundColor(.black)
                     .padding()
             }
-        }
+        }.padding(.horizontal)
     }
     
     private var productDetailsSection: some View {
@@ -110,7 +112,7 @@ struct CatalogScreenView: View {
                 .font(.system(size: 13, weight: .regular))
                 .foregroundColor(.black)
                 .lineSpacing(8)
-        }
+        }.padding(.horizontal)
     }
     
     private var priceSection: some View {
@@ -139,46 +141,84 @@ struct CatalogScreenView: View {
             }
             Spacer().frame(height: 20)
         }
+        .padding(.horizontal)
         .frame(maxWidth: .infinity, alignment: .topLeading)
     }
     
+    private var actionSection: some View {
+        HStack {
+            CounterSectionView()
+                .frame(height: 50)
+                .background(Color.white)
+                .border(Color.gray, width: 1)
+                .cornerRadius(4)
+            
+            Spacer().frame(width: 16)
+            
+            Button(action: {
+                // Action for the button
+            }) {
+                Text("Add to Cart")
+                    .font(.system(size: 17, weight: .bold))
+                    .foregroundColor(.white)
+                    .frame(maxWidth: .infinity, maxHeight: 50)
+                    .background(Color.black)
+                    .cornerRadius(8)
+            }
+        }
+        .padding(.horizontal)
+        .frame(height: 50)
+    }
+    
+    private var recomendSection: some View {
+        VStack{
+            Spacer().frame(height : 36)
+            
+            ShortRecommendationListView(
+                recommendedProducts: viewModel.recommenderProducts,
+                title: NSLocalizedString("recommend_like_title", comment: "")
+            )
+            .onAppear {
+                viewModel.loadRecommenderRecommendations( currentProductId: "665")
+            }
+            
+            Spacer().frame(height: 36)
+        }
+    }
 }
 
-struct CatalogScreenView_Previews: PreviewProvider {
-    static var previews: some View {
-        CatalogScreenView(
-            product: RecommendedProduct(
-                id: "1",
-                barcode: "123456",
-                name: "Product 1",
-                brand: "Brand 1",
-                model: "Model 1",
-                description: "Description 1",
-                imageUrl: "https://example.com/product1.jpg",
-                resizedImageUrl: "https://example.com/product1_resized.jpg",
-                url: "https://example.com/product1",
-                deeplinkIos: "",
-                categories: [],
-                locations: [],
-                price: 99.99,
-                priceFormatted: "$99.99",
-                priceFull: 129.99,
-                priceFullFormatted: "$129.99",
-                oldPrice: 10.0,
-                oldPriceFormatted: "$129.99",
-                oldPriceFull: 0.0,
-                oldPriceFullFormatted: nil,
-                currency: "USD",
-                salesRate: 10,
-                discount: 20,
-                rating: 4,
-                relativeSalesRate: 0.5,
-                paramsRaw: nil,
-                fashionOriginalSizes: [],
-                fashionSizes: [],
-                fashionColors: [],
-                resizedImages: [:]
-            )
-        )
+struct CounterSectionView: View {
+    @State private var counter = 0
+    
+    var body: some View {
+        HStack(spacing: 0) {
+            Button(action: {
+                if counter > 0 {
+                    counter -= 1
+                }
+            }) {
+                Text("-")
+                    .font(.system(size: 20, weight: .bold))
+                    .foregroundColor(.black)
+                    .frame(width: 50, height: 50)
+                    .background(Color.white)
+            }
+            
+            Text("\(counter)")
+                .font(.system(size: 20, weight: .bold))
+                .foregroundColor(.black)
+                .frame(width: 50, height: 50)
+                .background(Color.white)
+            
+            Button(action: {
+                counter += 1
+            }) {
+                Text("+")
+                    .font(.system(size: 20, weight: .bold))
+                    .foregroundColor(.black)
+                    .frame(width: 50, height: 50)
+                    .background(Color.white)
+            }
+        }
     }
 }
