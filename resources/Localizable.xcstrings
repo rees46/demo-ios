@@ -185,6 +185,17 @@
         }
       }
     },
+    "rating_reviews" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reviews"
+          }
+        }
+      }
+    },
     "reccomender_title" : {
       "extractionState" : "manual",
       "localizations" : {
