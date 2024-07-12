@@ -52,6 +52,12 @@
         }
       }
     },
+    "Cart" : {
+
+    },
+    "Cart Items:" : {
+
+    },
     "cart_tab_title" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -173,6 +179,9 @@
       }
     },
     "No product data available" : {
+
+    },
+    "Price: %@" : {
 
     },
     "process_timeout_title" : {

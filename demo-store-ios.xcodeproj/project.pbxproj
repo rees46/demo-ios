@@ -12,6 +12,7 @@
 		748A7C58839E67C62D21DB52 /* Pods_demo_store_iosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09908BAF81F91172D8D6062C /* Pods_demo_store_iosTests.framework */; };
 		752F1D3A2C41E01D002D4AC3 /* ProductCartItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752F1D392C41E01D002D4AC3 /* ProductCartItem.swift */; };
 		752F1D3C2C41E157002D4AC3 /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752F1D3B2C41E156002D4AC3 /* CartViewModel.swift */; };
+		752F1D402C41E5BC002D4AC3 /* CartRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752F1D3F2C41E5BC002D4AC3 /* CartRepository.swift */; };
 		7559449F2C357E5C00C274C9 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7559449E2C357E5C00C274C9 /* SplashScreenView.swift */; };
 		755944A12C35822700C274C9 /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755944A02C35822700C274C9 /* LaunchScreen.swift */; };
 		75674CDC2C3C1A67007FAB88 /* MainDiscoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75674CDB2C3C1A67007FAB88 /* MainDiscoverView.swift */; };
@@ -72,6 +73,7 @@
 		739840337D708A49CB89DD90 /* Pods-demo-store-ios-demo-store-iosUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demo-store-ios-demo-store-iosUITests.release.xcconfig"; path = "Target Support Files/Pods-demo-store-ios-demo-store-iosUITests/Pods-demo-store-ios-demo-store-iosUITests.release.xcconfig"; sourceTree = "<group>"; };
 		752F1D392C41E01D002D4AC3 /* ProductCartItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCartItem.swift; sourceTree = "<group>"; };
 		752F1D3B2C41E156002D4AC3 /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
+		752F1D3F2C41E5BC002D4AC3 /* CartRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartRepository.swift; sourceTree = "<group>"; };
 		7559449E2C357E5C00C274C9 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		755944A02C35822700C274C9 /* LaunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreen.swift; sourceTree = "<group>"; };
 		75674CDB2C3C1A67007FAB88 /* MainDiscoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDiscoverView.swift; sourceTree = "<group>"; };
@@ -153,6 +155,14 @@
 				752F1D3B2C41E156002D4AC3 /* CartViewModel.swift */,
 			);
 			path = viewModel;
+			sourceTree = "<group>";
+		};
+		752F1D3E2C41E5AC002D4AC3 /* repository */ = {
+			isa = PBXGroup;
+			children = (
+				752F1D3F2C41E5BC002D4AC3 /* CartRepository.swift */,
+			);
+			path = repository;
 			sourceTree = "<group>";
 		};
 		7559449C2C357E1800C274C9 /* features */ = {
@@ -347,6 +357,7 @@
 		75ECCD0D2C36BE0600D6D346 /* cartTab */ = {
 			isa = PBXGroup;
 			children = (
+				752F1D3E2C41E5AC002D4AC3 /* repository */,
 				752F1D3D2C41E1C6002D4AC3 /* viewModel */,
 				75ECCD112C36BE2D00D6D346 /* CartScreenView.swift */,
 			);
@@ -675,6 +686,7 @@
 				75E1C8EB2C3E9401005018B4 /* FullRecommendationListView.swift in Sources */,
 				75674CFE2C3D9A5A007FAB88 /* ShortRecommendationListView.swift in Sources */,
 				75A3F41E2C38065000AAC175 /* AppDelegate.swift in Sources */,
+				752F1D402C41E5BC002D4AC3 /* CartRepository.swift in Sources */,
 				75674D032C3DA14F007FAB88 /* RatingConverter.swift in Sources */,
 				752F1D3C2C41E157002D4AC3 /* CartViewModel.swift in Sources */,
 				75A3F4252C383E8100AAC175 /* SettingsErrroScreenView.swift in Sources */,

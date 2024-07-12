@@ -4,7 +4,6 @@ struct CatalogScreenView: View {
     
     var product: RecommendedProduct?
     @ObservedObject var viewModel = MainTabViewModel()
-    @ObservedObject var cartViewModel =  CartViewModel()
     
     @State private var selectedImageIndex = 0
     @State private var counter = 1
@@ -161,7 +160,7 @@ struct CatalogScreenView: View {
             Button(
                 action: {
                     if let product = product {
-                        cartViewModel.addToCart(product: product, quantity: counter)
+                        viewModel.addToCart(product: product, quantity: counter)
                     }
                 }
             ) {

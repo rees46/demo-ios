@@ -10,6 +10,8 @@ class MainTabViewModel: ObservableObject {
     @Published var topTrendProducts: [RecommendedProduct] = []
     @Published var recommenderProducts: [RecommendedProduct] = []
     
+    private let cartRepository = CartRepository.shared
+    
     let sdkManager = SDKManager.shared
     
     func getRecommendations(blockId: String, currentProductId: String, completion: @escaping ([RecommendedProduct]) -> Void) {
@@ -45,5 +47,17 @@ class MainTabViewModel: ObservableObject {
         getRecommendations(blockId: blockId, currentProductId: currentProductId) { products in
             self.recommenderProducts = products
         }
+    }
+    
+    func addToCart(product: RecommendedProduct, quantity: Int) {
+        cartRepository.addToCart(product: product, quantity: quantity)
+    }
+    
+    func updateCartItem(productId: String, quantity: Int) {
+        cartRepository.updateCartItem(productId: productId, quantity: quantity)
+    }
+    
+    func removeFromCart(productId: String) {
+        cartRepository.removeFromCart(productId: productId)
     }
 }

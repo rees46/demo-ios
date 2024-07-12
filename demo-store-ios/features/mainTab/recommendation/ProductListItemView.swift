@@ -3,6 +3,7 @@ import SwiftUI
 struct ProductListItemView: View {
     
     @EnvironmentObject var navigationManager: NavigationManager
+    
     var product: RecommendedProduct
     var containerWidth: CGFloat
     var containerHeight: CGFloat
