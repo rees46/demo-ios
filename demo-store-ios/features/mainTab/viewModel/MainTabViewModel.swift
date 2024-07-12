@@ -2,7 +2,7 @@ import Foundation
 import Combine
 import REES46
 
-class SDKViewModel: ObservableObject {
+class MainTabViewModel: ObservableObject {
     
     private let blockId = "977cb67194a72fdc7b424f49d69a862d"
     

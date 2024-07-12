@@ -3,7 +3,7 @@ import REES46
 
 struct MainScreenView: View {
     @EnvironmentObject var navigationManager: NavigationManager
-    @ObservedObject var viewModel = SDKViewModel()
+    @ObservedObject var viewModel = MainTabViewModel()
     
     private let blockId = "977cb67194a72fdc7b424f49d69a862d"
     

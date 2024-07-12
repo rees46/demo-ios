@@ -35,7 +35,7 @@ class StoriesViewController: UIViewController {
 
 struct StoriesViewControllerRepresentable: UIViewControllerRepresentable {
     
-    @EnvironmentObject var sdkViewModel: SDKViewModel
+    @EnvironmentObject var sdkViewModel: MainTabViewModel
     
     func makeUIViewController(context: Context) -> StoriesViewController {
         let viewController = StoriesViewController()

@@ -3,9 +3,11 @@ import SwiftUI
 struct CatalogScreenView: View {
     
     var product: RecommendedProduct?
-    @ObservedObject var viewModel = SDKViewModel()
+    @ObservedObject var viewModel = MainTabViewModel()
+    @ObservedObject var cartViewModel =  CartViewModel()
     
     @State private var selectedImageIndex = 0
+    @State private var counter = 1
     
     var body: some View {
         NavigationView {
@@ -24,7 +26,8 @@ struct CatalogScreenView: View {
                     
                     recomendSection
                     
-                }                .background(Color.white)
+                }
+                .background(Color.white)
             }
             .onAppear {
                 if let product = product {
@@ -133,7 +136,7 @@ struct CatalogScreenView: View {
                 
                 Text("\(Int.random(in: 1...50))%")
                     .font(.system(size: 16))
-                    .frame(width: 46, height: 18)
+                    .frame(width: 46, height: 14)
                     .foregroundColor(.white)
                     .padding(8)
                     .background(Color.red)
@@ -147,7 +150,7 @@ struct CatalogScreenView: View {
     
     private var actionSection: some View {
         HStack {
-            CounterSectionView()
+            CounterSectionView(counter: $counter)
                 .frame(height: 50)
                 .background(Color.white)
                 .border(Color.gray, width: 1)
@@ -155,9 +158,13 @@ struct CatalogScreenView: View {
             
             Spacer().frame(width: 16)
             
-            Button(action: {
-                // Action for the button
-            }) {
+            Button(
+                action: {
+                    if let product = product {
+                        cartViewModel.addToCart(product: product, quantity: counter)
+                    }
+                }
+            ) {
                 Text("Add to Cart")
                     .font(.system(size: 17, weight: .bold))
                     .foregroundColor(.white)
@@ -188,7 +195,7 @@ struct CatalogScreenView: View {
 }
 
 struct CounterSectionView: View {
-    @State private var counter = 0
+    @Binding var counter: Int
     
     var body: some View {
         HStack(spacing: 0) {

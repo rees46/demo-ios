@@ -2,7 +2,7 @@ import SwiftUI
 
 @main
 struct DemoStoreApp: App {
-    @StateObject private var sdkViewModel = SDKViewModel()
+    @StateObject private var sdkViewModel = MainTabViewModel()
     
     @State private var showSplash = true
     

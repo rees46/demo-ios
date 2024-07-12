@@ -13,7 +13,7 @@ struct MainStoriesContainerView: View {
             StoriesViewControllerRepresentable()
                 .frame(height: 200)
         }
-        .environmentObject(SDKViewModel())
+        .environmentObject(MainTabViewModel())
     }
 }
 
