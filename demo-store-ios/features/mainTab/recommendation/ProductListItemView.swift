@@ -3,6 +3,7 @@ import SwiftUI
 struct ProductListItemView: View {
     
     @EnvironmentObject var navigationManager: NavigationManager
+    @ObservedObject var viewModel = MainTabViewModel()
     
     var product: RecommendedProduct
     var containerWidth: CGFloat
@@ -49,9 +50,11 @@ struct ProductListItemView: View {
                 Spacer()
                 
                 if showShopButton {
-                    Button(action: {
-                        // TODO Действие по нажатию кнопки
-                    }) {
+                    Button(
+                        action: {
+                            viewModel.addToCart(product: product, quantity: 1)
+                        }
+                    ) {
                         Text("Shop")
                             .font(.system(size: 12))
                             .foregroundColor(.white)
@@ -67,14 +70,14 @@ struct ProductListItemView: View {
         .cornerRadius(10)
         .frame(width: containerWidth, height: containerHeight)
         .onTapGesture {
-          navigationManager.navigateTo(
-              screen: AnyView(
-                CatalogScreenView(
-                    product: product
-                )
-              ),
-              selectedTab: .catalog
-          )
-      }
+            navigationManager.navigateTo(
+                screen: AnyView(
+                    CatalogScreenView(
+                        product: product
+                    )
+                ),
+                selectedTab: .catalog
+            )
+        }
     }
 }

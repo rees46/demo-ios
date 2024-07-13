@@ -12,19 +12,25 @@ struct CatalogScreenView: View {
         NavigationView {
             ScrollView {
                 VStack(alignment: .leading) {
-                    
-                    topSection
-                    
-                    productImagesSection
-                    
-                    productDetailsSection
-                    
-                    priceSection
-                    
-                    actionSection
-                    
+                    if let product = product {
+                        topSection
+                        
+                        productImagesSection
+                        
+                        productDetailsSection
+                        
+                        priceSection
+                        
+                        actionSection
+                        
+                    } else {
+                        Text("No product available")
+                            .font(.headline)
+                            .foregroundColor(.black)
+                            .padding()
+                            .frame(height:300)
+                    }
                     recomendSection
-                    
                 }
                 .background(Color.white)
             }
@@ -59,7 +65,8 @@ struct CatalogScreenView: View {
                             urlString: imageUrls[index],
                             width: 350,
                             height: 350,
-                            contentMode: .fit
+                            contentMode: .fit,
+                            showBorder: false
                         ).tag(index)
                     }
                 }

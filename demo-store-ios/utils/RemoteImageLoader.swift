@@ -28,19 +28,22 @@ struct RemoteImageView: View {
     let width: CGFloat?
     let height: CGFloat?
     let contentMode: ContentMode
-    
+    let showBorder: Bool
+
     init(
         urlString: String,
         width: CGFloat? = nil,
         height: CGFloat? = nil,
-        contentMode: ContentMode = .fit
+        contentMode: ContentMode = .fit,
+        showBorder: Bool = true
     ) {
         self.urlString = urlString
         self.width = width
         self.height = height
         self.contentMode = contentMode
+        self.showBorder = showBorder
     }
-    
+
     var body: some View {
         ZStack {
             if let uiImage = UIImage(data: imageLoader.imageData) {
@@ -50,8 +53,9 @@ struct RemoteImageView: View {
                     .frame(width: width, height: height)
                     .cornerRadius(5)
                     .overlay(
+                        showBorder ?
                         RoundedRectangle(cornerRadius: 10)
-                            .stroke(Color.gray.opacity(0.5), lineWidth: 1)
+                            .stroke(Color.gray.opacity(0.5), lineWidth: 1) : nil
                     )
             } else {
                 Rectangle()
