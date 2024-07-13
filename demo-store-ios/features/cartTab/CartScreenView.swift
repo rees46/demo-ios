@@ -1,12 +1,28 @@
 import SwiftUI
 
 struct CartScreenView: View {
+    
+    @EnvironmentObject var navigationManager: NavigationManager
     @ObservedObject var cartViewModel = CartViewModel()
+    
+    var totalPrice: Int {
+        let total = cartViewModel.cartItems.reduce(0) { (result, cartItem) in
+            if let priceString = cartItem.product.priceFormatted {
+                let cleanedPriceString = priceString.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
+                
+                if let price = Int(cleanedPriceString) {
+                    return result + price
+                }
+            }
+            return result
+        }
+        print("Computed total price:", total)
+        return total
+    }
     
     var body: some View {
         NavigationView {
             VStack {
-                
                 Spacer().frame(height: 20)
                 
                 List {
@@ -54,15 +70,51 @@ struct CartScreenView: View {
                             }
                             .padding(.vertical, 8)
                             .background(Color.white)
-                         
+                            
                             Divider()
-                                                 }
-                                                 .listRowInsets(EdgeInsets())
-                                                 .padding(.horizontal)
+                        }
+                        .listRowInsets(EdgeInsets())
+                        .padding(.horizontal)
                     }
+                    
+                    VStack(spacing: 0) {
+                        Spacer().frame(height: 20)
+                        Spacer(minLength: 0)
+                        
+                        VStack(alignment: .trailing, spacing: 12) {
+                            HStack {
+                                Spacer()
+                                Text("shipping_title")
+                                    .font(.system(size: 16))
+                                    .foregroundColor(.black)
+                                    .padding(.trailing, 12)
+                                
+                                Text("Free")
+                                    .font(.system(size: 16, weight: .bold))
+                                    .foregroundColor(.black)
+                            }
+                            
+                            HStack {
+                                Spacer()
+                                Text("total_title")
+                                    .font(.system(size: 16))
+                                    .foregroundColor(.black)
+                                    .padding(.trailing, 12)
+                                
+                                Text("\(totalPrice)")
+                                    .font(.system(size: 16, weight: .bold))
+                                    .foregroundColor(.black)
+                            }
+                        }
+                        .padding(.horizontal)
+                    }
+                    .listRowInsets(EdgeInsets())
                 }
                 .listStyle(PlainListStyle())
                 .navigationBarTitle("cart_tab_title")
+                .onAppear{
+                    navigationManager.setToolbarHidden(hidden: false)
+                }
             }
         }
     }

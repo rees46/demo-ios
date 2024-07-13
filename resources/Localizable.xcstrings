@@ -118,6 +118,9 @@
         }
       }
     },
+    "Free" : {
+
+    },
     "go_home_button" : {
       "extractionState" : "manual",
       "localizations" : {
