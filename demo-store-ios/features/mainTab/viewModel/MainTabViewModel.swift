@@ -10,41 +10,24 @@ class MainTabViewModel: ObservableObject {
     @Published var topTrendProducts: [RecommendedProduct] = []
     @Published var recommenderProducts: [RecommendedProduct] = []
     
-    private let cartRepository = CartRepository.shared
-    
     let sdkManager = SDKManager.shared
+    private let cartRepository = CartRepository.shared
+    private let getRecommendationsUseCase = GetRecommendationsUseCase()
     
-    func getRecommendations(blockId: String, currentProductId: String, completion: @escaping ([RecommendedProduct]) -> Void) {
-        sdkManager.sdk?.recommend(
-            blockId: blockId,
-            currentProductId: currentProductId
-        ) { response in
-            switch response {
-            case .success(let recommendResponse):
-                let products = RecommendedProductMapper.mapResponseToProducts(response: recommendResponse)
-                DispatchQueue.main.async {
-                    completion(products)
-                }
-            case .failure(let error):
-                print("Error:", error.localizedDescription)
-            }
-        }
-    }
-    
-    func loadArrivalsRecommendations( currentProductId: String) {
-        getRecommendations(blockId: blockId, currentProductId: currentProductId) { products in
+    func loadArrivalsRecommendations(currentProductId: String) {
+        getRecommendationsUseCase.execute(blockId: blockId, currentProductId: currentProductId) { products in
             self.arrivalsProducts = products
         }
     }
     
-    func loadTopTrendRecommendations( currentProductId: String) {
-        getRecommendations(blockId: blockId, currentProductId: currentProductId) { products in
+    func loadTopTrendRecommendations(currentProductId: String) {
+        getRecommendationsUseCase.execute(blockId: blockId, currentProductId: currentProductId) { products in
             self.topTrendProducts = products
         }
     }
     
-    func loadRecommenderRecommendations( currentProductId: String) {
-        getRecommendations(blockId: blockId, currentProductId: currentProductId) { products in
+    func loadRecommenderRecommendations(currentProductId: String) {
+        getRecommendationsUseCase.execute(blockId: blockId, currentProductId: currentProductId) { products in
             self.recommenderProducts = products
         }
     }

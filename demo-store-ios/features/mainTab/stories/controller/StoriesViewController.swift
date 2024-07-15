@@ -35,7 +35,7 @@ class StoriesViewController: UIViewController {
 
 struct StoriesViewControllerRepresentable: UIViewControllerRepresentable {
     
-    @EnvironmentObject var sdkViewModel: MainTabViewModel
+    @EnvironmentObject var viewModel: MainTabViewModel
     
     func makeUIViewController(context: Context) -> StoriesViewController {
         let viewController = StoriesViewController()
@@ -43,7 +43,7 @@ struct StoriesViewControllerRepresentable: UIViewControllerRepresentable {
     }
     
     func updateUIViewController(_ uiViewController: StoriesViewController, context: Context) {
-        if let sdk = sdkViewModel.sdkManager.sdk {
+        if let sdk = viewModel.sdkManager.sdk {
             uiViewController.configure(with: sdk)
         } else {
             print("StoriesViewControllerRepresentable: SDK not found")
