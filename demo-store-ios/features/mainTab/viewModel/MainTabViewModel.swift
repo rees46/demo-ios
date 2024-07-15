@@ -9,26 +9,31 @@ class MainTabViewModel: ObservableObject {
     @Published var arrivalsProducts: [RecommendedProduct] = []
     @Published var topTrendProducts: [RecommendedProduct] = []
     @Published var recommenderProducts: [RecommendedProduct] = []
-    
     let sdkManager = SDKManager.shared
+    
+    @Published var isLoading = true
+    
     private let cartRepository = CartRepository.shared
     private let getRecommendationsUseCase = GetRecommendationsUseCase()
     
     func loadArrivalsRecommendations(currentProductId: String) {
         getRecommendationsUseCase.execute(blockId: blockId, currentProductId: currentProductId) { products in
             self.arrivalsProducts = products
+            self.isLoading = false
         }
     }
     
     func loadTopTrendRecommendations(currentProductId: String) {
         getRecommendationsUseCase.execute(blockId: blockId, currentProductId: currentProductId) { products in
             self.topTrendProducts = products
+            self.isLoading = false
         }
     }
     
     func loadRecommenderRecommendations(currentProductId: String) {
         getRecommendationsUseCase.execute(blockId: blockId, currentProductId: currentProductId) { products in
             self.recommenderProducts = products
+            self.isLoading = false
         }
     }
     

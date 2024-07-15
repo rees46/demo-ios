@@ -250,6 +250,9 @@
         }
       }
     },
+    "Retry" : {
+
+    },
     "settings_sub_title" : {
       "extractionState" : "manual",
       "localizations" : {

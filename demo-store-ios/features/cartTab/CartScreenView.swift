@@ -5,6 +5,8 @@ struct CartScreenView: View {
     @EnvironmentObject var navigationManager: NavigationManager
     @ObservedObject var cartViewModel = CartViewModel()
     
+    @State private var isLoading = true
+    
     var totalPrice: Int {
         let total = cartViewModel.cartItems.reduce(0) { (result, cartItem) in
             if let priceString = cartItem.product.priceFormatted,
@@ -22,7 +24,16 @@ struct CartScreenView: View {
                 VStack(spacing: 0) {
                     Spacer().frame(height: 20)
                     
-                    if cartViewModel.cartItems.isEmpty {
+                    if isLoading {
+                        ProgressView()
+                            .progressViewStyle(CircularProgressViewStyle())
+                            .onAppear {
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                                    isLoading = false
+                                }
+                            }
+                            .frame(height: 250)
+                    } else if cartViewModel.cartItems.isEmpty {
                         EmptyCartView()
                             .frame(height: 250)
                     } else {
@@ -41,7 +52,9 @@ struct CartScreenView: View {
                         )
                     }
                     
-                    RecommendationSection(recommendedProducts: cartViewModel.recommenderProducts)
+                    if !isLoading{
+                        RecommendationSection(recommendedProducts: cartViewModel.recommenderProducts)
+                    }
                 }
                 .navigationBarTitle("cart_tab_title")
                 .onAppear {

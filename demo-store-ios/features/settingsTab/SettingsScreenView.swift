@@ -16,26 +16,22 @@ struct SettingsScreenView: View {
     var body: some View {
         NavigationView {
             VStack {
-                SettingsInputCodeView(storeKey: $storeKey)
-//                switch viewState {
-//                case .loading:
-//                    ProgressView()
-//                        .progressViewStyle(CircularProgressViewStyle())
-//                        .onAppear {
-//                            // Start a timer to simulate loading
-//                            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-//                                loadData()
-//                            }
-//                        }
-//                    
-//                case .error:
-//                    SettingsErrroScreenView() {
-//                        navigationManager.navigateTo(screen: AnyView(MainScreenView()))
-//                    }
-//                    
-//                case .data:
-//                    SettingsInputCodeView(storeKey: $storeKey)
-//                }
+                switch viewState {
+                case .loading:
+                    ProgressView()
+                        .progressViewStyle(CircularProgressViewStyle())
+                        .onAppear {
+                            loadData()
+                        }
+                    
+                case .error(let errorMessage):
+                    SettingsErrorScreenView(errorMessage: errorMessage) {
+                        navigationManager.navigateTo(screen: AnyView(MainScreenView()))
+                    }
+                    
+                case .data:
+                    SettingsInputCodeView(storeKey: $storeKey)
+                }
             }
             .padding()
             .navigationTitle("settings_tab_title")
@@ -46,12 +42,30 @@ struct SettingsScreenView: View {
     private func loadData() {
         // Simulate data loading
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            let success = Bool.random()
+            let success = true // Replace with actual condition to check data loading success
             if success {
                 viewState = .data
             } else {
                 viewState = .error("Failed to load data")
             }
+        }
+    }
+}
+
+struct SettingsErrorScreenView: View {
+    let errorMessage: String
+    let retryAction: () -> Void
+    
+    var body: some View {
+        VStack {
+            Text(errorMessage)
+                .foregroundColor(.red)
+                .padding()
+            
+            Button("Retry") {
+                retryAction()
+            }
+            .padding()
         }
     }
 }

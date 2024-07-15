@@ -5,6 +5,7 @@ class CartViewModel: ObservableObject {
     
     @Published var cartItems: [ProductCartItem] = []
     @Published var recommenderProducts: [RecommendedProduct] = []
+    @Published var isLoading: Bool = true
     
     private let getRecommendationsUseCase = GetRecommendationsUseCase()
     private let cartRepository = CartRepository.shared
@@ -16,6 +17,7 @@ class CartViewModel: ObservableObject {
         cartRepository.$cartItems
             .sink { [weak self] cartItems in
                 self?.cartItems = cartItems
+                self?.isLoading = false
             }
             .store(in: &cancellables)
     }

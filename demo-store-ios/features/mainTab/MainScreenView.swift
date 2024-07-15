@@ -1,42 +1,52 @@
 import SwiftUI
-import REES46
 
 struct MainScreenView: View {
     @EnvironmentObject var navigationManager: NavigationManager
     @ObservedObject var viewModel = MainTabViewModel()
     
-    private let blockId = "977cb67194a72fdc7b424f49d69a862d"
+    @State private var isLoading = true
     
     var body: some View {
         NavigationView {
             ScrollView {
                 VStack(spacing: 16) {
-                    MainDiscoverView()
-                    
-                    MainStoriesContainerView()
-                    
-                    ShortRecommendationListView(
-                        recommendedProducts: viewModel.arrivalsProducts,
-                        title: NSLocalizedString("arrivals_title", comment: "")
-                    )
-                    .onAppear {
-                        viewModel.loadArrivalsRecommendations( currentProductId: "670")
+                    if isLoading {
+                        ProgressView()
+                            .progressViewStyle(CircularProgressViewStyle())
+                            .onAppear {
+                                // Simulate loading delay
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                                    isLoading = false
+                                }
+                            }
+                            .frame(height: 250)
+                    } else {
+                        MainDiscoverView()
+                        
+                        MainStoriesContainerView()
+                        
+                        ShortRecommendationListView(
+                            recommendedProducts: viewModel.arrivalsProducts,
+                            title: NSLocalizedString("arrivals_title", comment: "")
+                        )
+                        .onAppear {
+                            viewModel.loadArrivalsRecommendations(currentProductId: "670")
+                        }
+                        
+                        ShortRecommendationListView(
+                            recommendedProducts: viewModel.topTrendProducts,
+                            title: NSLocalizedString("top_trend_title", comment: "")
+                        ).onAppear {
+                            viewModel.loadTopTrendRecommendations(currentProductId: "656")
+                        }
+                        
+                        ShortRecommendationListView(
+                            recommendedProducts: viewModel.recommenderProducts,
+                            title: NSLocalizedString("reccomender_title", comment: "")
+                        ).onAppear {
+                            viewModel.loadRecommenderRecommendations(currentProductId: "651")
+                        }
                     }
-                    
-                    ShortRecommendationListView(
-                        recommendedProducts: viewModel.topTrendProducts,
-                        title: NSLocalizedString("top_trend_title", comment: "")
-                    ).onAppear {
-                        viewModel.loadTopTrendRecommendations(currentProductId: "656")
-                    }
-                    
-                    ShortRecommendationListView(
-                        recommendedProducts: viewModel.recommenderProducts,
-                        title: NSLocalizedString("reccomender_title", comment: "")
-                    ).onAppear {
-                        viewModel.loadRecommenderRecommendations(currentProductId: "651")
-                    }
-                    
                 }
                 .padding(.vertical, 16)
                 .frame(maxWidth: .infinity, alignment: .top)
