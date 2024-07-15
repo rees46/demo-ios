@@ -203,6 +203,20 @@
         }
       }
     },
+    "quantity_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quantity:"
+          }
+        }
+      }
+    },
+    "Quantity: %lld" : {
+
+    },
     "rating_reviews" : {
       "extractionState" : "manual",
       "localizations" : {

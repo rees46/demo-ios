@@ -11,7 +11,7 @@ struct CartScreenView: View {
                 let cleanedPriceString = priceString.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
                 
                 if let price = Int(cleanedPriceString) {
-                    return result + price
+                    return result + (price * cartItem.quantity)
                 }
             }
             return result
@@ -47,6 +47,10 @@ struct CartScreenView: View {
                                         .foregroundColor(.black)
                                         .lineLimit(1)
                                         .truncationMode(.tail)
+                                    
+                                    Text("quantity_title \(cartItem.quantity)")
+                                        .font(.system(size: 14))
+                                        .foregroundColor(.black)
                                 }
                                 .frame(maxWidth: .infinity, alignment: .leading)
                                 
@@ -74,6 +78,7 @@ struct CartScreenView: View {
                             Divider()
                         }
                         .listRowInsets(EdgeInsets())
+                        .background(Color.clear)
                         .padding(.horizontal)
                     }
                     
@@ -109,6 +114,44 @@ struct CartScreenView: View {
                         .padding(.horizontal)
                     }
                     .listRowInsets(EdgeInsets())
+                    
+                    HStack(spacing: 16) {
+                        Button(
+                            action: {
+                                navigationManager.navigateTo(screen: AnyView(MainScreenView()), selectedTab: .main)
+                            }
+                        ) {
+                            Text("continue_button")
+                                .font(.system(size: 16))
+                                .foregroundColor(.black)
+                                .padding()
+                                .frame(maxWidth: .infinity)
+                                .background(Color.white)
+                                .cornerRadius(10)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 10)
+                                        .stroke(Color.black, lineWidth: 1)
+                                )
+                        }
+                        
+                        Button(
+                            action: {
+                                // TODO Make purchase
+                            }
+                        ) {
+                            Text("checkout_button")
+                                .font(.system(size: 16))
+                                .foregroundColor(.white)
+                                .padding()
+                                .frame(maxWidth: .infinity)
+                                .background(Color.black)
+                                .cornerRadius(10)
+                        }
+                    }
+                    .padding(.horizontal)
+                    .padding(.vertical, 20)
+                    .listRowInsets(EdgeInsets())
+                    .background(Color.clear)
                 }
                 .listStyle(PlainListStyle())
                 .navigationBarTitle("cart_tab_title")
@@ -119,3 +162,4 @@ struct CartScreenView: View {
         }
     }
 }
+
