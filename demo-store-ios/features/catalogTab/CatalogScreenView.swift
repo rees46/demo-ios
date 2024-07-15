@@ -6,31 +6,44 @@ struct CatalogScreenView: View {
     @ObservedObject var viewModel = MainTabViewModel()
     
     @State private var selectedImageIndex = 0
+    @State private var isLoading = true
     @State private var counter = 1
     
     var body: some View {
         NavigationView {
             ScrollView {
                 VStack(alignment: .leading) {
-                    if let product = product {
-                        topSection
-                        
-                        productImagesSection
-                        
-                        productDetailsSection
-                        
-                        priceSection
-                        
-                        actionSection
-                        
+                    if isLoading {
+                        ProgressView()
+                            .progressViewStyle(CircularProgressViewStyle())
+                            .onAppear {
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                                    isLoading = false
+                                }
+                            }
+                            .frame(height: 250)
                     } else {
-                        Text("No product available")
-                            .font(.headline)
-                            .foregroundColor(.black)
-                            .padding()
-                            .frame(height:300)
+                        
+                        if let product = product {
+                            topSection
+                            
+                            productImagesSection
+                            
+                            productDetailsSection
+                            
+                            priceSection
+                            
+                            actionSection
+                            
+                        } else {
+                            Text("No product available")
+                                .font(.headline)
+                                .foregroundColor(.black)
+                                .padding()
+                                .frame(height:300)
+                        }
+                        recomendSection
                     }
-                    recomendSection
                 }
                 .background(Color.white)
             }

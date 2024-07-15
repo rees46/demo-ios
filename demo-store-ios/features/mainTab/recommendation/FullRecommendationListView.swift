@@ -8,8 +8,8 @@ struct FullRecommendationListView: View {
     var title: String
     var body: some View {
         VStack(alignment: .leading) {
-            DetailsToolbarView()
             
+            DetailsToolbarView()
             
             ScrollView {
                 Spacer().frame(height: 20)

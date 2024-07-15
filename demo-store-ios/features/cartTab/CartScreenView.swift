@@ -124,7 +124,7 @@ struct CartItemView: View {
                         .lineLimit(1)
                         .truncationMode(.tail)
                     
-                    Text("quantity_title \(cartItem.quantity)")
+                    Text(String(format: NSLocalizedString("quantity_title", comment: ""), "\(cartItem.quantity)"))
                         .font(.system(size: 14))
                         .foregroundColor(.black)
                 }

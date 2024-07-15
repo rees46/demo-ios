@@ -209,13 +209,10 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Quantity:"
+            "value" : "Quantity: %@"
           }
         }
       }
-    },
-    "quantity_title %lld" : {
-
     },
     "rating_reviews" : {
       "extractionState" : "manual",
