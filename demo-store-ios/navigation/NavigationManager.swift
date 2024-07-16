@@ -7,15 +7,19 @@ class NavigationManager: ObservableObject {
     @Published var currentScreenType: ScreenType = .none
     @Published var selectedTab: ScreenType? = .main
     
+    private var screenHistory: [AnyView] = []
+    
     init() {
-        self.currentScreen = AnyView(HomeScreenView())
+        let homeView = HomeScreenView()
+        self.currentScreen = AnyView(homeView)
         self.currentScreenType = .main
+        self.screenHistory.append(self.currentScreen)
     }
     
     func navigateTo<Content: View>(screen: Content, selectedTab: ScreenType? = .main) {
-        
         self.currentScreen = AnyView(screen)
         self.selectedTab = selectedTab
+        self.screenHistory.append(self.currentScreen)
         
         switch screen {
         case is HomeScreenView:
@@ -44,7 +48,12 @@ class NavigationManager: ObservableObject {
     }
     
     func navigateBack() {
-        // Implement navigation back logic if needed
+        if screenHistory.count > 1 {
+            screenHistory.removeLast()
+            if let previousScreen = screenHistory.last {
+                self.currentScreen = previousScreen
+            }
+        }
     }
 }
 

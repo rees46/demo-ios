@@ -36,6 +36,9 @@ struct SettingsScreenView: View {
             .padding()
             .navigationTitle("settings_tab_title")
             .background(Color.white.edgesIgnoringSafeArea(.all))
+            .onAppear{
+                navigationManager.setToolbarHidden(hidden: false)
+            }
         }
     }
     

@@ -3,6 +3,7 @@ import SwiftUI
 struct CatalogScreenView: View {
     
     var product: RecommendedProduct?
+    @EnvironmentObject var navigationManager: NavigationManager
     @ObservedObject var viewModel = HomeViewModel()
     
     @State private var selectedImageIndex = 0
@@ -53,6 +54,7 @@ struct CatalogScreenView: View {
                 } else {
                     print("DATA is nil")
                 }
+                navigationManager.setToolbarHidden(hidden: false)
             }
         }
     }

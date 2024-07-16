@@ -37,6 +37,12 @@ struct ToolbarView: View {
                         .renderingMode(.template)
                         .frame(width: 30, height: 30)
                         .foregroundColor(.black)
+                        .onTapGesture {
+                            navigationManager.navigateTo(
+                                screen: AnyView(SearchScreenView()),
+                                selectedTab: navigationManager.selectedTab
+                            )
+                        }
                     
                     Image("CartIcon")
                         .resizable()

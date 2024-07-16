@@ -158,7 +158,15 @@ public extension PersonalizationSDK {
         getProductsFromCart(completion: completion)
     }
     
-    func search(query: String, limit: Int? = nil, offset: Int? = nil, categoryLimit: Int? = nil, categories: String? = nil, extended: String? = nil, sortBy: String? = nil, sortDir: String? = nil, locations: String? = nil, brands: String? = nil, filters: [String: Any]? = nil, priceMin: Double? = nil, priceMax: Double? = nil, colors: [String]? = nil, fashionSizes: [String]? = nil, exclude: String? = nil, email: String? = nil, timeOut: Double? = nil, disableClarification: Bool? = nil, completion: @escaping(Result<SearchResponse, SDKError>) -> Void) {
+    func search(
+        query: String,
+        limit: Int? = nil,
+        offset: Int? = nil,
+        categoryLimit: Int? = nil,
+        categories: String? = nil,
+        extended: String? = nil,
+        sortBy: String? = nil,
+        sortDir: String? = nil, locations: String? = nil, brands: String? = nil, filters: [String: Any]? = nil, priceMin: Double? = nil, priceMax: Double? = nil, colors: [String]? = nil, fashionSizes: [String]? = nil, exclude: String? = nil, email: String? = nil, timeOut: Double? = nil, disableClarification: Bool? = nil, completion: @escaping(Result<SearchResponse, SDKError>) -> Void) {
         search(query: query, limit: limit, offset: offset, categoryLimit: categoryLimit, categories: categories, extended: extended, sortBy: sortBy, sortDir: sortDir, locations: locations, brands: brands, filters: filters, priceMin: priceMin, priceMax: priceMax, colors: colors, fashionSizes: fashionSizes, exclude: exclude, email: email, timeOut: timeOut, disableClarification: disableClarification, completion: completion)
     }
     

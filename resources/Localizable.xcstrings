@@ -250,6 +250,20 @@
     "Retry" : {
 
     },
+    "search_history_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your requests history"
+          }
+        }
+      }
+    },
+    "Search..." : {
+
+    },
     "settings_sub_title" : {
       "extractionState" : "manual",
       "localizations" : {
