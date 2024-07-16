@@ -11,6 +11,8 @@ class SearchViewModel: ObservableObject {
     @Published var errorMessage: String?
     @Published var searchHistory: [String] = []
     
+    @Published var totalItemCount: Int = 0
+    
     private var cancellables = Set<AnyCancellable>()
     
     init() {
@@ -58,6 +60,7 @@ class SearchViewModel: ObservableObject {
                 case .success(let response):
                     self?.searchResults = LocalSearchResponse.from(response)
                     self?.updateSearchHistory(query: query)
+                    self?.totalItemCount = self?.searchResults?.productsTotal ?? 0
                 case .failure(let error):
                     self?.errorMessage = error.localizedDescription
                 }

@@ -1,4 +1,6 @@
 import SwiftUI
+import Combine
+import REES46
 
 struct SearchScreenView: View {
     
@@ -85,9 +87,10 @@ struct SearchScreenView: View {
                             urlString: product.imageUrl,
                             width: 48,
                             height: 48,
-                            contentMode: .fill,
+                            contentMode: .fit,
                             showBorder: false
-                        ) .padding(.horizontal)
+                        )
+                        .padding(.horizontal)
                         
                         VStack(alignment: .leading) {
                             Text(product.name)
@@ -102,15 +105,17 @@ struct SearchScreenView: View {
                         }
                         .padding(.leading, 10)
                         
-                        Spacer()
                     }
                     .padding(.vertical, 8)
-                    .onAppear{
-                        print("ITEMS COUNT \(searchResults)")
-                    }
+                    .frame(height: 40)
                 }
                 .listStyle(PlainListStyle())
                 .padding(.horizontal, -20)
+                
+                if searchResults.productsTotal != 0 {
+                    ViewAllButton(count: searchResults.productsTotal)
+                        .padding(.bottom)
+                }
             }
             
             Spacer()
@@ -118,6 +123,34 @@ struct SearchScreenView: View {
         .background(Color.white)
         .onAppear {
             navigationManager.setToolbarHidden(hidden: true)
+        }
+    }
+}
+
+struct ViewAllButton: View {
+    let count: Int
+    
+    var body: some View {
+        Button(action: {
+            // Handle action when button is tapped
+            // For example, navigate to a new view with all search results
+        }) {
+            HStack {
+                Spacer()
+                Text("View all (\(count))")
+                    .foregroundColor(.black)
+                    .font(.system(size: 14))
+                    .padding(.horizontal)
+                Spacer()
+            }
+            .frame(height: 44)
+            .background(Color.white)
+            .cornerRadius(5)
+            .overlay(
+                RoundedRectangle(cornerRadius: 5)
+                    .stroke(Color.gray.opacity(0.5), lineWidth: 1)
+            )
+            .padding([.leading, .trailing])
         }
     }
 }
