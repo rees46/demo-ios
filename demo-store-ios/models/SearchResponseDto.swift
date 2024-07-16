@@ -182,3 +182,40 @@ extension LocalSearchResponse {
         )
     }
 }
+
+extension RecommendedProduct {
+    static func from(localProduct: LocalProduct) -> RecommendedProduct {
+        return RecommendedProduct(
+            id: localProduct.id,
+            barcode: localProduct.barcode,
+            name: localProduct.name,
+            brand: localProduct.brand,
+            model: localProduct.model,
+            description: localProduct.description,
+            imageUrl: localProduct.imageUrl,
+            resizedImageUrl: localProduct.resizedImageUrl,
+            url: localProduct.url,
+            deeplinkIos: localProduct.deeplinkIos,
+            categories: [],
+            locations: [],
+            price: localProduct.price,
+            priceFormatted: localProduct.priceFormatted,
+            priceFull: localProduct.priceFull,
+            priceFullFormatted: localProduct.priceFullFormatted,
+            oldPrice: localProduct.oldPrice,
+            oldPriceFormatted: localProduct.oldPriceFormatted,
+            oldPriceFull: localProduct.oldPriceFull,
+            oldPriceFullFormatted: localProduct.oldPriceFullFormatted,
+            currency: localProduct.currency,
+            salesRate: localProduct.salesRate,
+            discount: localProduct.discount,
+            rating: Int(localProduct.relativeSalesRate),
+            relativeSalesRate: localProduct.relativeSalesRate,
+            paramsRaw: localProduct.params,
+            fashionOriginalSizes: [],
+            fashionSizes: [],
+            fashionColors: [],
+            resizedImages: localProduct.resizedImages
+        )
+    }
+}

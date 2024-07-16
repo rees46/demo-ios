@@ -61,16 +61,14 @@ struct SearchScreenView: View {
                         .foregroundColor(.gray)
                     
                     ForEach(viewModel.searchHistory, id: \.self) { query in
-                        Button(action: {
-                            viewModel.searchText = query
-                        }) {
-                            Text(query)
-                                .font(.system(size: 14))
-                                .padding(.horizontal)
-                                .padding(.vertical, 8)
-                                .foregroundColor(.black)
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                        }
+                        Text(query)
+                            .font(.system(size: 14))
+                            .padding(.horizontal)
+                            .padding(.vertical, 8)
+                            .foregroundColor(.black)
+                            .onTapGesture {
+                                viewModel.searchText = query
+                            }
                     }
                     
                     Divider().background(Color.gray)
@@ -127,16 +125,16 @@ struct SearchScreenView: View {
                 .padding(.horizontal, -20)
                 
                 if searchResults.productsTotal != 0 {
-                    ViewAllButton(count: searchResults.productsTotal){
+                    ViewAllButton(count: searchResults.productsTotal) {
+                        let recommendedProducts = searchResults.products.map { RecommendedProduct.from(localProduct: $0) }
                         navigationManager.navigateTo(
                             screen: AnyView(
-                                SearchResultView(
-                                    
-                                )
+                                SearchResultView(recommendedProducts: recommendedProducts)
                             ),
                             selectedTab: nil
                         )
-                    }.padding(.bottom)
+                    }
+                    .padding(.bottom)
                 }
             }
             
@@ -150,15 +148,11 @@ struct SearchScreenView: View {
 }
 
 struct ViewAllButton: View {
-    
     let count: Int
     let action: () -> Void
     
     var body: some View {
-        Button(action: {
-            // Handle action when button is tapped
-            // For example, navigate to a new view with all search results
-        }) {
+        Button(action: action) {
             HStack {
                 Spacer()
                 Text(String(format: NSLocalizedString("view_all_button", comment: ""), "\(count)"))
