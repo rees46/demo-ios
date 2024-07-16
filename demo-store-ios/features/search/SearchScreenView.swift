@@ -11,7 +11,7 @@ struct SearchScreenView: View {
         VStack(alignment: .leading) {
             HStack {
                 ZStack {
-                    TextField("Search...", text: $viewModel.searchText)
+                    TextField("search_hint", text: $viewModel.searchText)
                         .padding(.leading, 10)
                         .padding(.trailing, 40)
                         .frame(height: 40)
@@ -38,9 +38,11 @@ struct SearchScreenView: View {
                     }
                 }
                 
-                Button(action: {
-                    navigationManager.navigateBack()
-                }) {
+                Button(
+                    action: {
+                        navigationManager.navigateBack()
+                    }
+                ) {
                     Image(systemName: "xmark")
                         .foregroundColor(.black)
                 }
@@ -59,11 +61,16 @@ struct SearchScreenView: View {
                         .foregroundColor(.gray)
                     
                     ForEach(viewModel.searchHistory, id: \.self) { query in
-                        Text(query)
-                            .font(.system(size: 14))
-                            .padding(.horizontal)
-                            .padding(.vertical, 8)
-                            .foregroundColor(.black)
+                        Button(action: {
+                            viewModel.searchText = query
+                        }) {
+                            Text(query)
+                                .font(.system(size: 14))
+                                .padding(.horizontal)
+                                .padding(.vertical, 8)
+                                .foregroundColor(.black)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                        }
                     }
                     
                     Divider().background(Color.gray)
@@ -72,8 +79,15 @@ struct SearchScreenView: View {
             
             // Search results or loading/error message
             if viewModel.isLoading {
-                ProgressView()
-                    .padding()
+                GeometryReader { geometry in
+                    VStack {
+                        Spacer()
+                        ProgressView()
+                            .frame(width: 36, height: 36)
+                        Spacer()
+                    }
+                    .frame(width: geometry.size.width, height: geometry.size.height)
+                }
             } else if let errorMessage = viewModel.errorMessage {
                 Text(errorMessage)
                     .foregroundColor(.red)
@@ -137,7 +151,7 @@ struct ViewAllButton: View {
         }) {
             HStack {
                 Spacer()
-                Text("View all (\(count))")
+                Text(String(format: NSLocalizedString("view_all_button", comment: ""), "\(count)"))
                     .foregroundColor(.black)
                     .font(.system(size: 14))
                     .padding(.horizontal)

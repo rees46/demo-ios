@@ -222,7 +222,7 @@ struct NavigationButtonsView: View {
             HStack(spacing: 16) {
                 Button(
                     action: {
-                        navigationManager.navigateTo(screen: AnyView(HomeScreenView()), selectedTab: .main)
+                        navigationManager.navigateBack()
                     }
                 ) {
                     Text("continue_button")

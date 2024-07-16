@@ -250,6 +250,17 @@
     "Retry" : {
 
     },
+    "search_hint" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Search..."
+          }
+        }
+      }
+    },
     "search_history_title" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -260,9 +271,6 @@
           }
         }
       }
-    },
-    "Search..." : {
-
     },
     "settings_sub_title" : {
       "extractionState" : "manual",
@@ -391,8 +399,16 @@
         }
       }
     },
-    "View all (%lld)" : {
-
+    "view_all_button" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "View all %@"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"
