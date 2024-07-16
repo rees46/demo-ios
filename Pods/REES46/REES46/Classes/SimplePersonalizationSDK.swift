@@ -249,15 +249,14 @@ class SimplePersonalizationSDK: PersonalizationSDK {
     func search(query: String, limit: Int?, offset: Int?, categoryLimit: Int?, categories: String?, extended: String?, sortBy: String?, sortDir: String?, locations: String?, brands: String?, filters: [String: Any]?, priceMin: Double?, priceMax: Double?, colors: [String]?, fashionSizes: [String]?, exclude: String?, email: String?, timeOut: Double?, disableClarification: Bool?, completion: @escaping (Result<SearchResponse, SDKError>) -> Void) {
         
         sessionQueue.addOperation {
+            
             let path = "search"
             var params: [String: String] = [
-                Constants.shopId: self.shopId,
-                Constants.deviceId: self.deviceId,
-                Constants.userSeance: self.userSeance,
-                Constants.segment: Constants.type,
-                Constants.segment: self.segment,
-                Constants.type: "full_search",
-                Constants.searchQuery: query,
+                "shop_id": self.shopId,
+                "did": self.deviceId,
+                "sid": self.userSeance,
+                "type": "full_search",
+                "search_query": query,
             ]
             
             if let limit = limit {
