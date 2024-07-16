@@ -26,7 +26,7 @@ struct SettingsScreenView: View {
                     
                 case .error(let errorMessage):
                     SettingsErrorScreenView(errorMessage: errorMessage) {
-                        navigationManager.navigateTo(screen: AnyView(MainScreenView()))
+                        navigationManager.navigateTo(screen: AnyView(HomeScreenView()))
                     }
                     
                 case .data:

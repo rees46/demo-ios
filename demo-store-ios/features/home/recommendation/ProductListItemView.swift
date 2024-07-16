@@ -3,7 +3,7 @@ import SwiftUI
 struct ProductListItemView: View {
     
     @EnvironmentObject var navigationManager: NavigationManager
-    @ObservedObject var viewModel = MainTabViewModel()
+    @ObservedObject var viewModel = HomeViewModel()
     
     var product: RecommendedProduct
     var containerWidth: CGFloat

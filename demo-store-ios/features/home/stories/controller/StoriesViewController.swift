@@ -6,7 +6,7 @@ class StoriesViewController: UIViewController {
     
     var sdk: PersonalizationSDK?
     var storiesView: StoriesView?
-    var storiesCode:String = "40e9f2c0b33aa016dba02b5b1024bd36"
+    var storiesCode:String = "fcaa8d3168ab7d7346e4b4f1a1c92214"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +35,7 @@ class StoriesViewController: UIViewController {
 
 struct StoriesViewControllerRepresentable: UIViewControllerRepresentable {
     
-    @EnvironmentObject var viewModel: MainTabViewModel
+    @EnvironmentObject var viewModel: HomeViewModel
     
     func makeUIViewController(context: Context) -> StoriesViewController {
         let viewController = StoriesViewController()

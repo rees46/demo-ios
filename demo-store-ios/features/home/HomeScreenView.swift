@@ -1,8 +1,8 @@
 import SwiftUI
 
-struct MainScreenView: View {
+struct HomeScreenView: View {
     @EnvironmentObject var navigationManager: NavigationManager
-    @ObservedObject var viewModel = MainTabViewModel()
+    @ObservedObject var viewModel = HomeViewModel()
     
     @State private var isLoading = true
     
@@ -23,7 +23,7 @@ struct MainScreenView: View {
                     } else {
                         MainDiscoverView()
                         
-                        MainStoriesContainerView()
+                        HomeStoriesContainerView()
                         
                         ShortRecommendationListView(
                             recommendedProducts: viewModel.arrivalsProducts,
@@ -59,9 +59,9 @@ struct MainScreenView: View {
     }
 }
 
-struct MainScreenView_Previews: PreviewProvider {
+struct HomeScreenView_Previews: PreviewProvider {
     static var previews: some View {
-        MainScreenView()
+        HomeScreenView()
             .environmentObject(NavigationManager())
     }
 }

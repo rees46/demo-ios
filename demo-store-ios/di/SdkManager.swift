@@ -35,10 +35,12 @@ class SDKManager {
                 print("SDK Initialization succeeded")
                 if let sessionId = self.sdk?.getSession() {
                     print("SDK Session ID: \(sessionId)")
+//                    self.suggestProducts()
                 } else {
                     print("Failed to retrieve SDK session ID")
                 }
             }
         }
     }
+
 }

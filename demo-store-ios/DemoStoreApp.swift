@@ -3,7 +3,7 @@ import SwiftUI
 @main
 struct DemoStoreApp: App {
     
-    @StateObject private var sdkViewModel = MainTabViewModel()
+    @StateObject private var sdkViewModel = HomeViewModel()
     
     
     @State private var showSplash = true

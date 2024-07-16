@@ -3,7 +3,7 @@ import SwiftUI
 struct CatalogScreenView: View {
     
     var product: RecommendedProduct?
-    @ObservedObject var viewModel = MainTabViewModel()
+    @ObservedObject var viewModel = HomeViewModel()
     
     @State private var selectedImageIndex = 0
     @State private var isLoading = true

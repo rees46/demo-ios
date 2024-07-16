@@ -3,11 +3,12 @@ import SwiftUI
 class NavigationManager: ObservableObject {
     @Published var currentScreen: AnyView
     @Published var isToolbarHidden: Bool = false
+    @Published var isBottomBarHidden: Bool = false
     @Published var currentScreenType: ScreenType = .none
     @Published var selectedTab: ScreenType? = .main
     
     init() {
-        self.currentScreen = AnyView(MainScreenView())
+        self.currentScreen = AnyView(HomeScreenView())
         self.currentScreenType = .main
     }
     
@@ -17,7 +18,7 @@ class NavigationManager: ObservableObject {
         self.selectedTab = selectedTab
         
         switch screen {
-        case is MainScreenView:
+        case is HomeScreenView:
             self.currentScreenType = .main
         case is CatalogScreenView:
             self.currentScreenType = .catalog
@@ -32,6 +33,10 @@ class NavigationManager: ObservableObject {
     
     func setToolbarHidden(hidden: Bool) {
         self.isToolbarHidden = hidden
+    }
+    
+    func setBottomBarHidden(hidden: Bool) {
+        self.isBottomBarHidden = hidden
     }
     
     func resetSelection() {

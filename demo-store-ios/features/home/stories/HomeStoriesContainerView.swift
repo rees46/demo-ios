@@ -1,7 +1,7 @@
 import SwiftUI
 import UIKit
 
-struct MainStoriesContainerView: View {
+struct HomeStoriesContainerView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
             Text("Stories")
@@ -13,12 +13,12 @@ struct MainStoriesContainerView: View {
             StoriesViewControllerRepresentable()
                 .frame(height: 200)
         }
-        .environmentObject(MainTabViewModel())
+        .environmentObject(HomeViewModel())
     }
 }
 
-struct MainStoriesContainerView_Previews: PreviewProvider {
+struct HomeStoriesContainerView_Previews: PreviewProvider {
     static var previews: some View {
-        MainStoriesContainerView()
+        HomeStoriesContainerView()
     }
 }
