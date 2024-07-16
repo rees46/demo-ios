@@ -127,8 +127,16 @@ struct SearchScreenView: View {
                 .padding(.horizontal, -20)
                 
                 if searchResults.productsTotal != 0 {
-                    ViewAllButton(count: searchResults.productsTotal)
-                        .padding(.bottom)
+                    ViewAllButton(count: searchResults.productsTotal){
+                        navigationManager.navigateTo(
+                            screen: AnyView(
+                                SearchResultView(
+                                    
+                                )
+                            ),
+                            selectedTab: nil
+                        )
+                    }.padding(.bottom)
                 }
             }
             
@@ -142,7 +150,9 @@ struct SearchScreenView: View {
 }
 
 struct ViewAllButton: View {
+    
     let count: Int
+    let action: () -> Void
     
     var body: some View {
         Button(action: {
