@@ -25,7 +25,7 @@ struct CatalogScreenView: View {
                             .frame(height: 250)
                     } else {
                         
-                        if let product = product {
+                        if product != nil {
                             topSection
                             
                             productImagesSection

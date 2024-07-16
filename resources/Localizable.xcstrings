@@ -250,6 +250,27 @@
     "Retry" : {
 
     },
+    "search_count_result" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : " %@ products"
+          }
+        }
+      }
+    },
+    "search_found_title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "found"
+          }
+        }
+      }
+    },
     "search_hint" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -268,6 +289,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Your requests history"
+          }
+        }
+      }
+    },
+    "search_result_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Search Results"
           }
         }
       }

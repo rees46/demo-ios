@@ -29,8 +29,11 @@ struct SectionHeaderView: View {
 
 struct SectionHeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        SectionHeaderView(title: "Section Title",  buttonAction: {
-            print("Show All tapped")
-        })
+        SectionHeaderView(
+            title: "Section Title",
+            buttonAction: {
+                print("Show All tapped")
+            }
+        )
     }
 }

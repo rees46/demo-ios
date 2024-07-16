@@ -27,9 +27,11 @@ struct SearchScreenView: View {
                     if !viewModel.searchText.isEmpty {
                         HStack {
                             Spacer()
-                            Button(action: {
-                                viewModel.clearSearchText()
-                            }) {
+                            Button(
+                                action: {
+                                    viewModel.clearSearchText()
+                                }
+                            ) {
                                 Image(systemName: "xmark.circle.fill")
                                     .foregroundColor(.gray)
                             }
@@ -129,7 +131,10 @@ struct SearchScreenView: View {
                         let recommendedProducts = searchResults.products.map { RecommendedProduct.from(localProduct: $0) }
                         navigationManager.navigateTo(
                             screen: AnyView(
-                                SearchResultView(recommendedProducts: recommendedProducts)
+                                SearchResultView(
+                                    recommendedProducts: recommendedProducts,
+                                    count: searchResults.productsTotal
+                                )
                             ),
                             selectedTab: nil
                         )
