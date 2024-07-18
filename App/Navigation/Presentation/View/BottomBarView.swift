@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct BottomBarView: View {
+    
     @EnvironmentObject var navigationManager: NavigationManager
     @State private var selectedTab: ScreenType? = .main
     

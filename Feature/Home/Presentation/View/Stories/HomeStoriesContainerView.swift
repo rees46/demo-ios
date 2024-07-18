@@ -2,9 +2,10 @@ import SwiftUI
 import UIKit
 
 struct HomeStoriesContainerView: View {
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
-            Text("Stories")
+            Text("stories_title")
                 .font(.system(size: 24))
                 .foregroundColor(.black)
                 .padding(.horizontal)

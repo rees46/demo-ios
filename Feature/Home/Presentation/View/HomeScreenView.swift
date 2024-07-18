@@ -2,9 +2,13 @@ import SwiftUI
 
 struct HomeScreenView: View {
     @EnvironmentObject var navigationManager: NavigationManager
-    @ObservedObject var viewModel = HomeViewModel()
+    @ObservedObject var viewModel: HomeViewModel
     
     @State private var isLoading = true
+    
+    init(viewModel: HomeViewModel = HomeResolver.shared.resolve()) {
+        self.viewModel = viewModel
+    }
     
     var body: some View {
         NavigationView {

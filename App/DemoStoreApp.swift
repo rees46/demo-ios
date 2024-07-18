@@ -2,10 +2,7 @@ import SwiftUI
 
 @main
 struct DemoStoreApp: App {
-    
-    @StateObject private var sdkViewModel = HomeViewModel()
-    
-    
+
     @State private var showSplash = true
     
     var body: some Scene {
@@ -22,7 +19,6 @@ struct DemoStoreApp: App {
                     }
             } else {
                 ContentView()
-                    .environmentObject(sdkViewModel)
             }
         }
     }

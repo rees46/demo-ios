@@ -13,11 +13,11 @@ class HomeViewModel: ObservableObject {
     
     private let cartRepository: CartRepository
     private let getRecommendationsUseCase: GetRecommendationsUseCase
-    private let sdkManager: SDKManaging
+    let sdkManager: SDKManaging
     
-    init(sdkManager: SDKManaging = SDKManager.shared,
-         cartRepository: CartRepository = CartRepository.shared,
-         getRecommendationsUseCase: GetRecommendationsUseCase = GetRecommendationsUseCase()) {
+    init(sdkManager: SDKManaging = HomeResolver.shared.resolve(),
+         cartRepository: CartRepository = HomeResolver.shared.resolve(),
+         getRecommendationsUseCase: GetRecommendationsUseCase = HomeResolver.shared.resolve()) {
         self.sdkManager = sdkManager
         self.cartRepository = cartRepository
         self.getRecommendationsUseCase = getRecommendationsUseCase

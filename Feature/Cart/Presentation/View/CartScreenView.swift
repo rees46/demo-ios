@@ -1,11 +1,14 @@
 import SwiftUI
 
 struct CartScreenView: View {
-    
     @EnvironmentObject var navigationManager: NavigationManager
-    @ObservedObject var cartViewModel = CartViewModel()
+    @ObservedObject var cartViewModel: CartViewModel
     
     @State private var isLoading = true
+    
+    init(cartViewModel: CartViewModel = CartResolver.shared.resolveCartViewModel()) {
+        self.cartViewModel = cartViewModel
+    }
     
     var totalPrice: Int {
         let total = cartViewModel.cartItems.reduce(0) { (result, cartItem) in
@@ -52,7 +55,7 @@ struct CartScreenView: View {
                         )
                     }
                     
-                    if !isLoading{
+                    if !isLoading {
                         RecommendationSection(recommendedProducts: cartViewModel.recommenderProducts)
                     }
                 }
@@ -76,86 +79,6 @@ struct EmptyCartView: View {
             Spacer()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-    }
-}
-
-struct CartListView: View {
-    var cartItems: [ProductCartItem]
-    var removeFromCart: (String) -> Void
-    
-    var body: some View {
-        List {
-            ForEach(cartItems) { cartItem in
-                CartItemView(
-                    cartItem: cartItem,
-                    removeFromCart: {
-                        removeFromCart(cartItem.product.id)
-                    }
-                )
-            }
-        }
-        .listStyle(PlainListStyle())
-    }
-}
-
-struct CartItemView: View {
-    var cartItem: ProductCartItem
-    var removeFromCart: () -> Void
-    
-    var body: some View {
-        VStack(spacing: 0) {
-            HStack(spacing: 16) {
-                RemoteImageView(
-                    urlString: cartItem.product.imageUrl,
-                    width: 64,
-                    height: 64,
-                    contentMode: .fit,
-                    showBorder: false
-                )
-                
-                VStack(alignment: .leading, spacing: 4) {
-                    Text(cartItem.product.brand)
-                        .font(.system(size: 12))
-                        .foregroundColor(.gray)
-                    
-                    Text(cartItem.product.name)
-                        .font(.system(size: 16))
-                        .foregroundColor(.black)
-                        .lineLimit(1)
-                        .truncationMode(.tail)
-                    
-                    Text(String(format: NSLocalizedString("quantity_title", comment: ""), "\(cartItem.quantity)"))
-                        .font(.system(size: 14))
-                        .foregroundColor(.black)
-                }
-                .frame(maxWidth: .infinity, alignment: .leading)
-                
-                Text(cartItem.product.priceFormatted ?? "")
-                    .font(.system(size: 16))
-                    .foregroundColor(.black)
-                    .padding(.trailing, 12)
-                
-                Button(
-                    action: {
-                        removeFromCart()
-                    }
-                ) {
-                    Image(systemName: "xmark")
-                        .foregroundColor(.white)
-                        .frame(width: 24, height: 24)
-                        .background(Color.gray)
-                        .clipShape(Circle())
-                }
-                .buttonStyle(BorderlessButtonStyle())
-            }
-            .padding(.vertical, 8)
-            .background(Color.white)
-            
-            Divider()
-        }
-        .listRowInsets(EdgeInsets())
-        .background(Color.clear)
-        .padding(.horizontal)
     }
 }
 
