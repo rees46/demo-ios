@@ -9,31 +9,38 @@ class HomeViewModel: ObservableObject {
     @Published var arrivalsProducts: [RecommendedProduct] = []
     @Published var topTrendProducts: [RecommendedProduct] = []
     @Published var recommenderProducts: [RecommendedProduct] = []
-    let sdkManager = SDKManager.shared
-    
     @Published var isLoading = true
     
-    private let cartRepository = CartRepository.shared
-    private let getRecommendationsUseCase = GetRecommendationsUseCase()
+    private let cartRepository: CartRepository
+    private let getRecommendationsUseCase: GetRecommendationsUseCase
+    private let sdkManager: SDKManaging
+    
+    init(sdkManager: SDKManaging = SDKManager.shared,
+         cartRepository: CartRepository = CartRepository.shared,
+         getRecommendationsUseCase: GetRecommendationsUseCase = GetRecommendationsUseCase()) {
+        self.sdkManager = sdkManager
+        self.cartRepository = cartRepository
+        self.getRecommendationsUseCase = getRecommendationsUseCase
+    }
     
     func loadArrivalsRecommendations(currentProductId: String) {
-        getRecommendationsUseCase.execute(blockId: blockId, currentProductId: currentProductId) { products in
-            self.arrivalsProducts = products
-            self.isLoading = false
+        getRecommendationsUseCase.execute(blockId: blockId, currentProductId: currentProductId) { [weak self] products in
+            self?.arrivalsProducts = products
+            self?.isLoading = false
         }
     }
     
     func loadTopTrendRecommendations(currentProductId: String) {
-        getRecommendationsUseCase.execute(blockId: blockId, currentProductId: currentProductId) { products in
-            self.topTrendProducts = products
-            self.isLoading = false
+        getRecommendationsUseCase.execute(blockId: blockId, currentProductId: currentProductId) { [weak self] products in
+            self?.topTrendProducts = products
+            self?.isLoading = false
         }
     }
     
     func loadRecommenderRecommendations(currentProductId: String) {
-        getRecommendationsUseCase.execute(blockId: blockId, currentProductId: currentProductId) { products in
-            self.recommenderProducts = products
-            self.isLoading = false
+        getRecommendationsUseCase.execute(blockId: blockId, currentProductId: currentProductId) { [weak self] products in
+            self?.recommenderProducts = products
+            self?.isLoading = false
         }
     }
     

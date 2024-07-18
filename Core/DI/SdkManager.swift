@@ -1,6 +1,10 @@
 import REES46
 
-class SDKManager {
+protocol SDKManaging {
+    var sdk: PersonalizationSDK? { get }
+}
+
+class SDKManager: SDKManaging {
     static let shared = SDKManager()
     
     var sdk: PersonalizationSDK?
@@ -41,5 +45,4 @@ class SDKManager {
             }
         }
     }
-
 }

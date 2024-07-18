@@ -3,7 +3,8 @@ import Combine
 import REES46
 
 class SearchViewModel: ObservableObject {
-    let sdkManager = SDKManager.shared
+    
+    private let sdkManager: SDKManaging
     
     @Published var searchText: String = ""
     @Published var searchResults: LocalSearchResponse? = nil
@@ -15,7 +16,9 @@ class SearchViewModel: ObservableObject {
     
     private var cancellables = Set<AnyCancellable>()
     
-    init() {
+    init(sdkManager: SDKManaging = SDKManager.shared) {
+        self.sdkManager = sdkManager
+        
         $searchText
             .debounce(for: .milliseconds(300), scheduler: RunLoop.main)
             .sink { [weak self] searchText in
@@ -89,5 +92,4 @@ class SearchViewModel: ObservableObject {
     func clearSearchText() {
         searchText = ""
     }
-    
 }
