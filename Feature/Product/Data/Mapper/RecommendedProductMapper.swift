@@ -17,7 +17,7 @@ class RecommendedProductMapper {
                 url: recommended.url,
                 deeplinkIos: recommended.deeplinkIos,
                 categories: recommended.categories.map { category in
-                    Category(
+                    ProductDto(
                         id: category.id,
                         name: category.name,
                         url: category.url,

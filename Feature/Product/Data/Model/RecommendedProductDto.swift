@@ -12,7 +12,7 @@ struct RecommendedProduct {
     let resizedImageUrl: String
     let url: String
     let deeplinkIos: String
-    let categories: [Category]
+    let categories: [ProductDto]
     let locations: [REES46.Location]
     let price: Double
     let priceFormatted: String?

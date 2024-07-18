@@ -1,6 +1,6 @@
 import Foundation
 
-struct Category {
+struct ProductDto {
     let id: String
     let name: String
     let url: String?
