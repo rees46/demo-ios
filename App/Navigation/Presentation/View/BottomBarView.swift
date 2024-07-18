@@ -22,7 +22,7 @@ struct BottomBarView: View {
                     TabBarButton(image: "CatalogTab", isSelected: selectedTab == .catalog)
                         .onTapGesture {
                             selectedTab = .catalog
-                            navigationManager.navigateTo(screen: AnyView(CatalogScreenView()), selectedTab: .catalog)
+                            navigationManager.navigateTo(screen: AnyView(ProductsScreenView()), selectedTab: .catalog)
                         }
                     
                     Spacer()

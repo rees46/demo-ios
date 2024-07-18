@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct CatalogScreenView: View {
+struct ProductsScreenView: View {
     
     var product: RecommendedProduct?
     @EnvironmentObject var navigationManager: NavigationManager

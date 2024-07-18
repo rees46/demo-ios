@@ -24,7 +24,7 @@ class NavigationManager: ObservableObject {
         switch screen {
         case is HomeScreenView:
             self.currentScreenType = .main
-        case is CatalogScreenView:
+        case is ProductsScreenView:
             self.currentScreenType = .catalog
         case is CartScreenView:
             self.currentScreenType = .cart

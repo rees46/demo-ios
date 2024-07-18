@@ -72,7 +72,7 @@ struct ProductListItemView: View {
         .onTapGesture {
             navigationManager.navigateTo(
                 screen: AnyView(
-                    CatalogScreenView(
+                    ProductsScreenView(
                         product: product
                     )
                 ),
