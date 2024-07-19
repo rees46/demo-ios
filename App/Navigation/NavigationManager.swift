@@ -5,7 +5,7 @@ class NavigationManager: ObservableObject {
     @Published var isToolbarHidden: Bool = false
     @Published var isBottomBarHidden: Bool = false
     @Published var currentScreenType: ScreenType = .none
-    @Published var selectedTab: ScreenType? = .main
+    @Published var selectedTab: ScreenType? = .home
     
     private var screenHistory: [AnyView] = []
     
@@ -17,10 +17,11 @@ class NavigationManager: ObservableObject {
         self.screenHistory.append(self.currentScreen)
     }
     
-    func navigateTo<Content: View & VisitableScreen>(screen: Content, selectedTab: ScreenType? = .main) {
-        self.currentScreen = AnyView(screen)
+    func navigateTo<Content: View & VisitableScreen>(screen: Content, selectedTab: ScreenType? = .home) {
+        let anyView = AnyView(screen)
+        self.currentScreen = anyView
         self.selectedTab = selectedTab
-        self.screenHistory.append(self.currentScreen)
+        self.screenHistory.append(anyView)
         
         let visitor = ScreenTypeVisitor()
         screen.accept(visitor: visitor)

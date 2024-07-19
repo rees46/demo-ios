@@ -9,11 +9,9 @@ struct ShortRecommendationListView: View {
         VStack(alignment: .leading) {
             SectionHeaderView(title: title) {
                 navigationManager.navigateTo(
-                    screen: AnyView(
-                        FullRecommendationListView(
-                            recommendedProducts: recommendedProducts,
-                            title: NSLocalizedString("reccomender_title", comment: "")
-                        )
+                    screen: FullRecommendationListView(
+                        recommendedProducts: recommendedProducts,
+                        title: NSLocalizedString("reccomender_title", comment: "")
                     )
                 )
             }

@@ -13,13 +13,13 @@ class ScreenTypeVisitor: ScreenVisitor {
     
     func visit(_ screen: VisitableScreen) {
         switch screen {
-        case let homeScreen as HomeScreenView:
-            screenType = .main
-        case let productsScreen as ProductsScreenView:
-            screenType = .productsScreen
-        case let cartScreen as CartScreenView:
+        case _ as HomeScreenView:
+            screenType = .home
+        case _ as ProductsScreenView:
+            screenType = .products
+        case _ as CartScreenView:
             screenType = .cart
-        case let settingsScreen as SettingsScreenView:
+        case _ as SettingsScreenView:
             screenType = .settings
         default:
             screenType = .none

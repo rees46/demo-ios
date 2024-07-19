@@ -1,6 +1,10 @@
 import SwiftUI
 
-struct FullRecommendationListView: View {
+struct FullRecommendationListView: View, VisitableScreen {
+    
+    func accept(visitor: ScreenVisitor) {
+         visitor.visit(self)
+     }
     
     @EnvironmentObject var navigationManager: NavigationManager
     
@@ -29,7 +33,7 @@ struct FullRecommendationListView: View {
         }
         .background(Color.white)
         .onAppear{
-            navigationManager.setToolbarHidden(hidden: true)
+            navigationManager.setVisibility(hideToolbar: true, hideBottomBar: false)
         }
     }
 }

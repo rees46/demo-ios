@@ -36,7 +36,7 @@ struct DetailsToolbarView: View {
                         .foregroundColor(.white)
                         .onTapGesture {
                             navigationManager.navigateTo(
-                                screen: AnyView(SearchScreenView()),
+                                screen: SearchScreenView(),
                                 selectedTab: navigationManager.selectedTab
                             )
                         }
@@ -49,7 +49,7 @@ struct DetailsToolbarView: View {
                         .padding(.trailing, 12)
                         .onTapGesture {
                             navigationManager.navigateTo(
-                                screen: AnyView(CartScreenView()),
+                                screen: CartScreenView(),
                                 selectedTab: .cart
                             )
                         }

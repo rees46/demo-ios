@@ -2,8 +2,8 @@
 import Foundation
 
 enum ScreenType {
-    case main
-    case productsScreen
+    case home
+    case products
     case cart
     case settings
     case none
