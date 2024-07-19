@@ -2,7 +2,8 @@ import SwiftUI
 import REES46
 
 struct ContentView: View {
-    @StateObject var navigationManager = NavigationManager()
+    
+    @StateObject var navigationManager = NavigationManager(initialScreen: HomeScreenView())
  
     var body: some View {
         ZStack {

@@ -1,9 +1,13 @@
 import SwiftUI
 
-struct CartScreenView: View {
+struct CartScreenView: View, VisitableScreen {
+    
+    func accept(visitor: ScreenVisitor) {
+         visitor.visit(self)
+     }
+    
     @EnvironmentObject var navigationManager: NavigationManager
     @ObservedObject var cartViewModel: CartViewModel
-    
     @State private var isLoading = true
     
     init(cartViewModel: CartViewModel = CartResolver.shared.resolveCartViewModel()) {
@@ -61,7 +65,7 @@ struct CartScreenView: View {
                 }
                 .navigationBarTitle("cart_tab_title")
                 .onAppear {
-                    navigationManager.setToolbarHidden(hidden: false)
+                    navigationManager.setVisibility(hideToolbar: false, hideBottomBar: false)
                     cartViewModel.loadRecommenderRecommendations(currentProductId: "665")
                 }
             }

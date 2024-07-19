@@ -1,10 +1,6 @@
 import SwiftUI
 import Combine
 
-protocol ToolbarConfigurable {
-    var isToolbarHidden: Bool { get }
-}
-
 struct ToolbarView: View {
     @EnvironmentObject var navigationManager: NavigationManager
     
@@ -39,7 +35,7 @@ struct ToolbarView: View {
                         .foregroundColor(.black)
                         .onTapGesture {
                             navigationManager.navigateTo(
-                                screen: AnyView(SearchScreenView()),
+                                screen: SearchScreenView(),
                                 selectedTab: navigationManager.selectedTab
                             )
                         }
@@ -52,7 +48,7 @@ struct ToolbarView: View {
                         .padding(.trailing, 12)
                         .onTapGesture {
                             navigationManager.navigateTo(
-                                screen: AnyView(CartScreenView()),
+                                screen: CartScreenView(),
                                 selectedTab: .cart
                             )
                         }

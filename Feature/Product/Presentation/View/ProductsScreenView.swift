@@ -1,10 +1,15 @@
 import SwiftUI
 
-struct ProductsScreenView: View {
+struct ProductsScreenView: View, VisitableScreen {
+    
+    func accept(visitor: ScreenVisitor) {
+         visitor.visit(self)
+     }
     
     var product: RecommendedProduct?
     @EnvironmentObject var navigationManager: NavigationManager
     @ObservedObject var viewModel = HomeViewModel()
+  
     
     @State private var selectedImageIndex = 0
     @State private var isLoading = true
@@ -54,7 +59,7 @@ struct ProductsScreenView: View {
                 } else {
                     print("DATA is nil")
                 }
-                navigationManager.setToolbarHidden(hidden: false)
+                navigationManager.setVisibility(hideToolbar: false, hideBottomBar: false)
             }
         }
     }

@@ -1,11 +1,16 @@
 import SwiftUI
 
-struct HomeScreenView: View {
+struct HomeScreenView: View, VisitableScreen {
+    
+    func accept(visitor: ScreenVisitor) {
+         visitor.visit(self)
+     }
+    
     @EnvironmentObject var navigationManager: NavigationManager
     @ObservedObject var viewModel: HomeViewModel
     
     @State private var isLoading = true
-    
+        
     init(viewModel: HomeViewModel = HomeResolver.shared.resolve()) {
         self.viewModel = viewModel
     }
@@ -18,7 +23,6 @@ struct HomeScreenView: View {
                         ProgressView()
                             .progressViewStyle(CircularProgressViewStyle())
                             .onAppear {
-                                // Simulate loading delay
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                                     isLoading = false
                                 }
@@ -26,9 +30,7 @@ struct HomeScreenView: View {
                             .frame(height: 250)
                     } else {
                         MainDiscoverView()
-                        
                         HomeStoriesContainerView()
-                        
                         ShortRecommendationListView(
                             recommendedProducts: viewModel.arrivalsProducts,
                             title: NSLocalizedString("arrivals_title", comment: "")
@@ -36,14 +38,12 @@ struct HomeScreenView: View {
                         .onAppear {
                             viewModel.loadArrivalsRecommendations(currentProductId: "670")
                         }
-                        
                         ShortRecommendationListView(
                             recommendedProducts: viewModel.topTrendProducts,
                             title: NSLocalizedString("top_trend_title", comment: "")
                         ).onAppear {
                             viewModel.loadTopTrendRecommendations(currentProductId: "656")
                         }
-                        
                         ShortRecommendationListView(
                             recommendedProducts: viewModel.recommenderProducts,
                             title: NSLocalizedString("reccomender_title", comment: "")
@@ -57,15 +57,8 @@ struct HomeScreenView: View {
             }
             .navigationTitle("main_tab_title")
             .onAppear {
-                navigationManager.setToolbarHidden(hidden: false)
+                navigationManager.setVisibility(hideToolbar: false, hideBottomBar: false)
             }
         }
-    }
-}
-
-struct HomeScreenView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeScreenView()
-            .environmentObject(NavigationManager())
     }
 }

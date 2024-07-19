@@ -6,7 +6,11 @@ enum ViewState {
     case data
 }
 
-struct SettingsScreenView: View {
+struct SettingsScreenView: View, VisitableScreen {
+    
+    func accept(visitor: ScreenVisitor) {
+         visitor.visit(self)
+     }
     
     @EnvironmentObject var navigationManager: NavigationManager
     
@@ -26,7 +30,7 @@ struct SettingsScreenView: View {
                     
                 case .error(let errorMessage):
                     SettingsErrorScreenView(errorMessage: errorMessage) {
-                        navigationManager.navigateTo(screen: AnyView(HomeScreenView()))
+                        navigationManager.navigateTo(screen: HomeScreenView())
                     }
                     
                 case .data:
@@ -37,7 +41,7 @@ struct SettingsScreenView: View {
             .navigationTitle("settings_tab_title")
             .background(Color.white.edgesIgnoringSafeArea(.all))
             .onAppear{
-                navigationManager.setToolbarHidden(hidden: false)
+                navigationManager.setVisibility(hideToolbar: false, hideBottomBar: false)
             }
         }
     }

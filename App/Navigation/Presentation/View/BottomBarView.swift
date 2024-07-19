@@ -14,16 +14,16 @@ struct BottomBarView: View {
                     TabBarButton(image: "MainTab", isSelected: selectedTab == .main)
                         .onTapGesture {
                             selectedTab = .main
-                            navigationManager.navigateTo(screen: AnyView(HomeScreenView()), selectedTab: .main)
+                            navigationManager.navigateTo(screen: HomeScreenView(), selectedTab: .main)
                         }
                         .padding(.leading, 20)
                     
                     Spacer()
                     
-                    TabBarButton(image: "CatalogTab", isSelected: selectedTab == .catalog)
+                    TabBarButton(image: "CatalogTab", isSelected: selectedTab == .productsScreen)
                         .onTapGesture {
-                            selectedTab = .catalog
-                            navigationManager.navigateTo(screen: AnyView(ProductsScreenView()), selectedTab: .catalog)
+                            selectedTab = .productsScreen
+                            navigationManager.navigateTo(screen: ProductsScreenView(), selectedTab: .productsScreen)
                         }
                     
                     Spacer()
@@ -31,7 +31,7 @@ struct BottomBarView: View {
                     TabBarButton(image: "CartTab", isSelected: selectedTab == .cart)
                         .onTapGesture {
                             selectedTab = .cart
-                            navigationManager.navigateTo(screen: AnyView(CartScreenView()), selectedTab: .cart)
+                            navigationManager.navigateTo(screen: CartScreenView(), selectedTab: .cart)
                         }
                     
                     Spacer()
@@ -39,7 +39,7 @@ struct BottomBarView: View {
                     TabBarButton(image: "SettingsTab", isSelected: selectedTab == .settings)
                         .onTapGesture {
                             selectedTab = .settings
-                            navigationManager.navigateTo(screen: AnyView(SettingsScreenView()), selectedTab: .settings)
+                            navigationManager.navigateTo(screen: SettingsScreenView(), selectedTab: .settings)
                         }
                         .padding(.trailing, 20)
                 }

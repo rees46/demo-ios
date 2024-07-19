@@ -9,38 +9,27 @@ class NavigationManager: ObservableObject {
     
     private var screenHistory: [AnyView] = []
     
-    init() {
-        let homeView = HomeScreenView()
-        self.currentScreen = AnyView(homeView)
-        self.currentScreenType = .main
+    init<Content: View & VisitableScreen>(initialScreen: Content) {
+        self.currentScreen = AnyView(initialScreen)
+        let visitor = ScreenTypeVisitor()
+        initialScreen.accept(visitor: visitor)
+        self.currentScreenType = visitor.screenType
         self.screenHistory.append(self.currentScreen)
     }
     
-    func navigateTo<Content: View>(screen: Content, selectedTab: ScreenType? = .main) {
+    func navigateTo<Content: View & VisitableScreen>(screen: Content, selectedTab: ScreenType? = .main) {
         self.currentScreen = AnyView(screen)
         self.selectedTab = selectedTab
         self.screenHistory.append(self.currentScreen)
         
-        switch screen {
-        case is HomeScreenView:
-            self.currentScreenType = .main
-        case is ProductsScreenView:
-            self.currentScreenType = .catalog
-        case is CartScreenView:
-            self.currentScreenType = .cart
-        case is SettingsScreenView:
-            self.currentScreenType = .settings
-        default:
-            self.currentScreenType = .none
-        }
+        let visitor = ScreenTypeVisitor()
+        screen.accept(visitor: visitor)
+        self.currentScreenType = visitor.screenType
     }
     
-    func setToolbarHidden(hidden: Bool) {
-        self.isToolbarHidden = hidden
-    }
-    
-    func setBottomBarHidden(hidden: Bool) {
-        self.isBottomBarHidden = hidden
+    func setVisibility(hideToolbar: Bool, hideBottomBar: Bool) {
+        self.isToolbarHidden = hideToolbar
+        self.isBottomBarHidden = hideBottomBar
     }
     
     func resetSelection() {
@@ -55,12 +44,4 @@ class NavigationManager: ObservableObject {
             }
         }
     }
-}
-
-enum ScreenType {
-    case main
-    case catalog
-    case cart
-    case settings
-    case none
 }
