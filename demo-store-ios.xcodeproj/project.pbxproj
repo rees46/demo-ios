@@ -93,8 +93,6 @@
 
 /* Begin PBXFileReference section */
 		09908BAF81F91172D8D6062C /* Pods_demo_store_iosTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_demo_store_iosTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1274DEF2C4D166945251575B /* Pods-demo-store-iosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demo-store-iosTests.debug.xcconfig"; path = "Target Support Files/Pods-demo-store-iosTests/Pods-demo-store-iosTests.debug.xcconfig"; sourceTree = "<group>"; };
-		739840337D708A49CB89DD90 /* Pods-demo-store-ios-demo-store-iosUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demo-store-ios-demo-store-iosUITests.release.xcconfig"; path = "Target Support Files/Pods-demo-store-ios-demo-store-iosUITests/Pods-demo-store-ios-demo-store-iosUITests.release.xcconfig"; sourceTree = "<group>"; };
 		752F1D392C41E01D002D4AC3 /* ProductCartItemDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCartItemDto.swift; sourceTree = "<group>"; };
 		752F1D3B2C41E156002D4AC3 /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
 		752F1D3F2C41E5BC002D4AC3 /* CartRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartRepository.swift; sourceTree = "<group>"; };
@@ -145,10 +143,8 @@
 		75ECCD162C36D6D000D6D346 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		75ECCD192C36F94800D6D346 /* BottomBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomBarView.swift; sourceTree = "<group>"; };
 		8D65FBB29DC18ECADC9C8C94 /* Pods_demo_store_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_demo_store_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A34899C8C386A23282313E5B /* Pods-demo-store-ios-demo-store-iosUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demo-store-ios-demo-store-iosUITests.debug.xcconfig"; path = "Target Support Files/Pods-demo-store-ios-demo-store-iosUITests/Pods-demo-store-ios-demo-store-iosUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AC654F53174F1754F6E72BDB /* Pods-demo-store-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demo-store-ios.release.xcconfig"; path = "Target Support Files/Pods-demo-store-ios/Pods-demo-store-ios.release.xcconfig"; sourceTree = "<group>"; };
 		C20BDB80283375AFE665FF96 /* Pods-demo-store-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demo-store-ios.debug.xcconfig"; path = "Target Support Files/Pods-demo-store-ios/Pods-demo-store-ios.debug.xcconfig"; sourceTree = "<group>"; };
-		C9E9C6394B2311130D8A51BB /* Pods-demo-store-iosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demo-store-iosTests.release.xcconfig"; path = "Target Support Files/Pods-demo-store-iosTests/Pods-demo-store-iosTests.release.xcconfig"; sourceTree = "<group>"; };
 		CF343FE4C1EB44258E4142CD /* Pods_demo_store_ios_demo_store_iosUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_demo_store_ios_demo_store_iosUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -531,6 +527,7 @@
 			isa = PBXGroup;
 			children = (
 				75E979BA2C4959790081B069 /* View */,
+				75A3F4262C3858DE00AAC175 /* NavigationManager.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -541,14 +538,6 @@
 				75ECCD192C36F94800D6D346 /* BottomBarView.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		75E979BB2C4959850081B069 /* Domain */ = {
-			isa = PBXGroup;
-			children = (
-				75A3F4262C3858DE00AAC175 /* NavigationManager.swift */,
-			);
-			path = Domain;
 			sourceTree = "<group>";
 		};
 		75E979BC2C4959F50081B069 /* Presentation */ = {
@@ -655,7 +644,6 @@
 		75ECCD182C36F92A00D6D346 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
-				75E979BB2C4959850081B069 /* Domain */,
 				75E979B92C4959710081B069 /* Presentation */,
 			);
 			path = Navigation;
@@ -674,10 +662,6 @@
 			children = (
 				C20BDB80283375AFE665FF96 /* Pods-demo-store-ios.debug.xcconfig */,
 				AC654F53174F1754F6E72BDB /* Pods-demo-store-ios.release.xcconfig */,
-				A34899C8C386A23282313E5B /* Pods-demo-store-ios-demo-store-iosUITests.debug.xcconfig */,
-				739840337D708A49CB89DD90 /* Pods-demo-store-ios-demo-store-iosUITests.release.xcconfig */,
-				1274DEF2C4D166945251575B /* Pods-demo-store-iosTests.debug.xcconfig */,
-				C9E9C6394B2311130D8A51BB /* Pods-demo-store-iosTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
