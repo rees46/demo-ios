@@ -43,7 +43,7 @@ struct SettingsScreenView: View {
     
     private func loadData() {
         Timer.after {
-            let success = true // Replace with actual condition to check data loading success
+            let success = true
             if success {
                 viewState = .data
             } else {

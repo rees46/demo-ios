@@ -10,7 +10,6 @@ class NavigationManager: ObservableObject {
     
     private var screenHistory: [ScreenWrapper] = []
     
-    // Массив экранов для табов
     private let rootScreenInitializers: [RootScreenType: () -> AnyView] = [
         .home: { AnyView(HomeScreenView()) },
         .products: { AnyView(ProductsScreenView()) },
