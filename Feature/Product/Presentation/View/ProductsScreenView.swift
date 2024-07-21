@@ -6,7 +6,6 @@ struct ProductsScreenView: View {
     @EnvironmentObject var navigationManager: NavigationManager
     @ObservedObject var viewModel = HomeViewModel()
   
-    
     @State private var selectedImageIndex = 0
     @State private var isLoading = true
     @State private var counter = 1
@@ -19,7 +18,7 @@ struct ProductsScreenView: View {
                         ProgressView()
                             .progressViewStyle(CircularProgressViewStyle())
                             .onAppear {
-                                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                                Timer.after {
                                     isLoading = false
                                 }
                             }
@@ -208,7 +207,7 @@ struct ProductsScreenView: View {
                 title: NSLocalizedString("recommend_like_title", comment: "")
             )
             .onAppear {
-                viewModel.loadRecommenderRecommendations( currentProductId: "665")
+                viewModel.loadRecommenderRecommendations(currentProductId: "665")
             }
             
             Spacer().frame(height: 36)

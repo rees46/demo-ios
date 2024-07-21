@@ -31,7 +31,7 @@ struct CartScreenView: View {
                         ProgressView()
                             .progressViewStyle(CircularProgressViewStyle())
                             .onAppear {
-                                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                                Timer.after {
                                     isLoading = false
                                 }
                             }
