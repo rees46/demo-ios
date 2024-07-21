@@ -1,10 +1,7 @@
 import SwiftUI
 
-struct FullRecommendationListView: View, VisitableScreen {
+struct FullRecommendationListView: View{
     
-    func accept(visitor: ScreenVisitor) {
-         visitor.visit(self)
-     }
     
     @EnvironmentObject var navigationManager: NavigationManager
     

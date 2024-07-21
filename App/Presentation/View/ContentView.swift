@@ -1,9 +1,8 @@
 import SwiftUI
-import REES46
 
 struct ContentView: View {
     
-    @StateObject var navigationManager = NavigationManager(initialScreen: HomeScreenView())
+    @StateObject var navigationManager = NavigationManager(initialScreen: ScreenWrapper(screen: HomeScreenView()))
  
     var body: some View {
         ZStack {
@@ -12,7 +11,7 @@ struct ContentView: View {
             VStack(spacing: 0) {
                 ToolbarView()
                 
-                navigationManager.currentScreen
+                navigationManager.currentScreen.screen
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
                     .edgesIgnoringSafeArea(.bottom)
                 
@@ -27,8 +26,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContentView()
+//    }
+//}

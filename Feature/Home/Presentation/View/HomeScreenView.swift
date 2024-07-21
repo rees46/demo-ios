@@ -1,11 +1,7 @@
 import SwiftUI
 
-struct HomeScreenView: View, VisitableScreen {
-    
-    func accept(visitor: ScreenVisitor) {
-         visitor.visit(self)
-     }
-    
+struct HomeScreenView: View {
+        
     @EnvironmentObject var navigationManager: NavigationManager
     @ObservedObject var viewModel: HomeViewModel
     

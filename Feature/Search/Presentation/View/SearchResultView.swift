@@ -1,10 +1,6 @@
 import SwiftUI
 
-struct SearchResultView: View, VisitableScreen {
-    
-    func accept(visitor: ScreenVisitor) {
-         visitor.visit(self)
-     }
+struct SearchResultView: View {
     
     @EnvironmentObject var navigationManager: NavigationManager
     
@@ -46,7 +42,7 @@ struct SearchResultView: View, VisitableScreen {
                 
                 Button(
                     action: {
-                        navigationManager.navigateTo(screen: HomeScreenView(), selectedTab: .home)
+//                        navigationManager.navigateTo(screen: HomeScreenView(), selectedTab: .home)
                     }
                 ) {
                     Image(systemName: "xmark")

@@ -1,10 +1,6 @@
 import SwiftUI
 
-struct ProductsScreenView: View, VisitableScreen {
-    
-    func accept(visitor: ScreenVisitor) {
-         visitor.visit(self)
-     }
+struct ProductsScreenView: View {
     
     var product: RecommendedProduct?
     @EnvironmentObject var navigationManager: NavigationManager

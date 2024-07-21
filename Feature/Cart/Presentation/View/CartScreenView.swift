@@ -1,10 +1,6 @@
 import SwiftUI
 
-struct CartScreenView: View, VisitableScreen {
-    
-    func accept(visitor: ScreenVisitor) {
-         visitor.visit(self)
-     }
+struct CartScreenView: View {
     
     @EnvironmentObject var navigationManager: NavigationManager
     @ObservedObject var cartViewModel: CartViewModel

@@ -6,11 +6,7 @@ enum ViewState {
     case data
 }
 
-struct SettingsScreenView: View, VisitableScreen {
-    
-    func accept(visitor: ScreenVisitor) {
-         visitor.visit(self)
-     }
+struct SettingsScreenView: View {
     
     @EnvironmentObject var navigationManager: NavigationManager
     
@@ -30,7 +26,7 @@ struct SettingsScreenView: View, VisitableScreen {
                     
                 case .error(let errorMessage):
                     SettingsErrorScreenView(errorMessage: errorMessage) {
-                        navigationManager.navigateTo(screen: HomeScreenView())
+                        navigationManager.navigateTo(HomeScreenView())
                     }
                     
                 case .data:

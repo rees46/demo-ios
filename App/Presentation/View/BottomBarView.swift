@@ -4,18 +4,17 @@ struct BottomBarView: View {
     
     @EnvironmentObject var navigationManager: NavigationManager
     
-    // Используйте AnyView для экранов
-    let tabs: [TabItem] = [
-        TabItem(image: "MainTab", screen: AnyView(HomeScreenView()), type: .home),
-        TabItem(image: "CatalogTab", screen: AnyView(ProductsScreenView()), type: .products),
-        TabItem(image: "CartTab", screen: AnyView(CartScreenView()), type: .cart),
-        TabItem(image: "SettingsTab", screen: AnyView(SettingsScreenView()), type: .settings)
+    private let tabs: [TabItem] = [
+        TabItem(image: "MainTab", screen: ScreenWrapper(screen: HomeScreenView()), type: .home),
+        TabItem(image: "CatalogTab", screen: ScreenWrapper(screen: ProductsScreenView()), type: .products),
+        TabItem(image: "CartTab", screen: ScreenWrapper(screen: CartScreenView()), type: .cart),
+        TabItem(image: "SettingsTab", screen: ScreenWrapper(screen: SettingsScreenView()), type: .settings)
     ]
     
     var body: some View {
         VStack {
+            Spacer()
             if !navigationManager.isBottomBarHidden {
-                Spacer()
                 HStack(spacing: 0) {
                     ForEach(tabs) { tab in
                         tabButton(tab)
@@ -29,10 +28,7 @@ struct BottomBarView: View {
         TabBarButton(image: tab.image, isSelected: navigationManager.selectedTab == tab.type)
             .onTapGesture {
                 navigationManager.selectedTab = tab.type
-                navigationManager.navigateTo(
-                    screen: tab.screen,
-                    selectedTab: tab.type
-                )
+                navigationManager.navigateTo(screen: tab.screen, selectedTab: tab.type)
             }
             .padding(.horizontal, tab.type == .home || tab.type == .settings ? 20 : 0)
     }
@@ -54,3 +50,4 @@ struct TabBarButton: View {
         }
     }
 }
+

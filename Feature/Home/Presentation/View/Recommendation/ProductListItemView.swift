@@ -70,12 +70,12 @@ struct ProductListItemView: View {
         .cornerRadius(10)
         .frame(width: containerWidth, height: containerHeight)
         .onTapGesture {
-            navigationManager.navigateTo(
-                screen: ProductsScreenView(
-                    product: product
-                ),
-                selectedTab: .products
-            )
+//            navigationManager.navigateTo(
+//                screen: ProductsScreenView(
+//                    product: product
+//                ),
+//                selectedTab: .products
+//            )
         }
     }
 }

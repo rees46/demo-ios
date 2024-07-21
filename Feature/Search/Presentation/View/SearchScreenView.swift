@@ -2,11 +2,7 @@ import SwiftUI
 import Combine
 import REES46
 
-struct SearchScreenView: View, VisitableScreen {
-    
-    func accept(visitor: ScreenVisitor) {
-         visitor.visit(self)
-     }
+struct SearchScreenView: View {
     
     @EnvironmentObject var navigationManager: NavigationManager
     @ObservedObject var viewModel = SearchViewModel()
@@ -134,13 +130,13 @@ struct SearchScreenView: View, VisitableScreen {
                 if searchResults.productsTotal != 0 {
                     ViewAllButton(count: searchResults.productsTotal) {
                         let recommendedProducts = searchResults.products.map { RecommendedProduct.from(localProduct: $0) }
-                        navigationManager.navigateTo(
-                            screen: SearchResultView(
-                                recommendedProducts: recommendedProducts,
-                                count: searchResults.productsTotal
-                            ),
-                            selectedTab: nil
-                        )
+//                        navigationManager.navigateTo(
+//                            screen: SearchResultView(
+//                                recommendedProducts: recommendedProducts,
+//                                count: searchResults.productsTotal
+//                            ),
+//                            selectedTab: nil
+//                        )
                     }
                     .padding(.bottom)
                 }

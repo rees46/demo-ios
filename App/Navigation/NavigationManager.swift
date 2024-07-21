@@ -1,31 +1,31 @@
 import SwiftUI
 
 class NavigationManager: ObservableObject {
-    @Published var currentScreen: AnyView
+    
+    @Published var currentScreen: ScreenWrapper
     @Published var isToolbarHidden: Bool = false
     @Published var isBottomBarHidden: Bool = false
     @Published var currentScreenType: ScreenType = .none
     @Published var selectedTab: ScreenType? = .home
     
-    private var screenHistory: [AnyView] = []
+    private var screenHistory: [ScreenWrapper] = []
     
-    init<Content: View & VisitableScreen>(initialScreen: Content) {
-        self.currentScreen = AnyView(initialScreen)
-        let visitor = ScreenTypeVisitor()
-        initialScreen.accept(visitor: visitor)
-        self.currentScreenType = visitor.screenType
+    init(initialScreen: ScreenWrapper) {
+        self.currentScreen = initialScreen
+        self.currentScreenType = initialScreen.type
         self.screenHistory.append(self.currentScreen)
     }
     
-    func navigateTo<Content: View & VisitableScreen>(screen: Content, selectedTab: ScreenType? = .home) {
-        let anyView = AnyView(screen)
-        self.currentScreen = anyView
+    func navigateTo<Screen: View>(_ screen: Screen) where Screen: ScreenTypeProvider {
+        let screenWrapper = ScreenWrapper(screen: screen)
+        self.navigateTo(screen: screenWrapper)
+    }
+    
+    func navigateTo(screen: ScreenWrapper, selectedTab: ScreenType? = .home) {
+        self.currentScreen = screen
         self.selectedTab = selectedTab
-        self.screenHistory.append(anyView)
-        
-        let visitor = ScreenTypeVisitor()
-        screen.accept(visitor: visitor)
-        self.currentScreenType = visitor.screenType
+        self.screenHistory.append(screen)
+        self.currentScreenType = screen.type
     }
     
     func setVisibility(hideToolbar: Bool, hideBottomBar: Bool) {
