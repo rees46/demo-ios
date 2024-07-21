@@ -1,11 +1,5 @@
 import SwiftUI
 
-enum ViewState {
-    case loading
-    case error(String)
-    case data
-}
-
 struct SettingsScreenView: View {
     
     @EnvironmentObject var navigationManager: NavigationManager
@@ -43,8 +37,7 @@ struct SettingsScreenView: View {
     }
     
     private func loadData() {
-        // Simulate data loading
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+        Timer.after {
             let success = true // Replace with actual condition to check data loading success
             if success {
                 viewState = .data
@@ -70,11 +63,5 @@ struct SettingsErrorScreenView: View {
             }
             .padding()
         }
-    }
-}
-
-struct SettingsScreenView_Previews: PreviewProvider {
-    static var previews: some View {
-        SettingsScreenView()
     }
 }

@@ -1,7 +1,7 @@
 
 import Foundation
 
-enum ScreenType {
+enum RootScreenType {
     case home
     case products
     case cart

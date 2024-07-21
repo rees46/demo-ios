@@ -8,12 +8,14 @@ struct ShortRecommendationListView: View {
     var body: some View {
         VStack(alignment: .leading) {
             SectionHeaderView(title: title) {
-//                navigationManager.navigateTo(
-//                    screen: FullRecommendationListView(
-//                        recommendedProducts: recommendedProducts,
-//                        title: NSLocalizedString("reccomender_title", comment: "")
-//                    )
-//                )
+                navigationManager.navigateToScreen(
+                    AnyView(
+                        FullRecommendationListView(
+                            recommendedProducts: recommendedProducts,
+                            title: NSLocalizedString("reccomender_title", comment: "")
+                        )
+                    )
+                )
             }
             
             ScrollView(.horizontal, showsIndicators: false) {

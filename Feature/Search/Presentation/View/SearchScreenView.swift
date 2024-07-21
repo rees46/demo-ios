@@ -130,13 +130,14 @@ struct SearchScreenView: View {
                 if searchResults.productsTotal != 0 {
                     ViewAllButton(count: searchResults.productsTotal) {
                         let recommendedProducts = searchResults.products.map { RecommendedProduct.from(localProduct: $0) }
-//                        navigationManager.navigateTo(
-//                            screen: SearchResultView(
-//                                recommendedProducts: recommendedProducts,
-//                                count: searchResults.productsTotal
-//                            ),
-//                            selectedTab: nil
-//                        )
+                        navigationManager.navigateToScreen(
+                            AnyView(
+                                SearchResultView(
+                                    recommendedProducts: recommendedProducts,
+                                    count: searchResults.productsTotal
+                                )
+                            )
+                        )
                     }
                     .padding(.bottom)
                 }

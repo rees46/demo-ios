@@ -42,7 +42,12 @@ struct SearchResultView: View {
                 
                 Button(
                     action: {
-//                        navigationManager.navigateTo(screen: HomeScreenView(), selectedTab: .home)
+                        navigationManager.navigateToRootScreen(
+                            screen: ScreenWrapper(
+                                screen: HomeScreenView()
+                            ),
+                            selectedTab: .home
+                        )
                     }
                 ) {
                     Image(systemName: "xmark")

@@ -34,10 +34,7 @@ struct ToolbarView: View {
                         .frame(width: 30, height: 30)
                         .foregroundColor(.black)
                         .onTapGesture {
-//                            navigationManager.navigateTo(
-//                                screen: SearchScreenView(),
-//                                selectedTab: navigationManager.selectedTab
-//                            )
+                            navigationManager.navigateToScreen(AnyView(SearchScreenView()))
                         }
                     
                     Image("CartIcon")
@@ -47,10 +44,7 @@ struct ToolbarView: View {
                         .foregroundColor(.black)
                         .padding(.trailing, 12)
                         .onTapGesture {
-//                            navigationManager.navigateTo(
-//                                screen: CartScreenView(),
-//                                selectedTab: .cart
-//                            )
+                            navigationManager.navigateToScreen(AnyView(CartScreenView()))
                         }
                 }
             }
