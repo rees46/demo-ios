@@ -20,7 +20,12 @@ struct SettingsScreenView: View {
                     
                 case .error(let errorMessage):
                     SettingsErrorScreenView(errorMessage: errorMessage) {
-                        navigationManager.navigateTo(HomeScreenView())
+                        navigationManager.navigateToRootScreen(
+                            screen: ScreenWrapper(
+                                screen: HomeScreenView()
+                            ),
+                            selectedTab: .home
+                        )
                     }
                     
                 case .data:

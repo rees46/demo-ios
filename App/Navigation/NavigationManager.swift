@@ -24,25 +24,11 @@ class NavigationManager: ObservableObject {
         self.screenHistory.append(self.currentScreen)
     }
     
-    func navigateTo<Screen: View>(_ screen: Screen) where Screen: ScreenTypeProvider {
-        let screenWrapper = ScreenWrapper(screen: screen)
-        self.navigateToRootScreen(screen: screenWrapper)
-    }
-    
     func navigateToRootScreen(screen: ScreenWrapper, selectedTab: RootScreenType? = .home) {
         self.currentScreen = screen
         self.selectedTab = selectedTab
         self.screenHistory.append(screen)
         self.currentRootScreenType = screen.type ?? .home
-    }
-    
-    func setVisibility(hideToolbar: Bool, hideBottomBar: Bool) {
-        self.isToolbarHidden = hideToolbar
-        self.isBottomBarHidden = hideBottomBar
-    }
-    
-    func resetSelection() {
-        self.selectedTab = nil
     }
     
     func navigateBack() {
@@ -54,16 +40,14 @@ class NavigationManager: ObservableObject {
         }
     }
     
-    func rootScreen(for type: RootScreenType) -> ScreenWrapper {
-        guard let initializer = rootScreenInitializers[type] else {
-            return ScreenWrapper(screen: AnyView(EmptyView()), type: nil)
-        }
-        return ScreenWrapper(screen: initializer(), type: type)
-    }
-    
     func navigateToScreen(_ view: AnyView) {
         let secondaryScreen = ScreenWrapper(screen: view, type: nil)
         self.currentScreen = secondaryScreen
         self.screenHistory.append(secondaryScreen)
+    }
+    
+    func setVisibility(hideToolbar: Bool, hideBottomBar: Bool) {
+        self.isToolbarHidden = hideToolbar
+        self.isBottomBarHidden = hideBottomBar
     }
 }
