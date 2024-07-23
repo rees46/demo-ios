@@ -1,4 +1,11 @@
 import SwiftUI
+import Foundation
+
+extension CartScreenView: ScreenTypeProvider {
+    static var screenType: RootScreenType {
+        .cart
+    }
+}
 
 struct CartScreenView: View {
     

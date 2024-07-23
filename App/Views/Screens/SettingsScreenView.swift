@@ -1,4 +1,11 @@
 import SwiftUI
+import Foundation
+
+extension SettingsScreenView: ScreenTypeProvider {
+    static var screenType: RootScreenType {
+        .settings
+    }
+}
 
 struct SettingsScreenView: View {
     

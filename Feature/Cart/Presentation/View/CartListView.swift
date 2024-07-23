@@ -7,7 +7,7 @@ struct CartListView: View {
     var body: some View {
         List {
             ForEach(cartItems) { cartItem in
-                CartItemView(
+                CartListItemView(
                     cartItem: cartItem,
                     removeFromCart: {
                         removeFromCart(cartItem.product.id)

@@ -7,7 +7,7 @@ class SearchViewModel: ObservableObject {
     private let sdkManager: SDKManaging
     
     @Published var searchText: String = ""
-    @Published var searchResults: LocalSearchResponse? = nil
+    @Published var searchResults: SearchProductResponse? = nil
     @Published var isLoading: Bool = false
     @Published var errorMessage: String?
     @Published var searchHistory: [String] = []
@@ -61,7 +61,7 @@ class SearchViewModel: ObservableObject {
                 self?.isLoading = false
                 switch result {
                 case .success(let response):
-                    self?.searchResults = LocalSearchResponse.from(response)
+                    self?.searchResults = SearchProductResponse.from(response)
                     self?.updateSearchHistory(query: query)
                     self?.totalItemCount = self?.searchResults?.productsTotal ?? 0
                 case .failure(let error):

@@ -1,7 +1,7 @@
 
 import SwiftUI
 
-struct CartItemView: View {
+struct CartListItemView: View {
     var cartItem: ProductCartItem
     var removeFromCart: () -> Void
     

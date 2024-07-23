@@ -129,7 +129,7 @@ struct SearchScreenView: View {
                 
                 if searchResults.productsTotal != 0 {
                     ViewAllButton(count: searchResults.productsTotal) {
-                        let recommendedProducts = searchResults.products.map { RecommendedProduct.from(localProduct: $0) }
+                        let recommendedProducts = searchResults.products.map { RecommendedProduct.from(product: $0) }
                         navigationManager.navigateToScreen(
                             AnyView(
                                 SearchResultView(

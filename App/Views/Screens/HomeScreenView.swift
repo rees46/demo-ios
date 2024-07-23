@@ -1,4 +1,11 @@
 import SwiftUI
+import Foundation
+
+extension HomeScreenView: ScreenTypeProvider {
+    static var screenType: RootScreenType {
+        .home
+    }
+}
 
 struct HomeScreenView: View {
         
@@ -25,27 +32,32 @@ struct HomeScreenView: View {
                             }
                             .frame(height: 250)
                     } else {
-                        MainDiscoverView()
+                        
+                        ListDiscoverProductsView()
+                        
                         HomeStoriesContainerView()
+                        
                         ShortRecommendationListView(
                             recommendedProducts: viewModel.arrivalsProducts,
                             title: NSLocalizedString("arrivals_title", comment: "")
-                        )
-                        .onAppear {
+                        ).onAppear {
                             viewModel.loadArrivalsRecommendations(currentProductId: "670")
                         }
+                        
                         ShortRecommendationListView(
                             recommendedProducts: viewModel.topTrendProducts,
                             title: NSLocalizedString("top_trend_title", comment: "")
                         ).onAppear {
                             viewModel.loadTopTrendRecommendations(currentProductId: "656")
                         }
+                        
                         ShortRecommendationListView(
                             recommendedProducts: viewModel.recommenderProducts,
                             title: NSLocalizedString("reccomender_title", comment: "")
                         ).onAppear {
                             viewModel.loadRecommenderRecommendations(currentProductId: "651")
                         }
+                        
                     }
                 }
                 .padding(.vertical, 16)

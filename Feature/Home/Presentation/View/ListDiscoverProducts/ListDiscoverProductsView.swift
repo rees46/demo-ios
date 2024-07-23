@@ -6,7 +6,7 @@ struct ImageItem {
     let count: Int
 }
 
-struct MainDiscoverView: View {
+struct ListDiscoverProductsView: View {
     let imageItems: [ImageItem] = [
         ImageItem(urlString: "https://m.media-amazon.com/images/I/71qqPTyiatS._AC_UY580_.jpg", type: "Summer style", count: 10),
         ImageItem(urlString: "https://ankerliebe.com/wp-content/uploads/2022/10/6f147a6d-b07c-43b9-9185-74516049e68a.jpg", type: "Evening style", count: 5),
@@ -58,8 +58,8 @@ struct MainDiscoverView: View {
     }
 }
 
-struct MainDiscoverView_Previews: PreviewProvider {
+struct ListDiscoverProductsView_Previews: PreviewProvider {
     static var previews: some View {
-        MainDiscoverView()
+        ListDiscoverProductsView()
     }
 }

@@ -1,10 +1,3 @@
-//
-//  Feature.h
-//  Feature
-//
-//  Created by Daniel Green on 2024-07-18.
-//
-
 #import <Foundation/Foundation.h>
 
 //! Project version number for Feature.
@@ -14,5 +7,3 @@ FOUNDATION_EXPORT double FeatureVersionNumber;
 FOUNDATION_EXPORT const unsigned char FeatureVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <Feature/PublicHeader.h>
-
-
