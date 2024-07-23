@@ -90,6 +90,7 @@
 		75E97A5F2C502F3C0081B069 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75674CF42C3D92CC007FAB88 /* Product.swift */; };
 		75E97A642C50320F0081B069 /* RecommendedProductMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75674CFB2C3D9964007FAB88 /* RecommendedProductMapper.swift */; };
 		75E97A652C50320F0081B069 /* RecommendedProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75674CF62C3D92E0007FAB88 /* RecommendedProduct.swift */; };
+		75E97A6B2C5037130081B069 /* MainViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E97A6A2C5037130081B069 /* MainViews.swift */; };
 		75ECCD0B2C36BDF500D6D346 /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75ECCD0A2C36BDF500D6D346 /* HomeScreenView.swift */; };
 		75ECCD102C36BE2000D6D346 /* ProductsScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75ECCD0F2C36BE2000D6D346 /* ProductsScreenView.swift */; };
 		75ECCD122C36BE2D00D6D346 /* CartScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75ECCD112C36BE2D00D6D346 /* CartScreenView.swift */; };
@@ -192,6 +193,7 @@
 		75E97A442C5025240081B069 /* SearchQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchQuery.swift; sourceTree = "<group>"; };
 		75E97A482C50253A0081B069 /* SearchSuggest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSuggest.swift; sourceTree = "<group>"; };
 		75E97A4C2C50255A0081B069 /* SearchPriceRange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPriceRange.swift; sourceTree = "<group>"; };
+		75E97A6A2C5037130081B069 /* MainViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViews.swift; sourceTree = "<group>"; };
 		75ECCD0A2C36BDF500D6D346 /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
 		75ECCD0F2C36BE2000D6D346 /* ProductsScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsScreenView.swift; sourceTree = "<group>"; };
 		75ECCD112C36BE2D00D6D346 /* CartScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartScreenView.swift; sourceTree = "<group>"; };
@@ -261,8 +263,6 @@
 		75674CFF2C3DA0EC007FAB88 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				75674D002C3DA0FA007FAB88 /* RemoteImageLoader.swift */,
-				75674D022C3DA14F007FAB88 /* RatingConverter.swift */,
 				75E979F02C4D2DBE0081B069 /* Timer.swift */,
 			);
 			path = Utils;
@@ -316,6 +316,7 @@
 		75E979842C4935170081B069 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				75E97A6C2C5037730081B069 /* Presentation */,
 				75ECCD1B2C37F09100D6D346 /* DI */,
 				75674CFF2C3DA0EC007FAB88 /* Utils */,
 				75E979852C4935170081B069 /* Core.h */,
@@ -594,6 +595,7 @@
 				75E97A142C501A7D0081B069 /* Screens */,
 				75E97A152C501A930081B069 /* ToolBar */,
 				75E979E22C4AE4790081B069 /* BottomBar */,
+				75E97A6A2C5037130081B069 /* MainViews.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -687,6 +689,23 @@
 				75E97A342C5024280081B069 /* SearchProductResponseMapper.swift */,
 			);
 			path = Mapper;
+			sourceTree = "<group>";
+		};
+		75E97A6C2C5037730081B069 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				75E97A6D2C50377C0081B069 /* Views */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		75E97A6D2C50377C0081B069 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				75674D002C3DA0FA007FAB88 /* RemoteImageLoader.swift */,
+				75674D022C3DA14F007FAB88 /* RatingConverter.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		75ECCD152C36D6B400D6D346 /* Resources */ = {
@@ -948,6 +967,7 @@
 				75E97A492C50253A0081B069 /* SearchSuggest.swift in Sources */,
 				75674CEF2C3D39F9007FAB88 /* StoriesViewController.swift in Sources */,
 				75E979E72C4AE8870081B069 /* TabItem.swift in Sources */,
+				75E97A6B2C5037130081B069 /* MainViews.swift in Sources */,
 				75674D012C3DA0FA007FAB88 /* RemoteImageLoader.swift in Sources */,
 				75E979CC2C4973DA0081B069 /* CartResolver.swift in Sources */,
 				75E979DE2C4ADDD20081B069 /* RootScreenType.enum.swift in Sources */,

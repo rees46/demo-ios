@@ -74,6 +74,28 @@
             ReferencedContainer = "container:demo-store-ios.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <EnvironmentVariables>
+         <EnvironmentVariable
+            key = "STORIES_CODE"
+            value = "fcaa8d3168ab7d7346e4b4f1a1c92214"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "SHOP_ID"
+            value = "357382bf66ac0ce2f1722677c59511"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "API_DOMAIN_PATH"
+            value = "api.rees46.ru"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "SDK_STREAM"
+            value = "ios"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+      </EnvironmentVariables>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
