@@ -1,38 +1,50 @@
 import Foundation
+import REES46
 
-extension RecommendedProduct {
-    static func from(product: SearchProduct) -> RecommendedProduct {
-        return RecommendedProduct(
-            id: product.id,
-            barcode: product.barcode,
-            name: product.name,
-            brand: product.brand,
-            model: product.model,
-            description: product.description,
-            imageUrl: product.imageUrl,
-            resizedImageUrl: product.resizedImageUrl,
-            url: product.url,
-            deeplinkIos: product.deeplinkIos,
-            categories: [],
-            locations: [],
-            price: product.price,
-            priceFormatted: product.priceFormatted,
-            priceFull: product.priceFull,
-            priceFullFormatted: product.priceFullFormatted,
-            oldPrice: product.oldPrice,
-            oldPriceFormatted: product.oldPriceFormatted,
-            oldPriceFull: product.oldPriceFull,
-            oldPriceFullFormatted: product.oldPriceFullFormatted,
-            currency: product.currency,
-            salesRate: product.salesRate,
-            discount: product.discount,
-            rating: Int(product.relativeSalesRate),
-            relativeSalesRate: product.relativeSalesRate,
-            paramsRaw: product.params,
-            fashionOriginalSizes: [],
-            fashionSizes: [],
-            fashionColors: [],
-            resizedImages: product.resizedImages
-        )
+class RecommendedProductMapper {
+    
+    static func mapResponseToProducts(response: REES46.RecommenderResponse) -> [RecommendedProduct] {
+        return response.recommended.map { recommended in
+            return RecommendedProduct(
+                id: recommended.id,
+                barcode: recommended.barcode,
+                name: recommended.name,
+                brand: recommended.brand,
+                model: recommended.model,
+                description: recommended.description,
+                imageUrl: recommended.imageUrl,
+                resizedImageUrl: recommended.resizedImageUrl,
+                url: recommended.url,
+                deeplinkIos: recommended.deeplinkIos,
+                categories: recommended.categories.map { category in
+                    ProductDto(
+                        id: category.id,
+                        name: category.name,
+                        url: category.url,
+                        alias: category.alias,
+                        parentId: category.parentId
+                    )
+                },
+                locations: recommended.locations,
+                price: recommended.price,
+                priceFormatted: recommended.priceFormatted,
+                priceFull: recommended.priceFull,
+                priceFullFormatted: recommended.priceFullFormatted,
+                oldPrice: recommended.oldPrice,
+                oldPriceFormatted: recommended.oldPriceFormatted,
+                oldPriceFull: recommended.oldPriceFull,
+                oldPriceFullFormatted: recommended.oldPriceFullFormatted,
+                currency: recommended.currency,
+                salesRate: recommended.salesRate,
+                discount: recommended.discount,
+                rating: recommended.rating,
+                relativeSalesRate: recommended.relativeSalesRate,
+                paramsRaw: recommended.paramsRaw,
+                fashionOriginalSizes: recommended.fashionOriginalSizes,
+                fashionSizes: recommended.fashionSizes,
+                fashionColors: recommended.fashionColors,
+                resizedImages: recommended.resizedImages
+            )
+        }
     }
 }

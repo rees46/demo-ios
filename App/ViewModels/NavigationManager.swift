@@ -19,6 +19,11 @@ class NavigationManager: ObservableObject {
     
     init(initialScreen: ScreenWrapper) {
         self.currentScreen = initialScreen
+        self.setStartDestinationScreen(initialScreen: initialScreen)
+    }
+    
+    private func setStartDestinationScreen(initialScreen: ScreenWrapper) {
+        self.currentScreen = initialScreen
         self.currentRootScreenType = initialScreen.type ?? .home
         self.screenHistory.append(self.currentScreen)
     }

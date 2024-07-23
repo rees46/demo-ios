@@ -1,11 +1,3 @@
-//
-//  SimplePersonaliztionSDK.swift
-//  REES46
-//
-//  Created by REES46
-//  Copyright (c) 2023. All rights reserved.
-//
-
 import UIKit
 import Foundation
 import AdSupport
@@ -17,6 +9,8 @@ class SimplePersonalizationSDK: PersonalizationSDK {
     
     struct Constants {
         static let shopId: String = "shop_id"
+        static let deviceIdKey = "device_id"
+        static let deviceToken = "device_token"
         static let searchQuery: String = "search_query"
         static let deviceId: String = "did"
         static let userSeance: String = "seance"
@@ -44,12 +38,10 @@ class SimplePersonalizationSDK: PersonalizationSDK {
     }
     
     var storiesCode: String?
-    
     var shopId: String
     var deviceId: String
     var userSeance: String
     var stream: String
-    
     var baseURL: String
     let baseInitJsonFileName = ".json"
     let autoSendPushToken: Bool
@@ -60,18 +52,13 @@ class SimplePersonalizationSDK: PersonalizationSDK {
     var userEmail: String?
     var userPhone: String?
     var userLoyaltyId: String?
-    
     var segment: String
     var urlSession: URLSession
-    
     var userInfo: InitResponse = InitResponse()
     
     let sessionQueue = SessionQueue.manager
-    
     private var requestOperation: RequestOperation?
-    
     let bodyMutableData = NSMutableData()
-    
     private let initSemaphore = DispatchSemaphore(value: 0)
     private let serialSemaphore = DispatchSemaphore(value: 0)
     
@@ -106,13 +93,17 @@ class SimplePersonalizationSDK: PersonalizationSDK {
         autoSendPushToken: Bool = true,
         completion: ((SDKError?) -> Void)? = nil
     ) {
-        
-        
         self.shopId = shopId
         self.autoSendPushToken = autoSendPushToken
         
         global_EL = enableLogs
-        self.baseURL = "https://" + apiDomain + "/"
+        
+#if DEBUG
+        let basePath = ProcessInfo.processInfo.environment["BASE_PATH"] ?? ""
+#else
+        let basePath = apiDomain
+#endif
+        self.baseURL = "https://" + basePath + "/"
         
         self.userEmail = userEmail
         self.userPhone = userPhone
@@ -127,7 +118,7 @@ class SimplePersonalizationSDK: PersonalizationSDK {
         segment = ["A", "B"].randomElement() ?? "A"
         
         // Trying to fetch user session (permanent user Id)
-        deviceId = UserDefaults.standard.string(forKey: "device_id") ?? ""
+        deviceId = UserDefaults.standard.string(forKey: Constants.deviceIdKey) ?? ""
         
         urlSession = URLSession.shared
         sessionQueue.addOperation {
@@ -138,25 +129,24 @@ class SimplePersonalizationSDK: PersonalizationSDK {
                         self.userInfo = res
                         self.userSeance = res.seance
                         self.deviceId = res.deviceId
-                        if let completion = completion {
-                            completion(nil)
+                        completion?(nil)
+                        // Automatically handle push token if autoSendPushToken is true
+                        if self.autoSendPushToken {
+                            self.handleAutoSendPushToken()
                         }
                     } else {
-                        if let completion = completion {
-                            completion(.decodeError)
-                        }
+                        completion?(.decodeError)
                     }
                     self.initSemaphore.signal()
                 case .failure(let error):
-                    if let completion = completion {
-                        completion(error)
-                    }
+                    completion?(error)
                     self.initSemaphore.signal()
-                    break
                 }
             }
             self.initSemaphore.wait()
         }
+        
+        initializeNotificationRegistrar()
     }
     
     func getDeviceId() -> String {
@@ -179,8 +169,65 @@ class SimplePersonalizationSDK: PersonalizationSDK {
         pushTokenService.setPushToken(token: token, isFirebaseNotification: isFirebaseNotification, completion: completion)
     }
     
-    func getAllNotifications(type: String, phone: String? = nil, email: String? = nil, userExternalId: String? = nil, userLoyaltyId: String? = nil, channel: String?, limit: Int?, page: Int?, dateFrom: String?, completion: @escaping (Result<UserPayloadResponse, SDKError>) -> Void) {
-        notificationService.getAllNotifications(type: type, phone: phone, email: email, userExternalId: userExternalId, userLoyaltyId: userLoyaltyId, channel: channel, limit: limit, page: page, dateFrom: dateFrom, completion: completion)
+    private func initializeNotificationRegistrar() {
+        if autoSendPushToken {
+            UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { [weak self] granted, error in
+                guard let self = self else { return }
+                
+                if granted {
+                    DispatchQueue.main.async {
+                        UIApplication.shared.registerForRemoteNotifications()
+                    }
+                    
+                    // Attempt to send the push token if available
+                    if let deviceToken = UserDefaults.standard.data(forKey: Constants.deviceToken) {
+                        let notificationRegistrar = NotificationRegistrar(sdk: self)
+                        notificationRegistrar.registerWithDeviceToken(deviceToken: deviceToken)
+                    }
+                } else if let error = error {
+#if DEBUG
+                    print("Error requesting notification authorization: \(error.localizedDescription)")
+#endif
+                }
+            }
+        } else {
+#if DEBUG
+            print("Auto-send push token is disabled.")
+#endif
+        }
+    }
+    
+    private func handleAutoSendPushToken() {
+        if let deviceToken = UserDefaults.standard.data(forKey: Constants.deviceToken) {
+            let notificationRegistrar = NotificationRegistrar(sdk: self)
+            notificationRegistrar.registerWithDeviceToken(deviceToken: deviceToken)
+        }
+    }
+    
+    func getAllNotifications(
+        type: String,
+        phone: String? = nil,
+        email: String? = nil,
+        userExternalId: String? = nil,
+        userLoyaltyId: String? = nil,
+        channel: String?,
+        limit: Int?,
+        page: Int?,
+        dateFrom: String?,
+        completion: @escaping (Result<UserPayloadResponse, SDKError>) -> Void
+    ) {
+        notificationService.getAllNotifications(
+            type: type,
+            phone: phone,
+            email: email,
+            userExternalId: userExternalId,
+            userLoyaltyId: userLoyaltyId,
+            channel: channel,
+            limit: limit,
+            page: page,
+            dateFrom: dateFrom,
+            completion: completion
+        )
     }
     
     func configureURLSession(configuration: URLSessionConfiguration) {
@@ -249,14 +296,15 @@ class SimplePersonalizationSDK: PersonalizationSDK {
     func search(query: String, limit: Int?, offset: Int?, categoryLimit: Int?, categories: String?, extended: String?, sortBy: String?, sortDir: String?, locations: String?, brands: String?, filters: [String: Any]?, priceMin: Double?, priceMax: Double?, colors: [String]?, fashionSizes: [String]?, exclude: String?, email: String?, timeOut: Double?, disableClarification: Bool?, completion: @escaping (Result<SearchResponse, SDKError>) -> Void) {
         
         sessionQueue.addOperation {
-            
             let path = "search"
             var params: [String: String] = [
-                "shop_id": self.shopId,
-                "did": self.deviceId,
-                "sid": self.userSeance,
-                "type": "full_search",
-                "search_query": query,
+                Constants.shopId: self.shopId,
+                Constants.deviceId: self.deviceId,
+                Constants.userSeance: self.userSeance,
+                Constants.segment: Constants.type,
+                Constants.segment: self.segment,
+                Constants.type: "full_search",
+                Constants.searchQuery: query,
             ]
             
             if let limit = limit {
@@ -762,8 +810,24 @@ class SimplePersonalizationSDK: PersonalizationSDK {
         )
     }
     
-    func subscribeForBackInStock(id: String, email: String? = nil, phone: String? = nil, fashionSize: [String]? = nil, completion: @escaping (Result<Void, SDKError>) -> Void) {
-        subscriptionService.subscribeForBackInStock(id: id, email: email, phone: phone, fashionSize: fashionSize, completion: completion)
+    func subscribeForBackInStock(
+        id: String,
+        email: String? = nil,
+        phone: String? = nil,
+        fashionSize: String? = nil,
+        fashionColor: String? = nil,
+        barcode: String? = nil,
+        completion: @escaping (Result<Void, SDKError>) -> Void
+    ) {
+        subscriptionService.subscribeForBackInStock(
+            id: id,
+            email: email,
+            phone: phone,
+            fashionSize: fashionSize,
+            fashionColor: fashionColor,
+            barcode: barcode,
+            completion: completion
+        )
     }
     
     func unsubscribeForBackInStock(itemIds: [String], email: String? = nil, phone: String? = nil, completion: @escaping (Result<Void, SDKError>) -> Void) {

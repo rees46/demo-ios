@@ -268,10 +268,10 @@
 		929592F4E0DD8EDFF56FD4F4A323F1AD /* ImageLoaderError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageLoaderError.swift; path = REES46/Classes/Stories/ConnectionAwareLoader/ErrorHandler/ImageLoaderError.swift; sourceTree = "<group>"; };
 		99F9C0A8AA814389AAE55FF89F73EE36 /* StoryButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StoryButton.swift; path = REES46/Classes/Button/StoryButton.swift; sourceTree = "<group>"; };
 		9ACFD36360239004C74296177CC06B81 /* UserSettings.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UserSettings.swift; path = REES46/Classes/Model/UserSettings.swift; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9F003C3DB1DEE8A11EC3298400F7A1B3 /* TBTextConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TBTextConfiguration.swift; path = REES46/Classes/Stories/TextBlockView/TextBlockConfiguration/TBSubConfigurations/TBTextConfiguration.swift; sourceTree = "<group>"; };
 		9F50E1B9C0A9D57F179E837662BBED9B /* ProductsResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ProductsResponse.swift; path = REES46/Classes/Model/ProductsResponse.swift; sourceTree = "<group>"; };
-		A05E795ECA6FF0F5767E433F8FE8625C /* Pods_demo_store_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_demo_store_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A05E795ECA6FF0F5767E433F8FE8625C /* Pods-demo-store-ios */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-demo-store-ios"; path = Pods_demo_store_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0E9B289963817FA78A8583561ED350D /* SlideViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SlideViewController.swift; path = REES46/Classes/Stories/ConnectionAwareLoader/Views/SlideViewController.swift; sourceTree = "<group>"; };
 		A1BFAEB3FCB6D5EDD1E6D063A5DC4E1B /* SdkStyleCustomFontSizeAwareViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SdkStyleCustomFontSizeAwareViewController.swift; path = REES46/Classes/Extensions/SdkConfiguration/SdkStyle/SdkStyleFonts/SdkStyleCustomFontSizeAwareViewController.swift; sourceTree = "<group>"; };
 		A29203D7043AD29587BAF76E23E053E8 /* VideoFileUtils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VideoFileUtils.swift; path = REES46/Classes/Extensions/DownloadManager/VideoFileUtils.swift; sourceTree = "<group>"; };
@@ -512,13 +512,14 @@
 				12CEFACCFD41C692AF42055B2947B7C1 /* Resources */,
 				A91D5D38DBDD4CC4142AFB17582E6F8A /* Support Files */,
 			);
+			name = REES46;
 			path = REES46;
 			sourceTree = "<group>";
 		};
 		45F05160E1AA18223A137E9876780947 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A05E795ECA6FF0F5767E433F8FE8625C /* Pods_demo_store_ios.framework */,
+				A05E795ECA6FF0F5767E433F8FE8625C /* Pods-demo-store-ios */,
 				3671B3C220D01E22000CF41146C2B4AB /* REES46 */,
 			);
 			name = Products;
@@ -647,7 +648,7 @@
 			);
 			name = "Pods-demo-store-ios";
 			productName = Pods_demo_store_ios;
-			productReference = A05E795ECA6FF0F5767E433F8FE8625C /* Pods_demo_store_ios.framework */;
+			productReference = A05E795ECA6FF0F5767E433F8FE8625C /* Pods-demo-store-ios */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */

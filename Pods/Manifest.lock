@@ -1,5 +1,5 @@
 PODS:
-  - REES46 (3.6.19)
+  - REES46 (3.6.23)
 
 DEPENDENCIES:
   - REES46 (from `https://github.com/rees46/ios-sdk.git`, branch `master`, tag `3.6.19`)
@@ -12,12 +12,12 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   REES46:
-    :commit: a7dc0ba52750cc671ff34e5cbf52b98b0aae61d9
+    :commit: b8ed253322fdc67d191acdddd51efc5a3e0ab7a0
     :git: https://github.com/rees46/ios-sdk.git
     :tag: 3.6.19
 
 SPEC CHECKSUMS:
-  REES46: 687320dccba92b13654a5ea57c355bd1f0aed8eb
+  REES46: 8c66b0fdb9f0a6c62a15fb04fafe621b2952149b
 
 PODFILE CHECKSUM: 95734e4d6187b8b6d19278bbb7d9a6acdb94da14
 
