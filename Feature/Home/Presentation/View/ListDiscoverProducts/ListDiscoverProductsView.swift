@@ -1,12 +1,8 @@
 import SwiftUI
 
-struct ImageItem {
-    let urlString: String
-    let type: String
-    let count: Int
-}
-
 struct ListDiscoverProductsView: View {
+    
+    //TODO Use real data from SDK
     let imageItems: [ImageItem] = [
         ImageItem(urlString: "https://m.media-amazon.com/images/I/71qqPTyiatS._AC_UY580_.jpg", type: "Summer style", count: 10),
         ImageItem(urlString: "https://ankerliebe.com/wp-content/uploads/2022/10/6f147a6d-b07c-43b9-9185-74516049e68a.jpg", type: "Evening style", count: 5),
