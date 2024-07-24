@@ -1,5 +1,6 @@
 import SwiftUI
 import Foundation
+import Resolver
 
 extension ProductsScreenView: ScreenTypeProvider {
     static var screenType: RootScreenType {
@@ -11,58 +12,49 @@ struct ProductsScreenView: View {
     
     var product: RecommendedProduct?
     @EnvironmentObject var navigationManager: NavigationManager
-    @ObservedObject var viewModel = HomeViewModel()
-  
+    @Injected var viewModel: ProductsViewModel
+    
     @State private var selectedImageIndex = 0
     @State private var isLoading = true
     @State private var counter = 1
     
     var body: some View {
-        NavigationView {
-            ScrollView {
-                VStack(alignment: .leading) {
-                    if isLoading {
-                        ProgressView()
-                            .progressViewStyle(CircularProgressViewStyle())
-                            .onAppear {
-                                Timer.after {
-                                    isLoading = false
-                                }
-                            }
-                            .frame(height: 250)
-                    } else {
-                        
-                        if product != nil {
-                            topSection
-                            
-                            productImagesSection
-                            
-                            productDetailsSection
-                            
-                            priceSection
-                            
-                            actionSection
-                            
-                        } else {
-                            Text("No product available")
-                                .font(.headline)
-                                .foregroundColor(.black)
-                                .padding()
-                                .frame(height:300)
-                        }
-                        recomendSection
-                    }
-                }
-                .background(Color.white)
-            }
-            .onAppear {
-                if let product = product {
-                    print("DATA \(product)")
+        ScrollView {
+            VStack(alignment: .leading) {
+                if isLoading {
+                    LoadingView(isLoading: $isLoading)
                 } else {
-                    print("DATA is nil")
+                    
+                    if product != nil {
+                        topSection
+                        
+                        productImagesSection
+                        
+                        productDetailsSection
+                        
+                        priceSection
+                        
+                        actionSection
+                        
+                    } else {
+                        Text("No product available")
+                            .font(.headline)
+                            .foregroundColor(.black)
+                            .padding()
+                            .frame(height:300)
+                    }
+                    recomendSection
                 }
-                navigationManager.setVisibility(hideToolbar: false, hideBottomBar: false)
             }
+            .background(Color.white)
+        }
+        .onAppear {
+            if let product = product {
+                print("DATA \(product)")
+            } else {
+                print("DATA is nil")
+            }
+            navigationManager.setVisibility(hideToolbar: false, hideBottomBar: false)
         }
     }
     

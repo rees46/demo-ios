@@ -15,36 +15,36 @@ struct SettingsScreenView: View {
     @State private var viewState: ViewState = .loading
     
     var body: some View {
-        NavigationView {
-            VStack {
-                switch viewState {
-                case .loading:
-                    ProgressView()
-                        .progressViewStyle(CircularProgressViewStyle())
-                        .onAppear {
-                            loadData()
-                        }
-                    
-                case .error(let errorMessage):
-                    SettingsErrorScreenView(errorMessage: errorMessage) {
-                        navigationManager.navigateToRootScreen(
-                            screen: ScreenWrapper(
-                                screen: HomeScreenView()
-                            ),
-                            selectedTab: .home
-                        )
-                    }
-                    
-                case .data:
-                    SettingsInputCodeView(storeKey: $storeKey)
+        VStack {
+            Spacer()
+            
+            switch viewState {
+            case .loading:
+                LoadingView(isLoading: .constant(true))
+                
+            case .error(let errorMessage):
+                SettingsErrorScreenView(errorMessage: errorMessage) {
+                    navigationManager.navigateToRootScreen(
+                        screen: ScreenWrapper(
+                            screen: HomeScreenView()
+                        ),
+                        selectedTab: .home
+                    )
                 }
+                
+            case .data:
+                SettingsInputCodeView(storeKey: $storeKey)
             }
-            .padding()
-            .navigationTitle("settings_tab_title")
-            .background(Color.white.edgesIgnoringSafeArea(.all))
-            .onAppear{
-                navigationManager.setVisibility(hideToolbar: false, hideBottomBar: false)
-            }
+            
+            Spacer()
+        }
+        .padding()
+        .navigationTitle("settings_tab_title")
+        .background(Color.white.edgesIgnoringSafeArea(.all))
+        .onAppear{
+            navigationManager.setVisibility(hideToolbar: false, hideBottomBar: false)
+            //TODO: Chage to real loading
+            loadData()
         }
     }
     

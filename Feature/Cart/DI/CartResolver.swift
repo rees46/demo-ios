@@ -1,22 +1,9 @@
 import Foundation
+import Resolver
 
-class CartResolver {
-    static let shared = CartResolver()
-    
-    private init() {}
-    
-    func resolveCartViewModel() -> CartViewModel {
-        return CartViewModel(
-            cartRepository: resolveCartRepository(),
-            getRecommendationsUseCase: resolveGetRecommendationsUseCase()
-        )
-    }
-    
-    func resolveCartRepository() -> CartRepository {
-        return CartRepository.shared
-    }
-    
-    func resolveGetRecommendationsUseCase() -> GetRecommendationsUseCase {
-        return GetRecommendationsUseCase()
+extension Resolver {
+    static func registerCartServices() {
+        register { CartViewModel() }.scope(.application)
+        register { CartRepository() as CartRepositoryProtocol }.scope(.application)
     }
 }

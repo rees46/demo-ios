@@ -1,10 +1,11 @@
 import SwiftUI
 import Combine
 import REES46
+import Resolver
 
-class SearchViewModel: ObservableObject {
+class SearchViewModel {
     
-    private let sdkManager: SDKManaging
+    @Injected var sdkManager: SDKManagingProtocol
     
     @Published var searchText: String = ""
     @Published var searchResults: SearchProductResponse? = nil
@@ -16,9 +17,7 @@ class SearchViewModel: ObservableObject {
     
     private var cancellables = Set<AnyCancellable>()
     
-    init(sdkManager: SDKManaging = SDKManager.shared) {
-        self.sdkManager = sdkManager
-        
+    init() {
         $searchText
             .debounce(for: .milliseconds(300), scheduler: RunLoop.main)
             .sink { [weak self] searchText in

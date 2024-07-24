@@ -1,18 +1,18 @@
 import SwiftUI
 import Combine
 import REES46
+import Resolver
 
 struct SearchScreenView: View {
     
     @EnvironmentObject var navigationManager: NavigationManager
-    @ObservedObject var viewModel = SearchViewModel()
- 
+    @Injected var viewModel: SearchViewModel
     
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
                 ZStack {
-                    TextField("search_hint", text: $viewModel.searchText)
+                    TextField("search_hint", text: .constant(viewModel.searchText))
                         .padding(.leading, 10)
                         .padding(.trailing, 40)
                         .frame(height: 40)

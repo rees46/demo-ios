@@ -14,7 +14,6 @@ struct HomeStoriesContainerView: View {
             StoriesViewControllerRepresentable()
                 .frame(height: 200)
         }
-        .environmentObject(HomeViewModel())
     }
 }
 

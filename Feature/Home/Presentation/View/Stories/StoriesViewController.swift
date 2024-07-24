@@ -1,6 +1,7 @@
 import SwiftUI
 import UIKit
 import REES46
+import Resolver
 
 class StoriesViewController: UIViewController {
     
@@ -35,7 +36,7 @@ class StoriesViewController: UIViewController {
 
 struct StoriesViewControllerRepresentable: UIViewControllerRepresentable {
     
-    @EnvironmentObject var viewModel: HomeViewModel
+    @Injected var viewModel: HomeViewModel
     
     func makeUIViewController(context: Context) -> StoriesViewController {
         let viewController = StoriesViewController()

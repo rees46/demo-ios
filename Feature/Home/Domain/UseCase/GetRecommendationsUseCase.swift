@@ -1,14 +1,18 @@
 import Foundation
 import Combine
 import REES46
+import Resolver
 
 class GetRecommendationsUseCase {
     
-    private let sdkManager = SDKManager.shared
+    @Injected var sdkManager: SDKManagingProtocol
     
-    func execute(blockId: String, currentProductId: String, completion: @escaping ([RecommendedProduct]) -> Void) {
+    func execute(
+        currentProductId: String,
+        completion: @escaping ([RecommendedProduct]) -> Void
+    ) {
         sdkManager.sdk?.recommend(
-            blockId: blockId,
+            blockId: AppConfigVariables.blockId,
             currentProductId: currentProductId
         ) { response in
             switch response {

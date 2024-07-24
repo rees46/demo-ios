@@ -95,6 +95,16 @@
             value = "ios"
             isEnabled = "YES">
          </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "NOTIFICATION_TYPE"
+            value = "DEMO NOTIFICATION TYPE"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "BLOCK_ID"
+            value = "977cb67194a72fdc7b424f49d69a862d"
+            isEnabled = "YES">
+         </EnvironmentVariable>
       </EnvironmentVariables>
    </LaunchAction>
    <ProfileAction

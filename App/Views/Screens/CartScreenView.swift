@@ -1,5 +1,6 @@
 import SwiftUI
 import Foundation
+import Resolver
 
 extension CartScreenView: ScreenTypeProvider {
     static var screenType: RootScreenType {
@@ -10,15 +11,12 @@ extension CartScreenView: ScreenTypeProvider {
 struct CartScreenView: View {
     
     @EnvironmentObject var navigationManager: NavigationManager
-    @ObservedObject var cartViewModel: CartViewModel
+    @Injected var viewModel: CartViewModel
+    
     @State private var isLoading = true
     
-    init(cartViewModel: CartViewModel = CartResolver.shared.resolveCartViewModel()) {
-        self.cartViewModel = cartViewModel
-    }
-    
     var totalPrice: Int {
-        let total = cartViewModel.cartItems.reduce(0) { (result, cartItem) in
+        let total = viewModel.cartItems.reduce(0) { (result, cartItem) in
             if let priceString = cartItem.product.priceFormatted,
                let price = Int(priceString.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()) {
                 return result + (price * cartItem.quantity)
@@ -29,48 +27,38 @@ struct CartScreenView: View {
     }
     
     var body: some View {
-        NavigationView {
-            ScrollView {
-                VStack(spacing: 0) {
-                    Spacer().frame(height: 20)
+        ScrollView {
+            VStack(spacing: 0) {
+                Spacer().frame(height: 20)
+                
+                if isLoading {
+                    LoadingView(isLoading: $isLoading)
+                } else if viewModel.cartItems.isEmpty {
+                    EmptyCartView()
+                        .frame(height: 250)
+                } else {
+                    CartListView(
+                        cartItems: viewModel.cartItems,
+                        removeFromCart: { productId in
+                            viewModel.removeFromCart(productId: productId)
+                        }
+                    ).frame(height: 250)
                     
-                    if isLoading {
-                        ProgressView()
-                            .progressViewStyle(CircularProgressViewStyle())
-                            .onAppear {
-                                Timer.after {
-                                    isLoading = false
-                                }
-                            }
-                            .frame(height: 250)
-                    } else if cartViewModel.cartItems.isEmpty {
-                        EmptyCartView()
-                            .frame(height: 250)
-                    } else {
-                        CartListView(
-                            cartItems: cartViewModel.cartItems,
-                            removeFromCart: { productId in
-                                cartViewModel.removeFromCart(productId: productId)
-                            }
-                        ).frame(height: 250)
-                        
-                        TotalPriceSection(totalPrice: totalPrice)
-                        
-                        NavigationButtonsView(
-                            navigationManager: navigationManager,
-                            cartViewModel: cartViewModel
-                        )
-                    }
+                    TotalPriceSection(totalPrice: totalPrice)
                     
-                    if !isLoading {
-                        RecommendationSection(recommendedProducts: cartViewModel.recommenderProducts)
-                    }
+                    NavigationButtonsView(
+                        navigationManager: navigationManager
+                    )
                 }
-                .navigationBarTitle("cart_tab_title")
-                .onAppear {
-                    navigationManager.setVisibility(hideToolbar: false, hideBottomBar: false)
-                    cartViewModel.loadRecommenderRecommendations(currentProductId: "665")
+                
+                if !isLoading {
+                    RecommendationSection(recommendedProducts: viewModel.recommenderProducts)
                 }
+            }
+            .navigationBarTitle("cart_tab_title")
+            .onAppear {
+                navigationManager.setVisibility(hideToolbar: false, hideBottomBar: false)
+                viewModel.loadRecommenderRecommendations(currentProductId: "665")
             }
         }
     }
@@ -144,8 +132,8 @@ struct TotalPriceSection: View {
 }
 
 struct NavigationButtonsView: View {
+    
     @ObservedObject var navigationManager: NavigationManager
-    @ObservedObject var cartViewModel:CartViewModel
     
     var body: some View {
         VStack{

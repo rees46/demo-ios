@@ -1,22 +1,20 @@
 import Foundation
 import Combine
+import Resolver
 
-class CartViewModel: ObservableObject {
+class CartViewModel {
+    
     @Published var cartItems: [ProductCartItem] = []
     @Published var recommenderProducts: [RecommendedProduct] = []
     @Published var isLoading: Bool = true
 
-    private let getRecommendationsUseCase: GetRecommendationsUseCase
-    private let cartRepository: CartRepository
+    @Injected var cartRepository: CartRepositoryProtocol
+    @Injected var getRecommendationsUseCase: GetRecommendationsUseCase
+    
     private var cancellables = Set<AnyCancellable>()
 
-    private let blockId = "977cb67194a72fdc7b424f49d69a862d"
-
-    init(cartRepository: CartRepository, getRecommendationsUseCase: GetRecommendationsUseCase) {
-        self.cartRepository = cartRepository
-        self.getRecommendationsUseCase = getRecommendationsUseCase
-        
-        cartRepository.$cartItems
+    init() {
+        cartRepository.cartItemsPublisher
             .sink { [weak self] cartItems in
                 self?.cartItems = cartItems
                 self?.isLoading = false
@@ -37,7 +35,9 @@ class CartViewModel: ObservableObject {
     }
 
     func loadRecommenderRecommendations(currentProductId: String) {
-        getRecommendationsUseCase.execute(blockId: blockId, currentProductId: currentProductId) { products in
+        getRecommendationsUseCase.execute(
+            currentProductId: currentProductId
+        ) { products in
             self.recommenderProducts = products
         }
     }

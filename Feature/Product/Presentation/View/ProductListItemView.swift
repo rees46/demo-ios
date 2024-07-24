@@ -1,9 +1,10 @@
 import SwiftUI
+import Resolver
 
 struct ProductListItemView: View {
     
     @EnvironmentObject var navigationManager: NavigationManager
-    @ObservedObject var viewModel = HomeViewModel()
+    @Injected var viewModel: ProductsViewModel
     
     var product: RecommendedProduct
     var containerWidth: CGFloat

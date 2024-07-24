@@ -1,14 +1,12 @@
 import Foundation
 import Combine
 
-class CartRepository: ObservableObject {
-    
-    static let shared = CartRepository()
-    
-    private init() {}
+class CartRepository: ObservableObject, CartRepositoryProtocol {
     
     @Published var cartItems: [ProductCartItem] = []
-    
+
+    var cartItemsPublisher: Published<[ProductCartItem]>.Publisher { $cartItems }
+
     func addToCart(product: RecommendedProduct, quantity: Int) {
         if let index = cartItems.firstIndex(where: { $0.product.id == product.id }) {
             cartItems[index].quantity += quantity
