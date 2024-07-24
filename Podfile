@@ -4,6 +4,7 @@ target 'demo-store-ios' do
   use_frameworks!
 
   pod 'REES46', :git => 'https://github.com/rees46/ios-sdk.git', :branch => 'master', :tag => '3.6.19'
+  pod "Resolver"
 
 end
 
