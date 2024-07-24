@@ -16,8 +16,16 @@
     "+" : {
 
     },
-    "Add to Cart" : {
-
+    "add_to_cart_button_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add to Cart"
+          }
+        }
+      }
     },
     "also_bought_title" : {
       "extractionState" : "manual",
@@ -118,6 +126,17 @@
         }
       }
     },
+    "empty_products_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No product available"
+          }
+        }
+      }
+    },
     "Free" : {
 
     },
@@ -174,9 +193,6 @@
           }
         }
       }
-    },
-    "No product available" : {
-
     },
     "No product data available" : {
 
@@ -247,8 +263,16 @@
         }
       }
     },
-    "Retry" : {
-
+    "retry_button_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Retry"
+          }
+        }
+      }
     },
     "search_count_result" : {
       "extractionState" : "manual",
