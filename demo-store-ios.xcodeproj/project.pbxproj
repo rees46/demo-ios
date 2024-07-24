@@ -321,7 +321,6 @@
 		75B935552C3564360063E814 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				75E97A7F2C51319A0081B069 /* New Group */,
 				75E979E12C4AE4630081B069 /* Views */,
 				75E97A1F2C501E650081B069 /* ViewModels */,
 				75ECCD182C36F92A00D6D346 /* Navigation */,
@@ -741,13 +740,6 @@
 				75E97A6F2C5041780081B069 /* ImageItem.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		75E97A7F2C51319A0081B069 /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
 			sourceTree = "<group>";
 		};
 		75E97A802C51322F0081B069 /* ViewModel */ = {

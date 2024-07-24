@@ -74,6 +74,12 @@
             ReferencedContainer = "container:demo-store-ios.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <CommandLineArguments>
+         <CommandLineArgument
+            argument = ""
+            isEnabled = "YES">
+         </CommandLineArgument>
+      </CommandLineArguments>
       <EnvironmentVariables>
          <EnvironmentVariable
             key = "STORIES_CODE"
@@ -103,6 +109,21 @@
          <EnvironmentVariable
             key = "BLOCK_ID"
             value = "977cb67194a72fdc7b424f49d69a862d"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "ARRIVALS_CODE"
+            value = "670"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "RECCOMENDATION_CODE"
+            value = "651"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "TOP_TRENDS_CODE"
+            value = "656"
             isEnabled = "YES">
          </EnvironmentVariable>
       </EnvironmentVariables>

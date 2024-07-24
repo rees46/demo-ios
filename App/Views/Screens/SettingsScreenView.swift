@@ -70,7 +70,7 @@ struct SettingsErrorScreenView: View {
                 .foregroundColor(.red)
                 .padding()
             
-            Button("Retry") {
+            Button("retry_button_title") {
                 retryAction()
             }
             .padding()

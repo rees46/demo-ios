@@ -1,4 +1,3 @@
-// Config.swift
 import Foundation
 
 struct AppConfigVariables {
@@ -6,4 +5,7 @@ struct AppConfigVariables {
     static let shopId: String = ProcessInfo.processInfo.environment["SHOP_ID"] ?? ""
     static let apiDomain: String = ProcessInfo.processInfo.environment["API_DOMAIN_PATH"] ?? "api.rees46.ru"
     static let sdkStream: String = ProcessInfo.processInfo.environment["SDK_STREAM"] ?? "ios"
+    static let arrivalsCode: String = ProcessInfo.processInfo.environment["ARRIVALS_CODE"] ?? ""
+    static let topTrendsCode: String = ProcessInfo.processInfo.environment["TOP_TRENDS"] ?? ""
+    static let recommendationCode: String = ProcessInfo.processInfo.environment["RECOMMENDATION_CODE"] ?? ""
 }

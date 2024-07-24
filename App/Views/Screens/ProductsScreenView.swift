@@ -37,7 +37,7 @@ struct ProductsScreenView: View {
                         actionSection
                         
                     } else {
-                        Text("No product available")
+                        Text("empty_products_title")
                             .font(.headline)
                             .foregroundColor(.black)
                             .padding()
@@ -142,7 +142,7 @@ struct ProductsScreenView: View {
         VStack(alignment: .leading, spacing: 4) {
             Spacer().frame(height: 20)
             
-            Text(product?.oldPriceFormatted ?? "₽ 42")
+            Text(product?.oldPriceFormatted ?? "")
                 .font(.system(size: 18))
                 .foregroundColor(.secondary)
                 .strikethrough()
@@ -185,7 +185,7 @@ struct ProductsScreenView: View {
                     }
                 }
             ) {
-                Text("Add to Cart")
+                Text("add_to_cart_button_title")
                     .font(.system(size: 17, weight: .bold))
                     .foregroundColor(.white)
                     .frame(maxWidth: .infinity, maxHeight: 50)
@@ -206,7 +206,7 @@ struct ProductsScreenView: View {
                 title: NSLocalizedString("recommend_like_title", comment: "")
             )
             .onAppear {
-                viewModel.loadRecommenderRecommendations(currentProductId: "665")
+                viewModel.loadRecommenderRecommendations(currentProductId: AppConfigVariables.recommendationCode)
             }
             
             Spacer().frame(height: 36)
@@ -219,11 +219,13 @@ struct CounterSectionView: View {
     
     var body: some View {
         HStack(spacing: 0) {
-            Button(action: {
-                if counter > 0 {
-                    counter -= 1
+            Button(
+                action: {
+                    if counter > 0 {
+                        counter -= 1
+                    }
                 }
-            }) {
+            ) {
                 Text("-")
                     .font(.system(size: 20, weight: .bold))
                     .foregroundColor(.black)

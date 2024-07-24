@@ -30,21 +30,21 @@ struct HomeScreenView: View {
                         recommendedProducts: viewModel.arrivalsProducts,
                         title: NSLocalizedString("arrivals_title", comment: "")
                     ).onAppear {
-                        viewModel.loadArrivalsRecommendations(currentProductId: "670")
+                        viewModel.loadArrivalsRecommendations(currentProductId: AppConfigVariables.arrivalsCode)
                     }
                     
                     ShortRecommendationListView(
                         recommendedProducts: viewModel.topTrendProducts,
                         title: NSLocalizedString("top_trend_title", comment: "")
                     ).onAppear {
-                        viewModel.loadTopTrendRecommendations(currentProductId: "656")
+                        viewModel.loadTopTrendRecommendations(currentProductId: AppConfigVariables.topTrendsCode)
                     }
                     
                     ShortRecommendationListView(
                         recommendedProducts: viewModel.recommenderProducts,
                         title: NSLocalizedString("reccomender_title", comment: "")
                     ).onAppear {
-                        viewModel.loadRecommenderRecommendations(currentProductId: "651")
+                        viewModel.loadRecommenderRecommendations(currentProductId: AppConfigVariables.recommendationCode)
                     }
                     
                 }
