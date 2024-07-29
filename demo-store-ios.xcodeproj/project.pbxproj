@@ -28,6 +28,8 @@
 		75A3F4252C383E8100AAC175 /* SettingsErrroScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A3F4242C383E8100AAC175 /* SettingsErrroScreenView.swift */; };
 		75A3F4272C3858DE00AAC175 /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A3F4262C3858DE00AAC175 /* NavigationManager.swift */; };
 		75A3F4292C38593800AAC175 /* ToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A3F4282C38593800AAC175 /* ToolbarView.swift */; };
+		75A4D5AE2C579A3F00929368 /* SDKManagingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A4D5AD2C579A3F00929368 /* SDKManagingProtocol.swift */; };
+		75A4D5B22C579A4900929368 /* SdkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A4D5B12C579A4900929368 /* SdkManager.swift */; };
 		75B935572C3564360063E814 /* DemoStoreApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B935562C3564360063E814 /* DemoStoreApp.swift */; };
 		75B935592C3564360063E814 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B935582C3564360063E814 /* ContentView.swift */; };
 		75B9355B2C3564370063E814 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75B9355A2C3564370063E814 /* Assets.xcassets */; };
@@ -99,7 +101,6 @@
 		75E97A922C5143630081B069 /* ProductsResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E97A912C5143630081B069 /* ProductsResolver.swift */; };
 		75E97AA22C5147A20081B069 /* SdkResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E97AA12C5147A20081B069 /* SdkResolver.swift */; };
 		75E97AA52C5147FC0081B069 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E97AA42C5147F30081B069 /* HomeViewModel.swift */; };
-		75E97AA92C5148860081B069 /* SDKManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E97A9F2C51478D0081B069 /* SDKManagerProtocol.swift */; };
 		75E97AAC2C514B4D0081B069 /* SearchResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E97AAB2C514B4D0081B069 /* SearchResolver.swift */; };
 		75E97AB02C514D2D0081B069 /* AppConvigVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E97AAF2C514D2D0081B069 /* AppConvigVariables.swift */; };
 		75E97AB12C514D2D0081B069 /* AppConvigVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E97AAF2C514D2D0081B069 /* AppConvigVariables.swift */; };
@@ -170,7 +171,8 @@
 		75A3F4242C383E8100AAC175 /* SettingsErrroScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsErrroScreenView.swift; sourceTree = "<group>"; };
 		75A3F4262C3858DE00AAC175 /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
 		75A3F4282C38593800AAC175 /* ToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarView.swift; sourceTree = "<group>"; };
-		75A4D5AB2C57966A00929368 /* SdkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SdkManager.swift; path = ../../../../../Desktop/Protocols/SdkManager.swift; sourceTree = "<group>"; };
+		75A4D5AD2C579A3F00929368 /* SDKManagingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKManagingProtocol.swift; sourceTree = "<group>"; };
+		75A4D5B12C579A4900929368 /* SdkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SdkManager.swift; sourceTree = "<group>"; };
 		75B935532C3564360063E814 /* demo-store-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "demo-store-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		75B935562C3564360063E814 /* DemoStoreApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoStoreApp.swift; sourceTree = "<group>"; };
 		75B935582C3564360063E814 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -212,10 +214,8 @@
 		75E97A872C51414D0081B069 /* CartRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartRepositoryProtocol.swift; sourceTree = "<group>"; };
 		75E97A8C2C5142F10081B069 /* ProductsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewModel.swift; sourceTree = "<group>"; };
 		75E97A912C5143630081B069 /* ProductsResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsResolver.swift; sourceTree = "<group>"; };
-		75E97A9F2C51478D0081B069 /* SDKManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKManagerProtocol.swift; sourceTree = "<group>"; };
 		75E97AA12C5147A20081B069 /* SdkResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SdkResolver.swift; sourceTree = "<group>"; };
 		75E97AA42C5147F30081B069 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		75E97AA62C51482F0081B069 /* SdkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SdkManager.swift; sourceTree = "<group>"; };
 		75E97AAB2C514B4D0081B069 /* SearchResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResolver.swift; sourceTree = "<group>"; };
 		75E97AAF2C514D2D0081B069 /* AppConvigVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConvigVariables.swift; sourceTree = "<group>"; };
 		75ECCD0A2C36BDF500D6D346 /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
@@ -291,6 +291,14 @@
 				75E97AAF2C514D2D0081B069 /* AppConvigVariables.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		75A4D5AC2C579A2100929368 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				75A4D5AD2C579A3F00929368 /* SDKManagingProtocol.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		75B9354A2C3564360063E814 = {
@@ -743,7 +751,7 @@
 		75E97A802C51322F0081B069 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				75A4D5AB2C57966A00929368 /* SdkManager.swift */,
+				75A4D5B12C579A4900929368 /* SdkManager.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -780,16 +788,6 @@
 			path = DI;
 			sourceTree = "<group>";
 		};
-		75E97A952C5146EB0081B069 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				75E97A9F2C51478D0081B069 /* SDKManagerProtocol.swift */,
-				75E97AA62C51482F0081B069 /* SdkManager.swift */,
-			);
-			name = Protocols;
-			path = ../../../../Desktop/Protocols;
-			sourceTree = "<group>";
-		};
 		75E97AAA2C514B3D0081B069 /* DI */ = {
 			isa = PBXGroup;
 			children = (
@@ -821,7 +819,7 @@
 			children = (
 				75E97A772C512F8C0081B069 /* DependenciesInitialization.swift */,
 				75E97AA12C5147A20081B069 /* SdkResolver.swift */,
-				75E97A952C5146EB0081B069 /* Protocols */,
+				75A4D5AC2C579A2100929368 /* Protocols */,
 			);
 			path = DI;
 			sourceTree = "<group>";
@@ -1042,7 +1040,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75E97AA92C5148860081B069 /* SDKManagerProtocol.swift in Sources */,
 				75E97AAC2C514B4D0081B069 /* SearchResolver.swift in Sources */,
 				75E97A642C50320F0081B069 /* RecommendedProductMapper.swift in Sources */,
 				75E97AA52C5147FC0081B069 /* HomeViewModel.swift in Sources */,
@@ -1087,6 +1084,7 @@
 				7559449F2C357E5C00C274C9 /* SplashScreenView.swift in Sources */,
 				75E1C8EF2C3ECC95005018B4 /* ProductListItemView.swift in Sources */,
 				75E97A922C5143630081B069 /* ProductsResolver.swift in Sources */,
+				75A4D5B22C579A4900929368 /* SdkManager.swift in Sources */,
 				75E1C8EB2C3E9401005018B4 /* FullRecommendationListView.swift in Sources */,
 				75E97AA22C5147A20081B069 /* SdkResolver.swift in Sources */,
 				75E97A232C5023600081B069 /* SearchFilter.swift in Sources */,
@@ -1100,6 +1098,7 @@
 				752F1D402C41E5BC002D4AC3 /* CartRepository.swift in Sources */,
 				75E97A272C50237F0081B069 /* SearchIndustrialFilters.swift in Sources */,
 				75E979D02C4974440081B069 /* CartListView.swift in Sources */,
+				75A4D5AE2C579A3F00929368 /* SDKManagingProtocol.swift in Sources */,
 				75E97A712C5041920081B069 /* ImageItem.swift in Sources */,
 				75E979D42C4974660081B069 /* CartListItemView.swift in Sources */,
 				75E97A392C5024CD0081B069 /* SearchProduct.swift in Sources */,
