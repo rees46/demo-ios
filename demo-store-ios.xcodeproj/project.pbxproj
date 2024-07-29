@@ -99,7 +99,6 @@
 		75E97A922C5143630081B069 /* ProductsResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E97A912C5143630081B069 /* ProductsResolver.swift */; };
 		75E97AA22C5147A20081B069 /* SdkResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E97AA12C5147A20081B069 /* SdkResolver.swift */; };
 		75E97AA52C5147FC0081B069 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E97AA42C5147F30081B069 /* HomeViewModel.swift */; };
-		75E97AA82C5148420081B069 /* SdkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E97AA72C5148420081B069 /* SdkManager.swift */; };
 		75E97AA92C5148860081B069 /* SDKManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E97A9F2C51478D0081B069 /* SDKManagerProtocol.swift */; };
 		75E97AAC2C514B4D0081B069 /* SearchResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E97AAB2C514B4D0081B069 /* SearchResolver.swift */; };
 		75E97AB02C514D2D0081B069 /* AppConvigVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E97AAF2C514D2D0081B069 /* AppConvigVariables.swift */; };
@@ -171,6 +170,7 @@
 		75A3F4242C383E8100AAC175 /* SettingsErrroScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsErrroScreenView.swift; sourceTree = "<group>"; };
 		75A3F4262C3858DE00AAC175 /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
 		75A3F4282C38593800AAC175 /* ToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarView.swift; sourceTree = "<group>"; };
+		75A4D5AB2C57966A00929368 /* SdkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SdkManager.swift; path = ../../../../../Desktop/Protocols/SdkManager.swift; sourceTree = "<group>"; };
 		75B935532C3564360063E814 /* demo-store-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "demo-store-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		75B935562C3564360063E814 /* DemoStoreApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoStoreApp.swift; sourceTree = "<group>"; };
 		75B935582C3564360063E814 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -214,10 +214,8 @@
 		75E97A912C5143630081B069 /* ProductsResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsResolver.swift; sourceTree = "<group>"; };
 		75E97A9F2C51478D0081B069 /* SDKManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKManagerProtocol.swift; sourceTree = "<group>"; };
 		75E97AA12C5147A20081B069 /* SdkResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SdkResolver.swift; sourceTree = "<group>"; };
-		75E97AA32C5147EF0081B069 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		75E97AA42C5147F30081B069 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		75E97AA62C51482F0081B069 /* SdkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SdkManager.swift; sourceTree = "<group>"; };
-		75E97AA72C5148420081B069 /* SdkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SdkManager.swift; path = ../../../../../Desktop/Protocols/SdkManager.swift; sourceTree = "<group>"; };
 		75E97AAB2C514B4D0081B069 /* SearchResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResolver.swift; sourceTree = "<group>"; };
 		75E97AAF2C514D2D0081B069 /* AppConvigVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConvigVariables.swift; sourceTree = "<group>"; };
 		75ECCD0A2C36BDF500D6D346 /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
@@ -745,7 +743,7 @@
 		75E97A802C51322F0081B069 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				75E97AA72C5148420081B069 /* SdkManager.swift */,
+				75A4D5AB2C57966A00929368 /* SdkManager.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -785,7 +783,6 @@
 		75E97A952C5146EB0081B069 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				75E97AA32C5147EF0081B069 /* HomeViewModel.swift */,
 				75E97A9F2C51478D0081B069 /* SDKManagerProtocol.swift */,
 				75E97AA62C51482F0081B069 /* SdkManager.swift */,
 			);
@@ -1089,7 +1086,6 @@
 				75E1C8ED2C3EACDA005018B4 /* DetailsToolbarView.swift in Sources */,
 				7559449F2C357E5C00C274C9 /* SplashScreenView.swift in Sources */,
 				75E1C8EF2C3ECC95005018B4 /* ProductListItemView.swift in Sources */,
-				75E97AA82C5148420081B069 /* SdkManager.swift in Sources */,
 				75E97A922C5143630081B069 /* ProductsResolver.swift in Sources */,
 				75E1C8EB2C3E9401005018B4 /* FullRecommendationListView.swift in Sources */,
 				75E97AA22C5147A20081B069 /* SdkResolver.swift in Sources */,
