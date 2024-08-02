@@ -14,33 +14,39 @@ class HomeViewModel {
     @Published var recommenderProducts: [RecommendedProduct] = []
     @Published var isLoading = true
     
-    func loadArrivalsRecommendations(currentProductId: String) {
-        getRecommendationsUseCase.execute(
-            currentProductId: currentProductId
-        ) { [weak self] products in
+    func loadAllRecommendations() {
+        isLoading = true
+        
+        loadArrivalsRecommendations(currentProductId: AppConfigVariables.arrivalsCode) { [weak self] in
+            self?.loadTopTrendRecommendations(currentProductId: AppConfigVariables.topTrendsCode) { [weak self] in
+                self?.loadRecommenderRecommendations(currentProductId: AppConfigVariables.recommendationCode) { [weak self] in
+                    self?.isLoading = false
+                }
+            }
+        }
+    }
+
+    private func loadArrivalsRecommendations(currentProductId: String, completion: @escaping () -> Void) {
+        getRecommendationsUseCase.execute(currentProductId: currentProductId) { [weak self] products in
             self?.arrivalsProducts = products
-            self?.isLoading = false
+            completion()
         }
     }
     
-    func loadTopTrendRecommendations(currentProductId: String) {
-        getRecommendationsUseCase.execute(
-            currentProductId: currentProductId
-        ) { [weak self] products in
+    private func loadTopTrendRecommendations(currentProductId: String, completion: @escaping () -> Void) {
+        getRecommendationsUseCase.execute(currentProductId: currentProductId) { [weak self] products in
             self?.topTrendProducts = products
-            self?.isLoading = false
+            completion()
         }
     }
     
-    func loadRecommenderRecommendations(currentProductId: String) {
-        getRecommendationsUseCase.execute(
-            currentProductId: currentProductId
-        ) { [weak self] products in
+    private func loadRecommenderRecommendations(currentProductId: String, completion: @escaping () -> Void) {
+        getRecommendationsUseCase.execute(currentProductId: currentProductId) { [weak self] products in
             self?.recommenderProducts = products
-            self?.isLoading = false
+            completion()
         }
     }
-    
+
     func addToCart(product: RecommendedProduct, quantity: Int) {
         cartRepository.addToCart(product: product, quantity: quantity)
     }

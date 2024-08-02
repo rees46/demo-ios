@@ -6,6 +6,6 @@ struct AppConfigVariables {
     static let apiDomain: String = ProcessInfo.processInfo.environment["API_DOMAIN_PATH"] ?? "api.rees46.ru"
     static let sdkStream: String = ProcessInfo.processInfo.environment["SDK_STREAM"] ?? "ios"
     static let arrivalsCode: String = ProcessInfo.processInfo.environment["ARRIVALS_CODE"] ?? ""
-    static let topTrendsCode: String = ProcessInfo.processInfo.environment["TOP_TRENDS"] ?? ""
+    static let topTrendsCode: String = ProcessInfo.processInfo.environment["TOP_TRENDS_CODE"] ?? ""
     static let recommendationCode: String = ProcessInfo.processInfo.environment["RECOMMENDATION_CODE"] ?? ""
 }

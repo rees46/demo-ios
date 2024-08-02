@@ -29,23 +29,17 @@ struct HomeScreenView: View {
                     ShortRecommendationListView(
                         recommendedProducts: viewModel.arrivalsProducts,
                         title: NSLocalizedString("arrivals_title", comment: "")
-                    ).onAppear {
-                        viewModel.loadArrivalsRecommendations(currentProductId: AppConfigVariables.arrivalsCode)
-                    }
+                    )
                     
                     ShortRecommendationListView(
                         recommendedProducts: viewModel.topTrendProducts,
                         title: NSLocalizedString("top_trend_title", comment: "")
-                    ).onAppear {
-                        viewModel.loadTopTrendRecommendations(currentProductId: AppConfigVariables.topTrendsCode)
-                    }
+                    )
                     
                     ShortRecommendationListView(
                         recommendedProducts: viewModel.recommenderProducts,
                         title: NSLocalizedString("reccomender_title", comment: "")
-                    ).onAppear {
-                        viewModel.loadRecommenderRecommendations(currentProductId: AppConfigVariables.recommendationCode)
-                    }
+                    )
                     
                 }
             }
@@ -54,6 +48,7 @@ struct HomeScreenView: View {
         }
         .navigationTitle("main_tab_title")
         .onAppear {
+            viewModel.loadAllRecommendations()
             navigationManager.setVisibility(hideToolbar: false, hideBottomBar: false)
         }
     }

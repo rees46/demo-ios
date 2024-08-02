@@ -113,17 +113,17 @@
          </EnvironmentVariable>
          <EnvironmentVariable
             key = "ARRIVALS_CODE"
-            value = "670"
+            value = "655"
             isEnabled = "YES">
          </EnvironmentVariable>
          <EnvironmentVariable
-            key = "RECCOMENDATION_CODE"
-            value = "651"
+            key = "RECOMMENDATION_CODE"
+            value = "656"
             isEnabled = "YES">
          </EnvironmentVariable>
          <EnvironmentVariable
             key = "TOP_TRENDS_CODE"
-            value = "656"
+            value = "654"
             isEnabled = "YES">
          </EnvironmentVariable>
       </EnvironmentVariables>
