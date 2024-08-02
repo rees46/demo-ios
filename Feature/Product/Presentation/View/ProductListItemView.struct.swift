@@ -72,11 +72,7 @@ struct ProductListItemView: View {
         .frame(width: containerWidth, height: containerHeight)
         .onTapGesture {
             navigationManager.navigateToScreen(
-                AnyView(
-                    ProductsScreenView(
-                        product: product
-                    )
-                )
+                ProductsScreenView(product: product)
             )
         }
     }

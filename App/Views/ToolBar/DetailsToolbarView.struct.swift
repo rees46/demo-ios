@@ -35,10 +35,7 @@ struct DetailsToolbarView: View {
                         .frame(width: 30, height: 30)
                         .foregroundColor(.white)
                         .onTapGesture {
-                            navigationManager.navigateToScreen(
-                                AnyView(
-                                    SearchScreenView())
-                            )
+                            navigationManager.navigateToScreen(SearchScreenView())
                         }
                     
                     Image("CartIcon")
@@ -48,10 +45,7 @@ struct DetailsToolbarView: View {
                         .foregroundColor(.white)
                         .padding(.trailing, 12)
                         .onTapGesture {
-                            navigationManager.navigateToScreen(
-                                AnyView(
-                                    CartScreenView())
-                            )
+                            navigationManager.navigateToScreen(CartScreenView())
                         }
                 }
             }

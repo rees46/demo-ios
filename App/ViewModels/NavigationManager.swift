@@ -44,8 +44,11 @@ class NavigationManager: ObservableObject {
         }
     }
     
-    func navigateToScreen(_ view: AnyView) {
-        let secondaryScreen = ScreenWrapper(screen: view, type: nil)
+    func navigateToScreen(_ view: any View) {
+        let secondaryScreen = ScreenWrapper(
+            screen: AnyView(view),
+            type: nil
+        )
         self.currentScreen = secondaryScreen
         self.screenHistory.append(secondaryScreen)
     }

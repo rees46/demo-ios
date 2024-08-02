@@ -17,7 +17,7 @@ struct HomeScreenView: View {
     
     var body: some View {
         ScrollView {
-            VStack(spacing: 16) {
+            LazyVStack(spacing: 16) {
                 if isLoading {
                     LoadingView(isLoading: $isLoading)
                 } else {
