@@ -39,9 +39,8 @@ struct TabBarButton: View {
             Image(image)
                 .resizable()
                 .renderingMode(.template)
-                .frame(width: 32, height: 32)
-                .foregroundColor(isSelected ? .white : .gray)
+                .frame(width: Sizes.defaultSize, height: Sizes.defaultSize)
+                .foregroundColor(isSelected ? Colors.selectedForeground : Colors.unselectedForeground)
         }
     }
 }
-

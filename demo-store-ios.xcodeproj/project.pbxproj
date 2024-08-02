@@ -31,6 +31,12 @@
 		75A4D5AE2C579A3F00929368 /* SDKManagingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A4D5AD2C579A3F00929368 /* SDKManagingProtocol.swift */; };
 		75A4D5B22C579A4900929368 /* SdkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A4D5B12C579A4900929368 /* SdkManager.swift */; };
 		75A4D60F2C5CD84800929368 /* RemoteImageView.struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A4D60D2C5CD80500929368 /* RemoteImageView.struct.swift */; };
+		75A4D6162C5D0AD400929368 /* Sizes.struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A4D6152C5D0AD400929368 /* Sizes.struct.swift */; };
+		75A4D6172C5D0AD400929368 /* Sizes.struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A4D6152C5D0AD400929368 /* Sizes.struct.swift */; };
+		75A4D6182C5D0AD400929368 /* Sizes.struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A4D6152C5D0AD400929368 /* Sizes.struct.swift */; };
+		75A4D61A2C5D0AE800929368 /* Colors.struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A4D6192C5D0AE800929368 /* Colors.struct.swift */; };
+		75A4D61B2C5D0AE800929368 /* Colors.struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A4D6192C5D0AE800929368 /* Colors.struct.swift */; };
+		75A4D61C2C5D0AE800929368 /* Colors.struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A4D6192C5D0AE800929368 /* Colors.struct.swift */; };
 		75B935572C3564360063E814 /* DemoStoreApp.struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B935562C3564360063E814 /* DemoStoreApp.struct.swift */; };
 		75B935592C3564360063E814 /* ContentView.struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B935582C3564360063E814 /* ContentView.struct.swift */; };
 		75B9355B2C3564370063E814 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75B9355A2C3564370063E814 /* Assets.xcassets */; };
@@ -175,6 +181,8 @@
 		75A4D5AD2C579A3F00929368 /* SDKManagingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKManagingProtocol.swift; sourceTree = "<group>"; };
 		75A4D5B12C579A4900929368 /* SdkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SdkManager.swift; sourceTree = "<group>"; };
 		75A4D60D2C5CD80500929368 /* RemoteImageView.struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImageView.struct.swift; sourceTree = "<group>"; };
+		75A4D6152C5D0AD400929368 /* Sizes.struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sizes.struct.swift; sourceTree = "<group>"; };
+		75A4D6192C5D0AE800929368 /* Colors.struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.struct.swift; sourceTree = "<group>"; };
 		75B935532C3564360063E814 /* demo-store-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "demo-store-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		75B935562C3564360063E814 /* DemoStoreApp.struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoStoreApp.struct.swift; sourceTree = "<group>"; };
 		75B935582C3564360063E814 /* ContentView.struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.struct.swift; sourceTree = "<group>"; };
@@ -301,6 +309,38 @@
 				75A4D5AD2C579A3F00929368 /* SDKManagingProtocol.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		75A4D6132C5D09BB00929368 /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				75A4D6192C5D0AE800929368 /* Colors.struct.swift */,
+			);
+			path = Colors;
+			sourceTree = "<group>";
+		};
+		75A4D6142C5D09C400929368 /* Sizes */ = {
+			isa = PBXGroup;
+			children = (
+				75A4D6152C5D0AD400929368 /* Sizes.struct.swift */,
+			);
+			path = Sizes;
+			sourceTree = "<group>";
+		};
+		75A4D61D2C5D0C6900929368 /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				75ECCD162C36D6D000D6D346 /* Localizable.xcstrings */,
+			);
+			path = Strings;
+			sourceTree = "<group>";
+		};
+		75A4D61E2C5D0C7500929368 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				75B9355A2C3564370063E814 /* Assets.xcassets */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 		75B9354A2C3564360063E814 = {
@@ -802,8 +842,10 @@
 		75ECCD152C36D6B400D6D346 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				75B9355A2C3564370063E814 /* Assets.xcassets */,
-				75ECCD162C36D6D000D6D346 /* Localizable.xcstrings */,
+				75A4D61E2C5D0C7500929368 /* Assets */,
+				75A4D61D2C5D0C6900929368 /* Strings */,
+				75A4D6132C5D09BB00929368 /* Colors */,
+				75A4D6142C5D09C400929368 /* Sizes */,
 			);
 			name = Resources;
 			path = Core/Resources;
@@ -1049,6 +1091,7 @@
 				75A4D60F2C5CD84800929368 /* RemoteImageView.struct.swift in Sources */,
 				75E97A652C50320F0081B069 /* RecommendedProduct.struct.swift in Sources */,
 				752F1D3A2C41E01D002D4AC3 /* ProductCartItem.struct.swift in Sources */,
+				75A4D6162C5D0AD400929368 /* Sizes.struct.swift in Sources */,
 				75E97A8D2C5142F10081B069 /* ProductsViewModel.swift in Sources */,
 				75E97A5F2C502F3C0081B069 /* Product.struct.swift in Sources */,
 				75E97A782C512F8C0081B069 /* DependenciesInitialization.struct.swift in Sources */,
@@ -1093,6 +1136,7 @@
 				75E97AA22C5147A20081B069 /* SdkResolver.swift in Sources */,
 				75E97A232C5023600081B069 /* SearchFilter.struct.swift in Sources */,
 				75E97A5A2C502DBF0081B069 /* SearchProductResponseMapper.swift in Sources */,
+				75A4D61A2C5D0AE800929368 /* Colors.struct.swift in Sources */,
 				752F1D4B2C46A363002D4AC3 /* SearchProductResponse.struct.swift in Sources */,
 				75E97A4D2C50255A0081B069 /* SearchPriceRange.struct.swift in Sources */,
 				75E979F12C4D2DBE0081B069 /* Timer.swift in Sources */,
@@ -1124,7 +1168,9 @@
 				75E97A4A2C50253A0081B069 /* SearchSuggest.struct.swift in Sources */,
 				75E979F22C4D2DBE0081B069 /* Timer.swift in Sources */,
 				75E97A422C5025080081B069 /* SearchCategory.struct.swift in Sources */,
+				75A4D61B2C5D0AE800929368 /* Colors.struct.swift in Sources */,
 				75E97A832C5133AD0081B069 /* LoadingView.struct.swift in Sources */,
+				75A4D6172C5D0AD400929368 /* Sizes.struct.swift in Sources */,
 				75E97A242C5023600081B069 /* SearchFilter.struct.swift in Sources */,
 				75E97A3E2C5024EF0081B069 /* SearchRedirect.struct.swift in Sources */,
 				75E97A4E2C50255A0081B069 /* SearchPriceRange.struct.swift in Sources */,
@@ -1144,7 +1190,9 @@
 				75E97A4F2C50255A0081B069 /* SearchPriceRange.struct.swift in Sources */,
 				75E97A472C5025240081B069 /* SearchQuery.struct.swift in Sources */,
 				75E97A432C5025080081B069 /* SearchCategory.struct.swift in Sources */,
+				75A4D61C2C5D0AE800929368 /* Colors.struct.swift in Sources */,
 				75E97A842C5133AD0081B069 /* LoadingView.struct.swift in Sources */,
+				75A4D6182C5D0AD400929368 /* Sizes.struct.swift in Sources */,
 				75E979F32C4D2DBE0081B069 /* Timer.swift in Sources */,
 				75E97A252C5023600081B069 /* SearchFilter.struct.swift in Sources */,
 				75E97A292C50237F0081B069 /* SearchIndustrialFilters.struct.swift in Sources */,
