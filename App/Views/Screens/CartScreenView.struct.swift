@@ -58,7 +58,7 @@ struct CartScreenView: View {
             .navigationBarTitle("cart_tab_title")
             .onAppear {
                 navigationManager.setVisibility(hideToolbar: false, hideBottomBar: false)
-                viewModel.loadRecommenderRecommendations(currentProductId: "665")
+                viewModel.loadRecommenderRecommendations()
             }
         }
     }

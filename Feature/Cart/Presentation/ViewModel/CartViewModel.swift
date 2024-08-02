@@ -34,9 +34,9 @@ class CartViewModel {
         cartRepository.removeFromCart(productId: productId)
     }
 
-    func loadRecommenderRecommendations(currentProductId: String) {
+    func loadRecommenderRecommendations() {
         getRecommendationsUseCase.execute(
-            currentProductId: currentProductId
+            currentProductId: AppConfigVariables.recommendationCode
         ) { products in
             self.recommenderProducts = products
         }

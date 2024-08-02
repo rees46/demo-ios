@@ -49,11 +49,6 @@ struct ProductsScreenView: View {
             .background(Color.white)
         }
         .onAppear {
-            if let product = product {
-                print("DATA \(product)")
-            } else {
-                print("DATA is nil")
-            }
             navigationManager.setVisibility(hideToolbar: false, hideBottomBar: false)
         }
     }
