@@ -16,7 +16,7 @@ struct LoadingView: View {
                         isLoading = false
                     }
                 }
-                .frame(height: Sizes.Size.largeImageHeight)
+                .frame(height: Sizes.Size.largeImageSize)
         }
     }
 }

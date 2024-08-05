@@ -11,7 +11,7 @@ struct SplashScreenView: View {
                 .resizable()
                 .scaledToFit()
                 .frame(width: Sizes.Size.mediumImage, height: Sizes.Size.mediumImage)
-                .foregroundColor(AppColors.foregroundColor)
+                .foregroundColor(AppColors.colorWhite)
         }
         .onAppear {
             Timer.after {

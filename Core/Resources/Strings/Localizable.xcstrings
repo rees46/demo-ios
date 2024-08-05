@@ -194,9 +194,6 @@
         }
       }
     },
-    "No product data available" : {
-
-    },
     "process_timeout_title" : {
       "extractionState" : "manual",
       "localizations" : {
