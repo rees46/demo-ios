@@ -7,25 +7,25 @@ struct SettingsErrroScreenView: View {
     var body: some View {
         VStack {
             Text("default_error_title")
-                .font(.system(size: 32))
+                .font(.system(size: Sizes.FontSize.enormous))
                 .multilineTextAlignment(.center)
-                .foregroundColor(.black)
+                .foregroundColor(AppColors.colorBlack)
                 .font(Font.footnote.weight(.bold))
             
             Text("default_error_sub_title")
-                .font(.system(size: 18))
-                .padding(.vertical,20)
-                .padding(.horizontal,16)
+                .font(.system(size: Sizes.FontSize.extraLarge))
+                .padding(.vertical,Sizes.Spacing.large)
+                .padding(.horizontal,Sizes.Spacing.standard)
                 .multilineTextAlignment(.center)
-                .foregroundColor(.black)
+                .foregroundColor(AppColors.colorBlack)
             
             Button(action: retryAction) {
                 Text("go_home_button")
-                    .foregroundColor(.white)
-                    .frame(height: 44)
+                    .foregroundColor(AppColors.colorWhite)
+                    .frame(height: Sizes.Size.textFrameWidth)
                     .frame(maxWidth: .infinity)
-                    .background(Color.black)
-                    .cornerRadius(10)
+                    .background(AppColors.colorBlack)
+                    .cornerRadius(Sizes.CornerRadius.large)
             }
             .padding(.horizontal)
         }

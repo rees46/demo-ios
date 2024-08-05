@@ -8,7 +8,8 @@ struct Sizes {
         static let small: CGFloat = 5
         static let extraSmall: CGFloat = 2
         static let buttonHorizontal: CGFloat = 16
-        static let xLarge: CGFloat = 10
+        static let large: CGFloat = 10
+        static let xLarge: CGFloat = 12
         static let xxLarge: CGFloat = 20
     }
     
@@ -23,18 +24,22 @@ struct Sizes {
     struct FontSize {
         static let lineWidth: CGFloat = 1
         static let small: CGFloat = 12
-        static let medium: CGFloat = 13
+        static let medium: CGFloat = 14
         static let standard: CGFloat = 16
         static let large: CGFloat = 17
         static let extraLarge: CGFloat = 18
         static let xxLarge: CGFloat = 20
         static let xxxLarge: CGFloat = 24
+        static let enormous: CGFloat = 32
     }
     
     struct Size {
         static let xxLargeImageSize: CGFloat = 350
+        static let smallIconSize: CGFloat = 24
+        static let smallImageSize: CGFloat = 64
         static let largeImageSize: CGFloat = 300
         static let largeImageWidth: CGFloat = 280
+        static let largeContainerHeight: CGFloat = 250
         static let smallCircle: CGFloat = 10
         static let badge: CGFloat = 14
         static let buttonHeight: CGFloat = 50

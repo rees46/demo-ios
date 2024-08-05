@@ -40,10 +40,9 @@ struct SettingsScreenView: View {
         }
         .padding()
         .navigationTitle("settings_tab_title")
-        .background(Color.white.edgesIgnoringSafeArea(.all))
+        .background(AppColors.colorWhite.edgesIgnoringSafeArea(.all))
         .onAppear{
             navigationManager.setVisibility(hideToolbar: false, hideBottomBar: false)
-            //TODO: Chage to real loading
             loadData()
         }
     }
@@ -56,24 +55,6 @@ struct SettingsScreenView: View {
             } else {
                 viewState = .error("Failed to load data")
             }
-        }
-    }
-}
-
-struct SettingsErrorScreenView: View {
-    let errorMessage: String
-    let retryAction: () -> Void
-    
-    var body: some View {
-        VStack {
-            Text(errorMessage)
-                .foregroundColor(.red)
-                .padding()
-            
-            Button("retry_button_title") {
-                retryAction()
-            }
-            .padding()
         }
     }
 }
