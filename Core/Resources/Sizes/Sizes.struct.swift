@@ -1,29 +1,47 @@
 import SwiftUI
 
 struct Sizes {
-    static let padding: CGFloat = 16
-    static let topSectionSpacing: CGFloat = 20
-    static let productImagesSectionHeight: CGFloat = 300
-    static let productImageCircleSize: CGFloat = 10
-    static let productDetailsSpacing: CGFloat = 20
-    static let productBrandFontSize: CGFloat = 16
-    static let productNameFontSize: CGFloat = 24
-    static let ratingSpacing: CGFloat = 12
-    static let ratingFontSize: CGFloat = 12
-    static let descriptionFontSize: CGFloat = 13
-    static let priceSectionSpacing: CGFloat = 20
-    static let oldPriceFontSize: CGFloat = 18
-    static let priceFontSize: CGFloat = 17
-    static let discountFontSize: CGFloat = 16
-    static let discountBadgeSize: CGFloat = 14
-    static let discountPadding: CGFloat = 8
-    static let discountCornerRadius: CGFloat = 8
-    static let actionSectionHeight: CGFloat = 50
-    static let counterButtonSize: CGFloat = 50
-    static let counterFontSize: CGFloat = 20
-    static let counterBorderWidth: CGFloat = 1
-    static let buttonCornerRadius: CGFloat = 8
-    static let buttonPaddingHorizontal: CGFloat = 16
-    static let buttonFontSize: CGFloat = 17
-    static let recommendationSpacing: CGFloat = 36
+    struct Padding {
+        static let standard: CGFloat = 16
+        static let small: CGFloat = 8
+        static let buttonHorizontal: CGFloat = 16
+    }
+    
+    struct Spacing {
+        static let small: CGFloat = 5
+        static let standard: CGFloat = 16
+        static let large: CGFloat = 20
+        static let medium: CGFloat = 12
+        static let extraLarge: CGFloat = 36
+    }
+    
+    struct FontSize {
+        static let small: CGFloat = 12
+        static let medium: CGFloat = 13
+        static let standard: CGFloat = 16
+        static let large: CGFloat = 17
+        static let extraLarge: CGFloat = 18
+        static let xxLarge: CGFloat = 20
+        static let xxxLarge: CGFloat = 24
+    }
+    
+    struct Size {
+        static let largeImageHeight: CGFloat = 300
+        static let smallCircle: CGFloat = 10
+        static let badge: CGFloat = 14
+        static let buttonHeight: CGFloat = 50
+        static let buttonWidth: CGFloat = 50
+        static let icon: CGFloat = 32
+        static let mediumImage: CGFloat = 140
+    }
+    
+    struct BorderWidth {
+        static let standard: CGFloat = 1
+    }
+    
+    struct CornerRadius {
+        static let small: CGFloat = 3
+        static let standard: CGFloat = 8
+        static let large: CGFloat = 10
+    }
 }

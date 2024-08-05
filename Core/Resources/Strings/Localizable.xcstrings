@@ -372,8 +372,16 @@
         }
       }
     },
-    "Shop" : {
-
+    "shop_button_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Shop"
+          }
+        }
+      }
     },
     "show_all_button" : {
       "extractionState" : "manual",

@@ -14,61 +14,16 @@ struct ProductListItemView: View {
     var showShopButton: Bool
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 5) {
-            RemoteImageView(
-                urlString: product.resizedImageUrl,
-                width: imageWidth,
-                height: imageHeight
-            )
+        VStack(alignment: .leading, spacing: Sizes.CornerRadius.small) {
+            ProductImageView(urlString: product.resizedImageUrl, width: imageWidth, height: imageHeight)
             
-            Text(product.brand)
-                .font(.system(size: 12))
-                .padding(.top, 8)
-                .padding(.bottom, 4)
-                .foregroundColor(.secondary)
-                .lineLimit(1)
+            ProductInfoView(product: product)
             
-            Text(product.name)
-                .font(.system(size: 19))
-                .padding(.bottom, 4)
-                .foregroundColor(.primary)
-                .lineLimit(1)
-            
-            RatingView(rating: Double(product.rating))
-            
-            if let oldPrice = product.oldPriceFormatted {
-                Text(oldPrice)
-                    .font(.subheadline)
-                    .foregroundColor(.secondary)
-                    .strikethrough()
-            }
-            
-            HStack {
-                Text(product.priceFormatted ?? "")
-                    .font(.system(size: 17, weight: .bold))
-                    .foregroundColor(.primary)
-                
-                Spacer()
-                
-                if showShopButton {
-                    Button(
-                        action: {
-                            viewModel.addToCart(product: product, quantity: 1)
-                        }
-                    ) {
-                        Text("Shop")
-                            .font(.system(size: 12))
-                            .foregroundColor(.white)
-                            .frame(width: 62, height: 28)
-                            .background(Color.black)
-                            .cornerRadius(3)
-                    }
-                }
-            }
+            PriceAndShopButtonView(product: product, showShopButton: showShopButton, viewModel: viewModel)
             
             Spacer()
         }
-        .cornerRadius(10)
+        .cornerRadius(Sizes.CornerRadius.large)
         .frame(width: containerWidth, height: containerHeight)
         .onTapGesture {
             navigationManager.navigateToScreen(

@@ -29,18 +29,3 @@ struct BottomBarView: View {
         }
     }
 }
-
-struct TabBarButton: View {
-    var image: String
-    var isSelected: Bool
-    
-    var body: some View {
-        VStack {
-            Image(image)
-                .resizable()
-                .renderingMode(.template)
-                .frame(width: Sizes.defaultSize, height: Sizes.defaultSize)
-                .foregroundColor(isSelected ? Colors.selectedForeground : Colors.unselectedForeground)
-        }
-    }
-}

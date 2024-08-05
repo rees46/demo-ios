@@ -43,7 +43,7 @@ struct HomeScreenView: View {
                     
                 }
             }
-            .padding(.vertical, Sizes.paddingHorizontal)
+            .padding(.vertical, Sizes.Padding.general)
             .frame(maxWidth: .infinity, alignment: .top)
         }
         .navigationTitle("main_tab_title")
