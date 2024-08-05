@@ -9,15 +9,15 @@ struct ContentView: View {
     var body: some View {
         VStack(spacing: 0) {
             ToolbarView()
-                .background(Color.black)
+                .background(AppColors.colorBlack)
             
             MainViews()
             
             BottomBarView()
-                .frame(height: 70)
-                .background(Color.black)
+                .frame(height: Sizes.Size.bottomBarHeight)
+                .background(AppColors.colorBlack)
         }
-        .background(Color.black.edgesIgnoringSafeArea(.all))
+        .background(AppColors.colorBlack.edgesIgnoringSafeArea(.all))
         .environmentObject(navigationManager)
     }
 }

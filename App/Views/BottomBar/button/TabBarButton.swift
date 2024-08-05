@@ -10,7 +10,7 @@ struct TabBarButton: View {
                 .resizable()
                 .renderingMode(.template)
                 .frame(width: Sizes.Size.icon, height: Sizes.Size.icon)
-                .foregroundColor(isSelected ? Colors.selectedForeground : Colors.unselectedForeground)
+                .foregroundColor(isSelected ? AppColors.selectedForeground : AppColors.unselectedForeground)
         }
     }
 }

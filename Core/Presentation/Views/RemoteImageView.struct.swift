@@ -2,13 +2,14 @@ import Foundation
 import SwiftUI
 
 struct RemoteImageView: View {
+    
     @StateObject var imageLoader = RemoteImageLoader()
     let urlString: String
     let width: CGFloat?
     let height: CGFloat?
     let contentMode: ContentMode
     let showBorder: Bool
-
+    
     init(
         urlString: String,
         width: CGFloat? = nil,
@@ -22,7 +23,7 @@ struct RemoteImageView: View {
         self.contentMode = contentMode
         self.showBorder = showBorder
     }
-
+    
     var body: some View {
         ZStack {
             if let uiImage = UIImage(data: imageLoader.imageData) {
@@ -30,17 +31,19 @@ struct RemoteImageView: View {
                     .resizable()
                     .aspectRatio(contentMode: contentMode)
                     .frame(width: width, height: height)
-                    .cornerRadius(5)
+                    .cornerRadius(Sizes.CornerRadius.medium)
                     .overlay(
                         showBorder ?
-                        RoundedRectangle(cornerRadius: 10)
-                            .stroke(Color.gray.opacity(0.5), lineWidth: 1) : nil
+                        RoundedRectangle(cornerRadius: Sizes.CornerRadius.large).stroke(
+                            Color.gray.opacity(0.5),
+                            lineWidth: Sizes.FontSize.lineWidth
+                        ) : nil
                     )
             } else {
                 Rectangle()
                     .fill(Color.gray.opacity(0.3))
                     .frame(width: width, height: height)
-                    .cornerRadius(5)
+                    .cornerRadius(Sizes.CornerRadius.medium)
                 
                 ProgressView()
                     .progressViewStyle(CircularProgressViewStyle())

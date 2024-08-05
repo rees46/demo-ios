@@ -2,11 +2,10 @@ import SwiftUI
 
 struct FullRecommendationListView: View{
     
-    
     @EnvironmentObject var navigationManager: NavigationManager
-    
     var recommendedProducts: [RecommendedProduct]
     var title: String
+    
     var body: some View {
         VStack(alignment: .leading) {
             
@@ -14,23 +13,26 @@ struct FullRecommendationListView: View{
             
             ScrollView {
                 Spacer().frame(height: 20)
-                LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 16) {
+                LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: Sizes.Spacing.standard) {
                     ForEach(recommendedProducts, id: \.id) { product in
                         ProductListItemView(
                             product: product,
-                            containerWidth: 170,
-                            containerHeight: 280,
-                            imageWidth: 170,
-                            imageHeight: 170,
+                            containerWidth: Sizes.Size.largeImage,
+                            containerHeight: Sizes.Size.largeImageWidth,
+                            imageWidth: Sizes.Size.largeImage,
+                            imageHeight: Sizes.Size.largeImage,
                             showShopButton: true
-                        ).padding(.bottom,20)
+                        ).padding(.bottom,Sizes.Padding.xxLarge)
                     }
                 }
             }
         }
         .background(Color.white)
         .onAppear{
-            navigationManager.setVisibility(hideToolbar: true, hideBottomBar: false)
+            navigationManager.setVisibility(
+                hideToolbar: true,
+                hideBottomBar: false
+            )
         }
     }
 }

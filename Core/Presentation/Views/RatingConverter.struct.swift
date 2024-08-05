@@ -15,12 +15,12 @@ struct RatingView: View {
         HStack(spacing: 2) {
             ForEach(1...5, id: \.self) { index in
                 Image(systemName: self.starType(for: index))
-                    .foregroundColor(.yellow)
+                    .foregroundColor(AppColors.ratingColor)
             }
         }
         .font(.caption)
-        .padding(.top, 2)
-        .padding(.bottom, 5)
+        .padding(.top, Sizes.Padding.extraSmall)
+        .padding(.bottom, Sizes.Padding.small)
     }
     
     private func starType(for index: Int) -> String {

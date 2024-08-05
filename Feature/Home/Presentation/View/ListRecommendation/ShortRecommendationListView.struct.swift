@@ -19,19 +19,19 @@ struct ShortRecommendationListView: View {
             }
             
             ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: Sizes.Spacing.general) {
+                HStack(spacing: Sizes.Spacing.standard) {
                     ForEach(recommendedProducts, id: \.id) { product in
                         ProductListItemView(
                             product: product,
                             containerWidth: 140,
                             containerHeight: 270,
-                            imageWidth: Sizes.Size.productImage,
-                            imageHeight: Sizes.Size.productImage,
+                            imageWidth: Sizes.Size.mediumImage,
+                            imageHeight: Sizes.Size.mediumImage,
                             showShopButton: false
                         )
                     }
                 }
-                .padding(.horizontal, Sizes.Padding.general)
+                .padding(.horizontal, Sizes.Padding.standard)
             }
         }
     }
