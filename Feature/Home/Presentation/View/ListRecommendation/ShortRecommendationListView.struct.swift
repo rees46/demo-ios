@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct ShortRecommendationListView: View {
+    
     @EnvironmentObject var navigationManager: NavigationManager
     var recommendedProducts: [RecommendedProduct]
     var title: String
@@ -9,11 +10,9 @@ struct ShortRecommendationListView: View {
         VStack(alignment: .leading) {
             SectionHeaderView(title: title) {
                 navigationManager.navigateToScreen(
-                    AnyView(
-                        FullRecommendationListView(
-                            recommendedProducts: recommendedProducts,
-                            title: NSLocalizedString("reccomender_title", comment: "")
-                        )
+                    FullRecommendationListView(
+                        recommendedProducts: recommendedProducts,
+                        title: NSLocalizedString("reccomender_title", comment: "")
                     )
                 )
             }
@@ -23,8 +22,8 @@ struct ShortRecommendationListView: View {
                     ForEach(recommendedProducts, id: \.id) { product in
                         ProductListItemView(
                             product: product,
-                            containerWidth: 140,
-                            containerHeight: 270,
+                            containerWidth: Sizes.Size.mediumImage,
+                            containerHeight: Sizes.Size.largeImageWidth,
                             imageWidth: Sizes.Size.mediumImage,
                             imageHeight: Sizes.Size.mediumImage,
                             showShopButton: false

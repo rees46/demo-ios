@@ -15,6 +15,7 @@ struct Sizes {
     }
     
     struct Spacing {
+        static let extraSmall: CGFloat = 2
         static let small: CGFloat = 5
         static let standard: CGFloat = 16
         static let large: CGFloat = 20

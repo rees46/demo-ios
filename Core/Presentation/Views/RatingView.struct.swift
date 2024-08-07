@@ -12,7 +12,7 @@ struct RatingView: View {
     }
 
     var body: some View {
-        HStack(spacing: 2) {
+        HStack(spacing: Sizes.Spacing.extraSmall) {
             ForEach(1...5, id: \.self) { index in
                 Image(systemName: self.starType(for: index))
                     .foregroundColor(AppColors.ratingColor)

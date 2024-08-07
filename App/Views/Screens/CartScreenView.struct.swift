@@ -28,14 +28,13 @@ struct CartScreenView: View {
     
     var body: some View {
         ScrollView {
-            VStack(spacing: 0) {
+            LazyVStack(spacing: 0) {
                 Spacer().frame(height: Sizes.Spacing.large)
                 
                 if isLoading {
                     LoadingView(isLoading: $isLoading)
                 } else if viewModel.cartItems.isEmpty {
-                    EmptyCartView()
-                        .frame(height: Sizes.Size.largeContainerHeight)
+                    EmptyCartView().frame(height: Sizes.Size.largeContainerHeight)
                 } else {
                     CartListView(
                         cartItems: viewModel.cartItems,
@@ -44,14 +43,10 @@ struct CartScreenView: View {
                         }
                     ).frame(height: Sizes.Size.largeContainerHeight)
                     
-                    TotalPriceSection(totalPrice: totalPrice)
+                    CartTotalPriceSection(totalPrice: totalPrice)
                     
-                    NavigationButtonsView(
-                        navigationManager: navigationManager
-                    )
-                }
-                
-                if !isLoading {
+                    CartActionButtonsView(navigationManager: navigationManager)
+                    
                     ShortRecommendationListView(
                         recommendedProducts: viewModel.recommenderProducts,
                         title: NSLocalizedString("recommend_like_title", comment: "")
@@ -62,7 +57,10 @@ struct CartScreenView: View {
             }
             .navigationBarTitle("cart_tab_title")
             .onAppear {
-                navigationManager.setVisibility(hideToolbar: false, hideBottomBar: false)
+                navigationManager.setVisibility(
+                    hideToolbar: false,
+                    hideBottomBar: false
+                )
                 viewModel.loadRecommenderRecommendations()
             }
         }

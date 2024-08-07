@@ -37,7 +37,14 @@ struct CartListItemView: View {
                     .foregroundColor(AppColors.colorBlack)
                     .padding(.trailing, Sizes.Padding.xLarge)
                 
-                RemoveButtonView(action: removeFromCart)
+                Button(action: removeFromCart) {
+                    Image(systemName: "xmark")
+                        .foregroundColor(AppColors.colorWhite)
+                        .frame(width: Sizes.Size.smallIconSize, height: Sizes.Size.smallIconSize)
+                        .background(AppColors.colorGray)
+                        .clipShape(Circle())
+                }
+                .buttonStyle(BorderlessButtonStyle())
             }
             .padding(.vertical, Sizes.Padding.medium)
             .background(AppColors.colorWhite)

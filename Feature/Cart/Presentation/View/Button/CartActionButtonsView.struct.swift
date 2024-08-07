@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct NavigationButtonsView: View {
+struct CartActionButtonsView: View {
     
     @ObservedObject var navigationManager: NavigationManager
     
@@ -21,7 +21,7 @@ struct NavigationButtonsView: View {
                         .cornerRadius(Sizes.CornerRadius.standard)
                         .overlay(
                             RoundedRectangle(cornerRadius: Sizes.CornerRadius.standard)
-                                .stroke(Color.black, lineWidth: Sizes.BorderWidth.standard)
+                                .stroke(AppColors.colorBlack, lineWidth: Sizes.BorderWidth.standard)
                         )
                 }
                 
