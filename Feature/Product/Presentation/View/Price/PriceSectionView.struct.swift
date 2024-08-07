@@ -9,20 +9,20 @@ struct PriceSectionView: View {
             
             if let oldPrice = product.oldPriceFormatted {
                 Text(oldPrice)
-                    .font(.system(size: Sizes.FontSize.large))
+                    .font(.system(size: Typography.FontSize.large))
                     .foregroundColor(.secondary)
                     .strikethrough()
             }
             
             HStack {
                 Text(product.priceFormatted ?? "")
-                    .font(.system(size: Sizes.FontSize.large, weight: .bold))
+                    .font(.system(size: Typography.FontSize.large, weight: .bold))
                     .foregroundColor(.primary)
                 
                 Spacer().frame(width: Sizes.Spacing.medium)
                 
                 Text("\(Int.random(in: 1...50))%")
-                    .font(.system(size: Sizes.FontSize.standard))
+                    .font(.system(size: Typography.FontSize.standard))
                     .frame(width: Sizes.Size.textFrameWidth, height: Sizes.Size.textFrameHeight)
                     .foregroundColor(AppColors.colorWhite)
                     .padding(Sizes.Padding.medium)

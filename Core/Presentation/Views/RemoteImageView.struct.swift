@@ -36,7 +36,7 @@ struct RemoteImageView: View {
                         showBorder ?
                         RoundedRectangle(cornerRadius: Sizes.CornerRadius.large).stroke(
                             Color.gray.opacity(0.5),
-                            lineWidth: Sizes.FontSize.lineWidth
+                            lineWidth: Typography.FontSize.lineWidth
                         ) : nil
                     )
             } else {

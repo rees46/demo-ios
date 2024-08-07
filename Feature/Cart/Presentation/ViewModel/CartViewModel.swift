@@ -8,7 +8,7 @@ class CartViewModel {
     @Published var recommenderProducts: [RecommendedProduct] = []
     @Published var isLoading: Bool = true
 
-    @Injected var cartRepository: CartRepositoryProtocol
+    @Injected var cartRepository: CartRepository
     @Injected var getRecommendationsUseCase: GetRecommendationsUseCase
     
     private var cancellables = Set<AnyCancellable>()

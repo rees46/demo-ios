@@ -1,7 +1,7 @@
 import Foundation
 import Combine
 
-protocol CartRepositoryProtocol {
+protocol CartRepository {
     var cartItemsPublisher: Published<[ProductCartItem]>.Publisher { get }
     func addToCart(product: RecommendedProduct, quantity: Int)
     func updateCartItem(productId: String, quantity: Int)

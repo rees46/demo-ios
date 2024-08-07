@@ -17,23 +17,23 @@ struct CartListItemView: View {
                 
                 VStack(alignment: .leading, spacing: Sizes.Spacing.small) {
                     Text(cartItem.product.brand)
-                        .font(.system(size: Sizes.FontSize.small))
+                        .font(.system(size: Typography.FontSize.small))
                         .foregroundColor(AppColors.colorGray)
                     
                     Text(cartItem.product.name)
-                        .font(.system(size: Sizes.FontSize.standard))
+                        .font(.system(size: Typography.FontSize.standard))
                         .foregroundColor(AppColors.colorBlack)
                         .lineLimit(1)
                         .truncationMode(.tail)
                     
                     Text(String(format: NSLocalizedString("quantity_title", comment: ""), "\(cartItem.quantity)"))
-                        .font(.system(size: Sizes.FontSize.medium))
+                        .font(.system(size: Typography.FontSize.medium))
                         .foregroundColor(AppColors.colorBlack)
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 
                 Text(cartItem.product.priceFormatted ?? "")
-                    .font(.system(size: Sizes.FontSize.standard))
+                    .font(.system(size: Typography.FontSize.standard))
                     .foregroundColor(AppColors.colorBlack)
                     .padding(.trailing, Sizes.Padding.xLarge)
                 

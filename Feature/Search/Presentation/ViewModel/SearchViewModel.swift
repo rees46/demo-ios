@@ -5,7 +5,7 @@ import Resolver
 
 class SearchViewModel {
     
-    @Injected var sdkManager: SDKManagingProtocol
+    @Injected var sdkManager: SDKManaging
     
     @Published var searchText: String = ""
     @Published var searchResults: SearchProductResponse? = nil

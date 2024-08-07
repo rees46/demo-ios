@@ -7,7 +7,7 @@ struct EmptyCartView: View {
             Text("empty_cart_title")
                 .font(
                     .system(
-                        size: Sizes.FontSize.extraLarge,
+                        size: Typography.FontSize.extraLarge,
                         weight: .bold
                     )
                 )

@@ -22,7 +22,7 @@ struct ActionSectionView: View {
                 }
             ) {
                 Text("add_to_cart_button_title")
-                    .font(.system(size: Sizes.FontSize.medium, weight: .bold))
+                    .font(.system(size: Typography.FontSize.medium, weight: .bold))
                     .foregroundColor(AppColors.colorWhite)
                     .frame(maxWidth: .infinity, maxHeight: Sizes.Size.buttonHeight)
                     .background(AppColors.colorBlack)

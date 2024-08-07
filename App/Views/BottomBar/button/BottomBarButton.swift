@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct TabBarButton: View {
+struct BottomBarButton: View {
     var image: String
     var isSelected: Bool
     

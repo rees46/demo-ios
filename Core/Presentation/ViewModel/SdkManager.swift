@@ -1,6 +1,6 @@
 import REES46
 
-class SDKManager: SDKManagingProtocol {
+class SDKManager: SDKManaging {
     var sdk: PersonalizationSDK?
 
     init() {

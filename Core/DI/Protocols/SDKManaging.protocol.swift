@@ -1,6 +1,6 @@
 import Foundation
 import REES46
 
-protocol SDKManagingProtocol {
+protocol SDKManaging {
     var sdk: PersonalizationSDK? { get }
 }

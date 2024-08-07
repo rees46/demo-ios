@@ -5,7 +5,7 @@ import Resolver
 
 class ProductsViewModel {
     
-    @Injected var cartRepository: CartRepositoryProtocol
+    @Injected var cartRepository: CartRepository
     @Injected var getRecommendationsUseCase: GetRecommendationsUseCase
     
     @Published var recommenderProducts: [RecommendedProduct] = []

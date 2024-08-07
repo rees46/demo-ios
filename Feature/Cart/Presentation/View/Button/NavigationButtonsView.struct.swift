@@ -31,7 +31,7 @@ struct NavigationButtonsView: View {
                     }
                 ) {
                     Text("checkout_button")
-                        .font(.system(size: Sizes.FontSize.standard))
+                        .font(.system(size: Typography.FontSize.standard))
                         .foregroundColor(AppColors.colorWhite)
                         .padding()
                         .frame(maxWidth: .infinity)

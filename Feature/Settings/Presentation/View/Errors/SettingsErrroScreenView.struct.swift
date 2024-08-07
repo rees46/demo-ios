@@ -7,13 +7,13 @@ struct SettingsErrroScreenView: View {
     var body: some View {
         VStack {
             Text("default_error_title")
-                .font(.system(size: Sizes.FontSize.enormous))
+                .font(.system(size: Typography.FontSize.enormous))
                 .multilineTextAlignment(.center)
                 .foregroundColor(AppColors.colorBlack)
                 .font(Font.footnote.weight(.bold))
             
             Text("default_error_sub_title")
-                .font(.system(size: Sizes.FontSize.extraLarge))
+                .font(.system(size: Typography.FontSize.extraLarge))
                 .padding(.vertical,Sizes.Spacing.large)
                 .padding(.horizontal,Sizes.Spacing.standard)
                 .multilineTextAlignment(.center)

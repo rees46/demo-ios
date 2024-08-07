@@ -17,7 +17,7 @@ struct BottomBarView: View {
             if !navigationManager.isBottomBarHidden {
                 HStack(spacing: 0) {
                     ForEach(tabs) { tab in
-                        TabBarButton(image: tab.image, isSelected: navigationManager.selectedTab == tab.type)
+                        BottomBarButton(image: tab.image, isSelected: navigationManager.selectedTab == tab.type)
                             .onTapGesture {
                                 navigationManager.selectedTab = tab.type
                                 navigationManager.navigateToRootScreen(screen: tab.screen, selectedTab: tab.type)

@@ -5,8 +5,8 @@ import Resolver
 
 class HomeViewModel {
     
-    @Injected var sdkManager: SDKManagingProtocol
-    @Injected var cartRepository: CartRepositoryProtocol
+    @Injected var sdkManager: SDKManaging
+    @Injected var cartRepository: CartRepository
     @Injected var getRecommendationsUseCase: GetRecommendationsUseCase
     
     @Published var arrivalsProducts: [RecommendedProduct] = []

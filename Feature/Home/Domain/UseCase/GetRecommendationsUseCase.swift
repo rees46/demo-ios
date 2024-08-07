@@ -5,7 +5,7 @@ import Resolver
 
 class GetRecommendationsUseCase {
     
-    @Injected var sdkManager: SDKManagingProtocol
+    @Injected var sdkManager: SDKManaging
     
     func execute(
         currentProductId: String,

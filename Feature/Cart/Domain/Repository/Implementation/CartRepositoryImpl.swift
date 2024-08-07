@@ -1,7 +1,7 @@
 import Foundation
 import Combine
 
-class CartRepository: ObservableObject, CartRepositoryProtocol {
+class CartRepositoryImpl: ObservableObject, CartRepository {
     
     @Published var cartItems: [ProductCartItem] = []
 
