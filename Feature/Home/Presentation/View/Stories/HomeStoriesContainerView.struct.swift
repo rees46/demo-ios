@@ -4,15 +4,15 @@ import UIKit
 struct HomeStoriesContainerView: View {
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 16) {
+        VStack(alignment: .leading, spacing: Sizes.Spacing.standard) {
             Text("stories_title")
-                .font(.system(size: 24))
+                .font(.system(size: Typography.FontSize.xxxLarge))
                 .foregroundColor(.black)
                 .padding(.horizontal)
-                .padding(.top, 32)
+                .padding(.top, Sizes.Padding.xxxLarge)
             
             StoriesViewControllerRepresentable()
-                .frame(height: 200)
+                .frame(height: Sizes.Size.storiesHeight)
         }
     }
 }

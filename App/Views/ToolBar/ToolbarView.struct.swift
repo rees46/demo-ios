@@ -12,26 +12,26 @@ struct ToolbarView: View {
                     Image("ToolbarLogo")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .padding(.vertical, 10)
+                        .padding(.vertical, Sizes.Padding.large)
                         .foregroundColor(.white)
                 }
-                .frame(height: 50)
+                .frame(height: Sizes.Size.buttonHeight)
                 
-                HStack(spacing: 20) {
+                HStack(spacing: Sizes.Spacing.large) {
                     
                     Image("MenuIcon")
                         .resizable()
                         .renderingMode(.template)
-                        .frame(width: 24, height: 24)
+                        .frame(width: Sizes.Size.smallIconSize, height: Sizes.Size.smallIconSize)
                         .foregroundColor(.black)
-                        .padding(.leading, 12)
+                        .padding(.leading, Sizes.Padding.xLarge)
                     
                     Spacer()
                     
                     Image("SearchIcon")
                         .resizable()
                         .renderingMode(.template)
-                        .frame(width: 30, height: 30)
+                        .frame(width: Sizes.Size.icon, height: Sizes.Size.icon)
                         .foregroundColor(.black)
                         .onTapGesture {
                             navigationManager.navigateToScreen(SearchScreenView())
@@ -40,9 +40,9 @@ struct ToolbarView: View {
                     Image("CartIcon")
                         .resizable()
                         .renderingMode(.template)
-                        .frame(width: 30, height: 30)
+                        .frame(width: Sizes.Size.icon, height: Sizes.Size.icon)
                         .foregroundColor(.black)
-                        .padding(.trailing, 12)
+                        .padding(.trailing, Sizes.Padding.xLarge)
                         .onTapGesture {
                             navigationManager.navigateToScreen(CartScreenView())
                         }
