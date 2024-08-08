@@ -24,6 +24,21 @@
 		75674CFE2C3D9A5A007FAB88 /* ShortRecommendationListView.struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75674CFD2C3D9A5A007FAB88 /* ShortRecommendationListView.struct.swift */; };
 		75674D012C3DA0FA007FAB88 /* RemoteImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75674D002C3DA0FA007FAB88 /* RemoteImageLoader.swift */; };
 		75674D032C3DA14F007FAB88 /* RatingView.struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75674D022C3DA14F007FAB88 /* RatingView.struct.swift */; };
+		758713CF2C64E0FF008E5E4E /* SearchViewAllProductsButton.struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758713CD2C64E00B008E5E4E /* SearchViewAllProductsButton.struct.swift */; };
+		758713D32C64E539008E5E4E /* SearchBarView.struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758713D12C64E519008E5E4E /* SearchBarView.struct.swift */; };
+		758713D62C64E577008E5E4E /* SearchHistoryView.struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758713D52C64E577008E5E4E /* SearchHistoryView.struct.swift */; };
+		758713DB2C64E692008E5E4E /* SearchLoadingView.struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758713DA2C64E692008E5E4E /* SearchLoadingView.struct.swift */; };
+		758713DC2C64E692008E5E4E /* SearchLoadingView.struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758713DA2C64E692008E5E4E /* SearchLoadingView.struct.swift */; };
+		758713DD2C64E692008E5E4E /* SearchLoadingView.struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758713DA2C64E692008E5E4E /* SearchLoadingView.struct.swift */; };
+		758713E02C64E6C3008E5E4E /* SearchErrorView.struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758713DF2C64E6C3008E5E4E /* SearchErrorView.struct.swift */; };
+		758713E12C64E6C3008E5E4E /* SearchErrorView.struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758713DF2C64E6C3008E5E4E /* SearchErrorView.struct.swift */; };
+		758713E22C64E6C3008E5E4E /* SearchErrorView.struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758713DF2C64E6C3008E5E4E /* SearchErrorView.struct.swift */; };
+		758713F92C64ED00008E5E4E /* RemoteImageView.struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A4D60D2C5CD80500929368 /* RemoteImageView.struct.swift */; };
+		758713FA2C64ED11008E5E4E /* SearchViewAllProductsButton.struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758713CD2C64E00B008E5E4E /* SearchViewAllProductsButton.struct.swift */; };
+		758713FE2C64EE7A008E5E4E /* SearchResultsListView.struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758713E32C64E6E0008E5E4E /* SearchResultsListView.struct.swift */; };
+		758714012C64EEC5008E5E4E /* RecommendedProduct.struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75674CF62C3D92E0007FAB88 /* RecommendedProduct.struct.swift */; };
+		758714042C64F021008E5E4E /* RemoteImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75674D002C3DA0FA007FAB88 /* RemoteImageLoader.swift */; };
+		758714052C64F039008E5E4E /* RemoteImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75674D002C3DA0FA007FAB88 /* RemoteImageLoader.swift */; };
 		75A3F4232C383CEF00AAC175 /* SettingsInputCodeView.struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A3F4222C383CEF00AAC175 /* SettingsInputCodeView.struct.swift */; };
 		75A3F4252C383E8100AAC175 /* SettingsErrroScreenView.struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A3F4242C383E8100AAC175 /* SettingsErrroScreenView.struct.swift */; };
 		75A3F4272C3858DE00AAC175 /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A3F4262C3858DE00AAC175 /* NavigationManager.swift */; };
@@ -125,7 +140,6 @@
 		75E97A5A2C502DBF0081B069 /* SearchProductResponseMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E97A342C5024280081B069 /* SearchProductResponseMapper.swift */; };
 		75E97A5F2C502F3C0081B069 /* Product.struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75674CF42C3D92CC007FAB88 /* Product.struct.swift */; };
 		75E97A642C50320F0081B069 /* RecommendedProductMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75674CFB2C3D9964007FAB88 /* RecommendedProductMapper.swift */; };
-		75E97A652C50320F0081B069 /* RecommendedProduct.struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75674CF62C3D92E0007FAB88 /* RecommendedProduct.struct.swift */; };
 		75E97A6B2C5037130081B069 /* MainViews.struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E97A6A2C5037130081B069 /* MainViews.struct.swift */; };
 		75E97A712C5041920081B069 /* ImageItem.struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E97A6F2C5041780081B069 /* ImageItem.struct.swift */; };
 		75E97A782C512F8C0081B069 /* DependenciesInitialization.struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E97A772C512F8C0081B069 /* DependenciesInitialization.struct.swift */; };
@@ -202,6 +216,12 @@
 		75674CFD2C3D9A5A007FAB88 /* ShortRecommendationListView.struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortRecommendationListView.struct.swift; sourceTree = "<group>"; };
 		75674D002C3DA0FA007FAB88 /* RemoteImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImageLoader.swift; sourceTree = "<group>"; };
 		75674D022C3DA14F007FAB88 /* RatingView.struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.struct.swift; sourceTree = "<group>"; };
+		758713CD2C64E00B008E5E4E /* SearchViewAllProductsButton.struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewAllProductsButton.struct.swift; sourceTree = "<group>"; };
+		758713D12C64E519008E5E4E /* SearchBarView.struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.struct.swift; sourceTree = "<group>"; };
+		758713D52C64E577008E5E4E /* SearchHistoryView.struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryView.struct.swift; sourceTree = "<group>"; };
+		758713DA2C64E692008E5E4E /* SearchLoadingView.struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLoadingView.struct.swift; sourceTree = "<group>"; };
+		758713DF2C64E6C3008E5E4E /* SearchErrorView.struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchErrorView.struct.swift; sourceTree = "<group>"; };
+		758713E32C64E6E0008E5E4E /* SearchResultsListView.struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsListView.struct.swift; sourceTree = "<group>"; };
 		75A3F4212C3828A400AAC175 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		75A3F4222C383CEF00AAC175 /* SettingsInputCodeView.struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInputCodeView.struct.swift; sourceTree = "<group>"; };
 		75A3F4242C383E8100AAC175 /* SettingsErrroScreenView.struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsErrroScreenView.struct.swift; sourceTree = "<group>"; };
@@ -347,6 +367,47 @@
 				75E97AAF2C514D2D0081B069 /* AppConvigVariables.struct.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		758713CC2C64DFC9008E5E4E /* Button.struct */ = {
+			isa = PBXGroup;
+			children = (
+				758713CD2C64E00B008E5E4E /* SearchViewAllProductsButton.struct.swift */,
+			);
+			path = Button.struct;
+			sourceTree = "<group>";
+		};
+		758713D02C64E502008E5E4E /* TopAppBar */ = {
+			isa = PBXGroup;
+			children = (
+				758713D12C64E519008E5E4E /* SearchBarView.struct.swift */,
+			);
+			path = TopAppBar;
+			sourceTree = "<group>";
+		};
+		758713D42C64E564008E5E4E /* List */ = {
+			isa = PBXGroup;
+			children = (
+				758713E32C64E6E0008E5E4E /* SearchResultsListView.struct.swift */,
+				758713D52C64E577008E5E4E /* SearchHistoryView.struct.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		758713D92C64E67A008E5E4E /* Loader */ = {
+			isa = PBXGroup;
+			children = (
+				758713DA2C64E692008E5E4E /* SearchLoadingView.struct.swift */,
+			);
+			path = Loader;
+			sourceTree = "<group>";
+		};
+		758713DE2C64E6AE008E5E4E /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				758713DF2C64E6C3008E5E4E /* SearchErrorView.struct.swift */,
+			);
+			path = Errors;
 			sourceTree = "<group>";
 		};
 		75A4D5AC2C579A2100929368 /* Protocols */ = {
@@ -688,6 +749,11 @@
 		75E979AF2C49586D0081B069 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				758713DE2C64E6AE008E5E4E /* Errors */,
+				758713D92C64E67A008E5E4E /* Loader */,
+				758713D42C64E564008E5E4E /* List */,
+				758713D02C64E502008E5E4E /* TopAppBar */,
+				758713CC2C64DFC9008E5E4E /* Button.struct */,
 				752F1D482C459680002D4AC3 /* SearchScreenView.struct.swift */,
 				752F1D4C2C46E165002D4AC3 /* SearchResultView.struct.swift */,
 			);
@@ -975,8 +1041,8 @@
 		75E97A6D2C50377C0081B069 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				75674D002C3DA0FA007FAB88 /* RemoteImageLoader.swift */,
 				75A4D60D2C5CD80500929368 /* RemoteImageView.struct.swift */,
+				75674D002C3DA0FA007FAB88 /* RemoteImageLoader.swift */,
 				75674D022C3DA14F007FAB88 /* RatingView.struct.swift */,
 				75E97A812C5133AD0081B069 /* LoadingView.struct.swift */,
 				75BAD56D2C63BFAA00DFFF02 /* LoadingStateView.swift */,
@@ -1284,23 +1350,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				758713D62C64E577008E5E4E /* SearchHistoryView.struct.swift in Sources */,
 				75E97AAC2C514B4D0081B069 /* SearchResolver.swift in Sources */,
 				75E97A642C50320F0081B069 /* RecommendedProductMapper.swift in Sources */,
 				75E97AA52C5147FC0081B069 /* HomeViewModel.swift in Sources */,
 				75BAD56E2C63BFAA00DFFF02 /* LoadingStateView.swift in Sources */,
 				75A4D60F2C5CD84800929368 /* RemoteImageView.struct.swift in Sources */,
-				75E97A652C50320F0081B069 /* RecommendedProduct.struct.swift in Sources */,
 				75BAD4742C60D5ED00DFFF02 /* BottomBarButton.swift in Sources */,
 				752F1D3A2C41E01D002D4AC3 /* ProductCartItem.struct.swift in Sources */,
 				75A4D6162C5D0AD400929368 /* Sizes.struct.swift in Sources */,
 				75E97A8D2C5142F10081B069 /* ProductsViewModel.swift in Sources */,
 				75E97A5F2C502F3C0081B069 /* Product.struct.swift in Sources */,
+				758713DB2C64E692008E5E4E /* SearchLoadingView.struct.swift in Sources */,
 				75E97A782C512F8C0081B069 /* DependenciesInitialization.struct.swift in Sources */,
 				752F1D432C45779F002D4AC3 /* GetRecommendationsUseCase.swift in Sources */,
 				75A3F4232C383CEF00AAC175 /* SettingsInputCodeView.struct.swift in Sources */,
 				75674CDC2C3C1A67007FAB88 /* ListDiscoverProductsView.struct.swift in Sources */,
 				75ECCD1A2C36F94800D6D346 /* BottomBarView.struct.swift in Sources */,
 				752F1D4D2C46E165002D4AC3 /* SearchResultView.struct.swift in Sources */,
+				758713FE2C64EE7A008E5E4E /* SearchResultsListView.struct.swift in Sources */,
 				75E97A3D2C5024EF0081B069 /* SearchRedirect.struct.swift in Sources */,
 				75E97A452C5025240081B069 /* SearchQuery.struct.swift in Sources */,
 				75E97A412C5025080081B069 /* SearchCategory.struct.swift in Sources */,
@@ -1308,6 +1376,7 @@
 				75E97A492C50253A0081B069 /* SearchSuggest.struct.swift in Sources */,
 				75BAD4A92C60F7D500DFFF02 /* SettingsErrorScreenView.struct.swift in Sources */,
 				75E97AB02C514D2D0081B069 /* AppConvigVariables.struct.swift in Sources */,
+				758713D32C64E539008E5E4E /* SearchBarView.struct.swift in Sources */,
 				75674CEF2C3D39F9007FAB88 /* StoriesViewControllerRepresentable.struct.swift in Sources */,
 				75BAD48C2C60EB0F00DFFF02 /* TopSectionView.struct.swift in Sources */,
 				75E979E72C4AE8870081B069 /* TabItem.struct.swift in Sources */,
@@ -1315,6 +1384,7 @@
 				75E97A882C51414D0081B069 /* CartRepository.protocol.swift in Sources */,
 				75674D012C3DA0FA007FAB88 /* RemoteImageLoader.swift in Sources */,
 				75E979CC2C4973DA0081B069 /* CartResolver.swift in Sources */,
+				758713E02C64E6C3008E5E4E /* SearchErrorView.struct.swift in Sources */,
 				75E979DE2C4ADDD20081B069 /* RootScreenType.enum.swift in Sources */,
 				75E97A1C2C501D660081B069 /* ScreenTypeProvider.protocol.swift in Sources */,
 				75674CF22C3D7A5D007FAB88 /* SectionHeaderView.struct.swift in Sources */,
@@ -1325,6 +1395,7 @@
 				75ECCD0B2C36BDF500D6D346 /* HomeScreenView.struct.swift in Sources */,
 				75BAD4B92C61021800DFFF02 /* EmptyCartView.struct.swift in Sources */,
 				75E97A822C5133AD0081B069 /* LoadingView.struct.swift in Sources */,
+				758714012C64EEC5008E5E4E /* RecommendedProduct.struct.swift in Sources */,
 				752F1D472C45954A002D4AC3 /* SearchViewModel.swift in Sources */,
 				75E979C72C496E1C0081B069 /* HomeResolver.swift in Sources */,
 				75BAD56A2C63A4F000DFFF02 /* Typography.struct.swift in Sources */,
@@ -1355,6 +1426,7 @@
 				75E979F72C4D37940081B069 /* ViewState.enum.swift in Sources */,
 				75E97A2B2C5023960081B069 /* SearchFashionSize.struct.swift in Sources */,
 				75674CFE2C3D9A5A007FAB88 /* ShortRecommendationListView.struct.swift in Sources */,
+				758713CF2C64E0FF008E5E4E /* SearchViewAllProductsButton.struct.swift in Sources */,
 				75BAD4892C60DC4F00DFFF02 /* StoriesViewController.swift in Sources */,
 				752F1D402C41E5BC002D4AC3 /* CartRepositoryImpl.swift in Sources */,
 				75E97A272C50237F0081B069 /* SearchIndustrialFilters.struct.swift in Sources */,
@@ -1379,6 +1451,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				758714042C64F021008E5E4E /* RemoteImageLoader.swift in Sources */,
 				75BAD56F2C63BFAA00DFFF02 /* LoadingStateView.swift in Sources */,
 				75E97A302C5023B10081B069 /* SearchFashionColor.struct.swift in Sources */,
 				75E97A3A2C5024CD0081B069 /* SearchProduct.struct.swift in Sources */,
@@ -1392,6 +1465,7 @@
 				75A4D6172C5D0AD400929368 /* Sizes.struct.swift in Sources */,
 				75BAD4BA2C61021800DFFF02 /* EmptyCartView.struct.swift in Sources */,
 				75E97A242C5023600081B069 /* SearchFilter.struct.swift in Sources */,
+				758713E12C64E6C3008E5E4E /* SearchErrorView.struct.swift in Sources */,
 				75E97A3E2C5024EF0081B069 /* SearchRedirect.struct.swift in Sources */,
 				75E97A4E2C50255A0081B069 /* SearchPriceRange.struct.swift in Sources */,
 				75E97AB12C514D2D0081B069 /* AppConvigVariables.struct.swift in Sources */,
@@ -1400,6 +1474,7 @@
 				75E97A2C2C5023960081B069 /* SearchFashionSize.struct.swift in Sources */,
 				75BAD4B52C60F9C300DFFF02 /* CartTotalPriceSection.struct.swift in Sources */,
 				75E97A462C5025240081B069 /* SearchQuery.struct.swift in Sources */,
+				758713DC2C64E692008E5E4E /* SearchLoadingView.struct.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1407,6 +1482,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				758714052C64F039008E5E4E /* RemoteImageLoader.swift in Sources */,
+				758713FA2C64ED11008E5E4E /* SearchViewAllProductsButton.struct.swift in Sources */,
+				758713F92C64ED00008E5E4E /* RemoteImageView.struct.swift in Sources */,
 				75BAD5702C63BFAA00DFFF02 /* LoadingStateView.swift in Sources */,
 				75E97A312C5023B10081B069 /* SearchFashionColor.struct.swift in Sources */,
 				75E97A4B2C50253A0081B069 /* SearchSuggest.struct.swift in Sources */,
@@ -1420,6 +1498,7 @@
 				75A4D6182C5D0AD400929368 /* Sizes.struct.swift in Sources */,
 				75BAD4BB2C61021800DFFF02 /* EmptyCartView.struct.swift in Sources */,
 				75E979F32C4D2DBE0081B069 /* Timer.swift in Sources */,
+				758713E22C64E6C3008E5E4E /* SearchErrorView.struct.swift in Sources */,
 				75E97A252C5023600081B069 /* SearchFilter.struct.swift in Sources */,
 				75E97A292C50237F0081B069 /* SearchIndustrialFilters.struct.swift in Sources */,
 				75E97AB22C514D2D0081B069 /* AppConvigVariables.struct.swift in Sources */,
@@ -1428,6 +1507,7 @@
 				75E97A2D2C5023960081B069 /* SearchFashionSize.struct.swift in Sources */,
 				75BAD4B62C60F9C300DFFF02 /* CartTotalPriceSection.struct.swift in Sources */,
 				75E97A3F2C5024EF0081B069 /* SearchRedirect.struct.swift in Sources */,
+				758713DD2C64E692008E5E4E /* SearchLoadingView.struct.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

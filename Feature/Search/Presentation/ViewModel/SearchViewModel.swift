@@ -36,25 +36,7 @@ class SearchViewModel {
         errorMessage = nil
         
         sdkManager.sdk?.search(
-            query: query,
-            limit: nil,
-            offset: nil,
-            categoryLimit: nil,
-            categories: nil,
-            extended: nil,
-            sortBy: nil,
-            sortDir: nil,
-            locations: nil,
-            brands: nil,
-            filters: nil,
-            priceMin: nil,
-            priceMax: nil,
-            colors: nil,
-            fashionSizes: nil,
-            exclude: nil,
-            email: nil,
-            timeOut: nil,
-            disableClarification: nil
+            query: query
         ) { [weak self] result in
             DispatchQueue.main.async {
                 self?.isLoading = false

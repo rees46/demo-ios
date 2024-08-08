@@ -12,6 +12,7 @@ struct Sizes {
         static let xLarge: CGFloat = 12
         static let xxLarge: CGFloat = 20
         static let xxxLarge: CGFloat = 32
+        static let extraLarge: CGFloat = 40
     }
     
     struct Spacing {
@@ -26,6 +27,7 @@ struct Sizes {
     struct Size {
         static let xxLargeImageSize: CGFloat = 350
         static let smallIconSize: CGFloat = 24
+        static let mediumImageSize: CGFloat = 48
         static let smallImageSize: CGFloat = 64
         static let largeImageSize: CGFloat = 300
         static let largeImageWidth: CGFloat = 280
@@ -40,6 +42,7 @@ struct Sizes {
         static let mediumImage: CGFloat = 140
         static let largeImage: CGFloat = 170
         static let textFrameWidth: CGFloat = 46
+        static let searchButtonHeight: CGFloat = 44
         static let textFrameHeight: CGFloat = 14
     }
     

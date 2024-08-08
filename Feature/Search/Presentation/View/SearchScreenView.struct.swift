@@ -1,107 +1,55 @@
-import SwiftUI
-import Combine
-import REES46
 import Resolver
+import SwiftUI
 
 struct SearchScreenView: View {
     
     @EnvironmentObject var navigationManager: NavigationManager
     @Injected var viewModel: SearchViewModel
     
+    @State private var localSearchText: String = ""
+    
     var body: some View {
         VStack(alignment: .leading) {
-            HStack {
-                ZStack {
-                    TextField("search_hint", text: .constant(viewModel.searchText))
-                        .padding(.leading, 10)
-                        .padding(.trailing, 40)
-                        .frame(height: 40)
-                        .background(Color(.systemGray6))
-                        .cornerRadius(6)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 6).stroke(
-                                Color.gray.opacity(0.5),
-                                lineWidth: 1
-                            )
-                        )
-                    
-                    if !viewModel.searchText.isEmpty {
-                        HStack {
-                            Spacer()
-                            Button(
-                                action: {
-                                    viewModel.clearSearchText()
-                                }
-                            ) {
-                                Image(systemName: "xmark.circle.fill")
-                                    .foregroundColor(.gray)
-                            }
-                            .padding(.trailing, 10)
-                        }
-                    }
+            SearchBarView(
+                localSearchText: $localSearchText,
+                onClearSearch: {
+                    localSearchText = ""
+                    viewModel.clearSearchText()
+                },
+                onNavigateBack: {
+                    navigationManager.navigateBack()
+                },
+                onChangeText: { newText in
+                    viewModel.search(query: newText)
                 }
-                
-                Button(
-                    action: {
-                        navigationManager.navigateBack()
-                    }
-                ) {
-                    Image(systemName: "xmark")
-                        .foregroundColor(.black)
-                }
-                .padding(.leading, 10)
-            }
-            .padding()
+            )
             
-            // Search history section
-            if !viewModel.searchHistory.isEmpty {
-                VStack(alignment: .leading) {
-                    Divider().background(Color.gray)
-                    
-                    Text("search_history_title")
-                        .font(.system(size: 11))
-                        .padding(.horizontal)
-                        .foregroundColor(.gray)
-                    
-                    ForEach(viewModel.searchHistory, id: \.self) { query in
-                        Text(query)
-                            .font(.system(size: 14))
-                            .padding(.horizontal)
-                            .padding(.vertical, 8)
-                            .foregroundColor(.black)
-                            .onTapGesture {
-                                viewModel.searchText = query
-                            }
-                    }
-                    
-                    Divider().background(Color.gray)
-                }
-            }
+            SearchHistoryView(localSearchText: $localSearchText)
             
-            // Search results or loading/error message
             if viewModel.isLoading {
                 GeometryReader { geometry in
-                    VStack {
-                        Spacer()
-                        ProgressView()
-                            .frame(width: 36, height: 36)
-                        Spacer()
+                               VStack {
+                                   Spacer()
+                                   ProgressView()
+                                       .frame(width: 36, height: 36)
+                                   Spacer()
+                               }
+                               .frame(width: geometry.size.width, height: geometry.size.height)
+                           }
+            }
+            if let errorMessage = viewModel.errorMessage {
+                SearchErrorView(errorMessage: errorMessage)
+                    .onAppear {
+                        print("Search results received: \(errorMessage)")
                     }
-                    .frame(width: geometry.size.width, height: geometry.size.height)
-                }
-            } else if let errorMessage = viewModel.errorMessage {
-                Text(errorMessage)
-                    .foregroundColor(.red)
-                    .padding()
-            } else if let searchResults = viewModel.searchResults {
+            } 
+            if let searchResults = viewModel.searchResults {
                 List(searchResults.products) { product in
-                    
                     HStack {
-                        
                         RemoteImageView(
                             urlString: product.imageUrl,
-                            width: 48,
-                            height: 48,
+                            width: Sizes.Size.mediumImageSize,
+                            height: Sizes.Size.mediumImageSize,
                             contentMode: .fit,
                             showBorder: false
                         )
@@ -109,71 +57,31 @@ struct SearchScreenView: View {
                         
                         VStack(alignment: .leading) {
                             Text(product.name)
-                                .font(.system(size: 14))
+                                .font(.system(size: Typography.FontSize.medium))
                                 .padding(.horizontal)
-                                .foregroundColor(.gray)
+                                .foregroundColor(AppColors.colorGray)
                             
                             Text("\(product.priceFormatted)")
-                                .font(.system(size: 14))
+                                .font(.system(size: Typography.FontSize.medium))
                                 .padding(.horizontal)
-                                .foregroundColor(.black)
+                                .foregroundColor(AppColors.colorBlack)
                         }
-                        .padding(.leading, 10)
-                        
+                        .padding(.leading, Sizes.Padding.large)
                     }
-                    .padding(.vertical, 8)
-                    .frame(height: 40)
+                    .padding(.vertical, Sizes.Padding.medium)
+                    .frame(height: Sizes.Size.searchButtonHeight)
                 }
                 .listStyle(PlainListStyle())
                 .padding(.horizontal, -20)
-                
-                if searchResults.productsTotal != 0 {
-                    ViewAllButton(count: searchResults.productsTotal) {
-                        let recommendedProducts = searchResults.products.map { RecommendedProduct.from(product: $0) }
-                        navigationManager.navigateToScreen(
-                            AnyView(
-                                SearchResultView(
-                                    recommendedProducts: recommendedProducts,
-                                    count: searchResults.productsTotal
-                                )
-                            )
-                        )
-                    }
-                    .padding(.bottom)
-                }
             }
-            
             Spacer()
         }
-        .background(Color.white)
+        .background(AppColors.colorWhite)
         .onAppear {
-            navigationManager.setVisibility(hideToolbar: true, hideBottomBar: true)
-        }
-    }
-}
-
-struct ViewAllButton: View {
-    let count: Int
-    let action: () -> Void
-    
-    var body: some View {
-        Button(action: action) {
-            HStack {
-                Spacer()
-                Text(String(format: NSLocalizedString("view_all_button", comment: ""), "\(count)"))
-                    .foregroundColor(.black)
-                    .font(.system(size: 14))
-                    .padding(.horizontal)
-                Spacer()
-            }
-            .frame(height: 44)
-            .background(Color.white)
-            .cornerRadius(5)
-            .overlay(
-                RoundedRectangle(cornerRadius: 5)
-                    .stroke(Color.gray.opacity(0.5), lineWidth: 1)
+            navigationManager.setVisibility(
+                hideToolbar: true,
+                hideBottomBar: true
             )
-            .padding([.leading, .trailing])
         }
     }
 }
