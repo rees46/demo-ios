@@ -393,7 +393,6 @@
 		758713D42C64E564008E5E4E /* List */ = {
 			isa = PBXGroup;
 			children = (
-				758714062C664093008E5E4E /* SearchResultProductGridView.struct.swift */,
 				758713E32C64E6E0008E5E4E /* SearchResultsListView.struct.swift */,
 				758713D52C64E577008E5E4E /* SearchHistoryView.struct.swift */,
 			);
@@ -414,6 +413,14 @@
 				7587140F2C66411B008E5E4E /* SearchResultInfoView.struct.swift */,
 			);
 			path = Text;
+			sourceTree = "<group>";
+		};
+		758714152C669F66008E5E4E /* Grid */ = {
+			isa = PBXGroup;
+			children = (
+				758714062C664093008E5E4E /* SearchResultProductGridView.struct.swift */,
+			);
+			path = Grid;
 			sourceTree = "<group>";
 		};
 		75A4D5AC2C579A2100929368 /* Protocols */ = {
@@ -755,6 +762,7 @@
 		75E979AF2C49586D0081B069 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				758714152C669F66008E5E4E /* Grid */,
 				7587140E2C66410D008E5E4E /* Text */,
 				758713DE2C64E6AE008E5E4E /* Errors */,
 				758713D42C64E564008E5E4E /* List */,
