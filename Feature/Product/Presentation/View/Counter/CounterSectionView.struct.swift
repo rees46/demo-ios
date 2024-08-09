@@ -16,14 +16,14 @@ struct CounterSectionView: View {
                     .font(.system(size: Typography.FontSize.xxLarge, weight: .bold))
                     .foregroundColor(AppColors.colorBlack)
                     .background(AppColors.colorWhite)
-                    .frame(width: Sizes.Size.buttonHeight, height: Sizes.Size.buttonHeight)
+                    .frame(width: Sizes.Size.commonHeight, height: Sizes.Size.commonHeight)
             }
             
             Text("\(counter)")
                 .font(.system(size: Typography.FontSize.xxLarge, weight: .bold))
                 .foregroundColor(AppColors.colorBlack)
                 .background(AppColors.colorWhite)
-                .frame(width: Sizes.Size.buttonHeight, height: Sizes.Size.buttonHeight)
+                .frame(width: Sizes.Size.commonHeight, height: Sizes.Size.commonHeight)
             
             Button(
                 action: {
@@ -34,7 +34,7 @@ struct CounterSectionView: View {
                     .font(.system(size: Typography.FontSize.xxLarge, weight: .bold))
                     .foregroundColor(AppColors.colorBlack)
                     .background(AppColors.colorWhite)
-                    .frame(width: Sizes.Size.buttonHeight, height: Sizes.Size.buttonHeight)
+                    .frame(width: Sizes.Size.commonHeight, height: Sizes.Size.commonHeight)
             }
         }
     }

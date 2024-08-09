@@ -14,7 +14,7 @@ struct ContentView: View {
             MainViews()
             
             BottomBarView()
-                .frame(height: Sizes.Size.bottomBarHeight)
+                .frame(height: Sizes.Size.commonHeight)
                 .background(AppColors.colorBlack)
         }
         .background(AppColors.colorBlack.edgesIgnoringSafeArea(.all))

@@ -9,7 +9,7 @@ struct ActionSectionView: View {
     var body: some View {
         HStack {
             CounterSectionView(counter: $counter)
-                .frame(height: Sizes.Size.buttonHeight)
+                .frame(height: Sizes.Size.commonHeight)
                 .background(AppColors.colorWhite)
                 .border(AppColors.colorGray, width: Sizes.BorderWidth.standard)
                 .cornerRadius(Sizes.CornerRadius.medium)
@@ -24,7 +24,7 @@ struct ActionSectionView: View {
                 Text("add_to_cart_button_title")
                     .font(.system(size: Typography.FontSize.medium, weight: .bold))
                     .foregroundColor(AppColors.colorWhite)
-                    .frame(maxWidth: .infinity, maxHeight: Sizes.Size.buttonHeight)
+                    .frame(maxWidth: .infinity, maxHeight: Sizes.Size.commonHeight)
                     .background(AppColors.colorBlack)
                     .cornerRadius(Sizes.CornerRadius.standard)
             }

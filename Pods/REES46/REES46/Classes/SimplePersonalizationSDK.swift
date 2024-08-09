@@ -64,24 +64,28 @@ class SimplePersonalizationSDK: PersonalizationSDK {
     private let initSemaphore = DispatchSemaphore(value: 0)
     private let serialSemaphore = DispatchSemaphore(value: 0)
     
-    lazy var trackEventService: TrackEventService = {
+    lazy var trackEventService: TrackEventServiceProtocol = {
         return TrackEventServiceImpl(sdk: self)
     }()
     
-    lazy var trackSourceService: TrackSourceService = {
+    lazy var trackSourceService: TrackSourceServiceProtocol = {
         return TrackSourceServiceImpl()
     }()
     
-    lazy var subscriptionService: SubscriptionService = {
+    lazy var subscriptionService: SubscriptionServiceProtocol = {
         return SubscriptionServiceImpl(sdk: self)
     }()
     
-    lazy var notificationService: NotificationHandlingService = {
+    lazy var notificationService: NotificationHandlingServiceProtocol = {
         return NotificationHandlerServiceImpl(sdk: self)
     }()
     
-    lazy var pushTokenService: PushTokenNotificationService = {
+    lazy var pushTokenService: PushTokenNotificationServiceProtocol = {
         return PushTokenHandlerServiceImpl(sdk: self)
+    }()
+    
+    lazy var searchService: SearchServiceProtocol = {
+        return SearchServiceImpl(sdk: self)
     }()
     
     init(
@@ -264,124 +268,57 @@ class SimplePersonalizationSDK: PersonalizationSDK {
         }
     }
     
-   func searchBlank(completion: @escaping (Result<SearchBlankResponse, SDKError>) -> Void) {
-          sessionQueue.addOperation {
-              let path = "search/blank"
-              let params: [String : String] = [
-                  "did": self.deviceId,
-                  "shop_id": self.shopId
-              ]
-
-              let sessionConfig = URLSessionConfiguration.default
-              sessionConfig.timeoutIntervalForRequest = 1
-              sessionConfig.waitsForConnectivity = true
-              sessionConfig.shouldUseExtendedBackgroundIdleMode = true
-              self.urlSession = URLSession(configuration: sessionConfig)
-              self.getRequest(path: path, params: params) { (result) in
-                  switch result {
-                  case let .success(successResult):
-                      let resJSON = successResult
-                      let resultResponse = SearchBlankResponse(json: resJSON)
-                      completion(.success(resultResponse))
-                  case let .failure(error):
-                      completion(.failure(error))
-                  }
-              }
-          }
-      }
-
-      func search(query: String, limit: Int?, offset: Int?, categoryLimit: Int?, categories: String?, extended: String?, sortBy: String?, sortDir: String?, locations: String?, brands: String?, filters: [String: Any]?, priceMin: Double?, priceMax: Double?, colors: [String]?, fashionSizes: [String]?, exclude: String?, email: String?, timeOut: Double?, disableClarification: Bool?, completion: @escaping (Result<SearchResponse, SDKError>) -> Void) {
-          sessionQueue.addOperation {
-              let path = "search"
-              var params: [String: String] = [
-                  "shop_id": self.shopId,
-                  "did": self.deviceId,
-                  "seance": self.userSeance,
-                  "sid": self.userSeance,
-                  "type": "full_search",
-                  "search_query": query,
-                  "segment": self.segment
-              ]
-              if let limit = limit {
-                  params["limit"] = String(limit)
-              }
-              if let offset = offset {
-                  params["offset"] = String(offset)
-              }
-              if let categoryLimit = categoryLimit{
-                  params["category_limit"] = String(categoryLimit)
-              }
-              if let categories = categories {
-                  params["categories"] = categories
-              }
-              if let extended = extended {
-                  params["extended"] = extended
-              }
-              if let sortBy = sortBy {
-                  params["sort_by"] = String(sortBy)
-              }
-              if let sortDir = sortDir {
-                  params["sort_dir"] = String(sortDir)
-              }
-              if let locations = locations {
-                  params["locations"] = locations
-              }
-              if let brands = brands {
-                  params["brands"] = brands
-              }
-              if let filters = filters {
-                  if let theJSONData = try? JSONSerialization.data(
-                      withJSONObject: filters,
-                      options: []) {
-                      let theJSONText = String(data: theJSONData,
-                                               encoding: .utf8)
-                      params["filters"] = theJSONText
-                  }
-              }
-              if let priceMin = priceMin {
-                  params["price_min"] = String(priceMin)
-              }
-              if let priceMax = priceMax {
-                  params["price_max"] = String(priceMax)
-              }
-              if let colors = colors {
-                  let colorsArray = self.generateString(array: colors)
-                  params["colors"] = colorsArray
-              }
-              if let fashionSizes = fashionSizes {
-                  let fashionSizesArray = self.generateString(array: fashionSizes)
-                  params["fashion_sizes"] = fashionSizesArray
-              }
-              if let exclude = exclude {
-                  params["exclude"] = exclude
-              }
-              if let email = email {
-                  params["email"] = email
-              }
-              if let disableClarification = disableClarification {
-                  if disableClarification == true {
-                      params["no_clarification"] = "1"
-                  }
-              }
-
-              let sessionConfig = URLSessionConfiguration.default
-              sessionConfig.timeoutIntervalForRequest = timeOut ?? 1
-              sessionConfig.waitsForConnectivity = true
-              sessionConfig.shouldUseExtendedBackgroundIdleMode = true
-              self.urlSession = URLSession(configuration: sessionConfig)
-
-              self.getRequest(path: path, params: params) { result in
-                  switch result {
-                  case let .success(successResult):
-                      let resJSON = successResult
-                      let resultResponse = SearchResponse(json: resJSON)
-                      completion(.success(resultResponse))
-                  case let .failure(error):
-                      completion(.failure(error))
-                  }
-              }
-          }
-      }
+    func searchBlank(completion: @escaping (Result<SearchBlankResponse, SDKError>) -> Void) {
+        searchService.searchBlank(completion: completion)
+    }
+    
+    func search(
+        query: String,
+        limit: Int?,
+        offset: Int?,
+        categoryLimit: Int?,
+        brandLimit: Int?,
+        categories: [Int]?,
+        extended: String?,
+        sortBy: String?,
+        sortDir: String?,
+        locations: String?,
+        brands: String?,
+        filters: [String: Any]?,
+        priceMin: Double?,
+        priceMax: Double?,
+        colors: [String]?,
+        fashionSizes: [String]?,
+        exclude: String?,
+        email: String?,
+        timeOut: Double?,
+        disableClarification: Bool?,
+        completion: @escaping (Result<SearchResponse, SDKError>) -> Void
+    ) {
+        searchService.search(
+            query:query,
+            limit:limit,
+            offset:offset,
+            categoryLimit:categoryLimit,
+            brandLimit:brandLimit,
+            categories:categories,
+            extended:extended,
+            sortBy:sortBy,
+            sortDir:sortDir,
+            locations:locations,
+            brands:brands,
+            filters:filters,
+            priceMin:priceMin,
+            priceMax:priceMax,
+            colors:colors,
+            fashionSizes:fashionSizes,
+            exclude:exclude,
+            email:email,
+            timeOut:timeOut,
+            disableClarification:disableClarification,
+            completion: completion
+        )
+    }
     
     func setProfileData(userEmail: String?, userPhone: String?, userLoyaltyId: String?, birthday: Date?, age: Int?, firstName: String?, lastName: String?, location: String?, gender: Gender?, fbID: String?, vkID: String?, telegramId: String?, loyaltyCardLocation: String?, loyaltyStatus: String?, loyaltyBonuses: Int?, loyaltyBonusesToNextLevel: Int?, boughtSomething: Bool?, userId: String?, customProperties: [String: Any?]?, completion: @escaping (Result<Void, SDKError>) -> Void) {
         sessionQueue.addOperation {
@@ -733,60 +670,31 @@ class SimplePersonalizationSDK: PersonalizationSDK {
         }
     }
     
-    // Send tracking event when user clicked mobile push notification
     func notificationClicked(type: String, code: String, completion: @escaping (Result<Void, SDKError>) -> Void) {
-        sessionQueue.addOperation {
-            let path = "track/clicked"
-            let params: [String: String] = [
-                "shop_id": self.shopId,
-                "did": self.deviceId,
-                "code": code,
-                "type": type
-            ]
-            
-            let sessionConfig = URLSessionConfiguration.default
-            sessionConfig.timeoutIntervalForRequest = 1
-            sessionConfig.waitsForConnectivity = true
-            sessionConfig.shouldUseExtendedBackgroundIdleMode = true
-            self.urlSession = URLSession(configuration: sessionConfig)
-            
-            self.postRequest(path: path, params: params, completion: { result in
-                switch result {
-                case .success:
-                    completion(.success(Void()))
-                case let .failure(error):
-                    completion(.failure(error))
-                }
-            })
-        }
+        notificationService.trackNotification(
+            path: "track/clicked",
+            type: type,
+            code: code,
+            completion: completion
+        )
     }
     
-    // Send tracking event when user receive mobile push notification
+    func notificationDelivered(type: String, code: String, completion: @escaping (Result<Void, SDKError>) -> Void) {
+        notificationService.trackNotification(
+            path: "track/delivered",
+            type: type,
+            code: code,
+            completion: completion
+        )
+    }
+    
     func notificationReceived(type: String, code: String, completion: @escaping (Result<Void, SDKError>) -> Void) {
-        sessionQueue.addOperation {
-            let path = "track/received"
-            let params: [String: String] = [
-                "shop_id": self.shopId,
-                "did": self.deviceId,
-                "code": code,
-                "type": type
-            ]
-            
-            let sessionConfig = URLSessionConfiguration.default
-            sessionConfig.timeoutIntervalForRequest = 1
-            sessionConfig.waitsForConnectivity = true
-            sessionConfig.shouldUseExtendedBackgroundIdleMode = true
-            self.urlSession = URLSession(configuration: sessionConfig)
-            
-            self.postRequest(path: path, params: params, completion: { result in
-                switch result {
-                case .success:
-                    completion(.success(Void()))
-                case let .failure(error):
-                    completion(.failure(error))
-                }
-            })
-        }
+        notificationService.trackNotification(
+            path: "track/received",
+            type: type,
+            code: code,
+            completion: completion
+        )
     }
     
     func subscribeForPriceDrop(
@@ -825,8 +733,23 @@ class SimplePersonalizationSDK: PersonalizationSDK {
         )
     }
     
-    func unsubscribeForBackInStock(itemIds: [String], email: String? = nil, phone: String? = nil, completion: @escaping (Result<Void, SDKError>) -> Void) {
+    func unsubscribeForBackInStock(
+        itemIds: [String],
+        email: String? = nil,
+        phone: String? = nil,
+        completion: @escaping (Result<Void, SDKError>) -> Void
+    ) {
         subscriptionService.unsubscribeForBackInStock(itemIds: itemIds, email: email, phone: phone, completion: completion)
+    }
+    
+    func unsubscribeForPriceDrop(
+        itemIds: [String],
+        currentPrice: Double,
+        email: String? = nil,
+        phone: String? = nil,
+        completion: @escaping (Result<Void, SDKError>) -> Void
+    ) {
+        subscriptionService.unsubscribeForPriceDrop(itemIds: itemIds,currentPrice: currentPrice, email: email, phone: phone, completion: completion)
     }
     
     func manageSubscription(
@@ -1127,8 +1050,11 @@ class SimplePersonalizationSDK: PersonalizationSDK {
     }
     
     func getRequest(path: String, params: [String: String], _ isInit: Bool = false, completion: @escaping (Result<[String: Any], SDKError>) -> Void) {
-        
         let urlString = baseURL + path
+#if DEBUG
+        print("LOG: getRequest to: \(urlString)")
+#endif
+        
         var url = URLComponents(string: urlString)
         
         var queryItems = [URLQueryItem]()
@@ -1197,6 +1123,9 @@ class SimplePersonalizationSDK: PersonalizationSDK {
     }
     
     func postRequest(path: String, params: [String: Any], completion: @escaping (Result<[String: Any], SDKError>) -> Void) {
+#if DEBUG
+        print("LOG: postRequest to: \(self.baseURL + path)")
+#endif
         var requestParams : [String: Any] = [
             "stream": stream
         ]

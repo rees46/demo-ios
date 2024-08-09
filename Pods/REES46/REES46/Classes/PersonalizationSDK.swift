@@ -114,8 +114,9 @@ public protocol PersonalizationSDK {
     func setPushTokenNotification(token: String, isFirebaseNotification: Bool, completion: @escaping(Result<Void, SDKError>) -> Void)
     func review(rate: Int, channel: String, category: String, orderId: String?, comment: String?, completion: @escaping(Result<Void, SDKError>) -> Void)
     func searchBlank(completion: @escaping(Result<SearchBlankResponse, SDKError>) -> Void)
-    func search(query: String, limit: Int?, offset: Int?, categoryLimit: Int?, categories: String?, extended: String?, sortBy: String?, sortDir: String?, locations: String?, brands: String?, filters: [String: Any]?, priceMin: Double?, priceMax: Double?, colors: [String]?, fashionSizes: [String]?, exclude: String?, email: String?, timeOut: Double?, disableClarification: Bool?, completion: @escaping(Result<SearchResponse, SDKError>) -> Void)
+    func search(query: String, limit: Int?, offset: Int?, categoryLimit: Int?,brandLimit: Int?, categories: [Int]?, extended: String?, sortBy: String?, sortDir: String?, locations: String?, brands: String?, filters: [String: Any]?, priceMin: Double?, priceMax: Double?, colors: [String]?, fashionSizes: [String]?, exclude: String?, email: String?, timeOut: Double?, disableClarification: Bool?, completion: @escaping(Result<SearchResponse, SDKError>) -> Void)
     func notificationClicked(type: String, code: String, completion: @escaping (Result<Void, SDKError>) -> Void)
+    func notificationDelivered(type: String, code: String, completion: @escaping (Result<Void, SDKError>) -> Void)
     func notificationReceived(type: String, code: String, completion: @escaping (Result<Void, SDKError>) -> Void)
     func subscribeForBackInStock(
         id: String,
@@ -128,6 +129,13 @@ public protocol PersonalizationSDK {
     )
     func unsubscribeForBackInStock(itemIds: [String], email: String?, phone: String? , completion: @escaping (Result<Void, SDKError>) -> Void)
     func subscribeForPriceDrop(id: String, currentPrice: Double, email: String?, phone: String?, completion: @escaping(Result<Void, SDKError>) -> Void)
+    func unsubscribeForPriceDrop(
+        itemIds: [String],
+        currentPrice: Double,
+        email: String?,
+        phone: String?,
+        completion: @escaping (Result<Void, SDKError>) -> Void
+    )
     func getStories(code: String, completion: @escaping(Result<StoryContent, SDKError>) -> Void)
     func addToSegment(segmentId: String, email: String?, phone: String?, completion: @escaping(Result<Void, SDKError>) -> Void)
     func removeFromSegment(segmentId: String, email: String?, phone: String?, completion: @escaping(Result<Void, SDKError>) -> Void)
@@ -166,8 +174,52 @@ public extension PersonalizationSDK {
         getProductsFromCart(completion: completion)
     }
     
-    func search(query: String, limit: Int? = nil, offset: Int? = nil, categoryLimit: Int? = nil, categories: String? = nil, extended: String? = nil, sortBy: String? = nil, sortDir: String? = nil, locations: String? = nil, brands: String? = nil, filters: [String: Any]? = nil, priceMin: Double? = nil, priceMax: Double? = nil, colors: [String]? = nil, fashionSizes: [String]? = nil, exclude: String? = nil, email: String? = nil, timeOut: Double? = nil, disableClarification: Bool? = nil, completion: @escaping(Result<SearchResponse, SDKError>) -> Void) {
-        search(query: query, limit: limit, offset: offset, categoryLimit: categoryLimit, categories: categories, extended: extended, sortBy: sortBy, sortDir: sortDir, locations: locations, brands: brands, filters: filters, priceMin: priceMin, priceMax: priceMax, colors: colors, fashionSizes: fashionSizes, exclude: exclude, email: email, timeOut: timeOut, disableClarification: disableClarification, completion: completion)
+    func search(
+        query: String,
+        limit: Int? = nil,
+        offset: Int? = nil,
+        categoryLimit: Int? = nil,
+        brandLimit: Int? = nil,
+        categories: [Int]? = nil,
+        extended: String? = nil,
+        sortBy: String? = nil,
+        sortDir: String? = nil,
+        locations: String? = nil,
+        brands: String? = nil,
+        filters: [String: Any]? = nil,
+        priceMin: Double? = nil,
+        priceMax: Double? = nil,
+        colors: [String]? = nil,
+        fashionSizes: [String]? = nil,
+        exclude: String? = nil,
+        email: String? = nil,
+        timeOut: Double? = nil,
+        disableClarification: Bool? = nil,
+        completion: @escaping(Result<SearchResponse, SDKError>) -> Void
+    ) {
+        search(
+            query:query,
+            limit:limit,
+            offset:offset,
+            categoryLimit:categoryLimit,
+            brandLimit:brandLimit,
+            categories:categories,
+            extended:extended,
+            sortBy:sortBy,
+            sortDir:sortDir,
+            locations:locations,
+            brands:brands,
+            filters:filters,
+            priceMin:priceMin,
+            priceMax:priceMax,
+            colors:colors,
+            fashionSizes:fashionSizes,
+            exclude:exclude,
+            email:email,
+            timeOut:timeOut,
+            disableClarification:disableClarification,
+            completion: completion
+        )
     }
     
     func track(event: Event, recommendedBy: RecomendedBy? = nil, completion: @escaping (Result<Void, SDKError>) -> Void) {
@@ -202,11 +254,32 @@ public extension PersonalizationSDK {
         )
     }
     
-    func unsubscribeForBackInStock(itemIds: [String], email: String? = nil, phone: String? = nil, completion: @escaping (Result<Void, SDKError>) -> Void) {
+    func unsubscribeForBackInStock(
+        itemIds: [String],
+        email: String? = nil,
+        phone: String? = nil,
+        completion: @escaping (Result<Void, SDKError>) -> Void
+    ) {
         unsubscribeForBackInStock(itemIds: itemIds, email: email,phone:phone,completion: completion)
     }
     
-    func subscribeForPriceDrop(id: String, currentPrice: Double, email: String? = nil, phone: String? = nil, completion: @escaping (Result<Void, SDKError>) -> Void) {
+    func unsubscribeForPriceDrop(
+        itemIds: [String],
+        currentPrice: Double,
+        email: String? = nil,
+        phone: String? = nil,
+        completion: @escaping (Result<Void, SDKError>) -> Void
+    ){
+        unsubscribeForPriceDrop(itemIds: itemIds,currentPrice: currentPrice, email: email,phone:phone,completion: completion)
+    }
+    
+    func subscribeForPriceDrop(
+        id: String,
+        currentPrice: Double,
+        email: String? = nil,
+        phone: String? = nil,
+        completion: @escaping (Result<Void, SDKError>) -> Void
+    ) {
         subscribeForPriceDrop(id: id, currentPrice: currentPrice, email: email, phone: phone, completion: completion)
     }
     
@@ -310,7 +383,7 @@ public func createPersonalizationSDK(
     userEmail: String? = nil,
     userPhone: String? = nil,
     userLoyaltyId: String? = nil,
-    apiDomain: String = "api.rees46.com",
+    apiDomain: String = "",
     stream: String = "ios",
     enableLogs: Bool = false,
     autoSendPushToken: Bool = true,
