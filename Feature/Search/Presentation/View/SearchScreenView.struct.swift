@@ -25,19 +25,19 @@ struct SearchScreenView: View {
                     },
                     onNavigateBack: {
                         navigationManager.navigateBack()
+                        
                     }
                 )
                 
                 SearchHistoryView(localSearchText: $localSearchText)
                 
                 if isLoading {
-                    SearchLoadingView()
+                    LoadingView(isLoading: $isLoading)
                 } else if let errorMessage = viewModel.errorMessage {
                     SearchErrorView(errorMessage: errorMessage)
                 } else if let searchResults = viewModel.searchResults {
                     SearchResultsListView(searchResults: searchResults)
                 }
-                Spacer()
             }
             .background(AppColors.colorWhite)
             .onAppear {

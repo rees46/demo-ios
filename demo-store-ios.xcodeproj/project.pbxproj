@@ -27,9 +27,6 @@
 		758713CF2C64E0FF008E5E4E /* SearchViewAllProductsButton.struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758713CD2C64E00B008E5E4E /* SearchViewAllProductsButton.struct.swift */; };
 		758713D32C64E539008E5E4E /* SearchBarView.struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758713D12C64E519008E5E4E /* SearchBarView.struct.swift */; };
 		758713D62C64E577008E5E4E /* SearchHistoryView.struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758713D52C64E577008E5E4E /* SearchHistoryView.struct.swift */; };
-		758713DB2C64E692008E5E4E /* SearchLoadingView.struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758713DA2C64E692008E5E4E /* SearchLoadingView.struct.swift */; };
-		758713DC2C64E692008E5E4E /* SearchLoadingView.struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758713DA2C64E692008E5E4E /* SearchLoadingView.struct.swift */; };
-		758713DD2C64E692008E5E4E /* SearchLoadingView.struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758713DA2C64E692008E5E4E /* SearchLoadingView.struct.swift */; };
 		758713E02C64E6C3008E5E4E /* SearchErrorView.struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758713DF2C64E6C3008E5E4E /* SearchErrorView.struct.swift */; };
 		758713E12C64E6C3008E5E4E /* SearchErrorView.struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758713DF2C64E6C3008E5E4E /* SearchErrorView.struct.swift */; };
 		758713E22C64E6C3008E5E4E /* SearchErrorView.struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758713DF2C64E6C3008E5E4E /* SearchErrorView.struct.swift */; };
@@ -219,7 +216,6 @@
 		758713CD2C64E00B008E5E4E /* SearchViewAllProductsButton.struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewAllProductsButton.struct.swift; sourceTree = "<group>"; };
 		758713D12C64E519008E5E4E /* SearchBarView.struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.struct.swift; sourceTree = "<group>"; };
 		758713D52C64E577008E5E4E /* SearchHistoryView.struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryView.struct.swift; sourceTree = "<group>"; };
-		758713DA2C64E692008E5E4E /* SearchLoadingView.struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLoadingView.struct.swift; sourceTree = "<group>"; };
 		758713DF2C64E6C3008E5E4E /* SearchErrorView.struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchErrorView.struct.swift; sourceTree = "<group>"; };
 		758713E32C64E6E0008E5E4E /* SearchResultsListView.struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsListView.struct.swift; sourceTree = "<group>"; };
 		75A3F4212C3828A400AAC175 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -392,14 +388,6 @@
 				758713D52C64E577008E5E4E /* SearchHistoryView.struct.swift */,
 			);
 			path = List;
-			sourceTree = "<group>";
-		};
-		758713D92C64E67A008E5E4E /* Loader */ = {
-			isa = PBXGroup;
-			children = (
-				758713DA2C64E692008E5E4E /* SearchLoadingView.struct.swift */,
-			);
-			path = Loader;
 			sourceTree = "<group>";
 		};
 		758713DE2C64E6AE008E5E4E /* Errors */ = {
@@ -750,7 +738,6 @@
 			isa = PBXGroup;
 			children = (
 				758713DE2C64E6AE008E5E4E /* Errors */,
-				758713D92C64E67A008E5E4E /* Loader */,
 				758713D42C64E564008E5E4E /* List */,
 				758713D02C64E502008E5E4E /* TopAppBar */,
 				758713CC2C64DFC9008E5E4E /* Button.struct */,
@@ -1361,7 +1348,6 @@
 				75A4D6162C5D0AD400929368 /* Sizes.struct.swift in Sources */,
 				75E97A8D2C5142F10081B069 /* ProductsViewModel.swift in Sources */,
 				75E97A5F2C502F3C0081B069 /* Product.struct.swift in Sources */,
-				758713DB2C64E692008E5E4E /* SearchLoadingView.struct.swift in Sources */,
 				75E97A782C512F8C0081B069 /* DependenciesInitialization.struct.swift in Sources */,
 				752F1D432C45779F002D4AC3 /* GetRecommendationsUseCase.swift in Sources */,
 				75A3F4232C383CEF00AAC175 /* SettingsInputCodeView.struct.swift in Sources */,
@@ -1474,7 +1460,6 @@
 				75E97A2C2C5023960081B069 /* SearchFashionSize.struct.swift in Sources */,
 				75BAD4B52C60F9C300DFFF02 /* CartTotalPriceSection.struct.swift in Sources */,
 				75E97A462C5025240081B069 /* SearchQuery.struct.swift in Sources */,
-				758713DC2C64E692008E5E4E /* SearchLoadingView.struct.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1507,7 +1492,6 @@
 				75E97A2D2C5023960081B069 /* SearchFashionSize.struct.swift in Sources */,
 				75BAD4B62C60F9C300DFFF02 /* CartTotalPriceSection.struct.swift in Sources */,
 				75E97A3F2C5024EF0081B069 /* SearchRedirect.struct.swift in Sources */,
-				758713DD2C64E692008E5E4E /* SearchLoadingView.struct.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
