@@ -5,7 +5,7 @@ struct SearchResultProductGridView: View {
     
     var body: some View {
         ScrollView {
-            LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 16) {
+            LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: Sizes.Spacing.standard) {
                 ForEach(recommendedProducts, id: \.id) { product in
                     ProductListItemView(
                         product: product,

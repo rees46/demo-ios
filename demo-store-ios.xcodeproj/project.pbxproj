@@ -373,12 +373,12 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		758713CC2C64DFC9008E5E4E /* Button.struct */ = {
+		758713CC2C64DFC9008E5E4E /* Button */ = {
 			isa = PBXGroup;
 			children = (
 				758713CD2C64E00B008E5E4E /* SearchViewAllProductsButton.struct.swift */,
 			);
-			path = Button.struct;
+			path = Button;
 			sourceTree = "<group>";
 		};
 		758713D02C64E502008E5E4E /* Header */ = {
@@ -759,7 +759,7 @@
 				758713DE2C64E6AE008E5E4E /* Errors */,
 				758713D42C64E564008E5E4E /* List */,
 				758713D02C64E502008E5E4E /* Header */,
-				758713CC2C64DFC9008E5E4E /* Button.struct */,
+				758713CC2C64DFC9008E5E4E /* Button */,
 				752F1D482C459680002D4AC3 /* SearchScreenView.struct.swift */,
 				752F1D4C2C46E165002D4AC3 /* SearchResultView.struct.swift */,
 			);
