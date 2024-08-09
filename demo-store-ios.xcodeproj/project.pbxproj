@@ -36,6 +36,11 @@
 		758714012C64EEC5008E5E4E /* RecommendedProduct.struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75674CF62C3D92E0007FAB88 /* RecommendedProduct.struct.swift */; };
 		758714042C64F021008E5E4E /* RemoteImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75674D002C3DA0FA007FAB88 /* RemoteImageLoader.swift */; };
 		758714052C64F039008E5E4E /* RemoteImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75674D002C3DA0FA007FAB88 /* RemoteImageLoader.swift */; };
+		758714102C66411B008E5E4E /* SearchResultInfoView.struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7587140F2C66411B008E5E4E /* SearchResultInfoView.struct.swift */; };
+		758714112C66411B008E5E4E /* SearchResultInfoView.struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7587140F2C66411B008E5E4E /* SearchResultInfoView.struct.swift */; };
+		758714122C66411B008E5E4E /* SearchResultInfoView.struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7587140F2C66411B008E5E4E /* SearchResultInfoView.struct.swift */; };
+		758714132C66414D008E5E4E /* SearchResultProductGridView.struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758714062C664093008E5E4E /* SearchResultProductGridView.struct.swift */; };
+		758714142C66415E008E5E4E /* SearchResultHeaderView.struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7587140A2C6640CA008E5E4E /* SearchResultHeaderView.struct.swift */; };
 		75A3F4232C383CEF00AAC175 /* SettingsInputCodeView.struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A3F4222C383CEF00AAC175 /* SettingsInputCodeView.struct.swift */; };
 		75A3F4252C383E8100AAC175 /* SettingsErrroScreenView.struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A3F4242C383E8100AAC175 /* SettingsErrroScreenView.struct.swift */; };
 		75A3F4272C3858DE00AAC175 /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A3F4262C3858DE00AAC175 /* NavigationManager.swift */; };
@@ -218,6 +223,9 @@
 		758713D52C64E577008E5E4E /* SearchHistoryView.struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryView.struct.swift; sourceTree = "<group>"; };
 		758713DF2C64E6C3008E5E4E /* SearchErrorView.struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchErrorView.struct.swift; sourceTree = "<group>"; };
 		758713E32C64E6E0008E5E4E /* SearchResultsListView.struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsListView.struct.swift; sourceTree = "<group>"; };
+		758714062C664093008E5E4E /* SearchResultProductGridView.struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultProductGridView.struct.swift; sourceTree = "<group>"; };
+		7587140A2C6640CA008E5E4E /* SearchResultHeaderView.struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultHeaderView.struct.swift; sourceTree = "<group>"; };
+		7587140F2C66411B008E5E4E /* SearchResultInfoView.struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultInfoView.struct.swift; sourceTree = "<group>"; };
 		75A3F4212C3828A400AAC175 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		75A3F4222C383CEF00AAC175 /* SettingsInputCodeView.struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInputCodeView.struct.swift; sourceTree = "<group>"; };
 		75A3F4242C383E8100AAC175 /* SettingsErrroScreenView.struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsErrroScreenView.struct.swift; sourceTree = "<group>"; };
@@ -373,17 +381,19 @@
 			path = Button.struct;
 			sourceTree = "<group>";
 		};
-		758713D02C64E502008E5E4E /* TopAppBar */ = {
+		758713D02C64E502008E5E4E /* Header */ = {
 			isa = PBXGroup;
 			children = (
+				7587140A2C6640CA008E5E4E /* SearchResultHeaderView.struct.swift */,
 				758713D12C64E519008E5E4E /* SearchBarView.struct.swift */,
 			);
-			path = TopAppBar;
+			path = Header;
 			sourceTree = "<group>";
 		};
 		758713D42C64E564008E5E4E /* List */ = {
 			isa = PBXGroup;
 			children = (
+				758714062C664093008E5E4E /* SearchResultProductGridView.struct.swift */,
 				758713E32C64E6E0008E5E4E /* SearchResultsListView.struct.swift */,
 				758713D52C64E577008E5E4E /* SearchHistoryView.struct.swift */,
 			);
@@ -396,6 +406,14 @@
 				758713DF2C64E6C3008E5E4E /* SearchErrorView.struct.swift */,
 			);
 			path = Errors;
+			sourceTree = "<group>";
+		};
+		7587140E2C66410D008E5E4E /* Text */ = {
+			isa = PBXGroup;
+			children = (
+				7587140F2C66411B008E5E4E /* SearchResultInfoView.struct.swift */,
+			);
+			path = Text;
 			sourceTree = "<group>";
 		};
 		75A4D5AC2C579A2100929368 /* Protocols */ = {
@@ -737,9 +755,10 @@
 		75E979AF2C49586D0081B069 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7587140E2C66410D008E5E4E /* Text */,
 				758713DE2C64E6AE008E5E4E /* Errors */,
 				758713D42C64E564008E5E4E /* List */,
-				758713D02C64E502008E5E4E /* TopAppBar */,
+				758713D02C64E502008E5E4E /* Header */,
 				758713CC2C64DFC9008E5E4E /* Button.struct */,
 				752F1D482C459680002D4AC3 /* SearchScreenView.struct.swift */,
 				752F1D4C2C46E165002D4AC3 /* SearchResultView.struct.swift */,
@@ -1350,6 +1369,7 @@
 				75E97A5F2C502F3C0081B069 /* Product.struct.swift in Sources */,
 				75E97A782C512F8C0081B069 /* DependenciesInitialization.struct.swift in Sources */,
 				752F1D432C45779F002D4AC3 /* GetRecommendationsUseCase.swift in Sources */,
+				758714132C66414D008E5E4E /* SearchResultProductGridView.struct.swift in Sources */,
 				75A3F4232C383CEF00AAC175 /* SettingsInputCodeView.struct.swift in Sources */,
 				75674CDC2C3C1A67007FAB88 /* ListDiscoverProductsView.struct.swift in Sources */,
 				75ECCD1A2C36F94800D6D346 /* BottomBarView.struct.swift in Sources */,
@@ -1368,6 +1388,7 @@
 				75E979E72C4AE8870081B069 /* TabItem.struct.swift in Sources */,
 				75E97A6B2C5037130081B069 /* MainViews.struct.swift in Sources */,
 				75E97A882C51414D0081B069 /* CartRepository.protocol.swift in Sources */,
+				758714102C66411B008E5E4E /* SearchResultInfoView.struct.swift in Sources */,
 				75674D012C3DA0FA007FAB88 /* RemoteImageLoader.swift in Sources */,
 				75E979CC2C4973DA0081B069 /* CartResolver.swift in Sources */,
 				758713E02C64E6C3008E5E4E /* SearchErrorView.struct.swift in Sources */,
@@ -1393,6 +1414,7 @@
 				75B935592C3564360063E814 /* ContentView.struct.swift in Sources */,
 				752F1D492C459680002D4AC3 /* SearchScreenView.struct.swift in Sources */,
 				75B935572C3564360063E814 /* DemoStoreApp.struct.swift in Sources */,
+				758714142C66415E008E5E4E /* SearchResultHeaderView.struct.swift in Sources */,
 				75E1C8ED2C3EACDA005018B4 /* DetailsToolbarView.struct.swift in Sources */,
 				75BAD4942C60ED4A00DFFF02 /* ActionSectionView.struct.swift in Sources */,
 				7559449F2C357E5C00C274C9 /* SplashScreenView.struct.swift in Sources */,
@@ -1460,6 +1482,7 @@
 				75E97A2C2C5023960081B069 /* SearchFashionSize.struct.swift in Sources */,
 				75BAD4B52C60F9C300DFFF02 /* CartTotalPriceSection.struct.swift in Sources */,
 				75E97A462C5025240081B069 /* SearchQuery.struct.swift in Sources */,
+				758714112C66411B008E5E4E /* SearchResultInfoView.struct.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1479,6 +1502,7 @@
 				75E97A432C5025080081B069 /* SearchCategory.struct.swift in Sources */,
 				75A4D61C2C5D0AE800929368 /* AppColors.struct.swift in Sources */,
 				75BAD56C2C63A4F000DFFF02 /* Typography.struct.swift in Sources */,
+				758714122C66411B008E5E4E /* SearchResultInfoView.struct.swift in Sources */,
 				75E97A842C5133AD0081B069 /* LoadingView.struct.swift in Sources */,
 				75A4D6182C5D0AD400929368 /* Sizes.struct.swift in Sources */,
 				75BAD4BB2C61021800DFFF02 /* EmptyCartView.struct.swift in Sources */,
