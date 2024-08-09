@@ -6,7 +6,6 @@ struct SearchBarView: View {
     @Binding var localSearchText: String
     var onClearSearch: () -> Void
     var onNavigateBack: () -> Void
-    var onChangeText: (String) -> Void
     
     var body: some View {
         HStack {
@@ -23,9 +22,6 @@ struct SearchBarView: View {
                             lineWidth: Sizes.BorderWidth.standard
                         )
                     )
-                    .onChange(of: localSearchText) { newValue in
-                        onChangeText(newValue)
-                    }
                 
                 if !localSearchText.isEmpty {
                     HStack {
