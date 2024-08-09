@@ -10,7 +10,7 @@ struct SearchResultView: View {
     var body: some View {
         VStack(alignment: .leading) {
             
-            Spacer().frame(height: 50)
+            Spacer().frame(height: Sizes.Size.commonHeight)
             
             HStack {
                 Button(
@@ -19,13 +19,13 @@ struct SearchResultView: View {
                     }
                 ) {
                     Image(systemName: "chevron.left")
-                        .foregroundColor(.black)
+                        .foregroundColor(AppColors.colorBlack)
                 }
-                .padding(.leading, 16)
+                .padding(.leading, Sizes.Padding.standard)
                 
                 Text("search_result_title")
-                    .font(.system(size: 24, weight: .bold))
-                    .foregroundColor(.black)
+                    .font(.system(size: Typography.FontSize.xxxLarge, weight: .bold))
+                    .foregroundColor(AppColors.colorBlack)
                     .padding(.horizontal)
                 
                 Spacer()
@@ -36,9 +36,9 @@ struct SearchResultView: View {
                     }
                 ) {
                     Image(systemName: "slider.horizontal.3")
-                        .foregroundColor(.black)
+                        .foregroundColor(AppColors.colorBlack)
                 }
-                .padding(.trailing, 16)
+                .padding(.trailing, Sizes.Padding.standard)
                 
                 Button(
                     action: {
@@ -51,24 +51,24 @@ struct SearchResultView: View {
                     }
                 ) {
                     Image(systemName: "xmark")
-                        .foregroundColor(.black)
+                        .foregroundColor(AppColors.colorBlack)
                 }
-                .padding(.trailing, 16)
+                .padding(.trailing, Sizes.Padding.standard)
             }
-            .frame(height: 50)
-            .background(Color.white)
+            .frame(height: Sizes.Size.commonHeight)
+            .background(AppColors.colorWhite)
             
             HStack {
                 Text("search_found_title")
-                    .font(.system(size: 14))
-                    .foregroundColor(.black)
+                    .font(.system(size: Typography.FontSize.medium))
+                    .foregroundColor(AppColors.colorBlack)
                 
                 Text(String(format: NSLocalizedString("search_count_result", comment: ""), "\(count)"))
-                    .font(.system(size: 14))
-                    .foregroundColor(.gray)
+                    .font(.system(size: Typography.FontSize.medium))
+                    .foregroundColor(AppColors.colorGray)
             }
-            .padding(.vertical, 8)
-            .background(Color.white)
+            .padding(.vertical, Sizes.Padding.medium)
+            .background(AppColors.colorWhite)
             .padding(.horizontal)
             
             ScrollView {
@@ -76,19 +76,19 @@ struct SearchResultView: View {
                     ForEach(recommendedProducts, id: \.id) { product in
                         ProductListItemView(
                             product: product,
-                            containerWidth: 170,
-                            containerHeight: 280,
-                            imageWidth: 170,
-                            imageHeight: 170,
+                            containerWidth: Sizes.Size.largeImage,
+                            containerHeight: Sizes.Size.largeImageWidth,
+                            imageWidth: Sizes.Size.largeImage,
+                            imageHeight: Sizes.Size.largeImage,
                             showShopButton: true
-                        ).padding(20)
+                        ).padding(Sizes.Padding.xxLarge)
                     }
                 }
                 .padding(.horizontal)
-                .padding(.bottom, 20)
+                .padding(.bottom, Sizes.Padding.xxLarge)
             }
         }
-        .background(Color.white)
+        .background(AppColors.colorWhite)
         .edgesIgnoringSafeArea(.all)
     }
 }

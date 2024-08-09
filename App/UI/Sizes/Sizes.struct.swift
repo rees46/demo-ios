@@ -7,7 +7,6 @@ struct Sizes {
         static let medium: CGFloat = 8
         static let small: CGFloat = 5
         static let extraSmall: CGFloat = 2
-        static let buttonHorizontal: CGFloat = 16
         static let large: CGFloat = 10
         static let xLarge: CGFloat = 12
         static let xxLarge: CGFloat = 20
@@ -35,9 +34,7 @@ struct Sizes {
         static let storiesHeight: CGFloat = 200
         static let smallCircle: CGFloat = 10
         static let badge: CGFloat = 14
-        static let buttonHeight: CGFloat = 50
-        static let buttonWidth: CGFloat = 50
-        static let bottomBarHeight: CGFloat = 50
+        static let commonHeight: CGFloat = 50
         static let icon: CGFloat = 32
         static let mediumImage: CGFloat = 140
         static let largeImage: CGFloat = 170
