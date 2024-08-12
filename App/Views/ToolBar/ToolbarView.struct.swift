@@ -15,7 +15,7 @@ struct ToolbarView: View {
                         .padding(.vertical, Sizes.Padding.large)
                         .foregroundColor(.white)
                 }
-                .frame(height: Sizes.Size.buttonHeight)
+                .frame(height: Sizes.Size.commonHeight)
                 
                 HStack(spacing: Sizes.Spacing.large) {
                     
