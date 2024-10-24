@@ -14,7 +14,7 @@ jobs:
       PROPERTIES_FILE: "version.properties"
       xcworkspace: "demo-store-ios.xcworkspace"
       scheme: "demo-store-ios"
-      export_options_plist: "ExportOptions.plist"  # Путь к export options plist
+      export_options_plist: "ExportOptions.plist"
     secrets:
       APP_STORE_CONNECT_API_KEY_ID: ${{ secrets.APP_STORE_CONNECT_API_KEY_ID }}
       APP_STORE_CONNECT_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
