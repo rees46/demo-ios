@@ -9,9 +9,12 @@ jobs:
   publish_and_version_bump:
     uses: rees46/workflow/.github/workflows/reusable-ios-testflight-publish.yml@master
     with:
-      app_identifier: "com.example.app"
+      app_identifier: "com.rees46.demo-shop"
       ipa_file: "path/to/app.ipa"
       PROPERTIES_FILE: "version.properties"
+      xcworkspace: "demo-store-ios.xcworkspace"
+      scheme: "YourScheme"                 # Добавляем схему для сборки
+      export_options_plist: "ExportOptions.plist"  # Путь к export options plist
     secrets:
       APP_STORE_CONNECT_API_KEY_ID: ${{ secrets.APP_STORE_CONNECT_API_KEY_ID }}
       APP_STORE_CONNECT_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
