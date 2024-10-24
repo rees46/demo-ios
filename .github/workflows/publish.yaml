@@ -10,7 +10,7 @@ jobs:
     uses: rees46/workflow/.github/workflows/reusable-ios-testflight-publish.yml@master
     with:
       app_identifier: "com.rees46.demo-shop"
-      ipa_file: "path/to/app.ipa"
+      ipa_file: "build/demo-store-ios.ipa"
       PROPERTIES_FILE: "version.properties"
       xcworkspace: "demo-store-ios.xcworkspace"
       scheme: "demo-store-ios"
