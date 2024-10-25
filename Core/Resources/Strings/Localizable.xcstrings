@@ -391,6 +391,15 @@
         }
       }
     },
+    "Show Alert" : {
+
+    },
+    "Show Bottom Sheet" : {
+
+    },
+    "Show Full Screen Alert" : {
+
+    },
     "show_all_button" : {
       "extractionState" : "manual",
       "localizations" : {
