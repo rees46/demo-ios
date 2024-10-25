@@ -1,31 +1,20 @@
 PODS:
-  - REES46 (3.6.30)
+  - REES46 (3.6.35)
   - Resolver (1.5.1)
 
 DEPENDENCIES:
-  - REES46 (from `https://github.com/rees46/ios-sdk.git`, branch `master`, tag `3.6.30`)
+  - REES46
   - Resolver
 
 SPEC REPOS:
   trunk:
+    - REES46
     - Resolver
 
-EXTERNAL SOURCES:
-  REES46:
-    :branch: master
-    :git: https://github.com/rees46/ios-sdk.git
-    :tag: 3.6.30
-
-CHECKOUT OPTIONS:
-  REES46:
-    :commit: 806d3e2deb2a5a051cede33f6d495a695f43b2ed
-    :git: https://github.com/rees46/ios-sdk.git
-    :tag: 3.6.30
-
 SPEC CHECKSUMS:
-  REES46: 75ca5b50c1d8320190a2b73e4abd6549e7415efe
+  REES46: cf50b5822589059c72a3624bd8852e8c87d52f63
   Resolver: 0e2ce51257e9366c54afe1b9e9be25059e9b9300
 
-PODFILE CHECKSUM: 2d0a302120a9d33bfb3871aa2931b80ef79dfc7c
+PODFILE CHECKSUM: eed1d2ea9a11f652e2f856e2330abd5ec77a5365
 
 COCOAPODS: 1.15.2
