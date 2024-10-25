@@ -25,7 +25,7 @@ struct InAppNotificationScreen: View {
 
         }
         .padding()
-        .background(NotificationWidgetView(widgetController: widgetController))
+        .background(NotificationWidgetRepresentable(widgetController: widgetController))
     }
 }
 

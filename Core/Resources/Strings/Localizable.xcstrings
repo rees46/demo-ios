@@ -205,6 +205,50 @@
         }
       }
     },
+    "notification_accept_button" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Accept"
+          }
+        }
+      }
+    },
+    "notification_alert_message" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Omni-channel recommendation engine with industry specific algorithms and online merchandising platform for brands manufacturers ."
+          }
+        }
+      }
+    },
+    "notification_alert_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "REES46 Product Presentation"
+          }
+        }
+      }
+    },
+    "notification_decline_button" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Decline"
+          }
+        }
+      }
+    },
     "process_timeout_title" : {
       "extractionState" : "manual",
       "localizations" : {

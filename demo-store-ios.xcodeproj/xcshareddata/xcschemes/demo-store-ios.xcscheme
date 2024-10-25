@@ -126,6 +126,11 @@
             value = "654"
             isEnabled = "YES">
          </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "IN_APP_NOTIFICATION_IMAGE_URL"
+            value = "https://image.slidesharecdn.com/rees46productpresentation-151112180026-lva1-app6891/75/REES46-Product-Presentation-1-2048.jpg"
+            isEnabled = "YES">
+         </EnvironmentVariable>
       </EnvironmentVariables>
    </LaunchAction>
    <ProfileAction

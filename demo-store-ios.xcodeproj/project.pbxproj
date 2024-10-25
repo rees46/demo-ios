@@ -89,6 +89,7 @@
 		75BAD5702C63BFAA00DFFF02 /* LoadingStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BAD56D2C63BFAA00DFFF02 /* LoadingStateView.swift */; };
 		75C930752CCB841700FCA295 /* InAppNotificationScreen.struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C930742CCB841700FCA295 /* InAppNotificationScreen.struct.swift */; };
 		75C930792CCBB8AD00FCA295 /* NotificationWidgetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C930782CCBB8AD00FCA295 /* NotificationWidgetController.swift */; };
+		75C9307D2CCBD41100FCA295 /* NotificationWidgetRepresentable.struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C9307B2CCBD3F100FCA295 /* NotificationWidgetRepresentable.struct.swift */; };
 		75E1C8EB2C3E9401005018B4 /* FullRecommendationListView.struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E1C8EA2C3E9401005018B4 /* FullRecommendationListView.struct.swift */; };
 		75E1C8ED2C3EACDA005018B4 /* DetailsToolbarView.struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E1C8EC2C3EACDA005018B4 /* DetailsToolbarView.struct.swift */; };
 		75E1C8EF2C3ECC95005018B4 /* ProductListItemView.struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E1C8EE2C3ECC95005018B4 /* ProductListItemView.struct.swift */; };
@@ -262,6 +263,7 @@
 		75BAD56D2C63BFAA00DFFF02 /* LoadingStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingStateView.swift; sourceTree = "<group>"; };
 		75C930742CCB841700FCA295 /* InAppNotificationScreen.struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppNotificationScreen.struct.swift; sourceTree = "<group>"; };
 		75C930782CCBB8AD00FCA295 /* NotificationWidgetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationWidgetController.swift; sourceTree = "<group>"; };
+		75C9307B2CCBD3F100FCA295 /* NotificationWidgetRepresentable.struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationWidgetRepresentable.struct.swift; sourceTree = "<group>"; };
 		75E1C8EA2C3E9401005018B4 /* FullRecommendationListView.struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullRecommendationListView.struct.swift; sourceTree = "<group>"; };
 		75E1C8EC2C3EACDA005018B4 /* DetailsToolbarView.struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsToolbarView.struct.swift; sourceTree = "<group>"; };
 		75E1C8EE2C3ECC95005018B4 /* ProductListItemView.struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListItemView.struct.swift; sourceTree = "<group>"; };
@@ -666,6 +668,7 @@
 		75C930772CCBB88A00FCA295 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				75C9307B2CCBD3F100FCA295 /* NotificationWidgetRepresentable.struct.swift */,
 				75C930782CCBB8AD00FCA295 /* NotificationWidgetController.swift */,
 			);
 			path = Controller;
@@ -859,8 +862,8 @@
 		75E979B72C4959250081B069 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				75C930762CCBB87B00FCA295 /* InAppNotification */,
 				75674CF12C3D7A5D007FAB88 /* SectionHeaderView.struct.swift */,
+				75C930762CCBB87B00FCA295 /* InAppNotification */,
 				75674CEA2C3D2E32007FAB88 /* Stories */,
 				75674CF02C3D787A007FAB88 /* ListRecommendation */,
 				75674CEC2C3D2E45007FAB88 /* ListDiscoverProducts */,
@@ -1398,6 +1401,7 @@
 				75E97A8D2C5142F10081B069 /* ProductsViewModel.swift in Sources */,
 				75E97A5F2C502F3C0081B069 /* Product.struct.swift in Sources */,
 				75E97A782C512F8C0081B069 /* DependenciesInitialization.struct.swift in Sources */,
+				75C9307D2CCBD41100FCA295 /* NotificationWidgetRepresentable.struct.swift in Sources */,
 				752F1D432C45779F002D4AC3 /* GetRecommendationsUseCase.swift in Sources */,
 				758714132C66414D008E5E4E /* SearchResultProductGridView.struct.swift in Sources */,
 				75A3F4232C383CEF00AAC175 /* SettingsInputCodeView.struct.swift in Sources */,

@@ -11,11 +11,11 @@ class NotificationWidgetController: ObservableObject {
     
     func showAlert() {
         widget?.showAlert(
-            titleText: "REES46 Product Presentation",
-            messageText: "Omni-channel recommendation engine with industry specific algorithms and online merchandising platform for brands manufacturers .",
-            imageUrl: "https://image.slidesharecdn.com/rees46productpresentation-151112180026-lva1-app6891/75/REES46-Product-Presentation-1-2048.jpg",
-            positiveButtonText: "Accept",
-            negativeButtonText: "Decline",
+            titleText: NSLocalizedString("notification_alert_title", comment: ""),
+            messageText: NSLocalizedString("notification_alert_message", comment: ""),
+            imageUrl: AppConfigVariables.inAppNotificationImageUrl,
+            positiveButtonText: NSLocalizedString("notification_accept_button", comment: ""),
+            negativeButtonText: NSLocalizedString("notification_decline_button", comment: ""),
             onPositiveButtonClick: {
                 print("Alert Accepted")
             },
@@ -27,11 +27,11 @@ class NotificationWidgetController: ObservableObject {
     
     func showBottomSheet() {
         widget?.showBottomSheet(
-            titleText: "Bottom Sheet Title",
-            messageText: "This is a bottom sheet message.",
-            imageUrl: "https://image.slidesharecdn.com/rees46productpresentation-151112180026-lva1-app6891/75/REES46-Product-Presentation-1-2048.jpg",
-            positiveButtonText: "Accept",
-            negativeButtonText: "Decline",
+            titleText: NSLocalizedString("notification_alert_title", comment: ""),
+            messageText: NSLocalizedString("notification_alert_message", comment: ""),
+            imageUrl: AppConfigVariables.inAppNotificationImageUrl,
+            positiveButtonText: NSLocalizedString("notification_accept_button", comment: ""),
+            negativeButtonText: NSLocalizedString("notification_decline_button", comment: ""),
             onPositiveButtonClick: {
                 print("Bottom Sheet Accepted")
             },
@@ -43,11 +43,11 @@ class NotificationWidgetController: ObservableObject {
     
     func showFullScreenAlert() {
         widget?.showFullScreenAlert(
-            titleText: "Full Screen Alert",
-            messageText: "This is a full screen alert message.",
-            imageUrl: "https://image.slidesharecdn.com/rees46productpresentation-151112180026-lva1-app6891/75/REES46-Product-Presentation-1-2048.jpg",
-            positiveButtonText: "Accept",
-            negativeButtonText: "Decline",
+            titleText: NSLocalizedString("notification_alert_title", comment: ""),
+            messageText: NSLocalizedString("notification_alert_message", comment: ""),
+            imageUrl: AppConfigVariables.inAppNotificationImageUrl,
+            positiveButtonText: NSLocalizedString("notification_accept_button", comment: ""),
+            negativeButtonText: NSLocalizedString("notification_decline_button", comment: ""),
             onPositiveButtonClick: {
                 print("Full Screen Alert Accepted")
             },
@@ -56,16 +56,4 @@ class NotificationWidgetController: ObservableObject {
             }
         )
     }
-}
-
-struct NotificationWidgetView: UIViewControllerRepresentable {
-    let widgetController: NotificationWidgetController
-
-    func makeUIViewController(context: Context) -> UIViewController {
-        let viewController = UIViewController()
-        widgetController.setViewController(viewController)
-        return viewController
-    }
-
-    func updateUIViewController(_ uiViewController: UIViewController, context: Context) {}
 }
