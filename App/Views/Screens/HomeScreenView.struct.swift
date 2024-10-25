@@ -44,7 +44,7 @@ struct HomeScreenView: View {
                         .font(.headline)
                         .foregroundColor(AppColors.colorBlue)
                         .padding()
-                        .frame(height: Sizes.Size.smallIconSize)
+                        .frame(height: Sizes.Size.mediumImage)
                         .onTapGesture {
                             navigationManager.navigateToScreen(InAppNotificationScreen())
                         }
@@ -56,7 +56,6 @@ struct HomeScreenView: View {
         .navigationTitle("main_tab_title")
         .onAppear {
             viewModel.loadAllRecommendations()
-            navigationManager.setVisibility(hideToolbar: false, hideBottomBar: false)
         }
     }
 }
