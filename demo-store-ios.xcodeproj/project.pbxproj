@@ -90,6 +90,7 @@
 		75C930752CCB841700FCA295 /* InAppNotificationScreen.struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C930742CCB841700FCA295 /* InAppNotificationScreen.struct.swift */; };
 		75C930792CCBB8AD00FCA295 /* NotificationWidgetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C930782CCBB8AD00FCA295 /* NotificationWidgetController.swift */; };
 		75C9307D2CCBD41100FCA295 /* NotificationWidgetRepresentable.struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C9307B2CCBD3F100FCA295 /* NotificationWidgetRepresentable.struct.swift */; };
+		75C930822CCBD88800FCA295 /* NotificationButton.struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C930802CCBD84E00FCA295 /* NotificationButton.struct.swift */; };
 		75E1C8EB2C3E9401005018B4 /* FullRecommendationListView.struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E1C8EA2C3E9401005018B4 /* FullRecommendationListView.struct.swift */; };
 		75E1C8ED2C3EACDA005018B4 /* DetailsToolbarView.struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E1C8EC2C3EACDA005018B4 /* DetailsToolbarView.struct.swift */; };
 		75E1C8EF2C3ECC95005018B4 /* ProductListItemView.struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E1C8EE2C3ECC95005018B4 /* ProductListItemView.struct.swift */; };
@@ -264,6 +265,7 @@
 		75C930742CCB841700FCA295 /* InAppNotificationScreen.struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppNotificationScreen.struct.swift; sourceTree = "<group>"; };
 		75C930782CCBB8AD00FCA295 /* NotificationWidgetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationWidgetController.swift; sourceTree = "<group>"; };
 		75C9307B2CCBD3F100FCA295 /* NotificationWidgetRepresentable.struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationWidgetRepresentable.struct.swift; sourceTree = "<group>"; };
+		75C930802CCBD84E00FCA295 /* NotificationButton.struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationButton.struct.swift; sourceTree = "<group>"; };
 		75E1C8EA2C3E9401005018B4 /* FullRecommendationListView.struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullRecommendationListView.struct.swift; sourceTree = "<group>"; };
 		75E1C8EC2C3EACDA005018B4 /* DetailsToolbarView.struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsToolbarView.struct.swift; sourceTree = "<group>"; };
 		75E1C8EE2C3ECC95005018B4 /* ProductListItemView.struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListItemView.struct.swift; sourceTree = "<group>"; };
@@ -660,6 +662,7 @@
 		75C930762CCBB87B00FCA295 /* InAppNotification */ = {
 			isa = PBXGroup;
 			children = (
+				75C9307E2CCBD83000FCA295 /* Component */,
 				75C930772CCBB88A00FCA295 /* Controller */,
 			);
 			path = InAppNotification;
@@ -672,6 +675,22 @@
 				75C930782CCBB8AD00FCA295 /* NotificationWidgetController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		75C9307E2CCBD83000FCA295 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				75C9307F2CCBD83A00FCA295 /* Button */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		75C9307F2CCBD83A00FCA295 /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				75C930802CCBD84E00FCA295 /* NotificationButton.struct.swift */,
+			);
+			path = Button;
 			sourceTree = "<group>";
 		};
 		75E979842C4935170081B069 /* Core */ = {
@@ -1485,6 +1504,7 @@
 				75E979ED2C4D2BAE0081B069 /* AppState.swift in Sources */,
 				75A3F4252C383E8100AAC175 /* SettingsErrroScreenView.struct.swift in Sources */,
 				75BAD4992C60EE8100DFFF02 /* CounterSectionView.struct.swift in Sources */,
+				75C930822CCBD88800FCA295 /* NotificationButton.struct.swift in Sources */,
 				75A3F4272C3858DE00AAC175 /* NavigationManager.swift in Sources */,
 				75ECCD142C36BE4300D6D346 /* SettingsScreenView.struct.swift in Sources */,
 				75C930792CCBB8AD00FCA295 /* NotificationWidgetController.swift in Sources */,

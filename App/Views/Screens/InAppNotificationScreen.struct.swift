@@ -2,40 +2,21 @@ import SwiftUI
 import Resolver
 
 struct InAppNotificationScreen: View {
-    @Injected var viewModel: HomeViewModel
-    
     @StateObject private var widgetController = NotificationWidgetController()
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 16) {
-            Button("Show Alert") {
+        VStack(alignment: .leading, spacing: Sizes.Padding.standard) {
+            NotificationButton(title: "show_base_alert_dialog") {
                 widgetController.showAlert()
             }
-            .buttonStyle(PrimaryButtonStyle())
-            
-            Button("Show Bottom Sheet") {
+            NotificationButton(title: "show_base_bottom_sheet_dialog") {
                 widgetController.showBottomSheet()
             }
-            .buttonStyle(PrimaryButtonStyle())
-            
-            Button("Show Full Screen Alert") {
+            NotificationButton(title: "show_full_screen_dialog") {
                 widgetController.showFullScreenAlert()
             }
-            .buttonStyle(PrimaryButtonStyle())
-
         }
         .padding()
         .background(NotificationWidgetRepresentable(widgetController: widgetController))
-    }
-}
-
-struct PrimaryButtonStyle: ButtonStyle {
-    func makeBody(configuration: Configuration) -> some View {
-        configuration.label
-            .padding()
-            .background(Color.blue)
-            .foregroundColor(.white)
-            .cornerRadius(8)
-            .scaleEffect(configuration.isPressed ? 0.95 : 1.0)
     }
 }

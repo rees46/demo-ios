@@ -435,15 +435,6 @@
         }
       }
     },
-    "Show Alert" : {
-
-    },
-    "Show Bottom Sheet" : {
-
-    },
-    "Show Full Screen Alert" : {
-
-    },
     "show_all_button" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -451,6 +442,39 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Show all"
+          }
+        }
+      }
+    },
+    "show_base_alert_dialog" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Show Alert PopUp"
+          }
+        }
+      }
+    },
+    "show_base_bottom_sheet_dialog" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Show Bottom Sheet PopUp"
+          }
+        }
+      }
+    },
+    "show_full_screen_dialog" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Show Full Screen PopUp"
           }
         }
       }
