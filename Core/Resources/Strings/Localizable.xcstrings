@@ -194,6 +194,17 @@
         }
       }
     },
+    "new_features_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Want\\'s to see in-app notifications?"
+          }
+        }
+      }
+    },
     "process_timeout_title" : {
       "extractionState" : "manual",
       "localizations" : {

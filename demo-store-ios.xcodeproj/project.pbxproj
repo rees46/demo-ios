@@ -87,6 +87,7 @@
 		75BAD56E2C63BFAA00DFFF02 /* LoadingStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BAD56D2C63BFAA00DFFF02 /* LoadingStateView.swift */; };
 		75BAD56F2C63BFAA00DFFF02 /* LoadingStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BAD56D2C63BFAA00DFFF02 /* LoadingStateView.swift */; };
 		75BAD5702C63BFAA00DFFF02 /* LoadingStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BAD56D2C63BFAA00DFFF02 /* LoadingStateView.swift */; };
+		75C930752CCB841700FCA295 /* InAppNotificationScreen.struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C930742CCB841700FCA295 /* InAppNotificationScreen.struct.swift */; };
 		75E1C8EB2C3E9401005018B4 /* FullRecommendationListView.struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E1C8EA2C3E9401005018B4 /* FullRecommendationListView.struct.swift */; };
 		75E1C8ED2C3EACDA005018B4 /* DetailsToolbarView.struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E1C8EC2C3EACDA005018B4 /* DetailsToolbarView.struct.swift */; };
 		75E1C8EF2C3ECC95005018B4 /* ProductListItemView.struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E1C8EE2C3ECC95005018B4 /* ProductListItemView.struct.swift */; };
@@ -258,6 +259,7 @@
 		75BAD4B82C61021800DFFF02 /* EmptyCartView.struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCartView.struct.swift; sourceTree = "<group>"; };
 		75BAD5692C63A4F000DFFF02 /* Typography.struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typography.struct.swift; sourceTree = "<group>"; };
 		75BAD56D2C63BFAA00DFFF02 /* LoadingStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingStateView.swift; sourceTree = "<group>"; };
+		75C930742CCB841700FCA295 /* InAppNotificationScreen.struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppNotificationScreen.struct.swift; sourceTree = "<group>"; };
 		75E1C8EA2C3E9401005018B4 /* FullRecommendationListView.struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullRecommendationListView.struct.swift; sourceTree = "<group>"; };
 		75E1C8EC2C3EACDA005018B4 /* DetailsToolbarView.struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsToolbarView.struct.swift; sourceTree = "<group>"; };
 		75E1C8EE2C3ECC95005018B4 /* ProductListItemView.struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListItemView.struct.swift; sourceTree = "<group>"; };
@@ -971,6 +973,7 @@
 				75ECCD132C36BE4300D6D346 /* SettingsScreenView.struct.swift */,
 				75ECCD112C36BE2D00D6D346 /* CartScreenView.struct.swift */,
 				75E97A162C501B120081B069 /* ScreenWrapper.struct.swift */,
+				75C930742CCB841700FCA295 /* InAppNotificationScreen.struct.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -1435,6 +1438,7 @@
 				75BAD47F2C60D97B00DFFF02 /* ProductInfoView.struct.swift in Sources */,
 				75E97A5A2C502DBF0081B069 /* SearchProductResponseMapper.swift in Sources */,
 				75A4D61A2C5D0AE800929368 /* AppColors.struct.swift in Sources */,
+				75C930752CCB841700FCA295 /* InAppNotificationScreen.struct.swift in Sources */,
 				752F1D4B2C46A363002D4AC3 /* SearchProductResponse.struct.swift in Sources */,
 				75E97A4D2C50255A0081B069 /* SearchPriceRange.struct.swift in Sources */,
 				75BAD4A32C60F54300DFFF02 /* PriceSectionView.struct.swift in Sources */,

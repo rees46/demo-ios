@@ -40,7 +40,14 @@ struct HomeScreenView: View {
                         recommendedProducts: viewModel.recommenderProducts,
                         title: NSLocalizedString("reccomender_title", comment: "")
                     )
-                    
+                    Text("new_features_title")
+                        .font(.headline)
+                        .foregroundColor(AppColors.colorBlue)
+                        .padding()
+                        .frame(height: Sizes.Size.smallIconSize)
+                        .onTapGesture {
+                            navigationManager.navigateToScreen(InAppNotificationScreen())
+                        }
                 }
             }
             .padding(.vertical, Sizes.Padding.standard)
