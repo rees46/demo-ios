@@ -40,7 +40,14 @@ struct HomeScreenView: View {
                         recommendedProducts: viewModel.recommenderProducts,
                         title: NSLocalizedString("reccomender_title", comment: "")
                     )
-                    
+                    Text("new_features_title")
+                        .font(.headline)
+                        .foregroundColor(AppColors.colorBlue)
+                        .padding()
+                        .frame(height: Sizes.Size.mediumImage)
+                        .onTapGesture {
+                            navigationManager.navigateToScreen(InAppNotificationScreen())
+                        }
                 }
             }
             .padding(.vertical, Sizes.Padding.standard)
@@ -49,7 +56,6 @@ struct HomeScreenView: View {
         .navigationTitle("main_tab_title")
         .onAppear {
             viewModel.loadAllRecommendations()
-            navigationManager.setVisibility(hideToolbar: false, hideBottomBar: false)
         }
     }
 }

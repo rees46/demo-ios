@@ -194,6 +194,61 @@
         }
       }
     },
+    "new_features_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Want\\'s to see in-app notifications?"
+          }
+        }
+      }
+    },
+    "notification_accept_button" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Accept"
+          }
+        }
+      }
+    },
+    "notification_alert_message" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Omni-channel recommendation engine with industry specific algorithms and online merchandising platform for brands manufacturers ."
+          }
+        }
+      }
+    },
+    "notification_alert_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "REES46 Product Presentation"
+          }
+        }
+      }
+    },
+    "notification_decline_button" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Decline"
+          }
+        }
+      }
+    },
     "process_timeout_title" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -387,6 +442,39 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Show all"
+          }
+        }
+      }
+    },
+    "show_base_alert_dialog" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Show Alert PopUp"
+          }
+        }
+      }
+    },
+    "show_base_bottom_sheet_dialog" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Show Bottom Sheet PopUp"
+          }
+        }
+      }
+    },
+    "show_full_screen_dialog" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Show Full Screen PopUp"
           }
         }
       }

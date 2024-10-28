@@ -87,6 +87,10 @@
 		75BAD56E2C63BFAA00DFFF02 /* LoadingStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BAD56D2C63BFAA00DFFF02 /* LoadingStateView.swift */; };
 		75BAD56F2C63BFAA00DFFF02 /* LoadingStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BAD56D2C63BFAA00DFFF02 /* LoadingStateView.swift */; };
 		75BAD5702C63BFAA00DFFF02 /* LoadingStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BAD56D2C63BFAA00DFFF02 /* LoadingStateView.swift */; };
+		75C930752CCB841700FCA295 /* InAppNotificationScreen.struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C930742CCB841700FCA295 /* InAppNotificationScreen.struct.swift */; };
+		75C930792CCBB8AD00FCA295 /* NotificationWidgetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C930782CCBB8AD00FCA295 /* NotificationWidgetController.swift */; };
+		75C9307D2CCBD41100FCA295 /* NotificationWidgetRepresentable.struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C9307B2CCBD3F100FCA295 /* NotificationWidgetRepresentable.struct.swift */; };
+		75C930822CCBD88800FCA295 /* NotificationButton.struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C930802CCBD84E00FCA295 /* NotificationButton.struct.swift */; };
 		75E1C8EB2C3E9401005018B4 /* FullRecommendationListView.struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E1C8EA2C3E9401005018B4 /* FullRecommendationListView.struct.swift */; };
 		75E1C8ED2C3EACDA005018B4 /* DetailsToolbarView.struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E1C8EC2C3EACDA005018B4 /* DetailsToolbarView.struct.swift */; };
 		75E1C8EF2C3ECC95005018B4 /* ProductListItemView.struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E1C8EE2C3ECC95005018B4 /* ProductListItemView.struct.swift */; };
@@ -258,6 +262,10 @@
 		75BAD4B82C61021800DFFF02 /* EmptyCartView.struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCartView.struct.swift; sourceTree = "<group>"; };
 		75BAD5692C63A4F000DFFF02 /* Typography.struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typography.struct.swift; sourceTree = "<group>"; };
 		75BAD56D2C63BFAA00DFFF02 /* LoadingStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingStateView.swift; sourceTree = "<group>"; };
+		75C930742CCB841700FCA295 /* InAppNotificationScreen.struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppNotificationScreen.struct.swift; sourceTree = "<group>"; };
+		75C930782CCBB8AD00FCA295 /* NotificationWidgetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationWidgetController.swift; sourceTree = "<group>"; };
+		75C9307B2CCBD3F100FCA295 /* NotificationWidgetRepresentable.struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationWidgetRepresentable.struct.swift; sourceTree = "<group>"; };
+		75C930802CCBD84E00FCA295 /* NotificationButton.struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationButton.struct.swift; sourceTree = "<group>"; };
 		75E1C8EA2C3E9401005018B4 /* FullRecommendationListView.struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullRecommendationListView.struct.swift; sourceTree = "<group>"; };
 		75E1C8EC2C3EACDA005018B4 /* DetailsToolbarView.struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsToolbarView.struct.swift; sourceTree = "<group>"; };
 		75E1C8EE2C3ECC95005018B4 /* ProductListItemView.struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListItemView.struct.swift; sourceTree = "<group>"; };
@@ -651,6 +659,40 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		75C930762CCBB87B00FCA295 /* InAppNotification */ = {
+			isa = PBXGroup;
+			children = (
+				75C9307E2CCBD83000FCA295 /* Component */,
+				75C930772CCBB88A00FCA295 /* Controller */,
+			);
+			path = InAppNotification;
+			sourceTree = "<group>";
+		};
+		75C930772CCBB88A00FCA295 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				75C9307B2CCBD3F100FCA295 /* NotificationWidgetRepresentable.struct.swift */,
+				75C930782CCBB8AD00FCA295 /* NotificationWidgetController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		75C9307E2CCBD83000FCA295 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				75C9307F2CCBD83A00FCA295 /* Button */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		75C9307F2CCBD83A00FCA295 /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				75C930802CCBD84E00FCA295 /* NotificationButton.struct.swift */,
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
 		75E979842C4935170081B069 /* Core */ = {
 			isa = PBXGroup;
 			children = (
@@ -840,6 +882,7 @@
 			isa = PBXGroup;
 			children = (
 				75674CF12C3D7A5D007FAB88 /* SectionHeaderView.struct.swift */,
+				75C930762CCBB87B00FCA295 /* InAppNotification */,
 				75674CEA2C3D2E32007FAB88 /* Stories */,
 				75674CF02C3D787A007FAB88 /* ListRecommendation */,
 				75674CEC2C3D2E45007FAB88 /* ListDiscoverProducts */,
@@ -971,6 +1014,7 @@
 				75ECCD132C36BE4300D6D346 /* SettingsScreenView.struct.swift */,
 				75ECCD112C36BE2D00D6D346 /* CartScreenView.struct.swift */,
 				75E97A162C501B120081B069 /* ScreenWrapper.struct.swift */,
+				75C930742CCB841700FCA295 /* InAppNotificationScreen.struct.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -1376,6 +1420,7 @@
 				75E97A8D2C5142F10081B069 /* ProductsViewModel.swift in Sources */,
 				75E97A5F2C502F3C0081B069 /* Product.struct.swift in Sources */,
 				75E97A782C512F8C0081B069 /* DependenciesInitialization.struct.swift in Sources */,
+				75C9307D2CCBD41100FCA295 /* NotificationWidgetRepresentable.struct.swift in Sources */,
 				752F1D432C45779F002D4AC3 /* GetRecommendationsUseCase.swift in Sources */,
 				758714132C66414D008E5E4E /* SearchResultProductGridView.struct.swift in Sources */,
 				75A3F4232C383CEF00AAC175 /* SettingsInputCodeView.struct.swift in Sources */,
@@ -1435,6 +1480,7 @@
 				75BAD47F2C60D97B00DFFF02 /* ProductInfoView.struct.swift in Sources */,
 				75E97A5A2C502DBF0081B069 /* SearchProductResponseMapper.swift in Sources */,
 				75A4D61A2C5D0AE800929368 /* AppColors.struct.swift in Sources */,
+				75C930752CCB841700FCA295 /* InAppNotificationScreen.struct.swift in Sources */,
 				752F1D4B2C46A363002D4AC3 /* SearchProductResponse.struct.swift in Sources */,
 				75E97A4D2C50255A0081B069 /* SearchPriceRange.struct.swift in Sources */,
 				75BAD4A32C60F54300DFFF02 /* PriceSectionView.struct.swift in Sources */,
@@ -1458,8 +1504,10 @@
 				75E979ED2C4D2BAE0081B069 /* AppState.swift in Sources */,
 				75A3F4252C383E8100AAC175 /* SettingsErrroScreenView.struct.swift in Sources */,
 				75BAD4992C60EE8100DFFF02 /* CounterSectionView.struct.swift in Sources */,
+				75C930822CCBD88800FCA295 /* NotificationButton.struct.swift in Sources */,
 				75A3F4272C3858DE00AAC175 /* NavigationManager.swift in Sources */,
 				75ECCD142C36BE4300D6D346 /* SettingsScreenView.struct.swift in Sources */,
+				75C930792CCBB8AD00FCA295 /* NotificationWidgetController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1672,7 +1720,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"App/Preview Content\"";
+				DEVELOPMENT_TEAM = MYA32EHWN4;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_TESTABILITY = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = App/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Demo store";
@@ -1686,7 +1736,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "demo-store.demo-store-ios";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rees46.demo-shop";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1704,7 +1754,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"App/Preview Content\"";
+				DEVELOPMENT_TEAM = MYA32EHWN4;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_TESTABILITY = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = App/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Demo store";
@@ -1718,7 +1770,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "demo-store.demo-store-ios";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rees46.demo-shop";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
