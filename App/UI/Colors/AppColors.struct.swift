@@ -7,4 +7,5 @@ struct AppColors {
     static let colorWhite = Color.white
     static let colorBlack = Color.black
     static let colorRed = Color.red
+    static let colorBlue = Color.blue
 }
