@@ -7,7 +7,7 @@ on:
 
 jobs:
   publish_and_version_bump:
-    uses: rees46/workflow/.github/workflows/reusable-ios-testflight-publish.yml@master
+    uses: rees46/workflow/.github/workflows/reusable-ios-testflight-publish.yaml@master
     with:
       app_identifier: "com.rees46.demo-shop"
       ipa_file: "build/demo-store-ios.ipa"
