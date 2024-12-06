@@ -3,6 +3,7 @@ import SwiftUI
 @main
 struct DemoStoreApp: App {
     @StateObject private var appState = AppState()
+    var window: UIWindow?
     
     init() {
         DependenciesInitialization.initialize()
