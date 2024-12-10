@@ -1,9 +1,9 @@
 PODS:
-  - REES46 (3.6.42)
+  - REES46 (3.6.44)
   - Resolver (1.5.1)
 
 DEPENDENCIES:
-  - REES46 (from `https://github.com/rees46/ios-sdk.git`, branch `feat/reset-user-data`)
+  - REES46 (from `https://github.com/rees46/ios-sdk.git`, branch `master`, tag `3.6.44`)
   - Resolver
 
 SPEC REPOS:
@@ -12,18 +12,20 @@ SPEC REPOS:
 
 EXTERNAL SOURCES:
   REES46:
-    :branch: feat/reset-user-data
+    :branch: master
     :git: https://github.com/rees46/ios-sdk.git
+    :tag: 3.6.44
 
 CHECKOUT OPTIONS:
   REES46:
-    :commit: b7cdff8d8a80ba7bb7787cee50ae7db08d731a8f
+    :commit: 9eb35cad6e2f5b4ec26db33c2b44c971eb8816dd
     :git: https://github.com/rees46/ios-sdk.git
+    :tag: 3.6.44
 
 SPEC CHECKSUMS:
-  REES46: 8bc3e4e6c6c8cea5620256ac1ac6db2a528445d9
+  REES46: 7d70155d0abedfb5ea671859656803db4f14b0db
   Resolver: 0e2ce51257e9366c54afe1b9e9be25059e9b9300
 
-PODFILE CHECKSUM: e09ac3e877196be432e85737b612e61a8b2e09f0
+PODFILE CHECKSUM: ea9fb2f3875fb93edabd7e0a5b0747c628fcaee9
 
 COCOAPODS: 1.15.2
