@@ -18,9 +18,6 @@ class NotificationWidgetController: ObservableObject {
             negativeButtonText: NSLocalizedString("notification_decline_button", comment: ""),
             onPositiveButtonClick: {
                 print("Alert Accepted")
-            },
-            onNegativeButtonClick: {
-                print("Alert Declined")
             }
         )
     }
@@ -34,9 +31,6 @@ class NotificationWidgetController: ObservableObject {
             negativeButtonText: NSLocalizedString("notification_decline_button", comment: ""),
             onPositiveButtonClick: {
                 print("Bottom Sheet Accepted")
-            },
-            onNegativeButtonClick: {
-                print("Bottom Sheet Declined")
             }
         )
     }
@@ -50,9 +44,6 @@ class NotificationWidgetController: ObservableObject {
             negativeButtonText: NSLocalizedString("notification_decline_button", comment: ""),
             onPositiveButtonClick: {
                 print("Full Screen Alert Accepted")
-            },
-            onNegativeButtonClick: {
-                print("Full Screen Alert Declined")
             }
         )
     }
