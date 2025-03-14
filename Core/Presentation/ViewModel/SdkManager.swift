@@ -13,7 +13,9 @@ class SDKManager: SDKManaging {
             apiDomain: AppConfigVariables.apiDomain,
             stream: AppConfigVariables.sdkStream,
             enableLogs: true,
-            autoSendPushToken: true
+            autoSendPushToken: true,
+            parentViewController: UIApplication.shared.windows.first?.rootViewController,
+            needReInitialization: true
         ) { error in
             if let error = error {
                 print("SDK Initialization failed: \(error.localizedDescription)")
