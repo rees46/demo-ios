@@ -1,13 +1,15 @@
 name: Publish to TestFlight and Bump Version
 
 on:
-  push:
-    branches:
-      - master
+  pull_request:
+  workflow_dispatch:
+  # push:
+  #   branches:
+  #     - master
 
 jobs:
   publish_and_version_bump:
-    uses: rees46/workflow/.github/workflows/reusable-ios-testflight-publish.yaml@master
+    uses: rees46/workflow/.github/workflows/reusable-ios-testflight-publish.yaml@fix/ios-workflow
     with:
       app_identifier: "com.rees46.demo-shop"
       ipa_file: "build/demo-store-ios.ipa"
