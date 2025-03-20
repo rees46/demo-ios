@@ -1,13 +1,15 @@
 name: Publish to TestFlight and Bump Version
 
 on:
-  push:
-    branches:
-      - master
+  pull_request:
+  workflow_dispatch:
+  # push:
+  #   branches:
+  #     - master
 
 jobs:
   publish_and_version_bump:
-    uses: rees46/workflow/.github/workflows/reusable-ios-testflight-publish.yaml@master
+    uses: rees46/workflow/.github/workflows/reusable-ios-testflight-publish.yaml@fix/ios-workflow
     with:
       app_identifier: "com.rees46.demo-shop"
       ipa_file: "build/demo-store-ios.ipa"
@@ -21,3 +23,6 @@ jobs:
       APP_STORE_CONNECT_API_KEY: ${{ secrets.APP_STORE_CONNECT_API_KEY_AS_BASE64_STRING }}
       GITHUB_APP_ID: ${{ vars.PUBLIVERSIONER_ID }}
       GITHUB_APP_PRIVATE_KEY: ${{ secrets.PUBLIVERSIONER_SECRET }}
+      IOS_CERTIFICATE_P12: ${{ secrets.IOS_CERTIFICATE_P12 }}
+      IOS_CERTIFICATE_PASSWORD: ${{ secrets.IOS_CERTIFICATE_PASSWORD }}
+      IOS_PROVISIONING_PROFILE: ${{ secrets.IOS_PROVISIONING_PROFILE }}
