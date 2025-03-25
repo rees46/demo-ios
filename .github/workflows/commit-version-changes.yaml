@@ -1,0 +1,13 @@
+name: Publish to TestFlight and Bump Version
+
+on:
+  pull_request:
+    # TODO link it with publish
+    # types:
+    #   - closed
+    # branches:
+    #   - master
+
+jobs:
+  publish_and_version_bump:
+    uses: rees46/workflow/.github/workflows/reusable-multiplatform-bump.yaml@feat/commit-version-changes
