@@ -1,4 +1,4 @@
-name: Publish to TestFlight and Bump Version
+name: Bump Version
 
 on:
   pull_request:
@@ -11,3 +11,6 @@ on:
 jobs:
   publish_and_version_bump:
     uses: rees46/workflow/.github/workflows/reusable-multiplatform-bump.yaml@feat/commit-version-changes
+    secrets:
+      GITHUB_APP_ID: ${{ vars.PUBLIVERSIONER_ID }}
+      GITHUB_APP_PRIVATE_KEY: ${{ secrets.PUBLIVERSIONER_SECRET }}

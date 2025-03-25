@@ -1,4 +1,4 @@
-name: Publish to TestFlight and Bump Version
+name: Publish to TestFlight
 
 on:
   pull_request:
