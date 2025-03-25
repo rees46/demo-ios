@@ -8,7 +8,7 @@ on:
       - master
 
 jobs:
-  publish_and_version_bump:
+  run:
     if: github.event.pull_request.merged == true
     uses: rees46/workflow/.github/workflows/reusable-ios-testflight-publish.yaml@master
     with:

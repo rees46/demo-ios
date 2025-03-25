@@ -1,10 +1,9 @@
 name: Sync repositories
 
 on:
-  pull_request:
   workflow_run:
     workflows:
-      - "Bump version, create release and publish"
+      - "Publish to TestFlight"
     types:
       - completed
   workflow_dispatch:
