@@ -14,36 +14,36 @@ class NotificationWidgetController: ObservableObject {
             titleText: NSLocalizedString("notification_alert_title", comment: ""),
             messageText: NSLocalizedString("notification_alert_message", comment: ""),
             imageUrl: AppConfigVariables.inAppNotificationImageUrl,
-            positiveButtonText: NSLocalizedString("notification_accept_button", comment: ""),
-            negativeButtonText: NSLocalizedString("notification_decline_button", comment: ""),
-            onPositiveButtonClick: {
-                print("Alert Accepted")
+            confirmButtonText: NSLocalizedString("notification_accept_button", comment: ""),
+            dismissButtonText: NSLocalizedString("notification_decline_button", comment: ""),
+            onConfirmButtonClick: {
+                print("Alert dialog accepted")
             }
         )
     }
     
-    func showBottomSheet() {
-        widget?.showBottomSheet(
+    func showBottomDialog() {
+        widget?.showBottomDialog(
             titleText: NSLocalizedString("notification_alert_title", comment: ""),
             messageText: NSLocalizedString("notification_alert_message", comment: ""),
             imageUrl: AppConfigVariables.inAppNotificationImageUrl,
-            positiveButtonText: NSLocalizedString("notification_accept_button", comment: ""),
-            negativeButtonText: NSLocalizedString("notification_decline_button", comment: ""),
-            onPositiveButtonClick: {
-                print("Bottom Sheet Accepted")
+            confirmButtonText: NSLocalizedString("notification_accept_button", comment: ""),
+            dismissButtonText: NSLocalizedString("notification_decline_button", comment: ""),
+            onConfirmButtonClick: {
+                print("Bottom dialog accepted")
             }
         )
     }
     
-    func showFullScreenAlert() {
-        widget?.showFullScreenAlert(
+    func showTopDialog() {
+        widget?.showTopDialog(
             titleText: NSLocalizedString("notification_alert_title", comment: ""),
             messageText: NSLocalizedString("notification_alert_message", comment: ""),
             imageUrl: AppConfigVariables.inAppNotificationImageUrl,
-            positiveButtonText: NSLocalizedString("notification_accept_button", comment: ""),
-            negativeButtonText: NSLocalizedString("notification_decline_button", comment: ""),
-            onPositiveButtonClick: {
-                print("Full Screen Alert Accepted")
+            confirmButtonText: NSLocalizedString("notification_accept_button", comment: ""),
+            dismissButtonText: NSLocalizedString("notification_decline_button", comment: ""),
+            onConfirmButtonClick: {
+                print("Top dialog accepted")
             }
         )
     }

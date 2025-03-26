@@ -435,6 +435,17 @@
         }
       }
     },
+    "show_alert_dialog" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Show Alert Dialog"
+          }
+        }
+      }
+    },
     "show_all_button" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -446,35 +457,24 @@
         }
       }
     },
-    "show_base_alert_dialog" : {
+    "show_bottom_dialog" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Show Alert PopUp"
+            "value" : "Show Bottom Dialog"
           }
         }
       }
     },
-    "show_base_bottom_sheet_dialog" : {
+    "show_top_dialog" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Show Bottom Sheet PopUp"
-          }
-        }
-      }
-    },
-    "show_full_screen_dialog" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Show Full Screen PopUp"
+            "value" : "Show Top Dialog"
           }
         }
       }

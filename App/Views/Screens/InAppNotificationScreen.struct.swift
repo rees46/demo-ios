@@ -6,14 +6,14 @@ struct InAppNotificationScreen: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: Sizes.Padding.standard) {
-            NotificationButton(title: "show_base_alert_dialog") {
+            NotificationButton(title: NSLocalizedString("show_alert_dialog", comment: "")) {
                 widgetController.showAlert()
             }
-            NotificationButton(title: "show_base_bottom_sheet_dialog") {
-                widgetController.showBottomSheet()
+            NotificationButton(title: NSLocalizedString("show_bottom_dialog", comment: "")) {
+                widgetController.showBottomDialog()
             }
-            NotificationButton(title: "show_full_screen_dialog") {
-                widgetController.showFullScreenAlert()
+            NotificationButton(title: NSLocalizedString("show_top_dialog", comment: "")) {
+                widgetController.showTopDialog()
             }
         }
         .padding()
