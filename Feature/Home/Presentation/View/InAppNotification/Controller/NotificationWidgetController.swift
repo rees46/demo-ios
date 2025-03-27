@@ -1,6 +1,6 @@
 import SwiftUI
 import UIKit
-import REES46
+import PersonaClick
 
 class NotificationWidgetController: ObservableObject {
     private var widget: NotificationWidget?

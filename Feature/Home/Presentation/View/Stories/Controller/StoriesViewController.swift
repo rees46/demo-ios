@@ -1,13 +1,13 @@
 import SwiftUI
 import UIKit
-import REES46
+import PersonaClick
 import Resolver
 
 class StoriesViewController: UIViewController {
     
     var sdk: PersonalizationSDK?
     var storiesView: StoriesView?
-    var storiesCode:String = "fcaa8d3168ab7d7346e4b4f1a1c92214"
+    var storiesCode:String = "09d291f54de95e9e5bde43b343b0b0d7"
     
     override func viewDidLoad() {
         super.viewDidLoad()

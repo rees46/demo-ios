@@ -1,6 +1,6 @@
 import Foundation
 import Combine
-import REES46
+import PersonaClick
 import Resolver
 
 class ProductsViewModel {

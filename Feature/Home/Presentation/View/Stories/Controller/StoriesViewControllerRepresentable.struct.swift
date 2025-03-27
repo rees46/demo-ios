@@ -1,6 +1,6 @@
 import SwiftUI
 import UIKit
-import REES46
+import PersonaClick
 import Resolver
 
 struct StoriesViewControllerRepresentable: UIViewControllerRepresentable {

@@ -1,5 +1,5 @@
 import Foundation
-import REES46
+import PersonaClick
 
 struct SearchProductResponse {
     let categories: [SearchCategory]

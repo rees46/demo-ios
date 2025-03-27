@@ -1,5 +1,5 @@
 import Foundation
-import REES46
+import PersonaClick
 
 protocol SDKManaging {
     var sdk: PersonalizationSDK? { get }

@@ -1,9 +1,9 @@
 import Foundation
-import REES46
+import PersonaClick
 
 class RecommendedProductMapper {
     
-    static func mapResponseToProducts(response: REES46.RecommenderResponse) -> [RecommendedProduct] {
+    static func mapResponseToProducts(response: PersonaClick.RecommenderResponse) -> [RecommendedProduct] {
         return response.recommended.map { recommended in
             return RecommendedProduct(
                 id: recommended.id,

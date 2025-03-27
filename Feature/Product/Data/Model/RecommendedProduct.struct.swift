@@ -1,5 +1,5 @@
 import Foundation
-import REES46
+import PersonaClick
 
 struct RecommendedProduct {
     let id: String
@@ -13,7 +13,7 @@ struct RecommendedProduct {
     let url: String
     let deeplinkIos: String
     let categories: [ProductDto]
-    let locations: [REES46.Location]
+    let locations: [PersonaClick.Location]
     let price: Double
     let priceFormatted: String?
     let priceFull: Double

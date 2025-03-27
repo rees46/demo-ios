@@ -1,4 +1,4 @@
-import REES46
+import PersonaClick
 
 class SDKManager: SDKManaging {
     var sdk: PersonalizationSDK?

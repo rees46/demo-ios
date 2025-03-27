@@ -83,17 +83,17 @@
       <EnvironmentVariables>
          <EnvironmentVariable
             key = "STORIES_CODE"
-            value = "fcaa8d3168ab7d7346e4b4f1a1c92214"
+            value = " 09d291f54de95e9e5bde43b343b0b0d7"
             isEnabled = "YES">
          </EnvironmentVariable>
          <EnvironmentVariable
             key = "SHOP_ID"
-            value = "357382bf66ac0ce2f1722677c59511"
+            value = "42a4cd11ebab3b0454778d18d4f3d5"
             isEnabled = "YES">
          </EnvironmentVariable>
          <EnvironmentVariable
             key = "API_DOMAIN_PATH"
-            value = "api.rees46.ru"
+            value = "api.personaclick.com"
             isEnabled = "YES">
          </EnvironmentVariable>
          <EnvironmentVariable
@@ -108,7 +108,7 @@
          </EnvironmentVariable>
          <EnvironmentVariable
             key = "BLOCK_ID"
-            value = "977cb67194a72fdc7b424f49d69a862d"
+            value = "5a57812604806d58d3d98f8e9480cb97"
             isEnabled = "YES">
          </EnvironmentVariable>
          <EnvironmentVariable
@@ -118,7 +118,7 @@
          </EnvironmentVariable>
          <EnvironmentVariable
             key = "RECOMMENDATION_CODE"
-            value = "656"
+            value = "2480"
             isEnabled = "YES">
          </EnvironmentVariable>
          <EnvironmentVariable
@@ -128,7 +128,7 @@
          </EnvironmentVariable>
          <EnvironmentVariable
             key = "IN_APP_NOTIFICATION_IMAGE_URL"
-            value = "https://image.slidesharecdn.com/rees46productpresentation-151112180026-lva1-app6891/75/REES46-Product-Presentation-1-2048.jpg"
+            value = "https://image.slidesharecdn.com/rees46productpresentation-151112180026-lva1-app6891/75/PersonaClick-Product-Presentation-1-2048.jpg"
             isEnabled = "YES">
          </EnvironmentVariable>
       </EnvironmentVariables>

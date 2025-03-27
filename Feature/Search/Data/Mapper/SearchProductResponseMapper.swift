@@ -1,5 +1,5 @@
 import Foundation
-import REES46
+import PersonaClick
 
 extension SearchProductResponse {
     static func from(_ response: SearchResponse) -> SearchProductResponse {

@@ -1,9 +1,9 @@
 PODS:
-  - REES46 (3.6.60)
+  - PersonaClick (3.6.60)
   - Resolver (1.5.1)
 
 DEPENDENCIES:
-  - REES46 (from `https://github.com/rees46/ios-sdk.git`, branch `master`, tag `3.6.60`)
+  - PersonaClick (from `https://github.com/PersonaClick/ios-sdk.git`, branch `master`, tag `3.6.60`)
   - Resolver
 
 SPEC REPOS:
@@ -11,21 +11,21 @@ SPEC REPOS:
     - Resolver
 
 EXTERNAL SOURCES:
-  REES46:
+  PersonaClick:
     :branch: master
-    :git: https://github.com/rees46/ios-sdk.git
+    :git: https://github.com/PersonaClick/ios-sdk.git
     :tag: 3.6.60
 
 CHECKOUT OPTIONS:
-  REES46:
-    :commit: dc609ccb926157ff61084dfd24a9121c6c113cac
-    :git: https://github.com/rees46/ios-sdk.git
+  PersonaClick:
+    :commit: ed28118f0e1a4c51dd6328a5587b4ace6911b736
+    :git: https://github.com/PersonaClick/ios-sdk.git
     :tag: 3.6.60
 
 SPEC CHECKSUMS:
-  REES46: 2df6596f22d0124892fba773f7e9af5e456a9bfd
+  PersonaClick: 4a62f920e702cb1d33e853a5e37e7ef409b76514
   Resolver: 0e2ce51257e9366c54afe1b9e9be25059e9b9300
 
-PODFILE CHECKSUM: f5c5b8211dfac0270afae6cef3623943c3e6bbea
+PODFILE CHECKSUM: 070135ed6cff04e7c805a1cc484a7b48b06b54b1
 
 COCOAPODS: 1.16.2
