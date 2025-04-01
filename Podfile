@@ -3,7 +3,7 @@ platform :ios, '13.0'
 target 'demo-store-ios' do
   use_frameworks!
 
-  pod 'PersonaClick', :git => 'https://github.com/PersonaClick/ios-sdk.git', :branch => 'master', :tag => '3.6.60'
+  pod 'PersonaClick', :git => 'https://github.com/PersonaClick/ios-sdk.git', :tag => '3.6.60'
   pod "Resolver"
 
 end

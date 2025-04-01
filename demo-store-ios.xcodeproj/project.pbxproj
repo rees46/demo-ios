@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		37CF7497084E2A6C5AB03AAF /* Pods_demo_store_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D65FBB29DC18ECADC9C8C94 /* Pods_demo_store_ios.framework */; };
 		752F1D3A2C41E01D002D4AC3 /* ProductCartItem.struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752F1D392C41E01D002D4AC3 /* ProductCartItem.struct.swift */; };
 		752F1D3C2C41E157002D4AC3 /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752F1D3B2C41E156002D4AC3 /* CartViewModel.swift */; };
 		752F1D402C41E5BC002D4AC3 /* CartRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752F1D3F2C41E5BC002D4AC3 /* CartRepositoryImpl.swift */; };
@@ -111,6 +110,7 @@
 		75ECCD142C36BE4300D6D346 /* SettingsScreenView.struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75ECCD132C36BE4300D6D346 /* SettingsScreenView.struct.swift */; };
 		75ECCD172C36D6D000D6D346 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 75ECCD162C36D6D000D6D346 /* Localizable.xcstrings */; };
 		75ECCD1A2C36F94800D6D346 /* BottomBarView.struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75ECCD192C36F94800D6D346 /* BottomBarView.struct.swift */; };
+		F078CDEE274BB04DC4BDBE11 /* Pods_demo_store_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B5F8F3D659C7581A01750A6 /* Pods_demo_store_ios.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -127,7 +127,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		09908BAF81F91172D8D6062C /* Pods_demo_store_iosTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_demo_store_iosTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		24D3D1D243CC0A7E537F296F /* Pods-demo-store-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demo-store-ios.debug.xcconfig"; path = "Target Support Files/Pods-demo-store-ios/Pods-demo-store-ios.debug.xcconfig"; sourceTree = "<group>"; };
+		4B5F8F3D659C7581A01750A6 /* Pods_demo_store_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_demo_store_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		752F1D392C41E01D002D4AC3 /* ProductCartItem.struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCartItem.struct.swift; sourceTree = "<group>"; };
 		752F1D3B2C41E156002D4AC3 /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
 		752F1D3F2C41E5BC002D4AC3 /* CartRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartRepositoryImpl.swift; sourceTree = "<group>"; };
@@ -235,10 +236,7 @@
 		75ECCD132C36BE4300D6D346 /* SettingsScreenView.struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreenView.struct.swift; sourceTree = "<group>"; };
 		75ECCD162C36D6D000D6D346 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		75ECCD192C36F94800D6D346 /* BottomBarView.struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomBarView.struct.swift; sourceTree = "<group>"; };
-		8D65FBB29DC18ECADC9C8C94 /* Pods_demo_store_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_demo_store_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AC654F53174F1754F6E72BDB /* Pods-demo-store-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demo-store-ios.release.xcconfig"; path = "Target Support Files/Pods-demo-store-ios/Pods-demo-store-ios.release.xcconfig"; sourceTree = "<group>"; };
-		C20BDB80283375AFE665FF96 /* Pods-demo-store-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demo-store-ios.debug.xcconfig"; path = "Target Support Files/Pods-demo-store-ios/Pods-demo-store-ios.debug.xcconfig"; sourceTree = "<group>"; };
-		CF343FE4C1EB44258E4142CD /* Pods_demo_store_ios_demo_store_iosUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_demo_store_ios_demo_store_iosUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D59AF201D1584430F08C03FF /* Pods-demo-store-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demo-store-ios.release.xcconfig"; path = "Target Support Files/Pods-demo-store-ios/Pods-demo-store-ios.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,13 +244,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37CF7497084E2A6C5AB03AAF /* Pods_demo_store_ios.framework in Frameworks */,
+				F078CDEE274BB04DC4BDBE11 /* Pods_demo_store_ios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		645A07094B7E96890C30821B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4B5F8F3D659C7581A01750A6 /* Pods_demo_store_ios.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		75674CEA2C3D2E32007FAB88 /* Stories */ = {
 			isa = PBXGroup;
 			children = (
@@ -387,7 +393,7 @@
 				75ECCD152C36D6B400D6D346 /* Resources */,
 				75B935542C3564360063E814 /* Products */,
 				8FED5CC7CDC6607CEFB8FDC9 /* Pods */,
-				ECE8154AB54931A903490932 /* Frameworks */,
+				645A07094B7E96890C30821B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1100,20 +1106,10 @@
 		8FED5CC7CDC6607CEFB8FDC9 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				C20BDB80283375AFE665FF96 /* Pods-demo-store-ios.debug.xcconfig */,
-				AC654F53174F1754F6E72BDB /* Pods-demo-store-ios.release.xcconfig */,
+				24D3D1D243CC0A7E537F296F /* Pods-demo-store-ios.debug.xcconfig */,
+				D59AF201D1584430F08C03FF /* Pods-demo-store-ios.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		ECE8154AB54931A903490932 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				8D65FBB29DC18ECADC9C8C94 /* Pods_demo_store_ios.framework */,
-				CF343FE4C1EB44258E4142CD /* Pods_demo_store_ios_demo_store_iosUITests.framework */,
-				09908BAF81F91172D8D6062C /* Pods_demo_store_iosTests.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1123,12 +1119,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 75B935772C3564370063E814 /* Build configuration list for PBXNativeTarget "demo-store-ios" */;
 			buildPhases = (
-				84C46F9393C00966419B7A98 /* [CP] Check Pods Manifest.lock */,
+				AE31DB8E4CD00CCD598C5982 /* [CP] Check Pods Manifest.lock */,
 				75B9354F2C3564360063E814 /* Sources */,
 				75B935502C3564360063E814 /* Frameworks */,
 				75B935512C3564360063E814 /* Resources */,
-				2ADA2F5588F90BD1D09FAC65 /* [CP] Embed Pods Frameworks */,
 				752F1D6D2C46F411002D4AC3 /* Embed Frameworks */,
+				154FAB2961CA13C37E06F732 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1186,7 +1182,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2ADA2F5588F90BD1D09FAC65 /* [CP] Embed Pods Frameworks */ = {
+		154FAB2961CA13C37E06F732 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1203,7 +1199,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-demo-store-ios/Pods-demo-store-ios-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		84C46F9393C00966419B7A98 /* [CP] Check Pods Manifest.lock */ = {
+		AE31DB8E4CD00CCD598C5982 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1459,15 +1455,16 @@
 		};
 		75B935782C3564370063E814 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C20BDB80283375AFE665FF96 /* Pods-demo-store-ios.debug.xcconfig */;
+			baseConfigurationReference = 24D3D1D243CC0A7E537F296F /* Pods-demo-store-ios.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"App/Preview Content\"";
-				DEVELOPMENT_TEAM = MYA32EHWN4;
+				DEVELOPMENT_TEAM = V5B392T8A9;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_TESTABILITY = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1483,8 +1480,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.rees46.demo-shop";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.personaClick.demo-shop";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1493,15 +1491,16 @@
 		};
 		75B935792C3564370063E814 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AC654F53174F1754F6E72BDB /* Pods-demo-store-ios.release.xcconfig */;
+			baseConfigurationReference = D59AF201D1584430F08C03FF /* Pods-demo-store-ios.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"App/Preview Content\"";
-				DEVELOPMENT_TEAM = MYA32EHWN4;
+				DEVELOPMENT_TEAM = V5B392T8A9;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_TESTABILITY = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1517,8 +1516,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.rees46.demo-shop";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.personaClick.demo-shop";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
