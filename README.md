@@ -7,6 +7,13 @@
 
 ![REES46](https://github.com/user-attachments/assets/f84f80c5-5884-42f5-92d5-65f2a4c30aee)
 
+<details>
+  <summary></summary>
+
+ ![1x1](https://github.com/user-attachments/assets/895082a8-e5ea-498c-bf78-d92519ba071b)
+
+</details>
+
 ## Description
 
 This demo application was developed using the REES46 SDK for iOS to showcase the capabilities of this SDK.
