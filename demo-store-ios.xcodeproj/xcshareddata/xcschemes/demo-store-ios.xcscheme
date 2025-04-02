@@ -128,7 +128,7 @@
          </EnvironmentVariable>
          <EnvironmentVariable
             key = "IN_APP_NOTIFICATION_IMAGE_URL"
-            value = "https://image.slidesharecdn.com/rees46productpresentation-151112180026-lva1-app6891/75/PersonaClick-Product-Presentation-1-2048.jpg"
+            value = "https://private-user-images.githubusercontent.com/122538327/429181735-2f71d8ed-4d32-4e40-9c9b-a428078f54b0.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDM1NzU0NDMsIm5iZiI6MTc0MzU3NTE0MywicGF0aCI6Ii8xMjI1MzgzMjcvNDI5MTgxNzM1LTJmNzFkOGVkLTRkMzItNGU0MC05YzliLWE0MjgwNzhmNTRiMC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwNDAyJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDQwMlQwNjI1NDNaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT05M2UzZTAxNzVmYWFmYzVkMTdlZTg3OTcxMjMxNzAyNjllODg3OGQ4MTBkZDIwMDE2MTM5MGZhZmMxZTdhMDEzJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.YZogDRB1XdaSu034VmAwyVul6qwq9mYBUxQmeozkJA4"
             isEnabled = "YES">
          </EnvironmentVariable>
       </EnvironmentVariables>
