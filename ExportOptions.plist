@@ -10,8 +10,8 @@
         <false/>
         <key>provisioningProfiles</key>
         <dict>
-            <key>com.rees46.demo-shop</key>
-            <string>demo-ios</string>
+            <key>com.personaclick.ios-demo</key>
+            <string>Apple Distribution: PERSONA DIJITAL PAZARLAMA TEKNOLOJILERI ANONIM SIRKETI (Z49R96MV7D)</string>
         </dict>
     </dict>
 </plist>
