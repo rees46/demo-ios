@@ -1,7 +1,11 @@
 name: Bump version
 
 on:
-  pull_request:
+  push:
+    branches:
+      - debug
+    paths-ignore:
+      - "version.properties"
   # TODO uncomment
   # push:
   #   branches:
