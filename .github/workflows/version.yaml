@@ -3,6 +3,12 @@ name: Bump version
 on:
   pull_request:
   # TODO uncomment
+  # push:
+  #   branches:
+  #     - master
+  #     - "!release/**"
+  #   paths-ignore:
+  #     - "version.properties"
   # pull_request:
   #   types:
   #     - closed
