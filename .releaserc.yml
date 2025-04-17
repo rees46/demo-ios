@@ -1,7 +1,8 @@
 {
   dryRun: true,
   ci: false,
-  branches: ["master"],
+  branches: ["feat/repo-sync"],
+  # branches: ["master"],
   plugins:
     [
       "@semantic-release/commit-analyzer",
