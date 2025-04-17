@@ -1,6 +1,6 @@
 {
-  dryRun: true,
-  ci: false,
+  # dryRun: true,
+  # ci: false,
   branches: ["debug"],
   # branches: ["master"],
   plugins:
