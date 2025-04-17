@@ -1,7 +1,7 @@
 {
   dryRun: true,
   ci: false,
-  branches: ["feat/repo-sync"],
+  branches: ["debug"],
   # branches: ["master"],
   plugins:
     [
