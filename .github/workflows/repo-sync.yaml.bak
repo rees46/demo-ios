@@ -1,13 +1,6 @@
 name: Sync repositories
 
 on:
-  # pull_request:
-  workflow_run:
-    workflows:
-      - Publish to TestFlight
-    types:
-      - completed
-    workflow_dispatch:
   # TODO uncomment
   # pull_request:
   #   types:

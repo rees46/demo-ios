@@ -7,9 +7,12 @@ on:
     branches:
       # TODO uncomment
       # - master
+      # - master
       - debug
     paths:
       - "version.properties"
+    paths-ignore:
+      - ".github/**"
   workflow_dispatch:
 
 jobs:
