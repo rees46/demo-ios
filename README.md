@@ -1,4 +1,3 @@
-<!-- TODO remove -->
 # Demo shop created on the basis of REES46- IOS SDK
 
 [![Version](https://img.shields.io/cocoapods/v/REES46.svg?style=flat)](https://cocoapods.org/pods/REES46)
