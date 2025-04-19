@@ -15,8 +15,8 @@ on:
 
 jobs:
   run:
-    steps: |
-    - name: debug startup
+    runs-on: ubuntu-latest 
+    step:
       echo "publish"
     # if: github.event.pull_request.merged == true || github.event_name == 'workflow_dispatch'
     # uses: rees46/workflow/.github/workflows/reusable-ios-testflight-publish.yaml@master
