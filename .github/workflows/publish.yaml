@@ -11,8 +11,6 @@ on:
       - debug
     paths:
       - "version.properties"
-    paths-ignore:
-      - ".github/**"
   workflow_dispatch:
 
 jobs:
