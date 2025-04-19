@@ -1,7 +1,13 @@
 name: Sync repositories
 
 on:
-  pull_request:
+  # pull_request:
+  workflow_run:
+    workflows:
+      - Publish to TestFlight
+    types:
+      - completed
+    workflow_dispatch:
   # TODO uncomment
   # pull_request:
   #   types:
@@ -12,7 +18,9 @@ on:
 
 jobs:
   run:
-    if: github.event.pull_request.merged == true || github.event_name == 'workflow_dispatch'
+    # if: github.event.pull_request.merged == true || github.event_name == 'workflow_dispatch'
+    # TODO is it needed?
+    # if: github.event.pull_request.merged == true && github.event.pull_request.base.ref == 'master'
     uses: rees46/workflow/.github/workflows/reusable-ios-synchronization.yaml@master
     permissions: write-all
     secrets:

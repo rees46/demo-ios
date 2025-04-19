@@ -5,11 +5,16 @@ on:
     types:
       - closed
     branches:
-      - master
+      # TODO uncomment
+      # - master
+      - debug
+    paths:
+      - "version.properties"
+  workflow_dispatch:
 
 jobs:
   run:
-    if: github.event.pull_request.merged == true
+    if: github.event.pull_request.merged == true || github.event_name == 'workflow_dispatch'
     uses: rees46/workflow/.github/workflows/reusable-ios-testflight-publish.yaml@master
     with:
       scheme: "demo-store-ios"

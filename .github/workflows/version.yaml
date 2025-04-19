@@ -1,11 +1,16 @@
 name: Bump version
 
 on:
-  push:
+  pull_request:
+    types:
+      - closed
     branches:
+      # TODO uncomment
+      # - master
       - debug
     paths-ignore:
       - "version.properties"
+
   # TODO uncomment
   # push:
   #   branches:
@@ -25,8 +30,8 @@ on:
 
 jobs:
   run:
+    if: github.event.pull_request.merged == true || github.event_name == 'workflow_dispatch'
     # TODO uncomment
-    # if: github.event.pull_request.merged == true || github.event_name == 'workflow_dispatch'
     # uses: rees46/workflow/.github/workflows/reusable-multiplatform-version-bump.yaml@master
     uses: rees46/workflow/.github/workflows/reusable-multiplatform-version-bump.yaml@feat/version-workflow
     permissions: write-all
