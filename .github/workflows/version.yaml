@@ -1,9 +1,7 @@
 name: Bump version
 
 on:
-  pull_request:
-    types:
-      - closed
+  push:
     branches:
       # TODO uncomment
       # - master
@@ -30,7 +28,7 @@ on:
 
 jobs:
   run:
-    if: github.event.pull_request.merged == true || github.event_name == 'workflow_dispatch'
+    # if: github.event.pull_request.merged == true || github.event_name == 'workflow_dispatch'
     # TODO uncomment
     # uses: rees46/workflow/.github/workflows/reusable-multiplatform-version-bump.yaml@master
     uses: rees46/workflow/.github/workflows/reusable-multiplatform-version-bump.yaml@feat/version-workflow
