@@ -11,11 +11,7 @@ on:
 
 jobs:
   repo-sync:
-    if: >-
-      github.event_name == 'workflow_dispatch' ||
-      (github.event_name == 'pull_request' &&
-       github.event.pull_request.merged == true &&
-       github.event.pull_request.head.ref.startsWith('release/'))
+    if: github.event_name == 'workflow_dispatch' || (github.event_name == 'pull_request' && github.event.pull_request.merged == true && github.event.pull_request.head.ref.startsWith('release/'))
     # TODO rm
     runs-on: ubuntu-latest
     steps:
