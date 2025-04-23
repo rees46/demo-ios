@@ -11,7 +11,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  run:
+  testflight-publish:
     if: github.event.pull_request.merged == true
     uses: rees46/workflow/.github/workflows/reusable-ios-testflight-publish.yaml@master
     with:
