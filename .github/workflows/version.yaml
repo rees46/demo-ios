@@ -9,7 +9,7 @@ on:
       - "version.properties"
 
 jobs:
-  run:
+  bump-version:
     uses: rees46/workflow/.github/workflows/reusable-multiplatform-version-bump.yaml@master
     permissions: write-all
     secrets:
