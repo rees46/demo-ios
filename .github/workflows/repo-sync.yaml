@@ -11,7 +11,7 @@ on:
 
 jobs:
   repo-sync:
-    if: |
+    if: >-
       github.event_name == 'workflow_dispatch' ||
       (github.event_name == 'pull_request' &&
        github.event.pull_request.merged == true &&
