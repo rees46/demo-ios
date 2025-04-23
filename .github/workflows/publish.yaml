@@ -6,6 +6,7 @@ on:
       - closed
     branches:
       # TODO uncomment
+      # TODO uncomment
       # - master
       - debug
   workflow_dispatch:
