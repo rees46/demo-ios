@@ -1,7 +1,9 @@
 name: Bump version
 
 on:
-  push:
+  pull_request:
+    types:
+      - closed
     branches:
       # TODO uncomment
       # - master
