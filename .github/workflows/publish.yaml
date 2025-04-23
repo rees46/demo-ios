@@ -5,27 +5,36 @@ on:
     types:
       - closed
     branches:
-      - master
-    paths:
-      - "version.properties"
+      # TODO uncomment
+      # TODO uncomment
+      # - master
+      - debug
   workflow_dispatch:
 
 jobs:
   testflight-publish:
-    if: github.event.pull_request.merged == true
-    uses: rees46/workflow/.github/workflows/reusable-ios-testflight-publish.yaml@master
-    with:
-      scheme: "demo-store-ios"
-      xcworkspace: "demo-store-ios.xcworkspace"
-      codeSignIdentity: "Apple Distribution: M.Kechinov's web-development studio, LLC (MYA32EHWN4)"
-      developmentTeam: "MYA32EHWN4"
-      provisioningProfileSpecifier: "demo-ios"
-    secrets:
-      GITHUB_APP_ID: ${{ vars.PUBLIVERSIONER_ID }}
-      GITHUB_APP_PRIVATE_KEY: ${{ secrets.PUBLIVERSIONER_SECRET }}
-      APP_STORE_CONNECT_API_KEY_ID: ${{ secrets.APP_STORE_CONNECT_API_KEY_ID }}
-      APP_STORE_CONNECT_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
-      APP_STORE_CONNECT_API_KEY: ${{ secrets.APP_STORE_CONNECT_API_KEY_AS_BASE64_STRING }}
-      IOS_CERTIFICATE_P12: ${{ secrets.IOS_CERTIFICATE_P12 }}
-      IOS_CERTIFICATE_PASSWORD: ${{ secrets.IOS_CERTIFICATE_PASSWORD }}
-      IOS_PROVISIONING_PROFILE: ${{ secrets.IOS_PROVISIONING_PROFILE }}
+    if: github.event_name == 'workflow_dispatch' || (github.event_name == 'pull_request' && github.event.pull_request.merged == true && startsWith(github.event.pull_request.head.ref, 'release/'))
+    # TODO rm
+    runs-on: ubuntu-latest
+    steps:
+      - name: Publish log
+        run: echo "publish"
+
+    # TODO secret&vars checks
+    # TODO uncomment
+    # uses: rees46/workflow/.github/workflows/reusable-ios-testflight-publish.yaml@master
+    # with:
+    #   scheme: "demo-store-ios"
+    #   xcworkspace: "demo-store-ios.xcworkspace"
+    #   codeSignIdentity: "Apple Distribution: M.Kechinov's web-development studio, LLC (MYA32EHWN4)"
+    #   developmentTeam: "MYA32EHWN4"
+    #   provisioningProfileSpecifier: "demo-ios"
+    # secrets:
+    #   GITHUB_APP_ID: ${{ vars.PUBLIVERSIONER_ID }}
+    #   GITHUB_APP_PRIVATE_KEY: ${{ secrets.PUBLIVERSIONER_SECRET }}
+    #   APP_STORE_CONNECT_API_KEY_ID: ${{ secrets.APP_STORE_CONNECT_API_KEY_ID }}
+    #   APP_STORE_CONNECT_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
+    #   APP_STORE_CONNECT_API_KEY: ${{ secrets.APP_STORE_CONNECT_API_KEY_AS_BASE64_STRING }}
+    #   IOS_CERTIFICATE_P12: ${{ secrets.IOS_CERTIFICATE_P12 }}
+    #   IOS_CERTIFICATE_PASSWORD: ${{ secrets.IOS_CERTIFICATE_PASSWORD }}
+    #   IOS_PROVISIONING_PROFILE: ${{ secrets.IOS_PROVISIONING_PROFILE }}
