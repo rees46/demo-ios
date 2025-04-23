@@ -1,0 +1,20 @@
+name: Sync repositories
+
+on:
+  pull_request:
+    types:
+      - closed
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  repo-sync:
+    if: github.event_name == 'workflow_dispatch' || (github.event_name == 'pull_request' && github.event.pull_request.merged == true && startsWith(github.event.pull_request.head.ref, 'release/'))
+    uses: rees46/workflow/.github/workflows/reusable-ios-synchronization.yaml@master
+    permissions: write-all
+    secrets:
+      token: ${{ secrets.JADE_SMITH_BOT_TOKEN }}
+    with:
+      targetRepository: "personaclick/demo-ios"
+      versionFilePath: "version.properties"
