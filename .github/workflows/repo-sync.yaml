@@ -28,5 +28,5 @@ jobs:
       appId: ${{ vars.PERSONACLICK_COURIER_ID }}
       replacements: ${{ needs.prepare.outputs.replacements }}
       repositoryOwner: personaclick
-      targetRepository: personaclick/android-sdk
+      targetRepository: personaclick/demo-ios
       reviewerUsername: iwwwanow
