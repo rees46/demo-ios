@@ -2,21 +2,17 @@ name: Upload to TestFlight
 
 on:
   pull_request:
-  # TODO uncomment
-  #   types:
-  #     - closed
-  #   branches:
-  #     - master
-  # workflow_dispatch:
+    types:
+      - closed
+    branches:
+      - master
+  workflow_dispatch:
 
 jobs:
   testflight-publish:
-    # TODO uncomment
-    # if: github.event_name == 'workflow_dispatch' || (github.event_name == 'pull_request' && github.event.pull_request.merged == true && startsWith(github.event.pull_request.head.ref, 'release/'))
-    # TODO secret&vars checks
-    # TODO uncomment
+    if: github.event_name == 'workflow_dispatch' || (github.event_name == 'pull_request' && github.event.pull_request.merged == true && startsWith(github.event.pull_request.head.ref, 'release/'))
+    # TODO check ref to hash after merge
     # uses: rees46/workflow/.github/workflows/reusable-ios-testflight-publish.yaml@master
-    uses: rees46/workflow/.github/workflows/reusable-ios-testflight-publish.yaml@feat/version-workflow
     with:
       scheme: "demo-store-ios"
       xcworkspace: "demo-store-ios.xcworkspace"
