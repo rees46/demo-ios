@@ -20,7 +20,8 @@ jobs:
 
   repoSync:
     needs: prepare
-    uses: rees46/workflow/.github/workflows/reusable-repo-sync.yml@master
+    # uses: rees46/workflow/.github/workflows/reusable-repo-sync.yml@master
+    uses: rees46/workflow/.github/workflows/reusable-repo-sync.yml@fix/sync
     secrets:
       appSecret: ${{ secrets.PERSONACLICK_COURIER_SECRET }}
     with:
