@@ -1,4 +1,4 @@
-name: Sync repositories
+name: Repository synchronization
 
 on:
   pull_request:
@@ -9,12 +9,23 @@ on:
   workflow_dispatch:
 
 jobs:
-  repo-sync:
-    if: github.event_name == 'workflow_dispatch' || (github.event_name == 'pull_request' && github.event.pull_request.merged == true && startsWith(github.event.pull_request.head.ref, 'release/'))
-    uses: rees46/workflow/.github/workflows/reusable-ios-synchronization.yaml@master
-    permissions: write-all
+  prepare:
+    if: github.event.pull_request.merged == true || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    outputs:
+      replacements: ${{ steps.getReplacementsStep.outputs.replacements }}
+    steps:
+      - uses: rees46/workflow/.github/actions/sync/read-replacements@master
+        id: getReplacementsStep
+
+  repoSync:
+    needs: prepare
+    uses: rees46/workflow/.github/workflows/reusable-repo-sync.yml@master
     secrets:
-      token: ${{ secrets.JADE_SMITH_BOT_TOKEN }}
+      appSecret: ${{ secrets.PERSONACLICK_COURIER_SECRET }}
     with:
-      targetRepository: "personaclick/demo-ios"
-      versionFilePath: "version.properties"
+      appId: ${{ vars.PERSONACLICK_COURIER_ID }}
+      replacements: ${{ needs.prepare.outputs.replacements }}
+      repositoryOwner: personaclick
+      targetRepository: personaclick/demo-ios
+      reviewerUsername: iwwwanow
