@@ -11,7 +11,7 @@ on:
 jobs:
   testflight-publish:
     if: github.event_name == 'workflow_dispatch' || (github.event_name == 'pull_request' && github.event.pull_request.merged == true && startsWith(github.event.pull_request.head.ref, 'release/'))
-    uses: rees46/workflow/.github/workflows/reusable-ios-testflight-publish.yaml@c92a64f68df6311d99f60617f9d97c5c07ec39bb
+    uses: rees46/workflow/.github/workflows/reusable-ios-testflight-publish.yaml@master
     with:
       scheme: "demo-store-ios"
       xcworkspace: "demo-store-ios.xcworkspace"
