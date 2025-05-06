@@ -1,5 +1,7 @@
 {
-  branches: ["master"],
+  # TODO
+  # branches: ["master"],
+  branches: ["master", "fix/version-workflow"],
   plugins:
     [
       "@semantic-release/commit-analyzer",
