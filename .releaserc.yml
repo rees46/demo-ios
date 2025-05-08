@@ -13,7 +13,7 @@
       ],
       [
         "@semantic-release/exec",
-        "prepareCmd": "chmod +x ./scripts/update-version.sh && ./scripts/update-version.sh ${nextRelease.version} && chmod +x ./scripts/update-info-plist-version.sh && ./scripts/update-info-plist-version.sh",
+        "prepareCmd": "chmod +x ./scripts/update-version.sh && ./scripts/update-version.sh ${nextRelease.version} && chmod +x ./scripts/update-info-plist-version.sh && ./scripts/update-info-plist-version.sh ./Info.plist && ./scripts/update-info-plist-version.sh ./App/Info.plist",
       ],
     ],
 }

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 source ./version.properties
-INFO_PLIST_PATH="./Info.plist"
+INFO_PLIST_PATH=$1
 
 sed -i '/<key>CFBundleVersion<\/key>/{n;s/<string>.*<\/string>/<string>'"$VERSION_CODE"'<\/string>/}' "$INFO_PLIST_PATH"
 sed -i '/<key>CFBundleShortVersionString<\/key>/{n;s/<string>.*<\/string>/<string>'"$VERSION_NAME"'<\/string>/}' "$INFO_PLIST_PATH"
