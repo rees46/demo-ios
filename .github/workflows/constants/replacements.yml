@@ -4,6 +4,7 @@ deletions:
 ignore:
   - version.properties
   - Info.plist
+  - App/Info.plist
 replacements:
   - from: "PUBLIVERSIONER_SECRET"
     to: "PERSONACLICK_COURIER_SECRET"
