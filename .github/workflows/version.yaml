@@ -7,6 +7,7 @@ on:
     paths-ignore:
       - ".github/**"
       - "version.properties"
+      - "Info.plist"
   workflow_dispatch:
 
 jobs:
