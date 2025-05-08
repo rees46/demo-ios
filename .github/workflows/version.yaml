@@ -8,6 +8,7 @@ on:
       - ".github/**"
       - "version.properties"
       - "Info.plist"
+      - "App/Info.plist"
   workflow_dispatch:
 
 jobs:
