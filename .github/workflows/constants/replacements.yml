@@ -3,6 +3,7 @@ deletions:
   - .github/workflows/constants/replacements.yml
 ignore:
   - version.properties
+  - Info.plist
 replacements:
   - from: "PUBLIVERSIONER_SECRET"
     to: "PERSONACLICK_COURIER_SECRET"
