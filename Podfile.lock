@@ -18,7 +18,6 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   REES46:
-    :commit: dc609ccb926157ff61084dfd24a9121c6c113cac
     :git: https://github.com/rees46/ios-sdk.git
     :tag: 3.6.60
 
