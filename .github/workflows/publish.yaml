@@ -15,7 +15,7 @@ jobs:
     with:
       scheme: "demo-store-ios"
       xcworkspace: "demo-store-ios.xcworkspace"
-      codeSignIdentity: "Apple Distribution: M.Kechinov's web-development studio, LLC (MYA32EHWN4)"
+      codeSignIdentity: "Apple Distribution"
       developmentTeam: "MYA32EHWN4"
       provisioningProfileSpecifier: "demo-ios"
     secrets:

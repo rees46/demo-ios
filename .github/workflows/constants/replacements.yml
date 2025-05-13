@@ -6,6 +6,14 @@ ignore:
   - Info.plist
   - App/Info.plist
 replacements:
+  - from: "MYA32EHWN4"
+    to: "Z49R96MV7D"
+  - from: 'provisioningProfileSpecifier: "demo-ios"'
+    to: 'provisioningProfileSpecifier: "PersonaClick Demo Shop Distribution Profile"'
+  - from: "com.rees46.demo-shop"
+    to: "com.personaclick.ios-demo"
+  - from: "<string>demo-ios</string>"
+    to: "<string>PersonaClick Demo Shop Distribution Profile</string>"
   - from: "PUBLIVERSIONER_SECRET"
     to: "PERSONACLICK_COURIER_SECRET"
   - from: "PUBLIVERSIONER_ID"
@@ -23,7 +31,7 @@ replacements:
   - from: "rees46.ru"
     to: "personaclick.com"
   - from: "rees46"
-    to: "personaClick"
+    to: "personaclick"
   - from: "REES46"
     to: "PersonaClick"
   - from: "REES"
