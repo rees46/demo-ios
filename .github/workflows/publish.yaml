@@ -19,8 +19,8 @@ jobs:
       developmentTeam: "MYA32EHWN4"
       provisioningProfileSpecifier: "demo-ios"
     secrets:
-      GITHUB_APP_ID: ${{ vars.PUBLIVERSIONER_ID }}
-      GITHUB_APP_PRIVATE_KEY: ${{ secrets.PUBLIVERSIONER_SECRET }}
+      GITHUB_APP_ID: ${{ vars.PUBLISHER_ID }}
+      GITHUB_APP_PRIVATE_KEY: ${{ secrets.PUBLISHER_SECRET }}
       APP_STORE_CONNECT_API_KEY_ID: ${{ secrets.APP_STORE_CONNECT_API_KEY_ID }}
       APP_STORE_CONNECT_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
       APP_STORE_CONNECT_API_KEY: ${{ secrets.APP_STORE_CONNECT_API_KEY_AS_BASE64_STRING }}
